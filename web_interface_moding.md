@@ -93,7 +93,7 @@ Returns any number of track lines:
 
 * `tracknumber` is 0 for master, 1 for first track, etc.
 * `trackname` is the name of the track, or MASTER
-`trackflags` includes various bits (test with parseInt(field)&1 etc):
+* `trackflags` includes various bits (test with parseInt(field)&1 etc):
   * 1: folder
   * 2: selected
   * 4: has FX
