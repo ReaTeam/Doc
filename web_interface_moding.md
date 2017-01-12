@@ -8,7 +8,7 @@ From REAPER v5.31 Web Interface *main.js* file. Formatted by [X-Raym](http://www
 * you can call `wwr_req_recur("REQUEST", interval)` to set recurring requests (such as status updates). Interval is in milliseconds.
 * you can call `wwr_req_recur_cancel("REQUEST")` to remove a recurring request that was previously set.
 * you can call `wwr_req("REQUEST")` to send a one-time request.
-* `g_wwr_timer_freq` can be overridden before calling `wwr_star()` to increase the timer frequency. (the default is 100, for 100ms)
+* `g_wwr_timer_freq` can be overridden before calling `wwr_start()` to increase the timer frequency. (the default is 100, for 100ms)
 
 ## Responses:
 
