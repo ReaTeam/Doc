@@ -102,6 +102,8 @@ Returns any number of track lines:
   * 64: record armed
   * 128: record monitoring on
   * 256: record monitoring auto
+  * 512: TCP visibility
+  * 1024: MCP visibility
 * `volume` is track volume, where 0 is -inf, 1 is +0dB, etc. see `mkvolstr` for dB conversions
 * `pan` is -1..1, where -1 is full left, 0 is centered, 1 is full right
 * `last_meter_peak` and `last_meter_pos` are integers that are dB*10, so -100 would be -10dB.
