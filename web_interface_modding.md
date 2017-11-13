@@ -1,4 +1,4 @@
-# REAPER Web Interface Moding Documentation
+# REAPER Web Interface Modding Documentation
 
 From REAPER v5.31 Web Interface *main.js* file. Formatted by [X-Raym](http://www.extremraym.com).
 
