@@ -1,12 +1,15 @@
 # REAPER Command Line Parameters
 
+Windows: ```C:\REAPER\reaper.exe -h```
+Mac: ```/Applications/REAPER64.app/Contents/MacOS/REAPER -h```
+
 ## Usage
 
 ```
 reaper [options] [filename.rpp] [filename.wav]
 ```
 
-## Options:
+## Options
 
 - `audiocfg`: show audio configuration at startup
 - `cfgfile file.ini`: use full path for alternate resource directory, otherwise uses default path
@@ -31,3 +34,7 @@ reaper [options] [filename.rpp] [filename.wav]
      - `PAD_START` 1.0 (leading silence in sec, can be negative)
      - `PAD_END` 1.0 (trailing silence in sec, can be negative)
      - `OUTPATH` 'path'
+
+## Windows-only Options
+
+(Run the `-h` command line on windows)
