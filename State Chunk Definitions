@@ -319,7 +319,7 @@ MIDI Item
                                                         //    21 = event list, diamond
                                                         //  field 7, int, ??
                                                         //  field 8, int (bool), move CCs with notes
-                                                        //  field 9, int, ??
+                                                        //  field 9, int, channel for new events
                                                         //  field 10, int (bool), snap to grid
                                                         //  field 11, int (bool), show grid
                                                         //  field 12, float, grid division unit, in beats.ticks
