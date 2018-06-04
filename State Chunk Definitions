@@ -323,8 +323,8 @@ MIDI Item
                                                         //  field 10, int (bool), snap to grid
                                                         //  field 11, int (bool), show grid
                                                         //  field 12, float, grid length, in quarter notes
-                                                        //  field 13, field 14, int, X and Y coords of upper left corner of ME window
-                                                        //  field 15, field 16, int, X and Y coords of bottom right corner of ME window
+                                                        //  field 13, field 14, int, (last-used UNmaximized) X and Y coords of upper left corner of ME window
+                                                        //  field 15, field 16, int, (last-used UNmaximized) X and Y coords of bottom right corner of ME window
                                                         //  field 17, int (bool), dock editor window
                                                         //  field 18, int, note row view modes
                                                         //    0 = show all rows
@@ -346,6 +346,7 @@ MIDI Item
                                                         //    1 = re-use MIDI editor window
                                                         //    2 = re-use MIDI editor window, keeping current item secondary
                                                         //  field 23, int (bool), show velocity numbers
+							//  field 24, int (bool), ME window maximized to full-screen
 							//  field 25, int (bool), swing enabled
 							//  field 26, float, swing % as fraction
         EVTFILTER 0 -1 -1 -1 -1 0 1                     // Event filter settings
