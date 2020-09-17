@@ -31,6 +31,10 @@ reaper.DeleteProjectMarkerByIndex( proj, markrgnidx )
 id = 1
 retval, region_guid = reaper.GetSetProjectInfo_String( 0, "MARKER_GUID:" .. id, "", false )
 ```
+
+```lua
+markeridx, regionidx = reaper.GetLastMarkerAndCurRegion( proj, time )
+```
  
 ## markrgnindexnumber (Ruler)
 
@@ -40,10 +44,6 @@ You can then have Marker 1 and Region 1 in the same project.
 This index doesn't change when you move the markers.
 
 This index is used in the following functions:
-
-```lua
-markeridx, regionidx = reaper.GetLastMarkerAndCurRegion( proj, time )
-```
 
 ```lua
 retval = reaper.AddProjectMarker2( proj, isrgn, pos, rgnend, name, wantidx, color )
