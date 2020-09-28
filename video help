@@ -216,3 +216,122 @@ Sets the parameter (or a temporary buffer if omitted) to a system-local timestam
 
 on_parameter_change(pvar[, isdone])
 Notifies that the parameter pointed to by pvar (must be param1..param24 or a user-defined parameter) has changed. Specify isdone=1 when done modifying parameter (e.g. releasing touch)
+
+===============================================
+String Functions
+===============================================
+
+sprintf(#dest,"format"[, ...])
+Formats a string and stores it in #dest. Format specifiers begin with %, and may include:
+    %% = %
+    %s = string from parameter
+    %d = parameter as integer
+    %i = parameter as integer
+    %u = parameter as unsigned integer
+    %x = parameter as hex (lowercase) integer
+    %X = parameter as hex (uppercase) integer
+    %c = parameter as character
+    %f = parameter as floating point
+    %e = parameter as floating point (scientific notation, lowercase)
+    %E = parameter as floating point (scientific notation, uppercase)
+    %g = parameter as floating point (shortest representation, lowercase)
+    %G = parameter as floating point (shortest representation, uppercase)
+
+Many standard C printf() modifiers can be used, including:
+    %.10s = string, but only print up to 10 characters
+    %-10s = string, left justified to 10 characters
+    %10s = string, right justified to 10 characters
+    %+f = floating point, always show sign
+    %.4f = floating point, minimum of 4 digits after decimal point
+    %10d = integer, minimum of 10 digits (space padded)
+    %010f = integer, minimum of 10 digits (zero padded)
+
+Values for format specifiers can be specified as additional parameters to sprintf, or within {} in the format specifier (such as %{varname}d, in that case a global variable is always used).
+
+matchi("needle","haystack"[, ...])
+Case-insensitive version of match().
+
+match("needle","haystack"[, ...])
+Searches for the first parameter in the second parameter, using a simplified regular expression syntax.
+   * = match 0 or more characters
+   *? = match 0 or more characters, lazy
+   + = match 1 or more characters
+   +? = match 1 or more characters, lazy
+   ? = match one character
+
+You can also use format specifiers to match certain types of data, and optionally put that into a variable:
+   %s means 1 or more chars
+   %0s means 0 or more chars
+   %5s means exactly 5 chars
+   %5-s means 5 or more chars
+   %-10s means 1-10 chars
+   %3-5s means 3-5 chars
+   %0-5s means 0-5 chars
+   %x, %d, %u, and %f are available for use similarly
+   %c can be used, but can't take any length modifiers
+   Use uppercase (%S, %D, etc) for lazy matching
+
+See also sprintf() for other notes, including specifying direct variable references via {}.
+
+strlen("str")
+Returns the length of the string passed as a parameter
+
+strcpy(#str,"srcstr")
+Copies the contents of srcstr to #str, and returns #str
+
+strcat(#str,"srcstr")
+Appends srcstr to #str, and returns #str
+
+strcmp("str","str2")
+Compares strings, returning 0 if equal
+
+stricmp("str","str2")
+Compares strings ignoring case, returning 0 if equal
+
+strncmp("str","str2",maxlen)
+Compares strings giving up after maxlen characters, returning 0 if equal
+
+strnicmp("str","str2",maxlen)
+Compares strings giving up after maxlen characters, ignoring case, returning 0 if equal
+
+strncpy(#str,"srcstr",maxlen)
+Copies srcstr to #str, stopping after maxlen characters. Returns #str.
+
+strncat(#str,"srcstr",maxlen)
+Appends srcstr to #str, stopping after maxlen characters of srcstr. Returns #str.
+
+strcpy_from(#str,"srcstr",offset)
+Copies srcstr to #str, but starts reading srcstr at offset offset
+
+strcpy_substr(#str,"srcstr",offs,ml))
+PHP-style (start at offs, offs<0 means from end, ml for maxlen, ml<0 = reduce length by this amt)
+
+str_getchar("str",offset[,type])
+Returns the data at byte-offset offset of str. If offset is negative, position is relative to end of string.type defaults to signed char, but can be specified to read raw binary data in other formats (note the single quotes, these are single/multi-byte characters):
+   'c' - signed char
+   'cu' - unsigned char
+   's' - signed short
+   'S' - signed short, big endian
+   'su' - unsigned short
+   'Su' - unsigned short, big endian
+   'i' - signed int
+   'I' - signed int, big endian
+   'iu' - unsigned int
+   'Iu' - unsigned int, big endian
+   'f' - float
+   'F' - float, big endian
+   'd' - double
+   'D' - double, big endian
+
+
+str_setchar(#str,offset,val[,type]))
+Sets value at offset offset, type optional. offset may be negative to refer to offset relative to end of string, or between 0 and length, inclusive, and if set to length it will lengthen string. See str_getchar() for more information on types.
+
+str_setlen(#str,len)
+Sets length of #str (if increasing, will be space-padded), and returns #str.
+
+str_delsub(#str,pos,len)
+Deletes len characters at offset pos from #str, and returns #str.
+
+str_insert(#str,"srcstr",pos)
+Inserts srcstr into #str at offset pos. Returns #str
