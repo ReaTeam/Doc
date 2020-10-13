@@ -68,3 +68,7 @@ retval, region_guid = reaper.GetSetProjectInfo_String( 0, "MARKER_GUID:" .. id, 
 
 This is a unique string to identify a marker/region. it doesn't change if the marker/region move. id is timeline based like EnumProjectMarkers3.
 Againt, there is no GetMarkerByGUID native function (v6.13). You need to iterate all markers/regions in a table first to have a quick way to get them.
+
+## Colors
+
+`color` parameter can sometimes needs 25th bit, `color | 1<<24`.
