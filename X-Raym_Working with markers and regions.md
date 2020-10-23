@@ -1,6 +1,6 @@
 # Markers and Regions in ReaScript API
 
-Markerss and Regions iteration is quite confusing cause there is several kind of indexes.
+Markers and Regions iteration is quite confusing cause there is several kinds of index.
  
 Note that markers and regions are undifferencied in this function. A regions is basically a marker with and end_position and isrgn = true.
 
