@@ -454,8 +454,31 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     <VST "VST: SomePlugin" "SomePlugin.dll" 0 "Sax offender"  //  Plugin data
         (see VST(i) plugin info below)                        //
     >                                                         //
+    WET 0.5                                                   //  Amount of plugin wet signal set on the plugin UI wrapper, if not 100%
+    PRESETNAME "stock - Basic 11 band"			      //  Name of current plugin preset selected in the preset drop-down list
     FLOATPOS 0 0 0 0                                          //  Plugin floating window pos, int (top, left, width, height)
+
+    PARMALIAS 3 "Compression"                                 //  Names and indices of renamed FX parameters
+    PARMALIAS 4 "DS Freq"                                     //  
+    PARMALIAS 6 "Delay"                                       //  
+    PARMALIAS 7 "Squeeze"                                     //
+
     FXID {1191A7FE-F583-477E-8416-D9F0F58226CD}               //  Plugin id, leave it alone
+
+							      // -- Start of Parameter modulation settings
+							      //
+    <PROGRAMENV 12:bypass 0                                   //  One block for each parameter with engaged parameter modilation
+      PARAMBASE 0.5			     		      //  Plugin wrapper parameters, such as Bypass here, are referenced by index:name, plugin native parameters are only
+      LFO 1			     		              //  referenced by their indices, both are followed by their value
+      LFOWT 1 0                                               //  The rest is parameter modulation parameter aliases and values
+      AUDIOCTL 0                                              //
+      AUDIOCTLWT 1 1                                          //
+      LFOSHAPE 0                                              //
+      LFOSYNC 0 0 0                                           //
+      LFOSPEED 0.124573 0                                     //
+      MODWND 0 204 147 552 506                                //
+    >                                                         //
+							      //  -- End of Parameter modulation settings
 
                                                               //  --- Start of parameter envelopes for this plugin.
                                                               //      One block for each non-empty envelope.
@@ -464,9 +487,10 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     >                                                         //
                                                               //  --- End of parameter envelopes
 
-    PARM_TCP 4 2 0                                            //  Params visible on TCP/MCP.
-                                                              //   List of int indexes separated by spaces.
-    WAK 0                                                     //  int, ??
+    PARM_TCP 12:bypass 13:wet 4 2 0                           //  Show in track controls (params visible on TCP/MCP for both Parameter modulation and plugins)
+                                                	      //  Parameter modulation parameters format is index:name followed by a list of plugin control indices
+                                                	      // 
+    WAK 0 0                                                   //  field 2, int, 1 - show embedded FX UI on TCP, 2 - show on MCP
     <COMMENT                                                  //  Plugin comment. Not present if no comment.
         Y29tbWVudA==                                          //   Binary data, probably best to leave it alone
     >                                                         //  
@@ -484,6 +508,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     >                                                         //  ...
 
     >                                                         // --- End of FX section
+
 
 --------------------------------------------------------------------------------------------------------------------
 
