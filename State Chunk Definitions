@@ -185,9 +185,18 @@ Audio Item
                                                         //  ...
     MUTE 0                                              // Is the item muted? int (bool)
     FADEFLAG 1                                          // ??, int, may not be present
+    GROUP 2560                                          // A number of the group the item belongs to, if grouped
     IGUID {98E8ECDE-FF4D-4E06-87ED-43A5E7E6A61A}        // Item id. Leave it alone
                                                         // --- From this point, values mostly relate to the first take
                                                         //     except for field 1 of VOLPAN which is the item trim
+    IID 424                               		// ??
+
+    <NOTES                               		// Notes block start
+      |-1                                		// Notes content
+    >                                  			// Notes block end
+
+    RESOURCEFN "filename.ext"                           // Name of the image file loaded in the notes, full path if located outside of the resource directory
+    IMGRESOURCEFLAGS 0                                  // ??
     NAME "The first take"                               // First take name
     VOLPAN 1.0 0.0 1.0 -1.0                             // Volume and pan settings
                                                         // field 1, float, item trim
@@ -225,6 +234,9 @@ Audio Item
         <SOURCE WAVE                                    // Source details. Appears alone if SOURCE SECTION not set
             FILE "C:Path\To\AudioFile.wav"              // Source file. 
         >                                               // Source details end
+    <TAKEFX                                             // Take FX section start
+	(see chunk info below under Track/Take FX)      //
+      >                                                 // Take FX section end
     >                                                   // Source section end
 
     TAKE SEL                                            // Second take start. SEL only appears if this take is selected
@@ -454,7 +466,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     <VST "VST: SomePlugin" "SomePlugin.dll" 0 "Sax offender"  //  Plugin data
         (see VST(i) plugin info below)                        //
     >                                                         //
-    WET 0.5                                                   //  Amount of plugin wet signal set on the plugin UI wrapper, if not 100%
+    WET 0.5                                                   //  Amount of plugin wet output set on the plugin UI wrapper, if not 100%
     PRESETNAME "stock - Basic 11 band"			      //  Name of current plugin preset selected in the preset drop-down list
     FLOATPOS 0 0 0 0                                          //  Plugin floating window pos, int (top, left, width, height)
 
