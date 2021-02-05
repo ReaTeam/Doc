@@ -9,7 +9,7 @@ All the other thing you might need, like setting rates, moving later SMs (just l
 ## Core Ideas
 
 - SM source positions is related to the positions in source media; it can never be below 0 or above source media length.
-- SM positions is related to the positions in the item. It can be negative if the item is trimmed and the SM is hidden outside item edge.
+- SM positions is related to the positions in the item. It can be negative if the item is trimmed and the SM is hidden outside item edge. You have to take care about take start offset.
 - A SM alone isn't helpful, you have to consider SM by pair/section. When you add a first SM to a item and move it, you will create 3 SM (two segments), one new SM being added at start of item source, and one at end. Taking an SM and its next one make more sense in most cases due to how rate is calculated. SM without a pair can't have a slope.
 
 - SM positions are pre Take rate so you don't have to care about this.
