@@ -23,15 +23,15 @@ A SM section is characterized by its left (start) and right (end) rate. If they 
 ```lua
 count =  reaper.GetTakeNumStretchMarkers( take )
 for i = 0, count - 1 do
-  slope = reaper.GetTakeStretchMarkerSlope( take, i )
-  retval, pos_a, srcpos_a = reaper.GetTakeStretchMarker( take, i )
-  retval, pos_b, srcpos_b = reaper.GetTakeStretchMarker( take, i+1 )
+  local slope = reaper.GetTakeStretchMarkerSlope( take, i )
+  local retval, pos_a, srcpos_a = reaper.GetTakeStretchMarker( take, i )
+  local retval, pos_b, srcpos_b = reaper.GetTakeStretchMarker( take, i+1 )
   -- Calculation
-  len_init = srcpos_b - srcpos_a -- length between two SM source positions
-  len_after = pos_b - pos_a -- Length between two SM actual item positions
-  rate_left = (len_init / len_after) * (1-slope)
-  rate_right = (len_init / len_after) * (1+slope)
-  rate_ratio = rate_right / rate_left
+  local len_init = srcpos_b - srcpos_a -- length between two SM source positions
+  local len_after = pos_b - pos_a -- Length between two SM actual item positions
+  local rate_left = (len_init / len_after) * (1-slope)
+  local rate_right = (len_init / len_after) * (1+slope)
+  local rate_ratio = rate_right / rate_left
 end
 ```
 
