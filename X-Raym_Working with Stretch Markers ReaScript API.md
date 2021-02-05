@@ -1,6 +1,6 @@
 # ReaScript API - Stretch Markers
 
-Managing Stretch Markers (SM) for ReaScript API is complex. Here are some guidelines, following the discussion on [FR/Q: Stretch Markers API and Slopes related actions/API functions - Cockos Incorporated Forums](https://forum.cockos.com/showthread.php?t=248801)
+Managing Stretch Markers (SM) from ReaScript API is complex. Here are some guidelines, following the discussion on [FR/Q: Stretch Markers API and Slopes related actions/API functions - Cockos Incorporated Forums](https://forum.cockos.com/showthread.php?t=248801)
 
 Basically, you have access to have count function, two get functions (one for positions, one for slope), associated with two set functions, and one delete.
 
