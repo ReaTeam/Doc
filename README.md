@@ -1,5 +1,2 @@
-# ReaScripts-Doc
-Version history and alternative (better) version for REAPER ReaScript Documenation.
-
-# Web Interface Moding Doc
-https://github.com/ReaTeam/ReaScripts-Doc/blob/master/web_interface_modding.md
+# ReaTeam-Doc
+Doc files, from REAPER of user-made, with revision history, and usually formatted in mardkown.
