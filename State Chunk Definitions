@@ -406,41 +406,43 @@ AUXMUTEENV - Receive mute (0.0 to 1.0)
 PARMENV - Plugin parameter (value range defined by additional parameters after type tag)
 TEMPOENVEX - Master tempo
 
-<VOLENV2                            // Type. PARMENV has additional fields on this line (see below)
-    ACT 1                           // Active, int (bool)
-    VIS 1 1 1.0                     // Visibility
-                                    //   field 1, int (bool), visible
-                                    //   field 2, int (bool), show in lane
-                                    //   field 3, float, ??
-    LANEHEIGHT 0 0                  // Lane height
-                                    //   field 1, int, height in pixels
-                                    //   field 2, int, ??
-    ARM 1                           // Armed, int (bool)
-    DEFSHAPE 0                      // Default point shape, int
-                                    //   0 = Linear
-                                    //   1 = Square
-                                    //   2 = Slow Start/End
-                                    //   3 = Fast Start
-                                    //   4 = Fast End
-                                    //   5 = Bezier
+<VOLENV2                            			// Type. PARMENV has additional fields on this line (see below)
+    EGUID {1A24257D-0EE1-4D1C-8BF7-7D795608ED97}	// Envelope GUID
+    ACT 1                           			// Active, int (bool)
+    VIS 1 1 1.0                     			// Visibility
+                                    			//   field 1, int (bool), visible
+                                    			//   field 2, int (bool), show in lane
+                                    			//   field 3, float, ??
+    LANEHEIGHT 0 0                  			// Lane height
+                                    			//   field 1, int, height in pixels
+                                    			//   field 2, int, ??
+    ARM 1                           			// Armed, int (bool)
+    DEFSHAPE 0                      			// Default point shape, int
+                                    			//   0 = Linear
+                                    			//   1 = Square
+                                    			//   2 = Slow Start/End
+                                    			//   3 = Fast Start
+                                    			//   4 = Fast End
+                                    			//   5 = Bezier
 
-    PT 3.000000 -0.2 5 0 0 0 -0.7   // Envelope point definition
-                                    //  field 1, float, position (seconds)
-                                    //  field 2, float, value
-                                    //  field 3, int, shape (-1 = envelope default?)
-                                    //  field 4, int, optional, ?? (TEMPOENVEX time sig? check this)
-                                    //  field 5, int (bool), selected (optional)
-                                    //  field 6, int, ?? (optional)
-                                    //  field 7, float, bezier tension (optional)
+    PT 3.000000 -0.2 5 0 0 0 -0.7   			// Envelope point definition
+                                    			//  field 1, float, position (seconds)
+                                    			//  field 2, float, value
+                                    			//  field 3, int, shape (-1 = envelope default?)
+                                    			//  field 4, int, optional, ?? (TEMPOENVEX time sig? check this)
+                                    			//  field 5, int (bool), selected (optional)
+                                    			//  field 6, int, ?? (optional)
+                                    			//  field 7, float, bezier tension (optional)
 >
 
 PARMENV contains extra data denoting which plugin parameter is controlled and what the minimum, maximum and default values are.
-<PARMENV 1 0.0 1469.0 734.5         // Type
-                                    //  field 1, int, param index - zero based top to bottom.
-                                    //    REAPER tags additional bypass and wet params onto the end, in that order
-                                    //  field 2, float, minimum value
-                                    //  field 3, float, maximum value
-                                    //  field 4, float, center/default value
+
+<PARMENV 1 0.0 1469.0 734.5         			// Type
+                                   			//  field 1, int, param index - zero based top to bottom.
+                                    			//    REAPER tags additional bypass and wet params onto the end, in that order
+                                    			//  field 2, float, minimum value
+                                    			//  field 3, float, maximum value
+                                    			//  field 4, float, center/default value
    /* snip */
 >
 
@@ -479,7 +481,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 
 							      // -- Start of Parameter modulation settings
 							      //
-    <PROGRAMENV 12:bypass 0                                   //  One block for each parameter with engaged parameter modilation
+    <PROGRAMENV 12:bypass 0                                   //  One block for each parameter with engaged parameter modulation
       PARAMBASE 0.5			     		      //  Plugin wrapper parameters, such as Bypass here, are referenced by index:name, plugin native parameters are only
       LFO 1			     		              //  referenced by their indices, both are followed by their value
       LFOWT 1 0                                               //  The rest is parameter modulation parameter aliases and values
