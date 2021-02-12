@@ -153,6 +153,11 @@ The Track state chunk contains all the settings for a track and all of it's item
     <FXCHAIN                                                  //     Not present if track hasn't got/had FX ---
         (see chunk info below)
     >                                                         // --- End of FX section
+    
+       							      // --- Start of Input FX section (irrelevant for the Master track) ----	
+    <FXCHAIN_REC					      //      Not present if track hasn't got/had Input FX ---								     
+	(see chunk info below)
+    >   						      // --- End of Input FX section
 	
                                                               // --- Start of item definitions ---
     <ITEM                                                     // First item definition
@@ -478,6 +483,13 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     PARMALIAS 7 "Squeeze"                                     //
 
     FXID {1191A7FE-F583-477E-8416-D9F0F58226CD}               //  Plugin id, leave it alone
+    
+							      //  -- Start of MIDI/OSC controller assignments
+    PARMLEARN 0 1968 2					      //  field 1, int, parameter idx
+    PARMLEARN 1 2736 2					      //  field 2, int, possibly a number assigned by REAPER to a MIDI controller (CC0 = 176, CC1 = 432,
+    PARMLEARN 2 944 2					      //  944 = CC3, 1968 = CC7, 2736 = CC10), the step equals 256
+   							      //  field 3, int, ?	      
+							      //  -- End of MIDI/OSC controller assignments
 
 							      // -- Start of Parameter modulation settings
 							      //
