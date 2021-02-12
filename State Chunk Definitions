@@ -484,16 +484,9 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 
     FXID {1191A7FE-F583-477E-8416-D9F0F58226CD}               //  Plugin id, leave it alone
     
-							      //  -- Start of MIDI/OSC controller assignments
-    PARMLEARN 0 1968 2					      //  field 1, int, parameter idx
-    PARMLEARN 1 2736 2					      //  field 2, int, possibly a number assigned by REAPER to a MIDI controller (CC0 = 176, CC1 = 432,
-    PARMLEARN 2 944 2					      //  944 = CC3, 1968 = CC7, 2736 = CC10), the step equals 256
-   							      //  field 3, int, ?	      
-							      //  -- End of MIDI/OSC controller assignments
-
 							      // -- Start of Parameter modulation settings
 							      //
-    <PROGRAMENV 12:bypass 0                                   //  One block for each parameter with engaged parameter modulation
+    <PROGRAMENV 12:bypass 0                                   //  One block for each parameter with engaged parameter modulation (irrelevant for Input and Monitor FX)
       PARAMBASE 0.5			     		      //  Plugin wrapper parameters, such as Bypass here, are referenced by index:name, plugin native parameters are only
       LFO 1			     		              //  referenced by their indices, both are followed by their value
       LFOWT 1 0                                               //  The rest is parameter modulation parameter aliases and values
@@ -508,14 +501,22 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 
                                                               //  --- Start of parameter envelopes for this plugin.
                                                               //      One block for each non-empty envelope.
-    <PARMENV 2 0.0 1.0 0.5                                    //  First parameter envelope
-        (see envelope chunk info)                             //
+    <PARMENV 2 0.0 1.0 0.5                                    //      First parameter envelope
+        (see envelope chunk info)                             //      (irrelevant for Input and Monitor FX)
     >                                                         //
                                                               //  --- End of parameter envelopes
+							      
+							      //  -- Start of MIDI/OSC controller assignments
+    PARMLEARN 0 1968 2					      //  field 1, int, parameter idx
+    PARMLEARN 1 2736 2					      //  field 2, int, possibly a number assigned by REAPER to a MIDI controller (CC0 = 176, CC1 = 432,
+    PARMLEARN 2 944 2					      //  944 = CC3, 1968 = CC7, 2736 = CC10), the step equals 256
+   							      //  field 3, int, ?	      
+							      //  -- End of MIDI/OSC controller assignments
 
     PARM_TCP 12:bypass 13:wet 4 2 0                           //  Show in track controls (params visible on TCP/MCP for both Parameter modulation and plugins)
                                                 	      //  Parameter modulation parameters format is index:name followed by a list of plugin control indices
-                                                	      // 
+                                                	      //  (irrelevant for Input and Monitor FX)
+							      
     WAK 0 0                                                   //  field 2, int, 1 - show embedded FX UI on TCP, 2 - show on MCP
     <COMMENT                                                  //  Plugin comment. Not present if no comment.
         Y29tbWVudA==                                          //   Binary data, probably best to leave it alone
