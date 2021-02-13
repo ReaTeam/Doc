@@ -239,11 +239,16 @@ Audio Item
         <SOURCE WAVE                                    // Source details. Appears alone if SOURCE SECTION not set
             FILE "C:Path\To\AudioFile.wav"              // Source file. 
         >                                               // Source details end
-    <TAKEFX                                             // Take FX section start
-	(see chunk info below under Track/Take FX)      //
-      >                                                 // Take FX section end
     >                                                   // Source section end
-
+    <TAKEFX                                             // -- Take FX section start
+     (see chunk info below under Track/Take FX)         //
+    >                                                   // -- Take FX section end
+    TAKE_FX_HAVE_NEW_PDC_AUTOMATION_BEHAVIOR 1
+							// -- Take envelopes section start, one block per envelope    
+    <VOLENV						// Envelope alias (VOLENV, PANENV, MUTEENV, PITCHENV)
+      EGUID {5CB63539-0B47-4094-97FA-C62230F23208}	// Envelope ID
+	(see chunk info below under Envelope)
+    >							// -- Take envelopes section end    
     TAKE SEL                                            // Second take start. SEL only appears if this take is selected
     NAME "The second take"                              // Take name
     TAKEVOLPAN 0.0 1.0 -1.0                             // Take volume and pan settings
