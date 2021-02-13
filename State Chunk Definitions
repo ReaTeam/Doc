@@ -511,6 +511,9 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     >                                                         //
                                                               //  --- End of parameter envelopes
 							      
+							      //  NOTE: If both envelope (PARMENV) and parameter modulation (PROGRAMENV) are enabled for the same plugin parameter
+							      //  the PARMENV data are followed by PROGRAMENV data.
+							      
 							      //  -- Start of MIDI/OSC controller assignments
     PARMLEARN 0 1968 2					      //  field 1, int, parameter idx
     PARMLEARN 1 2736 2					      //  field 2, int, possibly a number assigned by REAPER to a MIDI controller (CC0 = 176, CC1 = 432,
