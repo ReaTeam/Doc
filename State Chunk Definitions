@@ -516,11 +516,15 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 							      
 							      //  -- Start of MIDI/OSC controller assignments
     PARMLEARN 0 1968 2					      //  field 1, int, parameter idx
-    PARMLEARN 1 2736 2					      //  field 2, int, possibly a number assigned by REAPER to a MIDI controller (CC0 = 176, CC1 = 432,
-    PARMLEARN 2 944 2					      //  944 = CC3, 1968 = CC7, 2736 = CC10), the step equals 256
-   							      //  field 3, int, ?	      
-							      //  -- End of MIDI/OSC controller assignments
-
+    PARMLEARN 1 2736 2					      //  field 2, int, a number assigned by REAPER to a MIDI controller e.g. (CC0 = 176, CC1 = 432, 944 = CC3,
+    PARMLEARN 2 944 2					      //  1968 = CC7, 2736 =  CC10), the step equals 256 
+							      //  In CC Mode: Absolute - CC0 = 176, Relative 1 - CC0 = 65712, Relative 2 - CC0 = 131248, Relative 3 - CC0 = 196784,
+							      //  Toggle - CC0 = 262320
+   							      //  field 3, int, 2 - Soft takeover (absolute mode only) or 2+0, 1 - Enable only when track or item is selected,
+					      		      //   		3 - 1+2, 4 - Enable only when effect configuration is focused, 20 - Enable only when effect
+					      	      	      //   		configuration is visible, 0 - Arm envelope for selected parameter
+	      						      //  -- End of MIDI/OSC controller assignments
+							      
     PARM_TCP 12:bypass 13:wet 4 2 0                           //  Show in track controls (params visible on TCP/MCP for both Parameter modulation and plugins)
                                                 	      //  Parameter modulation parameters format is index:name followed by a list of plugin control indices
                                                 	      //  (irrelevant for Input and Monitor FX)
