@@ -491,19 +491,22 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     
 							      // -- Start of Parameter modulation settings
 							      //
-    <PROGRAMENV 12:bypass 0                                   //  One block for each parameter with engaged parameter modulation (irrelevant for Input and Monitor FX)
-      PARAMBASE 0.5			     		      //  Plugin wrapper parameters, such as Bypass here, are referenced by index:name, plugin native parameters are only
-      LFO 1			     		              //  referenced by their indices, both are followed by their value
-      LFOWT 1 0                                               //  The rest is parameter modulation parameter aliases and values
-      AUDIOCTL 0                                              //
-      AUDIOCTLWT 1 1                                          //
+    <PROGRAMENV 12:bypass 0                                   //  One block for each parameter with engaged parameter modulation
+      					     		      //  field 1, int, parameter index (zero based)
+      				     		              //  Plugin wrapper parameters, such as Bypass here, are named, plugin native parameters
+                           	                              //  are only referenced by their indices
+                           	                              //  field 2, bool, 0 - enabled, 1 - bypassed (set by (un)ticking checkbox 'Enable parameter modulation'
+                                      		              //  in Parameter modulation dialogue)
+      PARAMBASE 0.5					      //
+      LFO 1					 	      //
+      LFOWT 1 0					     	      //
+      AUDIOCTL 0					      //
+      AUDIOCTLWT 1 1					      //
       LFOSHAPE 0                                              //
       LFOSYNC 0 0 0                                           //
       LFOSPEED 0.124573 0                                     //
       MODWND 0 204 147 552 506                                //
     >                                                         //
-							      //  -- End of Parameter modulation settings
-
                                                               //  --- Start of parameter envelopes for this plugin.
                                                               //      One block for each non-empty envelope.
     <PARMENV 2 0.0 1.0 0.5                                    //      First parameter envelope
