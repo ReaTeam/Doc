@@ -491,7 +491,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     
 							      // -- Start of Parameter modulation settings
 							      //
-    <PROGRAMENV 12:bypass 0                                   //  One block for each parameter with engaged parameter modulation
+    <PROGRAMENV 12:bypass 0                                   //  One block per each parameter with engaged parameter modulation
       					     		      //  field 1, int, parameter index (zero based)
       				     		              //  Plugin wrapper parameters, such as Bypass here, are named, plugin native parameters
                            	                              //  are only referenced by their indices
