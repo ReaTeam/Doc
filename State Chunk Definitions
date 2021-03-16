@@ -556,11 +556,12 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 
 VST(i) Plugin
 
-    <VST "VST: SomePlugin" "SomePlugin.dll" 0 "Sax offender"  //  Start of VST plugin data
+    <VST "VST: SomePlugin" "SomePlugin.dll" 0 "Sax offender"  //  Start of VST/AU/DX plugin data
                                                               //   field 1, str, default name
                                                               //   field 2, str, filename
                                                               //   field 3, int, ??
-                                                              //   field 4, str, display name (default used if empty)
+                                                              //   field 4, str, display name (default used if empty), if no name set by the user then "" is displayed, custom
+							      //   names are only encolsed within quotes if they have spaces, so one word names don't have quotes
     RmFkbe9e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAA==  //  Binary data, leave it alone (variable number of lines)
     AgAAAAAAAAAwAAAAAAAAAAAAEADvvq3eDfCt3sP1qD4zMzM/AAAAPw==  //
     mplZPwAAAAAAAAA/MzMzP83MzD4AAAAAAABAP1Jlc29uYW50IEZpbA==  //  
@@ -573,7 +574,8 @@ Jesusonic Plugin
 
 For the sake of formatting, the plugin data has been truncated.
     <JS "Guitar/tremolo" ""                                   //  Start of JS plugin data
-                                                              //   field 1, str, filename
-                                                              //   field 2, str, display name (filename used if empty)
+                                                              //   field 1, str, the format is "folder name/file name"
+                                                              //   field 2, str, display name (if empty the name from reaper-jsfx.ini is used), "" is displayed if no name set
+							      //   by the user, custom names are only encolsed within quotes if they have spaces, so one word names don't have quotes
         4.0 -6.0 0.0 - - - - - - - - - - - - - - - - - - - -  //  Data, 64 fields of float or '-' separated by spaces
     >                                                         //  End of JS plugin data
