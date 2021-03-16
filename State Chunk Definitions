@@ -560,7 +560,7 @@ VST(i) Plugin
                                                               //   field 1, str, default name
                                                               //   field 2, str, filename
                                                               //   field 3, int, ??
-                                                              //   field 4, str, display name (default used if empty), if no name set by the user then "" is displayed, custom
+                                                              //   field 4, str, display name (default used if empty), if no name is set by the user then "" is displayed, custom
 							      //   names are only encolsed within quotes if they have spaces, so one word names don't have quotes
     RmFkbe9e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAA==  //  Binary data, leave it alone (variable number of lines)
     AgAAAAAAAAAwAAAAAAAAAAAAEADvvq3eDfCt3sP1qD4zMzM/AAAAPw==  //
