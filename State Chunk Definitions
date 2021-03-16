@@ -575,7 +575,7 @@ Jesusonic Plugin
 For the sake of formatting, the plugin data has been truncated.
     <JS "Guitar/tremolo" ""                                   //  Start of JS plugin data
                                                               //   field 1, str, the format is "folder name/file name"
-                                                              //   field 2, str, display name (if empty the name from reaper-jsfx.ini is used), "" is displayed if no name set
+                                                              //   field 2, str, display name (if empty the name from reaper-jsfx.ini is used), "" is displayed if no name is set
 							      //   by the user, custom names are only encolsed within quotes if they have spaces, so one word names don't have quotes
         4.0 -6.0 0.0 - - - - - - - - - - - - - - - - - - - -  //  Data, 64 fields of float or '-' separated by spaces
     >                                                         //  End of JS plugin data
