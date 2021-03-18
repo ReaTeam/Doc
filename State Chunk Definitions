@@ -584,34 +584,34 @@ For the sake of formatting, the plugin data has been truncated.
 
 Video Processor plugin
 
-<VIDEO_EFFECT "Video processor" ""						//  Start of Video Processor plugin data				  	
-   <CODE								  	//  Stores the entire preset code
-   |// Screensaver (Monitoring FX only - blanks screen after no change)   	//
-   |//@param 1:sec 'Timeout (seconds)' 10 1 240 120.5 1			  	//
-   |//@param 2:r 'Color Red' 0 0 1 .5 .01 				  	//
-   |//@param 3:g 'Color Green' 0 0 1 .5 .01				  	//
-   |//@param 4:b 'Color Blue' 0 0 1 .5 .01				  	//
-   |									  	//
-   |now = time_precise();							//
-   |input_info(0) && (!held || gfx_img_getptr(held) != gfx_img_getptr(0)) ? (	//
-   |  gfx_img_free(held);							//
-   |  held = gfx_img_hold(0);							//
-   |  timeout = now;								//
-   |);										//
-   |										//
-   |timeout > 0 ? (								//
-   |  now > timeout+sec ? (							//
-   |    gfx_set(r,g,b);								//
-   |    gfx_fillrect(0,0,project_w,project_h);					//
-   |    gfx_img_free(held);							//
-   |    timeout = held = 0;							//
-   |  ) : ui_get_state(0,0,0, 0.1+now - (timeout+sec));				//
-   |);										//
- >										//
- CODEPARM 10.0000000000 0.0000000000 0.0000000000 0.0000000000 1.0000000000	//  Control parameters
- 0.0000000000 1.0000000000 0.5000000000 0.0000000000 0.0000000000 0.1000000000	// 
- 0.5000000000 0.0000000000 0.0000000000 0.0000000000 0.0000000000 0.0000000000	//
- 0.0000000000 0.0000000000 0.0000000000 0.0000000000 0.0000000000 0.0000000000	// 
- 0.0000000000									//
-      >										//  End of Video Processor plugin data
+   <VIDEO_EFFECT "Video processor" ""							//  Start of Video Processor plugin data				  	
+      <CODE								  		//  Stores the entire preset code
+   	|// Screensaver (Monitoring FX only - blanks screen after no change)   		//
+   	|//@param 1:sec 'Timeout (seconds)' 10 1 240 120.5 1			  	//
+   	|//@param 2:r 'Color Red' 0 0 1 .5 .01 				  		//
+   	|//@param 3:g 'Color Green' 0 0 1 .5 .01				  	//
+   	|//@param 4:b 'Color Blue' 0 0 1 .5 .01				  		//
+   	|									  	//
+   	|now = time_precise();								//
+   	|input_info(0) && (!held || gfx_img_getptr(held) != gfx_img_getptr(0)) ? (	//
+   	|  gfx_img_free(held);								//
+   	|  held = gfx_img_hold(0);							//
+   	|  timeout = now;								//
+   	|);										//
+   	|										//
+   	|timeout > 0 ? (								//
+   	|  now > timeout+sec ? (							//
+   	|    gfx_set(r,g,b);								//
+   	|    gfx_fillrect(0,0,project_w,project_h);					//
+   	|    gfx_img_free(held);							//
+   	|    timeout = held = 0;							//
+   	|  ) : ui_get_state(0,0,0, 0.1+now - (timeout+sec));				//
+   	|);										//
+       >										//
+ 	CODEPARM 10.0000000000 0.0000000000 0.0000000000 0.0000000000 1.0000000000	//  Control parameters
+ 	0.0000000000 1.0000000000 0.5000000000 0.0000000000 0.0000000000 0.1000000000	// 
+ 	0.5000000000 0.0000000000 0.0000000000 0.0000000000 0.0000000000 0.0000000000	//
+ 	0.0000000000 0.0000000000 0.0000000000 0.0000000000 0.0000000000 0.0000000000	// 
+ 	0.0000000000									//
+    >											//  End of Video Processor plugin data
 
