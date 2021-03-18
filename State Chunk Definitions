@@ -534,6 +534,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 							      
     WAK 0 0                                                   //  WAK = Want All Keys (https://forums.cockos.com/showthread.php?p=2420594)
     							      //  field 1, bool, 1 - 'Send all keyboard input to plug-in' option is enabled in the FX instance RMB context menu
+							      //  or FX chain 'FX' menu
 							      //  field 2, int, 1 - show embedded FX UI on TCP, 2 - show on MCP
     <COMMENT                                                  //  Plugin comment. Not present if no comment.
         Y29tbWVudA==                                          //   Binary data, probably best to leave it alone
