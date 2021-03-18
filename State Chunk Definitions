@@ -554,7 +554,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 
 --------------------------------------------------------------------------------------------------------------------
 
-VST(i) Plugin
+VST/AU/DX(i) Plugins
 
     <VST "VST: SomePlugin" "SomePlugin.dll" 0 "Sax offender"  //  Start of VST/AU/DX plugin data
                                                               //   field 1, str, default name
@@ -579,3 +579,39 @@ For the sake of formatting, the plugin data has been truncated.
 							      //   by the user, custom names are only encolsed within quotes if they have spaces, so one word names don't have quotes
         4.0 -6.0 0.0 - - - - - - - - - - - - - - - - - - - -  //  Data, 64 fields of float or '-' separated by spaces
     >                                                         //  End of JS plugin data
+
+--------------------------------------------------------------------------------------------------------------------
+
+Video Processor plugin
+
+   <VIDEO_EFFECT "Video processor" ""							//  Start of Video Processor plugin data				  	
+      <CODE								  		//  Stores the entire preset code
+   	|// Screensaver (Monitoring FX only - blanks screen after no change)   		//
+   	|//@param 1:sec 'Timeout (seconds)' 10 1 240 120.5 1			  	//
+   	|//@param 2:r 'Color Red' 0 0 1 .5 .01 				  		//
+   	|//@param 3:g 'Color Green' 0 0 1 .5 .01				  	//
+   	|//@param 4:b 'Color Blue' 0 0 1 .5 .01				  		//
+   	|									  	//
+   	|now = time_precise();								//
+   	|input_info(0) && (!held || gfx_img_getptr(held) != gfx_img_getptr(0)) ? (	//
+   	|  gfx_img_free(held);								//
+   	|  held = gfx_img_hold(0);							//
+   	|  timeout = now;								//
+   	|);										//
+   	|										//
+   	|timeout > 0 ? (								//
+   	|  now > timeout+sec ? (							//
+   	|    gfx_set(r,g,b);								//
+   	|    gfx_fillrect(0,0,project_w,project_h);					//
+   	|    gfx_img_free(held);							//
+   	|    timeout = held = 0;							//
+   	|  ) : ui_get_state(0,0,0, 0.1+now - (timeout+sec));				//
+   	|);										//
+       >										//
+ 	CODEPARM 10.0000000000 0.0000000000 0.0000000000 0.0000000000 1.0000000000	//  Control parameters
+ 	0.0000000000 1.0000000000 0.5000000000 0.0000000000 0.0000000000 0.1000000000	// 
+ 	0.5000000000 0.0000000000 0.0000000000 0.0000000000 0.0000000000 0.0000000000	//
+ 	0.0000000000 0.0000000000 0.0000000000 0.0000000000 0.0000000000 0.0000000000	// 
+ 	0.0000000000									//
+    >											//  End of Video Processor plugin data
+
