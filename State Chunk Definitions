@@ -532,7 +532,10 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                                 	      //  Parameter modulation parameters format is index:name followed by a list of plugin control indices
                                                 	      //  (irrelevant for Input and Monitor FX)
 							      
-    WAK 0 0                                                   //  field 2, int, 1 - show embedded FX UI on TCP, 2 - show on MCP
+    WAK 0 0                                                   //  WAK = Want All Keys (https://forums.cockos.com/showthread.php?p=2420594)
+    							      //  field 1, bool, 1 - 'Send all keyboard input to plug-in' option is enabled in the FX instance RMB context menu
+							      //  or FX chain 'FX' menu
+							      //  field 2, int, 1 - show embedded FX UI on TCP, 2 - show on MCP
     <COMMENT                                                  //  Plugin comment. Not present if no comment.
         Y29tbWVudA==                                          //   Binary data, probably best to leave it alone
     >                                                         //  
@@ -542,9 +545,10 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     <JS "Guitar/tremolo" ""                                   //  Start of JS plugin data
         (see Jesusonic plugin info below)                     //
     >                                                         //
+    JS_DIMS 489 305					      //  Dimensions of JS plugin UI
     FLOATPOS 0 0 0 0                                          //  ...
     FXID {BE5D3334-6675-4DAD-AFDD-F4489878D82A}               //  ...
-    WAK 0                                                     //  ...
+    WAK 0 0                                                   //  ...
     <COMMENT                                                  //  ...
         Y29tbWVudA==                                          //  ...
     >                                                         //  ...
