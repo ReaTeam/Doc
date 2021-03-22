@@ -467,7 +467,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                                               //  field 2, int, left
                                                               //  field 3, int, width
                                                               //  field 4, int, height
-    SHOW 0                                                    //   int, Number of FX in the chain (NOT zero based)
+    SHOW 0                                                    //  field 1, int, index of an FX currently open in the chain (NOT zero based)
     LASTSEL 1                                                 // Index of selected plugin (zero based), int
     DOCKED 0                                                  // FX window is docked, int (bool)
 	
