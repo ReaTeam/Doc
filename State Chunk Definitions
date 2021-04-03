@@ -240,6 +240,12 @@ Audio Item
             FILE "C:Path\To\AudioFile.wav"              // Source file. 
         >                                               // Source details end
     >                                                   // Source section end
+    
+    TKM 0.5 "TEST 123" 21036800				// Take marker data
+    							// field 1 - float, position within take
+							// field 2 - string, name	Without quotes if consists of only one character or word
+							// field 3 - integer, OS native color code	can be converted to RGB with: r, g, b = reaper.ColorFromNative(code)
+							
     <TAKEFX                                             // -- Take FX section start
      (see chunk info below under Track/Take FX)         //
     >                                                   // -- Take FX section end
