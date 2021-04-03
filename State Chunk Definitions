@@ -246,10 +246,10 @@ Audio Item
 							// field 2 - string, name	Without quotes if consists of only one character or word
 							// field 3 - integer, OS native color code	can be converted to RGB with: r, g, b = reaper.ColorFromNative(code)
 							
-    SM 0 0 -0.149425287 + 0.574712644 0.5 + 1.348114004 // Stretch markers data
+    SM 0 0 -0.149425287 + 0.574712644 0.5 + 1.348114004 // Stretch marker data
     1.273401361
 							
-    TMINFO 44100					// Transient markers (guides) data
+    TMINFO 44100					// Transient marker (guide) data
     TM 104 671 6270 13233 678 676 673 19218 6385 677    //
     680 6320						//
 							
