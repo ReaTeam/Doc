@@ -262,7 +262,7 @@ Audio Item
       EGUID {5CB63539-0B47-4094-97FA-C62230F23208}	// Envelope ID
 	(see chunk info below under Envelope)
     >							// -- Take envelopes section end    
-    TAKE SEL                                            // Second take start. SEL only appears if this take is selected
+    TAKE SEL                                            // Second take start. SEL only appears if this take is selected or was last selected
     NAME "The second take"                              // Take name
     TAKEVOLPAN 0.0 1.0 -1.0                             // Take volume and pan settings
                                                         //  field 1, float, take pan
