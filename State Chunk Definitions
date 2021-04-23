@@ -45,9 +45,12 @@ The Track state chunk contains all the settings for a track and all of it's item
     IPHASE 0                                                  // Invert phase, int (bool)
     ISBUS 0 0                                                 // ??, Unknown but related to folder tracks 
                                                               //   1 1 = is folder, 2 -1 = is folder end, 0 0 for others
-    BUSCOMP 0 0                                               // Collapse folder (bus compact?)
+    BUSCOMP 0 0 0 41 8                                        // Collapse folder (bus compact?)
                                                               //  field 1, int, 0=full, 1=medium, 2=small
                                                               //  field 2, int, ??
+							      //  field 3, int, ??
+							      //  field 4, int, track wiring routing window x position
+							      //  field 5, int, track wiring routing window y position
     SHOWINMIX 1 0.6 0.5 1 0.5 -1 -1 -1                        // Show In Mixer
                                                               //  field 1, int (bool), show in mixer
                                                               //  field 2, float, ??
