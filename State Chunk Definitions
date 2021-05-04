@@ -544,9 +544,8 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 					      	      	      //   		configuration is visible, 0 - Arm envelope for selected parameter
 	      						      //  -- End of MIDI/OSC controller assignments
 							      
-    PARM_TCP 12:bypass 13:wet 4 2 0                           //  Show in track controls (params visible on TCP/MCP for both Parameter modulation and plugins)
-                                                	      //  Parameter modulation parameters format is index:name followed by a list of plugin control indices
-                                                	      //  (irrelevant for Input and Monitor FX)
+    PARM_TCP 12:bypass 13:wet 4 2 0                           //  Show in track controls (FX params visible on TCP/MCP), irrelevant for Input, Take and Monitor FX 
+                                                	      //  Plugin wrapper parameters format is index:name, plugin own params are referenced by their indices only
 							      
     WAK 0 0                                                   //  WAK = Want All Keys (https://forums.cockos.com/showthread.php?p=2420594)
     							      //  field 1, bool, 1 - 'Send all keyboard input to plug-in' option is enabled in the FX instance RMB context menu
