@@ -72,3 +72,18 @@ Againt, there is no GetMarkerByGUID native function (v6.13). You need to iterate
 ## Colors
 
 `color` parameter can sometimes needs 25th bit, `color | 1<<24`.
+
+## Looping
+
+Using while/repeat loops are perfect for iterating in all markers+regions. A simple conditions can allows filter markers by name, positions, type (marker or region) or even more complex things. Consider storing marker/region infos in a table in you plan to move them.
+
+```lua
+idx = 0
+repeat
+  retval, isrgn, pos, rgnend, name, markrgnindexnumber, color = reaper.EnumProjectMarkers3( proj, idx ) -- get marker by idx
+  if not isrgn then -- if it is a marker and not a region
+    -- do something
+  end
+  idx = idx + 1 -- increment idx
+until not retval
+```
