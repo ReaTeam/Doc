@@ -40,6 +40,15 @@ REAPER actions list has lots of registered entry. Sometimes, some terms are used
 
 * trim
 * set edge
-* shift edhe
+* shift edge
 * expand
 * extand
+
+## Item position
+
+* Set position
+* Reposition
+* Set order
+* Reorder
+* Move to
+* Snap to
