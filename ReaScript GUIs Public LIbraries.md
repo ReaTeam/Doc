@@ -1,6 +1,6 @@
-## ReaScript GUIs
+## ReaScript GUIs Public Libraries / Frameworks
 
-Here are avalaible framework and librairies for making GUI for REAPER scripts.
+Here are avalaible framework and librairies for making GUI for REAPER scripts. Note: Python can use external Python GUI library via reapy, but this is out of scope if this list.
 
 ## Native
 
