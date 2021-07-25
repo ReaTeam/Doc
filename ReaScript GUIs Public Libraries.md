@@ -29,7 +29,7 @@ Scripters can have their own fork of it cause it is unsuported.
 ## Old School
 
 - [James HE library](https://stash.reaper.fm/v/25128/gfx%20functions%201.01.eel) (2015)
-Library used by James HE EEL scripts. Though, it lack of documentation so it may not have been used by other scripters. https://forum.cockos.com/showthread.php?t=165954&highlight=gui+library
+Library used by James HE [EEL scripts](https://forum.cockos.com/showthread.php?t=165954&highlight=gui+library). Though, it lacks of documentation so it may not have been used by other scripters.
 
 - [spk77 simple slider class for eel](https://forum.cockos.com/showthread.php?p=1435963) (2014)
 A minimal slider for eel.
