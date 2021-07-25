@@ -85,5 +85,5 @@ repeat
     -- do something
   end
   idx = idx + 1 -- increment idx
-until not retval
+until retval == 0
 ```
