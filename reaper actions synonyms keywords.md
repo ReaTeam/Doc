@@ -9,6 +9,8 @@ REAPER actions list has lots of registered entry. Sometimes, some terms are used
 * shift by
 * scroll to
 * set
+* left
+* right
 
 ## Items
 
@@ -23,6 +25,7 @@ REAPER actions list has lots of registered entry. Sometimes, some terms are used
 
 * before
 * above
+* previous
 
 ## Delete
 
@@ -42,7 +45,9 @@ REAPER actions list has lots of registered entry. Sometimes, some terms are used
 * set edge
 * shift edge
 * expand
-* extand
+* extend
+* start
+* end
 
 ## Item position
 
@@ -52,3 +57,4 @@ REAPER actions list has lots of registered entry. Sometimes, some terms are used
 * Reorder
 * Move to
 * Snap to
+* Nudge
