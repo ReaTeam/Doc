@@ -8,10 +8,10 @@ Here are avalaible framework and librairies for making GUI for REAPER scripts. N
 
 ## Modern
 
-- [Reaper Toolkit](https://forum.cockos.com/showthread.php?t=255333&goto=nextoldest) by tack (2021)
+- [Reaper Toolkit - rtk](https://forum.cockos.com/showthread.php?t=255897) by tack (2021)
 Lua GFX based. Extensive documentation and modern look.
 
-- [ReaImGUI](https://forum.cockos.com/showthread.php?t=250419) by cfillion (2021)
+- [ReaImGui](https://forum.cockos.com/showthread.php?t=250419) by cfillion (2021)
 Extension for all reascript languages. Extensive number of functions and widgets. Simple to use.
 
 ## Unsupported but still In use
