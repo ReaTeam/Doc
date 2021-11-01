@@ -46,9 +46,9 @@ The Track state chunk contains all the settings for a track and all of it's item
     ISBUS 0 0                                                 // ??, Unknown but related to folder tracks 
                                                               //   1 1 = is folder, 2 -1 = is folder end, 0 0 for others
     BUSCOMP 0 0 0 41 8                                        // Collapse folder (bus compact?)
-                                                              //  field 1, int, 0=full, 1=medium, 2=small
+                                                              //  field 1, int, collapse state in Arrange 0=not collapsed, 1=collapsed medium, 2=collapsed small
                                                               //  field 2, int, collapse state in the Mixer 0=not collapsed, 1=collapsed
-							      //  field 3, int, collapse state in track wiring, 0=not-collapse, 1= collapse
+							      //  field 3, int, collapse state in track wiring, 0=not-collapse, 1=collapse
 							      //  field 4, int, track wiring routing window x position
 							      //  field 5, int, track wiring routing window y position
     SHOWINMIX 1 0.6 0.5 1 0.5 -1 -1 -1                        // Show In Mixer
