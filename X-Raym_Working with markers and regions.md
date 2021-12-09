@@ -71,7 +71,15 @@ There is no GetMarkerByGUID native function (v6.13). You need to iterate all mar
 
 ## Colors
 
-`color` parameter can sometimes needs 25th bit, `color | 1<<24`.
+`color` parameter can sometimes needs 25th bit, `color_int | 1<<24`, or `color_int | 0x1000000``
+
+```lua
+reaper.SetProjectMarker3(0,1,false,0,0,"test", reaper.ColorToNative( 255, 0, 0 ) |0x1000000 )
+```
+
+```lua
+reaper.SetProjectMarker3(0,1,false,0,0,"test", reaper.ColorToNative( 255, 0, 0 ) | 1<<24 )[/code]
+```
 
 ## Looping
 
