@@ -78,7 +78,7 @@ reaper.SetProjectMarker3(0,1,false,0,0,"test", reaper.ColorToNative( 255, 0, 0 )
 ```
 
 ```lua
-reaper.SetProjectMarker3(0,1,false,0,0,"test", reaper.ColorToNative( 255, 0, 0 ) | 1<<24 )[/code]
+reaper.SetProjectMarker3(0,1,false,0,0,"test", reaper.ColorToNative( 255, 0, 0 ) | 1<<24 )
 ```
 
 ## Looping
