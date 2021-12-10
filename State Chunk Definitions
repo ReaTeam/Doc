@@ -457,7 +457,7 @@ TEMPOENVEX - Master tempo
                                     			//  field 1, float, position (seconds)
                                     			//  field 2, float, value
                                     			//  field 3, int, shape (-1 = envelope default?)
-                                    			//  field 4, int, optional, ?? (TEMPOENVEX time sig? check this)
+                                    			//  field 4, int, optional, ?? (TEMPOENVEX time sig = 65536 * time signature denominator + time signature numerator)
                                     			//  field 5, int (bool), selected (optional)
                                     			//  field 6, int, ?? (optional)
                                     			//  field 7, float, bezier tension (optional)
