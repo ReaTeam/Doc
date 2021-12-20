@@ -1,6 +1,7 @@
 # REAPER ACTIONS SYNONYMS KEYWORDS
 
 REAPER actions list has lots of registered entry. Sometimes, some terms are used instead of others. Here are some things to try:
+(Since v6.35 REAPER supports action name synonyms and to the built-in synonyms [custom ones can be added via language pack file in [actionlist_synonyms] section](https://forum.cockos.com/showpost.php?p=2507351&postcount=16)
 
 ## Moving
 
