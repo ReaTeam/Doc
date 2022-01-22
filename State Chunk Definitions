@@ -445,13 +445,18 @@ TEMPOENVEX - Master tempo
                                     			//   field 1, int, height in pixels
                                     			//   field 2, int, ??
     ARM 1                           			// Armed, int (bool)
-    DEFSHAPE 0                      			// Default point shape, int
+    DEFSHAPE 0 -1 -1                    		// field 1 - Default point shape, int
                                     			//   0 = Linear
                                     			//   1 = Square
                                     			//   2 = Slow Start/End
                                     			//   3 = Fast Start
                                     			//   4 = Fast End
                                     			//   5 = Bezier
+							// field 2 - ??
+							// field 3 - ??
+    <EXT						// Extension-specific persistent data which can be added with GetSetEnvelopeInfo_String() function using 'P_EXT' parameter
+    parmname string					//  field 1, string - parmname, set with the function namesake argument
+    >							//  field 2, string - string, set with the function stringNeedBig argument
     
     POOLEDENVINST 6 1.375 0.39917615841563 0.114936 0.354826 1 0.5 1 1 0 0 1280 0 0 0.012 0 // Automation item (AI) properties
     											    // field 1, int, index (greater by 1 than the one displayed by default											    
