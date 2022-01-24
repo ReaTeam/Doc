@@ -442,7 +442,7 @@ TEMPOENVEX - Master tempo
                                     			//   field 2, int (bool), show in lane
                                     			//   field 3, float, ??
     LANEHEIGHT 0 0                  			// Lane height
-                                    			//   field 1, int, height in pixels
+                                    			//   field 1, int, height in pixels, corresponds to the value associated with 'I_TCPH' parameter of GetEnvelopeInfo_Value() function
                                     			//   field 2, int, ??
     ARM 1                           			// Armed, int (bool)
     DEFSHAPE 0 -1 -1                    		// field 1 - Default point shape, int
