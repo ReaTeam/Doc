@@ -456,7 +456,8 @@ TEMPOENVEX - Master tempo
 							// field 3 - ??
     <EXT						// Extension-specific persistent data which can be added with GetSetEnvelopeInfo_String() function using 'P_EXT' parameter
     parmname string					//  field 1, string - parmname, set with the function namesake argument
-    >							//  field 2, string - string, set with the function stringNeedBig argument
+    >							//  field 2, string - string, set with the function stringNeedBig argument; to delete, pass this argument as an empty string
+    							//
     
     POOLEDENVINST 6 1.375 0.39917615841563 0.114936 0.354826 1 0.5 1 1 0 0 1280 0 0 0.012 0 // Automation item (AI) properties
     											    // field 1, int, index (greater by 1 than the one displayed by default											    
