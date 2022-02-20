@@ -35,6 +35,10 @@ retval, region_guid = reaper.GetSetProjectInfo_String( 0, "MARKER_GUID:" .. id, 
 ```lua
 markeridx, regionidx = reaper.GetLastMarkerAndCurRegion( proj, time )
 ```
+
+```lua
+ reaper.NF_GetSWSMarkerRegionSub( markerRegionIdx )
+```
  
 ## markrgnindexnumber (Ruler)
 
