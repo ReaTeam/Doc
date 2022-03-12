@@ -428,12 +428,12 @@ VOLENV2 - Track (post FX) volume (0.0 to 2.0)
 VOLENV3 - Track trim volume (0 to 2)
 PANENV - Track (pre FX)/Take pan (-1.0 to 1.0)
 PANENV2 - Track (post FX) pan (-1.0 to 1.0)
-DUALPANENVL - Track pan (left) (pre-FX) (-1 to 1)
-DUALPANENV - Track pan (right) (pre-FX) (-1 to 1)
-DUALPANENVL2 - Track pan (left) (-1 to 1) in 'Dual pan' pan mode;
-DUALPANENV2 - Track pan (right) (-1 to 1) in 'Dual pan' pan mode;
-WIDTHENV - Track (pre FX) stereo width (-1 to 1)
-WIDTHENV2 - Track (post FX) stereo width (-1 to 1)
+DUALPANENVL - Track pan (left) (pre-FX) (-1 to 1) in 'Dual pan' pan mode
+DUALPANENV - Track pan (right) (pre-FX) (-1 to 1) in 'Dual pan' pan mode
+DUALPANENVL2 - Track pan (left) (-1 to 1) in 'Dual pan' pan mode
+DUALPANENV2 - Track pan (right) (-1 to 1) in 'Dual pan' pan mode
+WIDTHENV - Track (pre FX) stereo width (-1 to 1) in 'Stereo pan' pan mode
+WIDTHENV2 - Track stereo width (-1 to 1) in 'Stereo pan' pan mode
 MUTEENV - Track mute (0.0 to 1.0)
 AUXVOLENV - Track send volume (0.0 to 2.0)
 AUXPANENV - Track sendpan (-1.0 to 1.0)
