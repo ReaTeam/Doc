@@ -197,9 +197,9 @@ Audio Item
     IGUID {98E8ECDE-FF4D-4E06-87ED-43A5E7E6A61A}        // Item id. Leave it alone
                                                         // --- From this point, values mostly relate to the first take
                                                         //     except for field 1 of VOLPAN which is the item trim
-    IID 424                               		// item ordinal number, particularly relevant for overlapping items and especially those with identical start and end coordinates,
+    IID 424                               		// Item ordinal number, particularly relevant for overlapping items and especially those with identical start and end coordinates,
     							// when 'Show overlapping media items in lanes (when room)' option is enabled the greater the IID the lower the item's lane is,
-							// with this option disabled the visible/front item is the one with the greatest IID;							
+							// with the said option disabled the visible/front item is the one with the greatest IID out of all items it's overlapping							
 
     <NOTES                               		// Notes block start
       |-1                                		// Notes content
