@@ -504,7 +504,8 @@ TEMPOENVEX - Master tempo
 PARMENV contains extra data denoting which plugin parameter is controlled and what the minimum, maximum and default values are.
 
 <PARMENV 1 0.0 1469.0 734.5         			// Type
-                                   			//  field 1, int, param index - zero based top to bottom.
+<PARMENV 5:_1__Feedback 0 2 1                           //  field 1, int, param index - zero based top to bottom.
+<PARMENV 5:_Sample_start_offset 0 2 1			//  Since build 6.52 names of ReaPlugs parameters are also specified in the format _paramname or _param_name
                                     			//    REAPER tags additional bypass and wet params onto the end, in that order
                                     			//  field 2, float, minimum value
                                     			//  field 3, float, maximum value
