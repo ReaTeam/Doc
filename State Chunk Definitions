@@ -203,10 +203,11 @@ Audio Item
                                                         // --- From this point, values mostly relate to the first take
                                                         //     except for field 1 of VOLPAN which is the item trim
 							//
-    IID 424                               		// Item ordinal number, particularly relevant for overlapping items and especially those with identical start 
-    							// and end coordinates, when 'Show overlapping media items in lanes (when room)' option is enabled the greater 
-							// the IID the lower the item's lane is, with the said option disabled the visible/front item is the one with 
-							// the greatest IID out of all items it's overlapping							
+    IID 424                               		// Irrelevant since build 6.54
+    							// Item ordinal number governing the order of overlapping items displayed in lanes and especially those with identical start 
+    							// and end coordinates, when 'Show overlapping media items in lanes (when room)' option is enabled. The greater 
+							// the IID the lower the item's lane is. With the said option disabled or lanes fully collapsed the visible/outermost item
+							// is the latest one on the track out of all items it's overlapping, regardless of its IID							
 
     <NOTES                               		// Notes block start
       |-1                                		// Notes content
@@ -539,7 +540,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     BYPASS 0 0                                                //  Plugin bypass state
                                                               //   field 1, int (bool), bypassed
                                                               //   field 2, int (bool), offline
-    <VST "VST: SomePlugin" "SomePlugin.dll" 0 "Sax offender"  //  Plugin data
+    <VST "VST: SomePlugin" "SomePlugin.dll" 0 "Sax offender"  //  Plugin data, see details below
         (see VST(i) plugin info below)                        //
     >                                                         //
     WET 0.5                                                   //  Amount of plugin wet output set on the plugin UI wrapper, if not 100%
