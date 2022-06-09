@@ -694,62 +694,63 @@ Freeze data chunk, storing data for unfreezing
  SHOW 0
  LASTSEL 0
  DOCKED 0
- >
- <FREEZE 0
-   <FXCHAIN
-    WNDRECT 32 60 745 420
-    SHOW 0
-    LASTSEL 0
-    DOCKED 0
-    BYPASS 0 0 0
-    <VST "VST: ReaDelay (Cockos)" readelay.dll 0 "" 1919247468<5653547265646C72656164656C617900> ""
-      bGRlcu5e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAAIAAAAAAAAATAAAAAEAAAAAABAA
-      AAAAAAAAAAABAAAALAAAAAIAAAAAAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAIA8nNEHMwAAgD8AAAAAAACAPwAAgD8AAIA/AAAAPw==
-      AAAQAAAA
-    >
-    FLOATPOS 0 0 0 0
-    FXID {FF92D48D-1B63-44E6-A44F-EF996F9E2228}
-    WAK 0 0
-  >
-  <ITEM {26E45913-BFEA-417E-8F96-1C61EE6E3FE4}
-     POSITION 0.5
-     SNAPOFFS 0
-     LENGTH 1.27340136054422
-     LOOP 0
-     ALLTAKES 0
-     FADEIN 1 0 0 1 0 0 0
-     FADEOUT 1 0 0 1 0 0 0
-     MUTE 0 0
-     COLOR 31464893 R
-     SEL 1
-     IGUID {26E45913-BFEA-417E-8F96-1C61EE6E3FE4}
-     IID 1
-     NAME THREE
-     VOLPAN 1 0 1 -1
-     SOFFS 0
-     PLAYRATE 1 0 0 -1 0 0.0025
-     CHANMODE 0
-     GUID {7A1C7B3D-7FB6-4FA1-9F0B-1FC41AAEA61D}
-     <SOURCE WAVE
-       FILE "C:\Users\Admin\Documents\REAPER Media\reaper.wav"
-     >
-     <PITCHENV
-       EGUID {8955C719-553C-4494-879E-286ECE31C437}
-       ACT 0 -1
-       VIS 0 1 1
-       LANEHEIGHT 0 0
-       ARM 0
-       DEFSHAPE 0 -1 -1
-       PT 2.58540135 9 0
-     >
-   >
 >
-<ITEM
-  POSITION 0.5
-  .........
-  <SOURCE WAVE
-    FILE "C:\Users\Admin\Documents\REAPER Media\reaper_freeze.wav"
-  >
->
+ <FREEZE 0													// FREEZE section start
+ 														// field 1, ??
+   <FXCHAIN													// A regular FXCHAIN chunk storing track FX, if any
+    WNDRECT 32 60 745 420											//
+    SHOW 0													//
+    LASTSEL 0													//
+    DOCKED 0													// last line of FXCHAIN chunk if there were no track FX
+    BYPASS 0 0 0												//
+    <VST "VST: ReaDelay (Cockos)" readelay.dll 0 "" 1919247468<5653547265646C72656164656C617900> ""		//
+      bGRlcu5e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAAIAAAAAAAAATAAAAAEAAAAAABAA				//
+      AAAAAAAAAAABAAAALAAAAAIAAAAAAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAIA8nNEHMwAAgD8AAAAAAACAPwAAgD8AAIA/AAAAPw==	//
+      AAAQAAAA													//
+    >														//
+    FLOATPOS 0 0 0 0												//
+    FXID {FF92D48D-1B63-44E6-A44F-EF996F9E2228}									//
+    WAK 0 0													//
+  >														//
+  <ITEM {26E45913-BFEA-417E-8F96-1C61EE6E3FE4}									//
+     POSITION 0.5												//
+     SNAPOFFS 0													//
+     LENGTH 1.27340136054422											//
+     LOOP 0													//
+     ALLTAKES 0													//
+     FADEIN 1 0 0 1 0 0 0											//
+     FADEOUT 1 0 0 1 0 0 0											//
+     MUTE 0 0													//
+     COLOR 31464893 R												//
+     SEL 1													//
+     IGUID {26E45913-BFEA-417E-8F96-1C61EE6E3FE4}								//
+     IID 1													//
+     NAME THREE													//
+     VOLPAN 1 0 1 -1												//		
+     SOFFS 0													//
+     PLAYRATE 1 0 0 -1 0 0.0025											//
+     CHANMODE 0													//
+     GUID {7A1C7B3D-7FB6-4FA1-9F0B-1FC41AAEA61D}								//
+     <SOURCE WAVE												//
+       FILE "C:\Users\Admin\Documents\REAPER Media\reaper.wav"							//
+     >														//
+     <PITCHENV													//
+       EGUID {8955C719-553C-4494-879E-286ECE31C437}								//
+       ACT 0 -1													//
+       VIS 0 1 1												//
+       LANEHEIGHT 0 0												//
+       ARM 0													//
+       DEFSHAPE 0 -1 -1												//
+       PT 2.58540135 9 0											//
+     >														//
+   >														//
+>														//
+<ITEM														//
+  POSITION 0.5													//
+  .........													//
+  <SOURCE WAVE													//
+    FILE "C:\Users\Admin\Documents\REAPER Media\reaper_freeze.wav"						//
+  >														//
+>														//
 
 
