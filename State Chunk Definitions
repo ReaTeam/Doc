@@ -203,7 +203,7 @@ Audio Item
                                                         // --- From this point, values mostly relate to the first take
                                                         //     except for field 1 of VOLPAN which is the item trim
 							//
-    IID 424                               		// Irrelevant since build 6.54
+    IID 424                               		// Deprecated since build 6.54
     							// Item ordinal number governing the order of overlapping items displayed in lanes and especially those with identical start 
     							// and end coordinates, when 'Show overlapping media items in lanes (when room)' option is enabled. The greater 
 							// the IID the lower the item's lane is. With the said option disabled or lanes fully collapsed the visible/outermost item
