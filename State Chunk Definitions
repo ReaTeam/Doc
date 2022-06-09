@@ -749,8 +749,8 @@ Freeze data chunk, storing data for unfreezing
        FXID {63C343BD-C1AF-4CB0-9668-EA07D62D32A0}							//
        WAK 0 0												//
      >    												//
-     <PITCHENV												// PITCHENV is stored even if there's no active take pitch envelope 
-       EGUID {8955C719-553C-4494-879E-286ECE31C437}							//
+     <PITCHENV												// PITCHENV chunk is stored even if there's no active 
+       EGUID {8955C719-553C-4494-879E-286ECE31C437}							// take pitch envelope 
        ACT 0 -1												//
        VIS 0 1 1											//
        LANEHEIGHT 0 0											//
