@@ -158,7 +158,7 @@ The Track state chunk contains all the settings for a track and all of it's item
     >                                                         // --- End of FX section
     
     							      // --- Start of FREEZE section ----
-    <FREEZE 0						      //     Not present if track hasn't got/had FX ---
+    <FREEZE 0						      //     Not present if track wasn't frozen ---
         (see chunk info below)
     >							      // --- End of FREEZE section
     
