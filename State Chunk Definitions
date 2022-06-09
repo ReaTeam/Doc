@@ -689,7 +689,7 @@ Video Processor plugin
 
 Freeze data chunk, storing data for unfreezing
 
-<FXCHAIN												// Track regular FXCHAIN chunk start
+<FXCHAIN												// Start if track regular FXCHAIN chunk
  WNDRECT 32 60 745 420											//
  SHOW 0													//
  LASTSEL 0												//
