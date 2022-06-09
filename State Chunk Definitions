@@ -689,12 +689,12 @@ Video Processor plugin
 
 Freeze data chunk, storing data for unfreezing
 
-<FXCHAIN
- WNDRECT 32 60 745 420
- SHOW 0
- LASTSEL 0
- DOCKED 0
->
+<FXCHAIN													// Track regular FXCHAIN chunk start
+ WNDRECT 32 60 745 420												//
+ SHOW 0														//
+ LASTSEL 0													//
+ DOCKED 0													//
+>														//
  <FREEZE 0													// FREEZE section start
  														// field 1, ??
    <FXCHAIN													// A regular FXCHAIN chunk storing track FX, if any
@@ -712,7 +712,7 @@ Freeze data chunk, storing data for unfreezing
     FXID {FF92D48D-1B63-44E6-A44F-EF996F9E2228}									//
     WAK 0 0													//
   >														//
-  <ITEM {26E45913-BFEA-417E-8F96-1C61EE6E3FE4}									//
+  <ITEM {26E45913-BFEA-417E-8F96-1C61EE6E3FE4}									// Original ITEM chunk
      POSITION 0.5												//
      SNAPOFFS 0													//
      LENGTH 1.27340136054422											//
@@ -745,7 +745,7 @@ Freeze data chunk, storing data for unfreezing
      >														//
    >														//
 >														//
-<ITEM														//
+<ITEM														// Frozen item chunk, part of the TRACK chunk 
   POSITION 0.5													//
   .........													//
   <SOURCE WAVE													//
