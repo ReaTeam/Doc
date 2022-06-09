@@ -695,7 +695,7 @@ Freeze data chunk, storing data for unfreezing
  LASTSEL 0													//
  DOCKED 0													//
 >														//
- <FREEZE 0													// FREEZE section start
+ <FREEZE 0													// -------Start of FREEZE chunk
  														// field 1, ??
    <FXCHAIN													// A regular FXCHAIN chunk storing track FX, if any
     WNDRECT 32 60 745 420											//
@@ -712,7 +712,7 @@ Freeze data chunk, storing data for unfreezing
     FXID {FF92D48D-1B63-44E6-A44F-EF996F9E2228}									//
     WAK 0 0													//
   >														//
-  <ITEM {26E45913-BFEA-417E-8F96-1C61EE6E3FE4}									// Original ITEM chunk
+  <ITEM {26E45913-BFEA-417E-8F96-1C61EE6E3FE4}									// Original ITEM chunk (before freezing)
      POSITION 0.5												//
      SNAPOFFS 0													//
      LENGTH 1.27340136054422											//
@@ -734,7 +734,22 @@ Freeze data chunk, storing data for unfreezing
      <SOURCE WAVE												//
        FILE "C:\Users\Admin\Documents\REAPER Media\reaper.wav"							//
      >														//
-     <PITCHENV													//
+     <TAKEFX													// A regular TAKEFX chunk if original item had FX
+       WNDRECT 32 60 745 420											//
+       SHOW 0													//
+       LASTSEL 0												//
+       DOCKED 0													//
+       BYPASS 0 0 0												//
+       <VST "VST: ReaDelay (Cockos)" readelay.dll 0 "" 1919247468<5653547265646C72656164656C617900> ""		//
+         bGRlcu5e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAAIAAAAAAAAATAAAAAEAAAAAABAA			//
+         AAAAAAAAAAABAAAALAAAAAIAAAAAAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAIA8nNEHMwAAgD8AAAAAAACAPwAAgD8AAIA/	//
+        AAAAPw==AAAQAAAA											//
+        >													//
+       FLOATPOS 0 0 0 0												//
+       FXID {63C343BD-C1AF-4CB0-9668-EA07D62D32A0}								//
+       WAK 0 0													//
+     >    													//
+     <PITCHENV													// PITCHENV is stored even if there's no active take pitch envelope 
        EGUID {8955C719-553C-4494-879E-286ECE31C437}								//
        ACT 0 -1													//
        VIS 0 1 1												//
@@ -744,7 +759,7 @@ Freeze data chunk, storing data for unfreezing
        PT 2.58540135 9 0											//
      >														//
    >														//
->														//
+>														// -------End of FREEZE chunk
 <ITEM														// Frozen item chunk, part of the TRACK chunk 
   POSITION 0.5													//
   .........													//
