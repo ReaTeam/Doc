@@ -157,6 +157,11 @@ The Track state chunk contains all the settings for a track and all of it's item
         (see chunk info below)
     >                                                         // --- End of FX section
     
+    							      // --- Start of FREEZE section ----
+    <FREEZE 0						      //     Not present if track hasn't got/had FX ---
+        (see chunk info below)
+    >							      // --- End of FREEZE section
+    
        							      // --- Start of Input FX section (irrelevant for the Master track) ----	
     <FXCHAIN_REC					      //      Not present if track hasn't got/had Input FX ---								     
 	(see chunk info below)
