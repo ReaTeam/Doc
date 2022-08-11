@@ -12,6 +12,7 @@ For more information on the code language, please see the appendix near the bott
 Special Variables Used by Processors
 ===============================================
 project_time: project time in seconds
+project_timeoffs: project setting time offset in seconds
 project_tempo: current tempo in BPM
 project_ts_num: current time signature numerator
 project_ts_denom: current time signature denominator
@@ -76,6 +77,12 @@ Returns 1 if input is available, sets w/h to dimensions. If srctime specified, i
 input_get_name(input, #str)
 Gets the input take name or track name. returns >0 on success
 
+input_match(startidx,#pattern[,...])
+Searches inputs for input starting at startidx whose track or item matches #pattern (see EEL2 match() for syntax), returns -10000 if not found.
+
+input_matchi(startidx,#pattern[,...])
+Searches inputs for input starting at startidx whose track or item case-insensitively matches #pattern (see EEL2 matchi() for syntax), returns -10000 if not found.
+
 gfx_img_alloc([w,h,clear])
 Returns an image index for drawing (can create up to 32 images). contents of image undefined unless clear set.
 
@@ -126,7 +133,7 @@ Fills rectangle. r/g/b/a supply color at top left corner, drdx (if specified) is
 gfx_rotoblit(srcidx, angle [,x, y, w, h, srcx, srcy, w, h, cliptosrcrect=0, centxoffs=0, centyoffs=0])
 Blits with rotate. This function behaves a bit odd when the source and destination sizes/aspect ratios differ, so gfx_deltablit() is generally more useful.
 
-gfx_deltablit(srcidx, x,y,w,h srcx,srcy, dsdx, dtdx, dsdy, dtdy, dsdxdy, dtdxdy[, dadx, dady, dadxdy])
+gfx_deltablit(srcidx, x,y,w,h, srcx,srcy, dsdx, dtdx, dsdy, dtdy, dsdxdy, dtdxdy[, dadx, dady, dadxdy])
 Blits with source pixel transformation control. S and T refer to source coordinates: dsdx is  how much the source X position changes with each X destination pixel, dtdx is how much the source Y position changes with each X destination pixel, etc.
 
 gfx_xformblit(srcidx, x,y,w,h,  wdiv, hdiv, tab[, wantalpha=0])
@@ -201,12 +208,12 @@ convolve_c(dest,src,size)
 Multiplies each of size complex pairs in dest by the complex pairs in src. Often used for convolution.
 
 ===============================================
-Global Shared Memroy
+Global Shared Memory
 ===============================================
 
-gmem[] can be used for a shared memory buffer (similar to JSFX) -- you can specify a named buffer which can be shared with EEL2 ReaScripts and JSFX, by using:
+gmem[] can be used for a shared memory buffer (similar to JSFX) -- you can specify a named buffer which can be shared with ReaScripts and JSFX, by using:
     //@gmem=sharedBufferName
-on a line by itself. Note that when synchronizing with ReaScripts or JSFX, all processing is asynchronous, so your code will have to deal with synchronization issues (including vast differences between project_time and playback_position, and including race conditions).
+on a line by itself. Note that when synchronizing with ReaScripts or JSFX, all processing is asynchronous, so your code will have to deal with synchronization issues (including vast differences between project_time and playback_position, and including race conditions). For Lua ReaScripts, see the function gmem_attach().
 
 ui_get_state(ctx[,mouse_x, mouse_y,force_frame_in,mouse_wheel_state,mouse_hwheel_state])
 Gets UI state and context, only usable from Monitoring FX (returns 0 if used from track). Returns state (1/2/4 are l/r/m mouse buttons, 8/16/32 are ctrl/shift/alt, 1024 is whether configuration for this processor is visible). If 'ctx' set to -1, context is video window and any returned mouse coordinates are [0..1] (where 0,0 is upper left corner, 1,1 is lower right corner of the video area). If 'ctx' is set to [1..24], it means the user is editing that knob. If force_frame_in is specified and is positive, then the processor will be re-executed in this amount of time (even if no new video source is available)
