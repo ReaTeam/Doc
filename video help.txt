@@ -125,7 +125,7 @@ Additional options:
     If init_code_string specified, it will be executed in each thread context before processing
     If src specified (and >= -1), sr/sg/sb/sa, sy1/su/sv etc will be available to read. In this case only the intersection of valid rectangles between src and the destination buffer will be processed. 
     If src and src2 specified (and >= -1), s2r/s2g/s2b/s2a, s2y1/s2u/s2v etc will also be available to read. 
-    Note: variables _1-_99 are thread-local variables which will always be initialized to 0, and _0 will be initialized to the thread index (usually 0 or 1)
+    Note: variables _1-_99 are thread-local variables which will always be initialized to 0, and _0 will be initialized to the thread index (usually 0 or 1). 6.70+: _slice is an alias of _0. _slices is a count of the multiprocessing slices, _span is the number of calls per line, and _slice_size is the size of each slice in lines (the last slice may vary in size).
 
 gfx_gradrect(x,y,w,h, r,g,b,a [,drdx,dgdx,dbdx,dadx, drdy,dgdy,dbdy,dady])
 Fills rectangle. r/g/b/a supply color at top left corner, drdx (if specified) is amount red changes per X-pixel, etc.
