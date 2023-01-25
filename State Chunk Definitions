@@ -222,7 +222,7 @@ Audio Item
                                                         //   16.00 = +24 dB
                                                         //   0.50 = -6 dB
                                                         // field 2, float, first take pan, -1.00 = left, 1.00 = right
-                                                        // field 3, float, first take volume (other takes in TAKEVOLPAN below)
+                                                        // field 3, float, first take volume (other takes in TAKEVOLPAN below), if negative 'Invert phase' setting is enabled
                                                         // field 4, float, first take pan law
     SOFFS 0.000                                         // First take slip offset (in seconds)
     PLAYRATE 1.000 1 0.000 -1                           // First take playrate settings
@@ -281,7 +281,7 @@ Audio Item
     NAME "The second take"                              // Take name
     TAKEVOLPAN 0.0 1.0 -1.0                             // Take volume and pan settings
                                                         //  field 1, float, take pan
-                                                        //  field 2, float, take volume
+                                                        //  field 2, float, take volume, if negative 'Invert phase' setting is enabled
                                                         //  field 3, float, take pan law
     SOFFS 0.000                                         // Take slip offset (in seconds)
     PLAYRATE 1.000 1 0.000 -1                           // see PLAYRATE above
