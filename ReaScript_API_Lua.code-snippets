@@ -2158,7 +2158,7 @@
 	"MIDIEditor_GetMode lua": {
 		"prefix": "reaper.MIDIEditor_GetMode",
 		"body": "reaper.MIDIEditor_GetMode(${1:midieditor})$0",
-		"description": "get the mode of a MIDI editor (0=piano roll/named notes, 1=event list, 2=musical notation,-1=invalid editor)\nsee MIDIEditor_GetActive, MIDIEditor_OnCommand\n\n"
+		"description": "get the mode of a MIDI editor (0=piano roll, 1=event list, -1=invalid editor)\nsee MIDIEditor_GetActive, MIDIEditor_OnCommand\n\n"
 	},
 	"MIDIEditor_GetSetting_int lua": {
 		"prefix": "reaper.MIDIEditor_GetSetting_int",
