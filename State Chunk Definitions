@@ -347,6 +347,7 @@ MIDI Item
                                                         //    131 = bank/program select
                                                         //    132 = text events
                                                         //    133 = sysex
+							//    166 = notaion events
                                                         //  field 2, int, height of the lane in MIDI editor mode
                                                         //  field 3, int, height of the lane in inline editor mode
         BANKPROGRAMFILE "C:\Path\To\GM.reabank"         // Path to ReaBank file used by the current item
