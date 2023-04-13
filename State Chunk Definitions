@@ -25,7 +25,7 @@ Contents:
 
 The Track state chunk contains all the settings for a track and all of it's items, envelopes, receives, plugins etc.
 <TRACK                                                        // Start of Track definition
-    NAME "Aural sax"                                          // Track name
+    NAME "Track Name"                                         // Track name
     PEAKCOL 16576                                             // Peak colour (items and takes override?)
     BEAT -1                                                   // Track timebase (-1 = project default)
     AUTOMODE 0                                                // Automation mode
