@@ -12,7 +12,7 @@
 - **-renderproject filename.rpp** : render project and exit
 - **-ignoreerrors** : do not show errors on load
 - **-nosplash** : do not show slpash screen window
-- **-splashlog /path/to/filename.log** : write splash screen message log to file
+- **-splashlog /path/to/filename.log** : write splash screen message log to file; the first line of logfile.txt will include the version number, [source](https://forum.cockos.com/showthread.php?t=258280#4)
 - **-newinst | -nonewinst** : override preference for new instance checking
 - **-close[all][:save|:nosave]** : close project(s), optionally not prompting for save
 - **-batchconvert filelist.txt** : batch converter mode, filelist.txt includes:
