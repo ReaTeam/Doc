@@ -1,6 +1,11 @@
 ## Usage:
 
-```reaper [options] [filename.rpp] [filename.wav]```
+```reaper [options] [filename.rpp] [filename.wav] [scriptfile.lua]```
+
+Passing both project/template and a media file isn't supported as of Oct 10, 2021 (see Limitations below).  
+Since build 6.80 passing either project/template or a media file AND a script is supported, e.g.  
+`reaper.exe projectfile.rpp scriptfile.lua`  
+`reaper.exe -nonewinst media.wav scriptfile.lua`
 
 ## Options:
 
@@ -45,3 +50,14 @@
 ## Windows-only options:
 
 - **-noactivate** : launch but do not activate
+
+## Limitations:
+
+As of Oct 13, 2021 Passing two filenames (like a template and a media file) via the command line is not yet supported ([source](https://forum.cockos.com/showthread.php?t=258395#18)), e.g. 
+`X:\mypath\reaper.exe X:\myotherpath\my_template.rpp X:\myotherpath\my_file.mp4`
+
+## Rerefernces
+https://forum.cockos.com/showthread.php?t=258487  
+https://forum.cockos.com/showthread.php?t=258395
+
+
