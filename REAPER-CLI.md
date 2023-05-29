@@ -38,8 +38,8 @@ Since build 6.80 passing either project/template or a media file AND a script fi
     - USESRCMETADATA 1 (1=attempt to preserve original media file metadata if possible)
     - PAD_START 1.0 (leading silence in sec, can be negative)
     - PAD_END 1.0 (trailing silence in sec, can be negative)
-    - NORMALIZE 1 -6.0 0 (1=peak, 2=true peak, 3=lufs-i, 4=lufs-s, 5=lufs-m,
-                         2nd parameter is dB,
+    - NORMALIZE 1 -6.0 0 (1=peak, 2=true peak, 3=lufs-i, 4=lufs-s, 5=lufs-m,  
+                         2nd parameter is dB,  
                          3rd parameter: 1=normalize only if too loud)
     - BRICKWALL 1 -1.0 (1=peak, 2=true peak, 2nd parameter is dB)
     - FADE 0.0 0.0 1 1 (fade-in length, fade-out length, fade-in shape, fade-out shape; length 0.001 = 1 ms)
@@ -48,13 +48,13 @@ Since build 6.80 passing either project/template or a media file AND a script fi
     - FXCHAIN 'fxchainfilename' (use full path if specified, otherwise FxChains directory)
     - FX_NCH 4 (if not specified, FX will be configured to 4 channels)
     - \<FXCHAIN  
-        (contents of .RfxChain file)  
+          (contents of .RfxChain file)  
       \>
     - \<OUTFMT  
-        (base64 data, e.g. contents <RECORD_CFG block from project file)  
+          (base64 data, e.g. contents <RECORD_CFG block from project file)  
       \>
     - \<METADATA  
-        (contents of RENDER_METADATA block from project file)  
+          (contents of RENDER_METADATA block from project file)  
       \>
 
 ## Windows-only options:
