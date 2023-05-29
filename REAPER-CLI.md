@@ -56,7 +56,7 @@ Since build 6.80 passing either project/template or a media file AND a script is
 As of Oct 13, 2021 Passing two filenames (like a template and a media file) via the command line is not yet supported ([source](https://forum.cockos.com/showthread.php?t=258395#18)), e.g. 
 `X:\mypath\reaper.exe X:\myotherpath\my_template.rpp X:\myotherpath\my_file.mp4`
 
-## Rerefernces
+## Rerefernces:
 https://forum.cockos.com/showthread.php?t=258487  
 https://forum.cockos.com/showthread.php?t=258395
 
