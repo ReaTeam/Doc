@@ -57,7 +57,7 @@ As of Oct 13, 2021 Passing two filenames (like a template and a media file) via 
 `X:\mypath\reaper.exe X:\myotherpath\my_template.rpp X:\myotherpath\my_file.mp4`
 
 ## References:
-https://forum.cockos.com/showthread.php?t=258487  
-https://forum.cockos.com/showthread.php?t=258395
+https://forum.cockos.com/showthread.php?t=258395  
+https://forum.cockos.com/showthread.php?t=258487
 
 
