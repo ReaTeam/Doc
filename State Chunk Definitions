@@ -600,8 +600,8 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     PARM_TCP 12:bypass 13:wet 4 2 0                           //  Show in track controls (FX params visible on TCP/MCP), irrelevant for Input, Take and Monitor FX 
                                                 	      //  Plugin wrapper parameters format is index:name, ReaPlug and VST2 plugin own params are referenced 
 							      //  by their indices only, the indices count is 0 based;
-							      //  Since build 6.48 (wasn't able to figure out which change in the changelog refers to this) for ReaPlugs the format 
-							      //  includes FX parameter names, e.g. PARM_TCP 4:_1__Length 7:_1__Hipass 10:_1__Volume
+							      //  Since build 6.48 (wasn't able to figure out which change in the changelog refers to this) for ReaPlugs 
+							      //  and some VST2 plugins the format includes FX parameter names, e.g. PARM_TCP 4:_1__Length 7:_1__Hipass 10:_1__Volume
 							      //  Examples of VST3 plugins format: 1) 0:1652125811 1:1835232512 3:1835232514; 2) 0:720135338 1:720135339 2:720135340
 							      //  3) 0:65536 1:0 8:7, where the first number is the REAPER assigned 0-based index and the second one is plugin's 
 							      //  own internal index
