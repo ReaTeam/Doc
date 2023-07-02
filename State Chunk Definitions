@@ -598,7 +598,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 					      	      	      //   		configuration is visible, 0 - Arm envelope for selected parameter
 	      						      //  -- End of MIDI/OSC controller assignments
 							      
-    PARM_TCP 12:bypass 13:wet 4 2 0                           //  Show in track controls (FX params visible on TCP/MCP), irrelevant for Input, Take and Monitor FX 
+    PARM_TCP 12:bypass 13:wet 4 2 0                           //  Show in track controls (FX params visible in TCP/MCP), irrelevant for Input, Take and Monitor FX 
                                                 	      //  Plugin wrapper parameters format is index:name, ReaPlug and VST2 plugin own params are referenced 
 							      //  by their indices only, the indices count is 0 based;
 							      //  Since build 6.48 (wasn't able to figure out which change in the changelog refers to this) for ReaPlugs 
