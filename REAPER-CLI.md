@@ -1,3 +1,5 @@
+_If REAPER is run from the command line with an unrecognized parameter (like 'reaper -?' for example) the command line help will be displayed, including documentation for the -batchconvert file list ([source](https://forum.cockos.com/showthread.php?p=2690395#5))._
+
 ## Usage:
 
 ```reaper [options] [projectfile.rpp | mediafile.wav | scriptfile.lua [...]]```
@@ -47,6 +49,7 @@ Since build 6.80 passing either project/template or a media file AND a script fi
     - OUTPATTERN 'wildcardpattern'
     - FXCHAIN 'fxchainfilename' (use full path if specified, otherwise FxChains directory)
     - FX_NCH 4 (if not specified, FX will be configured to 4 channels)
+    - CPULIMIT 0 (0 or omit=use all available CPU cores, 1=limit to 1 core, etc) -- [since 6.81](https://forum.cockos.com/showthread.php?p=2690395)
     - \<FXCHAIN  
           (contents of .RfxChain file)  
       \>
