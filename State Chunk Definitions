@@ -599,16 +599,18 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 							      //  field 2, integer, a colon delimited pair of the Master parameter 0-based index
 							      //  and a difference between the Master plugin and the current (Slave) plugin indices
 							      //  (also 0-based) in the FX chain, negative difference indicates that the Master plugin
-							      //  sits earlier in the chain;
+							      //  sits earlier in the chain, difference 0 means self-linking (within same plugin);
 							      //  field 3, integer, Master parameter 0-based index, may or may not be formatted as
 							      //  as a colon delimited pair of the Master parameter index and either its name or
 							      //  its internal index inside the Master plugin, e.g. 6:5, where 5 is the index assigned
 							      //  to the parameter inside the plugin, or 6:_SafeBass, where SafeBass is the parameter name,
 							      //  VST3 plugins seem to tend to have indices rather than names, with 3d party plugins
 							      //  this piece of data if incorrect will render parameter modulation inoperable, BUT
-							      //  its complete absence won't affect the functionality;
+							      //  its complete absence won't affect the functionality, if second integer of the field 2
+							      //  is 0 field 3 integer refers to the index of the Master parameter within the same plugin;
 							      //  field 4, float, param modulation Offset value
 							      //  -1 - -100%, 0 - 0%, 1 - 100% and everything in between as decimals;
+
       MODWND 0 204 147 552 506                                //  field 1, bool, parameter modulation dialogue state,
     >                                                         //  0 - closed, 1 - open, the element is added if parameter 
 							      //  modulation dialogue was opened at least once
