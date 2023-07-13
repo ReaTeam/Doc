@@ -594,7 +594,8 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
       LFOSHAPE 0                                              //
       LFOSYNC 0 0 0                                           //
       LFOSPEED 0.124573 0                                     //
-      PLINK 1 2:-1 6 0					      //  field 1, float, param modulation Scale value
+      PLINK 1 2:-1 6 0                                        //  Parameter modulation linkage data
+							      //  field 1, float, param modulation Scale value
 							      //  -1 - -100%, 0 - 0%, 1 - 100% and everything in between as decimals;
 							      //  field 2, integer, a colon delimited pair of the Master parameter 0-based index
 							      //  and a difference between the Master plugin and the current (Slave) plugin indices
@@ -613,6 +614,15 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 							      //  but the parameter isn't linked and there's no linkage to MIDI;
 							      //  field 4, float, param modulation Offset value
 							      //  -1 - -100%, 0 - 0%, 1 - 100% and everything in between as decimals;
+      MIDIPLINK 0 0 176 14				      //  Parameter modulation MIDI linkage data
+							      //  field 1, integer, MIDI bus number (0-15);
+							      //  field 2, integer, MIDI channel number (1-16);
+							      //  field 3, integer, MIDI message type code: 176 - CC, 144 - Note, 160 - Aftertouch, 
+							      //  192 - Program Change, 208 - Channel Pressure, 224 - Pitch;
+							      //  field 4, integer, message number (0-127) if CC type message (176), 
+							      //  including numbers of 14 bit messages (128-159), note number (0-127) if Note type message (144) 
+							      //  or Aftertouch type message (160), and 0 if another message type;
+							      //  if MIDI linkage is enabled the modified PLINK data are kept in the chunk but not vice versa;
       MODWND 0 204 147 552 506                                //  field 1, bool, parameter modulation dialogue state,
     >                                                         //  0 - closed, 1 - open, the element is added if parameter 
 							      //  modulation dialogue was opened at least once
