@@ -594,8 +594,12 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
       LFOSHAPE 0                                              //
       LFOSYNC 0 0 0                                           //
       LFOSPEED 0.124573 0                                     //
-      MODWND 0 204 147 552 506                                //
-    >                                                         //
+      MODWND 0 204 147 552 506                                //  field 1, bool, parameter modulation dialogue state,
+    >                                                         //  0 - closed, 1 - open, the element is added if parameter 
+							      //  modulation dialogue was opened at least once
+							      //  fields 2-5, pixels, parameter modulation dialogue coordinates
+							      //  x y width height
+							      //
                                                               //  --- Start of parameter envelopes for this plugin.
                                                               //      One block for each non-empty envelope.
     <PARMENV 2 0.0 1.0 0.5                                    //      First parameter envelope
