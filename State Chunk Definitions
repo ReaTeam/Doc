@@ -627,7 +627,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 							      //   field 1, bool, parameter modulation dialogue state,
     >                                                         //   0 - closed, 1 - open, the element is added if parameter 
 							      //   modulation dialogue was opened at least once
-							      //   fields 2-5, pixel, parameter modulation dialogue coordinates, x y width height
+							      //   fields 2-5, pixel, parameter modulation dialogue coordinates: left, top, right, bottom 
 							      //
                                                               //  --- Start of parameter envelopes for this plugin.
                                                               //      One block for each non-empty envelope.
