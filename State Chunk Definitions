@@ -597,7 +597,8 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 							      //   field 2 - ??
 							      //   field 3, bool, Phase reset, 0 - On seek/loop (deterministic output),
 							      //   1 - Free running (non-deterministic output);
-      LFOSPEED 0.124573 0                                     //   field 1, float, Speed in the range of 0 - 0 Hz, 1 - 8.000 Hz;
+      LFOSPEED 0.124573 0                                     //   field 1, float, Speed in the range of 0 - 0 Hz, 0.124573 (center) - 1 Hz, 1 - 8.000 Hz;
+							      //   if Tempo sync is enabled, 0 - 8 QN, 0.9 (center) - 1 QN, 1 - 0.25 QN
 							      //   field 2, float, Phase in the range of 0 - 1;
       PLINK 1 2:-1 6 0                                        //  Parameter modulation linkage data
 							      //   field 1, float, param modulation Scale value
