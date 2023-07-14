@@ -592,6 +592,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
       LFOWT 1 0					     	      //   field 1, float, LFO Strength, 0 - 0%, 1 - 100% and everything in between;
 					      		      //   field 2, int, LFO direction, -1 - negative, 0 - center, 1 - positive;
       AUDIOCTL 0					      //   bool, 'Audio control signal (sidechain)' checkbox, 0 - disabled, 1 - enabled;
+					      		      //   all audio control related parameters are only present in the block if this setting is 1;
       AUDIOCTLWT 1 1					      //  
       LFOSHAPE 0                                              //   int, 0 - sine, 1 - square, 2 - saw L, 3 - saw R, 4 - triangle, 5 - random;
       LFOSYNC 0 0 0                                           //   field 1, bool, Tempo sync, 0 - disabled, 1 - enabled;
