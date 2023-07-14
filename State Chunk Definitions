@@ -610,6 +610,8 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 							      //   field 2, float, Release time in the range of 0 - 1000 ms;
       DBLO -60			      		     	      //   float, 'Min volume' setting in the range of -60.00 - 11.9 dB (although readout shows 12.00);
       DBHI 12			      		     	      //   float, 'Max volume' setting in the range of -59.9 - 12.00 dB (although readout shows -60.00);
+      X2 0.5			      		     	      //   float, 'Audio control signal shaping' node X coordinate in the range of 0 - 1;
+      Y2 0.5			      		     	      //   float, 'Audio control signal shaping' node Y coordinate in the range of 0 - 1;
       PLINK 1 2:-1 6 0                                        //  Parameter modulation linkage data
 							      //   field 1, float, param modulation Scale value
 							      //   -1 - -100%, 0 - 0%, 1 - 100% and everything in between as decimals;
