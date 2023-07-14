@@ -586,13 +586,13 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                            	                              //  plugin native parameters are only referenced by their indices
                            	                              //  field 2, bool, 0 - enabled, 1 - bypassed (set by (un)ticking checkbox 
                                       		              //  'Enable parameter modulation' in Parameter modulation dialogue)
-      PARAMBASE 0.5					      //
-      LFO 1					 	      //
-      LFOWT 1 0					     	      //
-      AUDIOCTL 0					      //
+      PARAMBASE 0.5					      //  float, 'Baseline value (envelope overrides)' in the range of 0-1
+      LFO 1					 	      //  bool, 'LFO' checkbox, 0 - disabled, 1 - enabled
+      LFOWT 1 0					     	      //  field 2, int, Direction, -1 - negative, 0 - center, 1 - positive
+      AUDIOCTL 0					      //  bool, 'Audio control signal (sidechain)' checkbox, 0 - disabled, 1 - enabled
       AUDIOCTLWT 1 1					      //
-      LFOSHAPE 0                                              //
-      LFOSYNC 0 0 0                                           //
+      LFOSHAPE 0                                              //  int, 0 - sine, 1 - square, 2 - saw L, 3 - saw R, 4 - triangle, 5 - random
+      LFOSYNC 0 0 0                                           //  field 1, bool, Tempo sync, 0 - disabled, 1 - enabled
       LFOSPEED 0.124573 0                                     //
       PLINK 1 2:-1 6 0                                        //  Parameter modulation linkage data
 							      //   field 1, float, param modulation Scale value
