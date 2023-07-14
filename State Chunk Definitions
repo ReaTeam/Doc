@@ -599,7 +599,8 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 							      //   field 3, bool, Phase reset, 0 - On seek/loop (deterministic output),
 							      //   1 - Free running (non-deterministic output);
       LFOSPEED 0.124573 0                                     //   field 1, float, Speed in the range of 0 - 0 Hz, 0.124573 (center) - 1 Hz, 1 - 8.000 Hz;
-							      //   if Tempo sync is enabled, 0 - 8 QN, 0.9 (center) - 1 QN, 1 - 0.25 QN
+							      //   if Tempo sync is enabled, 0 - 8 QN, 0.9 (center) - 1 QN, 1 - 0.25 QN;
+							      //   field 2, float, Phase in the range of 0 - 1;
       CHAN 0				      		      //   int, Track audio channel number, mono channels count is 0-based, stereo channel
 							      //   is incremented by 2 for each next stereo pairs starting from 0, e.g. 0 - 1+2,
 							      //   2 - 3+4, 4 - 5+6, 6 - 7+8 etc.;
@@ -609,7 +610,6 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 							      //   field 2, float, Release time in the range of 0 - 1000 ms;
       DBLO -60			      		     	      //   float, 'Min volume' setting in the range of -60.00 - 11.9 dB (although readout shows 12.00);
       DBHI 12			      		     	      //   float, 'Max volume' setting in the range of -59.9 - 12.00 dB (although readout shows -60.00);
-							      //   field 2, float, Phase in the range of 0 - 1;
       PLINK 1 2:-1 6 0                                        //  Parameter modulation linkage data
 							      //   field 1, float, param modulation Scale value
 							      //   -1 - -100%, 0 - 0%, 1 - 100% and everything in between as decimals;
