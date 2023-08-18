@@ -100,6 +100,11 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  val & 1 = prevent media buffering
                                                               //  val & 2 = prevent anticipative fx
 
+    <EXT						     // Extension-specific persistent data which can be added with GetSetEnvelopeInfo_String() 
+							     // function using 'P_EXT' parameter
+    parmname string					     //  field 1, string - parmname, set with the function namesake argument
+    >							     //  field 2, string - string, set with the function stringNeedBig argument; to delete, pass this argument as an empty string
+
                                                               // --- Start of receive data ---
                                                               //     One for each receive or not present if no receives
     AUXRECV 2 1 1.000 0.000 0 0 0 2 0 1.000 80 1              // First receive
@@ -143,8 +148,19 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  channel = val & 0x1F
                                                               //    channel number or 0 for 'use original'
                                                               //    val = device * 32 + channel (device 2, ch 4 == 68)
-    MAINSEND 1                                                // Master/parent send, int (bool)
-	
+
+   CUSTOM_NOTE_ORDER 0 1 2 45 105 3                           // list of integers in the range of 0 - 127 representing note numbers
+                                                              // Custom note order in Piano roll on the track, which can be changed by Click+left drag
+                                                              // Only numbers of displayed notes are listed. The note display is governed by
+                                                              // options under View -> Show/hide note rows in the MIDI Editor
+   
+  <MIDINOTENAMES                                              // Custom MIDI note names applied to Piano roll in all MIDI items on the track
+   -1 36 "My note 1" 0 36                                     //  field 1 ??; field 2, int, 0-based note number; field 3, string, note name,              
+   -1 38 "My note 2" 0 38                                     //  if the name contains spaces it's enclosed within quotes; field 4 ??; field 5 ???
+   -1 40 "My note 3" 0 40
+   -1 41 "My note 4" 0 41
+   -1 43 "My note 5" 0 43
+   >
                                                               // --- Start of track envelopes ---
                                                               //     One definition block for each non-empty envelope.
                                                               //     See GetSetEnvelopeState() for full envelope definition.
@@ -153,6 +169,10 @@ The Track state chunk contains all the settings for a track and all of it's item
     >                                                         //   End of first track envelope
                                                               // --- End of track envelopes
 
+    MAINSEND 1 0                                              // Master/parent send
+                                                              // field 1, int (bool)
+                                                              // field 2, ????
+	
                                                               // --- Start of FX section ----
     <FXCHAIN                                                  //     Not present if track hasn't got/had FX ---
         (see chunk info below)
