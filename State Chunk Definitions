@@ -103,7 +103,8 @@ The Track state chunk contains all the settings for a track and all of it's item
     <EXT						     // Extension-specific persistent data which can be added with GetSetEnvelopeInfo_String() 
 							     // function using 'P_EXT' parameter
     parmname string					     //  field 1, string - parmname, set with the function namesake argument
-    >							     //  field 2, string - string, set with the function stringNeedBig argument; to delete, pass this argument as an empty string
+    >							     //  field 2, string - string, set with the function stringNeedBig argument; to delete, 
+							     //  pass this argument as an empty string
 
                                                               // --- Start of receive data ---
                                                               //     One for each receive or not present if no receives
