@@ -160,7 +160,7 @@ The Track state chunk contains all the settings for a track and all of it's item
    -1 38 "My note 2" 0 38                                     //  and the same named note can be assigned to more that one channel, in which case its listed
    -1 40 "My note 3" 0 40				      //  as many times as there're channels it's assigned to appearing under different channel numbers;
    -1 41 "My note 4" 0 41				      //  field 2, int, 0-based note number; field 3, string, note name,
-   -1 43 "My note 5" 0 43				      //  if the name contains spaces it's enclosed within quotes; field 4 ??; field 5, note number.
+   -1 43 "My note 5" 0 43				      //  if the name contains spaces it's enclosed within quotes; field 4 ??; field 5, int, note number.
    >
                                                               // --- Start of track envelopes ---
                                                               //     One definition block for each non-empty envelope.
