@@ -155,12 +155,15 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               // Only numbers of displayed notes are listed. The note display is governed by
                                                               // options under View -> Show/hide note rows in the MIDI Editor
    
-  <MIDINOTENAMES                                              // Custom MIDI note names applied to Piano roll in all MIDI items on the track
-   -1 36 "My note 1" 0 36                                     //  field 1, int, MIDI channel number, -1 = Omni, named notes can be assigned to different channels,
-   -1 38 "My note 2" 0 38                                     //  and the same named note can be assigned to more that one channel, in which case its listed
-   -1 40 "My note 3" 0 40				      //  as many times as there're channels it's assigned to appearing under different channel numbers;
-   -1 41 "My note 4" 0 41				      //  field 2, int, 0-based note number; field 3, string, note name,
-   -1 43 "My note 5" 0 43				      //  if the name contains spaces it's enclosed within quotes; field 4 ??; field 5, int, note number.
+  <MIDINOTENAMES                                              // Custom MIDI note names applied to Piano roll in all MIDI items 
+							      // on the track
+   -1 36 "My note 1" 0 36                                     //  field 1, int, MIDI channel number, -1 = Omni, named notes can be 
+   -1 38 "My note 2" 0 38                                     //  assigned to different channels, and the same named note can be assigned 
+   -1 40 "My note 3" 0 40				      //  to more that one channel, in which case its listed as many times as 
+   -1 41 "My note 4" 0 41				      //  there're channels it's assigned to appearing under different channel numbers;
+   -1 43 "My note 5" 0 43				      //  field 2, int, 0-based note number; field 3, string, note name,
+							      //  if the name contains spaces it's enclosed within quotes; 
+							      //  field 4 ??; field 5, int, note number.
    >
                                                               // --- Start of track envelopes ---
                                                               //     One definition block for each non-empty envelope.
@@ -228,10 +231,12 @@ Audio Item
     IID 424                               		// Deprecated since build 6.54
     							// Item ordinal number governing the order of overlapping items 
 							// displayed in lanes and especially those with identical start 
-    							// and end coordinates, when 'Show overlapping media items in lanes (when room)' 
-							// option is enabled. The greater the IID the lower the item's lane is.
-							// With the said option disabled or lanes fully collapsed the visible/outermost item
-							// is the latest one on the track out of all items it's overlapping, regardless of its IID							
+    							// and end coordinates, when  
+							// 'Show overlapping media items in lanes (when room)' option
+							// is enabled. The greater the IID the lower the item's lane is.
+							// With the said option disabled or lanes fully collapsed 
+							// the visible/outermost item is the latest one on the track 
+							// out of all items it's overlapping, regardless of its IID							
 
     <NOTES                               		// Notes block start
       |-1                                		// Notes content
@@ -282,7 +287,8 @@ Audio Item
     
     TKM 0.5 "TEST 123" 21036800				// Take marker data
     							// field 1 - float, position within take in sec
-							// field 2 - string, name	Without quotes if consists of only one character or word
+							// field 2 - string, name, without quotes if consists of only one 
+							// character or word
 							// field 3 - integer, OS native color code	
 							// can be converted to RGB with: r, g, b = reaper.ColorFromNative(code)
 							
@@ -291,8 +297,8 @@ Audio Item
 							
    							// Transient markers (guides) data
     TMINFO 44100					// field 2 - item source sample rate
-    TM 104 671 6270 13233 678 676 673 19218 6385 677    // field 2 - distance in samples, at the above sample rate, of the first transient guide 
-    680 6320						// from the item start 
+    TM 104 671 6270 13233 678 676 673 19218 6385 677    // field 2 - distance in samples, at the above sample rate,  
+    680 6320						// of the first transient guide from the item start
     							// returned by reaper.GetMediaItemInfo_Value(item, 'D_POSITION')
    							// fields 3 onwards - distance in samples at the above sample rate 
 							// from previous transient guide
@@ -306,7 +312,8 @@ Audio Item
       EGUID {5CB63539-0B47-4094-97FA-C62230F23208}	// Envelope ID
 	(see chunk info below under Envelope)
     >							// -- Take envelopes section end    
-    TAKE SEL                                            // Second take start. SEL only appears if this take is selected or was last selected
+    TAKE SEL                                            // Second take start. SEL only appears if this take is selected 
+							// or was last selected
     NAME "The second take"                              // Take name
     TAKEVOLPAN 0.0 1.0 -1.0                             // Take volume and pan settings
                                                         //  field 1, float, take pan
@@ -504,28 +511,30 @@ TEMPOENVEX - Master tempo
                                     			//   5 = Bezier
 							// field 2 - ??
 							// field 3 - ??
-    <EXT						// Extension-specific persistent data which can be added with GetSetEnvelopeInfo_String() 
-							// function using 'P_EXT' parameter
+    <EXT						// Extension-specific persistent data which can be added 
+							// with GetSetEnvelopeInfo_String() function
+							// using 'P_EXT' parameter
     parmname string					//  field 1, string - parmname, set with the function namesake argument
-    >							//  field 2, string - string, set with the function stringNeedBig argument; to delete, pass this argument as an empty string
-    							//
+    >							//  field 2, string - string, set with the function stringNeedBig argument; 
+    							//  to delete, pass this argument as an empty string
     
     POOLEDENVINST 6 1.375 0.39917615841563 0.114936 0.354826 1 0.5 1 1 0 0 1280 0 0 0.012 0 // Automation item (AI) properties
-    											    // field 1, int, index (greater by 1 than the one 
-											    // displayed by default											    
+    											    // field 1, int, index (greater by 1 than 
+											    // the one displayed by default											    
 											    // in the Name field of AI Properties window)
 											    // field 2, float, Position (sec)
 											    // field 3, float, Length (sec)
 											    // field 4, float, Start offset (sec)
 											    // field 5, float, Play rate
-											    // field 6, int (bool), Baseline/amplitude affects 
-											    // pooled copies, 
-											    // (couldn't figure out which value is what because 
-											    // it's not updated consistently 
+											    // field 6, int (bool), Baseline/amplitude 
+											    // affects pooled copies, 
+											    // (couldn't figure out which value is  
+											    // what because it's not updated consistently 
 											    // and seems to depend on the Loop (field 9) setting)
-											    // field 7, float, Baseline, 0 = -100, 0.5 = 0, 1 = 100
-											    // field 8, float, Amplitude, -2 = -200, 1 = 100, 
-											    // 2 = 200
+											    // field 7, float, Baseline, 0 = -100, 
+											    // 0.5 = 0, 1 = 100;
+											    // field 8, float, Amplitude, -2 = -200, 
+											    // 1 = 100, 2 = 200;
 											    // field 9, int (bool), Loop, 1 on, 0 off
 											    // field 10, ??
 											    // field 11, ??
@@ -573,7 +582,8 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                                               //  field 2, int, left
                                                               //  field 3, int, width
                                                               //  field 4, int, height
-    SHOW 0                                                    //  field 1, int, index of an FX currently open in the chain (NOT zero based)
+    SHOW 0                                                    //  field 1, int, index of an FX currently open in the chain 
+							      // (NOT zero based)
     LASTSEL 1                                                 // Index of selected plugin (zero based), int
     DOCKED 0                                                  // FX window is docked, int (bool)
 	
@@ -584,12 +594,13 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     <VST "VST: SomePlugin" "SomePlugin.dll" 0 "Sax offender"  //  Plugin data, see details below
         (see VST(i) plugin info below)                        //
     >                                                         //
-    WET 0.5                                                   //  Amount of plugin wet output set on the plugin UI wrapper, if not 100%
-    PRESETNAME "stock - Basic 11 band"			      //  Name of current plugin preset selected in the preset drop-down list
-    FLOATPOS 0 0 0 0                                          //  Plugin floating window pos, int
+    WET 0.5                                                   //  Amount of plugin wet output set on the plugin UI wrapper, 
+							      //  if not 100%;
+    PRESETNAME "stock - Basic 11 band"			      //  Name of current plugin preset selected in the preset drop-down list;
+    FLOATPOS 0 0 0 0                                          //  Plugin floating window pos, int;
     						              //  FLOAT - plugin UI is open in a floating window; FLOATPOS - plugin UI 
-							      //  is NOT open in a floating window
-    							      //  field 1 - top; field 2 - left; field 3 - width; field 4 - height
+							      //  is NOT open in a floating window;
+    							      //  field 1 - top; field 2 - left; field 3 - width; field 4 - height;
 							      //  If at least field 3 or 4 is 0, plugin window doesn't float							       
 
     PARMALIAS 3 "Compression"                                 //  Names and indices of renamed FX parameters
@@ -605,70 +616,90 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
       					     		      //   field 1, int, parameter index (zero based)
       				     		              //   Plugin wrapper parameters, such as Bypass here, are named, 
                            	                              //   plugin native parameters are only referenced by their indices
-                           	                              //   field 2, bool, 0 - enabled, 1 - bypassed (set by (un)ticking checkbox 
-                                      		              //   'Enable parameter modulation' in Parameter modulation dialogue)
+                           	                              //   field 2, bool, 0 - enabled, 1 - bypassed  
+                                      		              //   (set by (un)ticking checkbox 'Enable parameter modulation' 
+							      //   in Parameter modulation dialogue)
       PARAMBASE 0.5					      //   float, 'Baseline value (envelope overrides)' in the range of 0-1;
       LFO 1					 	      //   bool, 'LFO' checkbox, 0 - disabled, 1 - enabled,
-					      		      //   all LFO related parameters are only present in the block if this setting is 1;
+					      		      //   all LFO related parameters are only present in the block 
+							      //   if this setting is 1;
       LFOWT 1 0					     	      //   field 1, float, LFO Strength, 0 - 0.0%, 1 - 100.0%;
-					      		      //   field 2, int, LFO Direction, -1 - negative, 0 - center, 1 - positive;
-      AUDIOCTL 0					      //   bool, 'Audio control signal (sidechain)' checkbox, 0 - disabled, 1 - enabled;
-					      		      //   all audio control related parameters are only present in the block if this setting is 1;
+					      		      //   field 2, int, LFO Direction, -1 - negative, 0 - center, 
+							      //   1 - positive;
+      AUDIOCTL 0					      //   bool, 'Audio control signal (sidechain)' checkbox, 0 - disabled, 
+							      //   1 - enabled;
+					      		      //   all audio control related parameters are only present in the block 
+							      //   if this setting is 1;
       AUDIOCTLWT 1 1					      //   field 1, float, Strength, 0 - 0.0%, 1 - 100.0%;
 					      		      //   field 2, int, Direction, -1 - negative, 0 - center, 1 - positive;
-      LFOSHAPE 0                                              //   int, 0 - sine, 1 - square, 2 - saw L, 3 - saw R, 4 - triangle, 5 - random;
+      LFOSHAPE 0                                              //   int, 0 - sine, 1 - square, 2 - saw L, 3 - saw R, 4 - triangle, 
+							      //   5 - random;
       LFOSYNC 0 0 0                                           //   field 1, bool, Tempo sync, 0 - disabled, 1 - enabled;
 							      //   field 2 - ??
-							      //   field 3, bool, Phase reset, 0 - On seek/loop (deterministic output),
-							      //   1 - Free running (non-deterministic output);
-      LFOSPEED 0.124573 0                                     //   field 1, float, Speed in the range of 0 - 0 Hz, 0.124573 (center) - 1 Hz, 1 - 8.000 Hz;
-							      //   if Tempo sync is enabled: 0 - 8 QN, 0.9 (center) - 1 QN, 1 - 0.25 QN;
+							      //   field 3, bool, Phase reset, 0 - On seek/loop (deterministic 
+							      //   output), 1 - Free running (non-deterministic output);
+      LFOSPEED 0.124573 0                                     //   field 1, float, Speed in the range of 0 - 0 Hz, 
+							      //   0.124573 (center) - 1 Hz, 1 - 8.000 Hz;
+							      //   if Tempo sync is enabled: 0 - 8 QN, 0.9 (center) - 1 QN, 
+							      //   1 - 0.25 QN;
 							      //   field 2, float, Phase in the range of 0 - 1;
-      CHAN 0				      		      //   int, Track audio channel number, mono channels count is 0-based, stereo channel
-							      //   is incremented by 2 for each next stereo pairs starting from 0, e.g. 0 - 1+2,
-							      //   2 - 3+4, 4 - 5+6, 6 - 7+8 etc.;
+      CHAN 0				      		      //   int, Track audio channel number, mono channels count is 0-based, 
+							      //   stereo channel is incremented by 2 for each next stereo pairs 
+							      //   starting from 0, e.g. 0 - 1+2, 2 - 3+4, 4 - 5+6, 6 - 7+8 etc.;
       STEREO 0				      		      //   bool, 0 - mono channel is selected in 'Track audio channel' menu, 
 							      //   1 - stereo channel is selected;
       RMS 0 0				      		      //   field 1, float, Attack time in the range of 0 - 1000 ms;
 							      //   field 2, float, Release time in the range of 0 - 1000 ms;
-      DBLO -60			      		     	      //   float, 'Min volume' setting in the range of -60.00 - 11.9 dB (although readout shows 12.00);
-      DBHI 12			      		     	      //   float, 'Max volume' setting in the range of -59.9 - 12.00 dB (although readout shows -60.00);
-      X2 0.5			      		     	      //   float, 'Audio control signal shaping' node X coordinate in the range of 0 - 1;
-      Y2 0.5			      		     	      //   float, 'Audio control signal shaping' node Y coordinate in the range of 0 - 1;
+      DBLO -60			      		     	      //   float, 'Min volume' setting in the range of -60.00 - 11.9 dB 
+							      //   (although readout shows 12.00);
+      DBHI 12			      		     	      //   float, 'Max volume' setting in the range of -59.9 - 12.00 dB 
+							      //   (although readout shows -60.00);
+      X2 0.5			      		     	      //   float, 'Audio control signal shaping' node X coordinate 
+							      //   in the range of 0 - 1;
+      Y2 0.5			      		     	      //   float, 'Audio control signal shaping' node Y coordinate 
+							      //   in the range of 0 - 1;
       PLINK 1 2:-1 6 0                                        //  Parameter modulation linkage data
 							      //   field 1, float, param modulation Scale value
 							      //   -1 - -100%, 0 - 0%, 1 - 100% and everything in between as decimals;
-							      //   field 2, int, a colon delimited pair of the Master parameter 0-based index
-							      //   and a difference between the Master plugin and the current (Slave) plugin indices
-							      //   (also 0-based) in the FX chain, negative difference indicates that the Master plugin
-							      //   sits earlier in the chain, difference 0 means self-linking (within same plugin)
+							      //   field 2, int, a colon delimited pair of the Master parameter 
+							      //   0-based index and a difference between the Master plugin and 
+							      //   the current (Slave) plugin indices (also 0-based) in the FX chain, 
+							      //   negative difference indicates that the Master plugin sits earlier
+							      //   in the chain, difference 0 means self-linking (within same plugin)
 							      //   field 2 contains -100 when the parameter is linked to MIDI;
-							      //   field 3, int, Master parameter 0-based index, may or may not be formatted as
-							      //   as a colon delimited pair of the Master parameter index and either its name or
-							      //   its internal index inside the Master plugin, e.g. 6:5, where 5 is the index assigned
-							      //   to the parameter inside the plugin, or 6:_SafeBass, where SafeBass is the parameter name,
-							      //   VST3 plugins seem to tend to have indices rather than names, with 3d party plugins
-							      //   this piece of data if incorrect will render parameter modulation inoperable, BUT
-							      //   its complete absence won't affect the functionality, if second integer of the field 2
-							      //   is 0 field 3 integer refers to the index of the Master parameter within the same plugin
-							      //   Both fields 2 and 3 contain -1 when option 'Link from MIDI or FX parameter' is enabled
-							      //   but the parameter isn't linked and there's no linkage to MIDI;
+							      //   field 3, int, Master parameter 0-based index, may or may not be 
+							      //   formatted as as a colon delimited pair of the Master parameter 
+							      //   index and either its name or its internal index inside the Master plugin, 
+							      //   e.g. 6:5, where 5 is the index assigned to the parameter inside 
+							      //   the plugin, or 6:_SafeBass, where SafeBass is the parameter name,
+							      //   VST3 plugins seem to tend to have indices rather than names, 
+							      //   with 3d party plugins this piece of data if incorrect will render 
+							      //   parameter modulation inoperable, BUT its complete absence won't affect 
+							      //   the functionality, if second integer of the field 2 is 0
+							      //   field 3 integer refers to the index of the Master parameter within 
+							      //   the same plugin. Both fields 2 and 3 contain -1 when option 
+							      //   'Link from MIDI or FX parameter' is enabled but the parameter
+							      //   isn't linked and there's no linkage to MIDI;
 							      //   field 4, float, param modulation Offset value
 							      //   -1 - -100%, 0 - 0%, 1 - 100% and everything in between as decimals;
       MIDIPLINK 0 0 176 14				      //  Parameter modulation MIDI linkage data
 							      //   field 1, int, MIDI bus number (0-15);
 							      //   field 2, int, MIDI channel number (1-16);
-							      //   field 3, int, MIDI message type code: 176 - CC, 144 - Note, 160 - Aftertouch, 
-							      //   192 - Program Change, 208 - Channel Pressure, 224 - Pitch;
+							      //   field 3, int, MIDI message type code: 176 - CC, 144 - Note, 
+							      //   160 - Aftertouch, 192 - Program Change, 208 - Channel Pressure, 
+							      //   224 - Pitch;
 							      //   field 4, int, message number (0-127) if CC type message (176), 
-							      //   including numbers of 14 bit messages (128-159), note number (0-127) if Note type message (144) 
-							      //   or Aftertouch type message (160), and 0 if another message type;
-							      //   if MIDI linkage is enabled the modified PLINK data are kept in the chunk but not vice versa;
+							      //   including numbers of 14 bit messages (128-159), note number (0-127)
+							      //   if Note type message (144) or Aftertouch type message (160), 
+							      //   and 0 if another message type;
+							      //   if MIDI linkage is enabled the modified PLINK data are kept 
+							      //   in the chunk but not vice versa;
       MODWND 0 204 147 552 506				      //  Parameter modulaition dialogue data                       
 							      //   field 1, bool, parameter modulation dialogue state,
     >                                                         //   0 - closed, 1 - open, the element is added if parameter 
 							      //   modulation dialogue was opened at least once
-							      //   fields 2-5, pixel, parameter modulation dialogue coordinates: left, top, right, bottom 
+							      //   fields 2-5, pixel, parameter modulation dialogue coordinates: 
+							      //   left, top, right, bottom 
 							      //
                                                               //  --- Start of parameter envelopes for this plugin.
                                                               //      One block for each non-empty envelope.
@@ -684,30 +715,38 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 							      //  -- Start of MIDI/OSC controller assignments
     PARMLEARN 0 1968 2					      //  field 1, int, parameter idx
     PARMLEARN 1 2736 2					      //  field 2, int, a number assigned by REAPER to a MIDI controller e.g. 
-    PARMLEARN 2 944 2					      //  (CC0 = 176, CC1 = 432, 944 = CC3, 1968 = CC7, 2736 =  CC10), the step equals 256; 
-							      //  In CC Mode: Absolute - CC0 = 176, Relative 1 - CC0 = 65712, Relative 2 - CC0 = 131248, 
-							      //  Relative 3 - CC0 = 196784, Toggle - CC0 = 262320;
-   							      //  field 3, int, 2 - Soft takeover (absolute mode only) or 2+0, 1 - Enable only when track 
-					      		      //  or item is selected, 3 - 1+2, 4 - Enable only when effect configuration is focused, 
-					      	      	      //  20 - Enable only when effect configuration is visible, 0 - Arm envelope for selected parameter
+    PARMLEARN 2 944 2					      //  (CC0 = 176, CC1 = 432, 944 = CC3, 1968 = CC7, 2736 =  CC10), 
+							      //  the step equals 256;
+							      //  In CC Mode: Absolute - CC0 = 176, Relative 1 - CC0 = 65712,  
+							      //  Relative 2 - CC0 = 131248, Relative 3 - CC0 = 196784, 
+							      //  Toggle - CC0 = 262320;
+   							      //  field 3, int, 2 - Soft takeover (absolute mode only) or 2+0, 
+					      		      //  1 - Enable only when track or item is selected, 3 - 1+2, 
+							      //  4 - Enable only when effect configuration is focused, 
+					      	      	      //  20 - Enable only when effect configuration is visible, 
+							      //  0 - Arm envelope for selected parameter;
 	      						      //  -- End of MIDI/OSC controller assignments
 							      
-    PARM_TCP 12:bypass 13:wet 4 2 0                           //  Show in track controls (FX params visible in TCP/MCP), irrelevant for Input, 
-                                                	      //  Take and Monitor FX;
-							      //  Plugin wrapper parameters format is index:name, ReaPlug and VST2 plugin own 
-							      //  params are referenced by their indices only, the indices count is 0 based;
-							      //  Since build 6.48 (wasn't able to figure out which change in the changelog refers 
-							      //  to this) for ReaPlugs and some VST2 plugins the format includes FX parameter names, 
-							      //  e.g. PARM_TCP 4:_1__Length 7:_1__Hipass 10:_1__Volume
-							      //  Examples of VST3 plugins format: 1) 0:1652125811 1:1835232512 3:1835232514; 
+    PARM_TCP 12:bypass 13:wet 4 2 0                           //  Show in track controls (FX params visible in TCP/MCP), irrelevant  
+                                                	      //  for Input, Take and Monitor FX;
+							      //  Plugin wrapper parameters format is index:name, ReaPlug  
+							      //  and VST2 plugin own params are referenced by their indices only, 
+							      //  the indices count is 0 based;
+							      //  Since build 6.48 (wasn't able to figure out which change in the 
+							      //  changelog refers to this) for ReaPlugs and some VST2 plugins 
+							      //  the format includes FX parameter names, e.g. 
+							      //  PARM_TCP 4:_1__Length 7:_1__Hipass 10:_1__Volume
+							      //  Examples of VST3 plugins format: 
+							      //  1) 0:1652125811 1:1835232512 3:1835232514;
 							      //  2) 0:720135338 1:720135339 2:720135340;
-							      //  3) 0:65536 1:0 8:7, where the first number is the REAPER assigned 0-based index 
-							      //  and the second one is plugin's own internal index
+							      //  3) 0:65536 1:0 8:7, where the first number is the REAPER assigned 
+							      //  0-based index and the second one is plugin's own internal index.
 
 							      
-    WAK 0 0                                                   //  WAK = Want All Keys (https://forums.cockos.com/showthread.php?p=2420594)
-    							      //  field 1, bool, 1 - 'Send all keyboard input to plug-in' option is enabled 
-							      // in the FX instance RMB context menu or FX chain 'FX' menu
+    WAK 0 0                                                   //  WAK = Want All Keys 
+							      //  (https://forums.cockos.com/showthread.php?p=2420594)
+    							      //  field 1, bool, 1 - 'Send all keyboard input to plug-in' option 
+							      //  is enabled in the FX instance RMB context menu or FX chain 'FX' menu
 							      //  field 2, int, 1 - show embedded FX UI on TCP, 2 - show on MCP
     <COMMENT                                                  //  Plugin comment. Not present if no comment.
         Y29tbWVudA==                                          //   Binary data, probably best to leave it alone
@@ -737,9 +776,10 @@ VST/AU/DX(i) Plugins
                                                               //   field 1, str, default name
                                                               //   field 2, str, filename
                                                               //   field 3, int, ??
-                                                              //   field 4, str, display name (default used if empty), if no name is set by the user 
-							      //   then "" is displayed, custom names are only encolsed within quotes  
-							      //   if they have spaces, so one word names don't have quotes;
+                                                              //   field 4, str, display name (default used if empty), if no name 
+							      //   is set by the user then "" is displayed, custom names are only 
+							      //   encolsed within quotes if they have spaces, so one word names 
+							      //   don't have quotes;
     RmFkbe9e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAA==  //  Binary data, leave it alone (variable number of lines)
     AgAAAAAAAAAwAAAAAAAAAAAAEADvvq3eDfCt3sP1qD4zMzM/AAAAPw==  //
     mplZPwAAAAAAAAA/MzMzP83MzD4AAAAAAABAP1Jlc29uYW50IEZpbA==  //  
@@ -753,9 +793,10 @@ Jesusonic Plugin
 For the sake of formatting, the plugin data has been truncated.
     <JS "Guitar/tremolo" ""                                   //  Start of JS plugin data
                                                               //   field 1, str, the format is "folder name/file name"
-                                                              //   field 2, str, display name (if empty the name from reaper-jsfx.ini is used), 
-							      //  "" is displayed if no name is set by the user, custom names are only encolsed 
-							      //   within quotes if they have spaces, so one word names don't have quotes
+                                                              //   field 2, str, display name (if empty the name from 
+							      //  reaper-jsfx.ini is used), "" is displayed if no name is set by the user, 
+							      //  custom names are only enclosed within quotes if they have spaces, 
+							      //  so one word names don't have quotes;
         4.0 -6.0 0.0 - - - - - - - - - - - - - - - - - - - -  //  Data, 64 fields of float or '-' separated by spaces
     >                                                         //  End of JS plugin data
 
