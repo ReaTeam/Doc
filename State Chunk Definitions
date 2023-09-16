@@ -156,11 +156,11 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               // options under View -> Show/hide note rows in the MIDI Editor
    
   <MIDINOTENAMES                                              // Custom MIDI note names applied to Piano roll in all MIDI items on the track
-   -1 36 "My note 1" 0 36                                     //  field 1, int, MIDI channel number, -1 = Omni, seems the only one supported;
-   -1 38 "My note 2" 0 38                                     //  field 2, int, 0-based note number; field 3, string, note name,
-   -1 40 "My note 3" 0 40				      //  if the name contains spaces it's enclosed within quotes; field 4 ??; field 5 ??
-   -1 41 "My note 4" 0 41
-   -1 43 "My note 5" 0 43
+   -1 36 "My note 1" 0 36                                     //  field 1, int, MIDI channel number, -1 = Omni, named notes can be assigned to different channels,
+   -1 38 "My note 2" 0 38                                     //  and the same named note can be assigned to more that one channel, in which case its listed
+   -1 40 "My note 3" 0 40				      //  as many times as there're channels it's assigned to appearing under different channel numbers;
+   -1 41 "My note 4" 0 41				      //  field 2, int, 0-based note number; field 3, string, note name,
+   -1 43 "My note 5" 0 43				      //  if the name contains spaces it's enclosed within quotes; field 4 ??; field 5, note number.
    >
                                                               // --- Start of track envelopes ---
                                                               //     One definition block for each non-empty envelope.
