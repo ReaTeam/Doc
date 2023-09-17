@@ -156,15 +156,26 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               // options under View -> Show/hide note rows in the MIDI Editor
    
   <MIDINOTENAMES                                              // Custom MIDI note names applied to Piano roll in all MIDI items 
-							      // on the track
-   -1 36 "My note 1" 0 36                                     //  field 1, int, MIDI channel number, -1 = Omni, named notes can be 
-   -1 38 "My note 2" 0 38                                     //  assigned to different channels, and the same named note can be assigned 
-   -1 40 "My note 3" 0 40				      //  to more that one channel, in which case its listed as many times as 
-   -1 41 "My note 4" 0 41				      //  there're channels it's assigned to appearing under different channel numbers;
-   -1 43 "My note 5" 0 43				      //  field 2, int, 0-based note number; field 3, string, note name,
-							      //  if the name contains spaces it's enclosed within quotes; 
+   -1 36 "My note 1" 0 36				      //  on the track
+   -1 38 "My note 2" 0 38                                     //  field 1, int, MIDI channel number, -1 = Omni, named notes can be 
+   -1 40 "My note 3" 0 40				      //  assigned to different channels, and the same named note can be assigned 
+   -1 41 "My note 4" 0 41				      //  to more that one channel, in which case its listed as many times as 
+   -1 43 "My note 5" 0 43				      //  there're channels it's assigned to appearing under different channel numbers;
+   >				      			      //  field 2, int, 0-based note number; field 3, string, note name,
+  							      //  if the name contains spaces it's enclosed within quotes; 
 							      //  field 4 ??; field 5, int, note number.
-   >
+							      //  Named notes assigned to specific MIDI channels are only displayed 
+							      //  when such channels are selected in the MIDI Editor channel filter,
+							      //  unless they're also assigned to Omni in which case they will be displayed
+							      //  if any other channel is selected in the filter as well.
+							      //  Named notes assigned to Omni will be displayed alongside named notes 
+							      //  assigned to specific MIDI channels unless there're blank names
+							      //  assigned to such specific MIDI channel which match the note numbers
+							      //  assigned to Omni.
+							      //  Manual input of note names in the MIDI editor always results in Omni
+							      //  assignment. Linking note names to specific MIDI channel is only
+							      //  possible via API using Get/SetTrackMIDINoteName(Ex) functions.
+   
                                                               // --- Start of track envelopes ---
                                                               //     One definition block for each non-empty envelope.
                                                               //     See GetSetEnvelopeState() for full envelope definition.
