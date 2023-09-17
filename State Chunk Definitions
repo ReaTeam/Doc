@@ -871,8 +871,8 @@ Freeze data chunk, storing data for unfreezing
     LASTSEL 0										// track FXCHAIN chunk is not added.
     DOCKED 0										// Last line of FXCHAIN chunk before 
     											// closure if FX existed on the track at some 
-    											// point in the past but were absent at the moment 
-											// of last freezing.
+    											// point in the past but were absent at the 
+											// moment of last freezing.
     BYPASS 0 0 0									//
     <VST "VST: ReaDelay (Cockos)" readelay.dll 0 "" 1919247468<5653547265646C72656164656C617900> ""	//
       bGRlcu5e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAAIAAAAAAAAATAAAAAEAAAAAABAA			//
