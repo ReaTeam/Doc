@@ -46,10 +46,12 @@ The Track state chunk contains all the settings for a track and all of it's item
     ISBUS 0 0                                                 // ??, Unknown but related to folder tracks 
                                                               //   1 1 = is folder, 2 -1 = is folder end, 0 0 for others
     BUSCOMP 0 0 0 41 8                                        // Collapse folder (bus compact?)
-                                                              //  field 1, int, collapse state in Arrange 0=not collapsed, 1=collapsed medium, 
-							      //  2=collapsed small
-                                                              //  field 2, int, collapse state in the Mixer 0=not collapsed, 1=collapsed
-							      //  field 3, int, collapse state in track wiring, 0=not-collapse, 1=collapse
+                                                              //  field 1, int, collapse state in Arrange 0=not collapsed, 
+							      //  1=collapsed medium, 2=collapsed small
+                                                              //  field 2, int, collapse state in the Mixer 0=not collapsed, 
+                                                              //  1=collapsed;
+							      //  field 3, int, collapse state in track wiring, 0=not-collapse, 
+							      //  1=collapse;
 							      //  field 4, int, track wiring routing window x position
 							      //  field 5, int, track wiring routing window y position
     SHOWINMIX 1 0.6 0.5 1 0.5 -1 -1 -1                        // Show In Mixer
@@ -103,8 +105,8 @@ The Track state chunk contains all the settings for a track and all of it's item
     <EXT						     // Extension-specific persistent data which can be added with GetSetEnvelopeInfo_String() 
 							     // function using 'P_EXT' parameter
     parmname string					     //  field 1, string - parmname, set with the function namesake argument
-    >							     //  field 2, string - string, set with the function stringNeedBig argument; to delete, 
-							     //  pass this argument as an empty string
+    >							     //  field 2, string - string, set with the function stringNeedBig  
+							     //  argument; to delete pass this argument as an empty string
 
                                                               // --- Start of receive data ---
                                                               //     One for each receive or not present if no receives
@@ -151,23 +153,26 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //    val = device * 32 + channel (device 2, ch 4 == 68)
 
    CUSTOM_NOTE_ORDER 0 1 2 45 105 3                           // list of integers in the range of 0 - 127 representing note numbers
-                                                              // Custom note order in Piano roll on the track, which can be changed by Click+left drag
-                                                              // Only numbers of displayed notes are listed. The note display is governed by
-                                                              // options under View -> Show/hide note rows in the MIDI Editor
+                                                              // Custom note order in Piano roll on the track, which can be changed 
+                                                              // by Click+left drag.
+                                                              // Only numbers of displayed notes are listed. The note display 
+                                                              // is governed by options under 
+                                                              // View -> Show/hide note rows in the MIDI Editor
    
   <MIDINOTENAMES                                              // Custom MIDI note names applied to Piano roll in all MIDI items 
    -1 36 "My note 1" 0 36				      //  on the track
    -1 38 "My note 2" 0 38                                     //  field 1, int, MIDI channel number, -1 = Omni, named notes can be 
-   -1 40 "My note 3" 0 40				      //  assigned to different channels, and the same named note can be assigned 
-   -1 41 "My note 4" 0 41				      //  to more that one channel, in which case its listed as many times as 
-   -1 43 "My note 5" 0 43				      //  there're channels it's assigned to appearing under different channel numbers;
-   >				      			      //  field 2, int, 0-based note number; field 3, string, note name,
+   -1 40 "My note 3" 0 40				      //  assigned to different channels, and the same named note can be 
+   -1 41 "My note 4" 0 41				      //  assigned to more that one channel, in which case its listed as many 
+   -1 43 "My note 5" 0 43				      //  times as there're channels it's assigned to appearing under different 
+  >							      //  channel numbers;
+   				      			      //  field 2, int, 0-based note number; field 3, string, note name,
   							      //  if the name contains spaces it's enclosed within quotes; 
 							      //  field 4 ??; field 5, int, note number.
 							      //  Named notes assigned to specific MIDI channels are only displayed 
 							      //  when such channels are selected in the MIDI Editor channel filter,
-							      //  unless they're also assigned to Omni in which case they will be displayed
-							      //  if any other channel is selected in the filter as well.
+							      //  unless they're also assigned to Omni in which case they will be 
+							      //  displayed if any other channel is selected in the filter as well.
 							      //  Named notes assigned to Omni will be displayed alongside named notes 
 							      //  assigned to specific MIDI channels unless there're blank names
 							      //  assigned to such specific MIDI channel which match the note numbers
@@ -532,7 +537,8 @@ TEMPOENVEX - Master tempo
     POOLEDENVINST 6 1.375 0.39917615841563 0.114936 0.354826 1 0.5 1 1 0 0 1280 0 0 0.012 0 // Automation item (AI) properties
     											    // field 1, int, index (greater by 1 than 
 											    // the one displayed by default											    
-											    // in the Name field of AI Properties window)
+											    // in the Name field of AI Properties 
+											    // window)
 											    // field 2, float, Position (sec)
 											    // field 3, float, Length (sec)
 											    // field 4, float, Start offset (sec)
@@ -540,8 +546,9 @@ TEMPOENVEX - Master tempo
 											    // field 6, int (bool), Baseline/amplitude 
 											    // affects pooled copies, 
 											    // (couldn't figure out which value is  
-											    // what because it's not updated consistently 
-											    // and seems to depend on the Loop (field 9) setting)
+											    // what because it's not updated  
+											    // consistently and seems to depend on the Loop 
+											    // (field 9) setting)
 											    // field 7, float, Baseline, 0 = -100, 
 											    // 0.5 = 0, 1 = 100;
 											    // field 8, float, Amplitude, -2 = -200, 
@@ -680,13 +687,13 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 							      //   field 2 contains -100 when the parameter is linked to MIDI;
 							      //   field 3, int, Master parameter 0-based index, may or may not be 
 							      //   formatted as as a colon delimited pair of the Master parameter 
-							      //   index and either its name or its internal index inside the Master plugin, 
-							      //   e.g. 6:5, where 5 is the index assigned to the parameter inside 
-							      //   the plugin, or 6:_SafeBass, where SafeBass is the parameter name,
-							      //   VST3 plugins seem to tend to have indices rather than names, 
+							      //   index and either its name or its internal index inside the Master  
+							      //   plugin, e.g. 6:5, where 5 is the index assigned to the parameter 
+							      //   inside the plugin, or 6:_SafeBass, where SafeBass is the parameter 
+							      //   name, VST3 plugins seem to tend to have indices rather than names, 
 							      //   with 3d party plugins this piece of data if incorrect will render 
-							      //   parameter modulation inoperable, BUT its complete absence won't affect 
-							      //   the functionality, if second integer of the field 2 is 0
+							      //   parameter modulation inoperable, BUT its complete absence won't  
+							      //   affect the functionality, if second integer of the field 2 is 0
 							      //   field 3 integer refers to the index of the Master parameter within 
 							      //   the same plugin. Both fields 2 and 3 contain -1 when option 
 							      //   'Link from MIDI or FX parameter' is enabled but the parameter
@@ -719,9 +726,9 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     >                                                         //
                                                               //  --- End of parameter envelopes
 							      
-							      //  NOTE: If both envelope (PARMENV) and parameter modulation (PROGRAMENV) 
-							      //  are enabled for the same plugin parameter the PARMENV data are followed 
-							      //  by PROGRAMENV data.
+							      //  NOTE: If both envelope (PARMENV) and parameter modulation  
+							      //  (PROGRAMENV) are enabled for the same plugin parameter 
+							      //  the PARMENV data are followed by PROGRAMENV data.
 							      
 							      //  -- Start of MIDI/OSC controller assignments
     PARMLEARN 0 1968 2					      //  field 1, int, parameter idx
@@ -805,9 +812,9 @@ For the sake of formatting, the plugin data has been truncated.
     <JS "Guitar/tremolo" ""                                   //  Start of JS plugin data
                                                               //   field 1, str, the format is "folder name/file name"
                                                               //   field 2, str, display name (if empty the name from 
-							      //  reaper-jsfx.ini is used), "" is displayed if no name is set by the user, 
-							      //  custom names are only enclosed within quotes if they have spaces, 
-							      //  so one word names don't have quotes;
+							      //  reaper-jsfx.ini is used), "" is displayed if no name is set  
+							      //  by the user, custom names are only enclosed within quotes 
+							      //  if they have spaces, so one word names don't have quotes;
         4.0 -6.0 0.0 - - - - - - - - - - - - - - - - - - - -  //  Data, 64 fields of float or '-' separated by spaces
     >                                                         //  End of JS plugin data
 
@@ -850,87 +857,87 @@ Video Processor plugin
 
 Freeze data chunk, storing data for unfreezing
 
-<FXCHAIN												// Start of track regular FXCHAIN chunk
- WNDRECT 32 60 745 420											//
- SHOW 0													//
- LASTSEL 0												//
- DOCKED 0												//
->													//
-													// -------Start of FREEZE chunk 
- <FREEZE 0												// field 1, ?? 
-   <FXCHAIN												// A regular FXCHAIN chunk storing track FX, 
-    WNDRECT 32 60 745 420										// if any, which are removed on freezing.
-    SHOW 0												// If FX have never been inserted on the 
-    LASTSEL 0												// track FXCHAIN chunk is not added.
-    DOCKED 0												// Last line of FXCHAIN chunk before 
-    													// closure if FX existed on the track at some 
-    													// point in the past but were absent at the moment 
-													// of last freezing.
-    BYPASS 0 0 0											//
+<FXCHAIN											// Start of track regular FXCHAIN chunk
+ WNDRECT 32 60 745 420										//
+ SHOW 0												//
+ LASTSEL 0											//
+ DOCKED 0											//
+>												//
+												// -------Start of FREEZE chunk 
+ <FREEZE 0											// field 1, ?? 
+   <FXCHAIN											// A regular FXCHAIN chunk storing track FX, 
+    WNDRECT 32 60 745 420									// if any, which are removed on freezing.
+    SHOW 0											// If FX have never been inserted on the 
+    LASTSEL 0											// track FXCHAIN chunk is not added.
+    DOCKED 0											// Last line of FXCHAIN chunk before 
+    												// closure if FX existed on the track at some 
+    												// point in the past but were absent at the moment 
+												// of last freezing.
+    BYPASS 0 0 0										//
     <VST "VST: ReaDelay (Cockos)" readelay.dll 0 "" 1919247468<5653547265646C72656164656C617900> ""	//
       bGRlcu5e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAAIAAAAAAAAATAAAAAEAAAAAABAA			//
       AAAAAAAAAAABAAAALAAAAAIAAAAAAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAIA8nNEHMwAAgD8AAAAAAACAPwAAgD8AAIA/	//
      AAAAPw==AAAQAAAA											//
     >													//
-    FLOATPOS 0 0 0 0											//
-    FXID {FF92D48D-1B63-44E6-A44F-EF996F9E2228}								//
-    WAK 0 0												//
-  >													//
-  <ITEM {26E45913-BFEA-417E-8F96-1C61EE6E3FE4}								// Original ITEM chunk (before freezing), 
-     POSITION 0.5											// looks the same as any item chunk.
-     SNAPOFFS 0												//
-     LENGTH 1.27340136054422										//
-     LOOP 0												//
-     ALLTAKES 0												//
-     FADEIN 1 0 0 1 0 0 0										//
-     FADEOUT 1 0 0 1 0 0 0										//
-     MUTE 0 0												//
-     COLOR 31464893 R											//
-     SEL 1												//
-     IGUID {26E45913-BFEA-417E-8F96-1C61EE6E3FE4}							//
-     IID 1												//
-     NAME THREE												//
-     VOLPAN 1 0 1 -1											//		
-     SOFFS 0												//
-     PLAYRATE 1 0 0 -1 0 0.0025										//
-     CHANMODE 0												//
-     GUID {7A1C7B3D-7FB6-4FA1-9F0B-1FC41AAEA61D}							//
-     <SOURCE WAVE											//
-       FILE "C:\Users\Admin\Documents\REAPER Media\reaper.wav"						//
-     >													//
-     <TAKEFX												// A regular TAKEFX chunk if original item 
-       WNDRECT 32 60 745 420										// had FX before freezing.
-       SHOW 0												//
-       LASTSEL 0											//
-       DOCKED 0												//
-       BYPASS 0 0 0											//
+    FLOATPOS 0 0 0 0										//
+    FXID {FF92D48D-1B63-44E6-A44F-EF996F9E2228}							//
+    WAK 0 0											//
+  >												//
+  <ITEM {26E45913-BFEA-417E-8F96-1C61EE6E3FE4}							// Original ITEM chunk (before freezing), 
+     POSITION 0.5										// looks the same as any item chunk.
+     SNAPOFFS 0											//
+     LENGTH 1.27340136054422									//
+     LOOP 0											//
+     ALLTAKES 0											//
+     FADEIN 1 0 0 1 0 0 0									//
+     FADEOUT 1 0 0 1 0 0 0									//
+     MUTE 0 0											//
+     COLOR 31464893 R										//
+     SEL 1											//
+     IGUID {26E45913-BFEA-417E-8F96-1C61EE6E3FE4}						//
+     IID 1											//
+     NAME THREE											//
+     VOLPAN 1 0 1 -1										//		
+     SOFFS 0											//
+     PLAYRATE 1 0 0 -1 0 0.0025									//
+     CHANMODE 0											//
+     GUID {7A1C7B3D-7FB6-4FA1-9F0B-1FC41AAEA61D}						//
+     <SOURCE WAVE										//
+       FILE "C:\Users\Admin\Documents\REAPER Media\reaper.wav"					//
+     >												//
+     <TAKEFX											// A regular TAKEFX chunk if original item 
+       WNDRECT 32 60 745 420									// had FX before freezing.
+       SHOW 0											//
+       LASTSEL 0										//
+       DOCKED 0											//
+       BYPASS 0 0 0										//
        <VST "VST: ReaDelay (Cockos)" readelay.dll 0 "" 1919247468<5653547265646C72656164656C617900> ""	//
          bGRlcu5e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAAIAAAAAAAAATAAAAAEAAAAAABAA		//
          AAAAAAAAAAABAAAALAAAAAIAAAAAAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAIA8nNEHMwAAgD8AAAAAAACAPw		//
         AAgD8AAIA/AAAAPw==AAAQAAAA									//
         >												//
-       FLOATPOS 0 0 0 0											//
-       FXID {63C343BD-C1AF-4CB0-9668-EA07D62D32A0}							//
-       WAK 0 0												//
-     >    												//
-     <PITCHENV												// Envelope chunk data if before freezing 
-       EGUID {8955C719-553C-4494-879E-286ECE31C437}							// item had active take envelopes.
-       ACT 0 -1												//
-       VIS 0 1 1											//
-       LANEHEIGHT 0 0											//
-       ARM 0												//
-       DEFSHAPE 0 -1 -1											//
-       PT 2.58540135 9 0										//
-     >													//
-   >													//
->													// -------End of FREEZE chunk
-<ITEM													// Frozen item chunk, part 
-													// of the TRACK chunk 
-  POSITION 0.5												//
-  .........												//
-  <SOURCE WAVE												//
-    FILE "C:\Users\Admin\Documents\REAPER Media\reaper_freeze.wav"					//
-  >													//
->													//
+       FLOATPOS 0 0 0 0										//
+       FXID {63C343BD-C1AF-4CB0-9668-EA07D62D32A0}						//
+       WAK 0 0											//
+     >    											//
+     <PITCHENV											// Envelope chunk data if before freezing 
+       EGUID {8955C719-553C-4494-879E-286ECE31C437}						// item had active take envelopes.
+       ACT 0 -1											//
+       VIS 0 1 1										//
+       LANEHEIGHT 0 0										//
+       ARM 0											//
+       DEFSHAPE 0 -1 -1										//
+       PT 2.58540135 9 0									//
+     >												//
+   >												//
+>												// -------End of FREEZE chunk
+<ITEM												// Frozen item chunk, part 
+												// of the TRACK chunk 
+  POSITION 0.5											//
+  .........											//
+  <SOURCE WAVE											//
+    FILE "C:\Users\Admin\Documents\REAPER Media\reaper_freeze.wav"				//
+  >												//
+>												//
 
 
