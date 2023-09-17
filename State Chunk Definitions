@@ -179,7 +179,8 @@ The Track state chunk contains all the settings for a track and all of it's item
 							      //  the named note numbers assigned to Omni.
 							      //  Manual input of note names in the MIDI Editor always results in Omni
 							      //  assignment. Linking note names to specific MIDI channel is only
-							      //  possible via API using Get/SetTrackMIDINoteName(Ex) functions.
+							      //  possible via API using Get/SetTrackMIDINoteName(Ex) functions
+							      //  or by manual editing of the .rpp file.
    
                                                               // --- Start of track envelopes ---
                                                               //     One definition block for each non-empty envelope.
