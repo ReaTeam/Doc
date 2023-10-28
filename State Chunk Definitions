@@ -767,7 +767,9 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     							      //  field 1, bool, 1 - 'Send all keyboard input to plug-in' option 
 							      //  is enabled in the FX instance RMB context menu or FX chain 'FX' menu
 							      //  field 2, int, 1 - show embedded FX UI on TCP, 2 - show on MCP
-
+    PARALLEL 1					      	      //  Appears if option 'Run selected FX in parallel with previous FX'
+							      //  is enabled, the flag is 2 if the option 'Run selected FX in parallel
+							      //  with previous FX (merge MIDI)' is enabled (since REAPER 7)						
 							      
 	<CONTAINER Container ""				      // --- Start of FX container definition (since REAPER 7)
 							      // "" - container isn't named; as usual, names with spaces are enclosed
@@ -800,12 +802,12 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 							      //
 	-- Here regular FX chain chunk follows --	      // FX containers are nestable, so inside this FX chain chunk another 
 	  ........				   	      // container block may be found;
-							      //
-	  FLOATPOS 0 0 0 0				      // Each FX container ends with the following 3 lines
-          FXID {CA586787-591F-4157-B5B3-888AB9F19CE3}	      //
-          WAK 0 0					      //	
-	>						      // --- FX container definition end	
-
+	>						      //
+	  						      // Each FX container is followed by these 3 lines, same as in FX chunk
+	  FLOATPOS 0 0 0 0				      // 
+          FXID {CA586787-591F-4157-B5B3-888AB9F19CE3}	      // 
+          WAK 0 0					      //					      
+							      //  --- FX container definition end
 
     <COMMENT                                                  //  Plugin comment. Not present if no comment.
         Y29tbWVudA==                                          //   Binary data, probably best to leave it alone
