@@ -767,6 +767,29 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     							      //  field 1, bool, 1 - 'Send all keyboard input to plug-in' option 
 							      //  is enabled in the FX instance RMB context menu or FX chain 'FX' menu
 							      //  field 2, int, 1 - show embedded FX UI on TCP, 2 - show on MCP
+
+							      
+	<CONTAINER Container ""				      // --- Start of FX container definition (since REAPER 7)
+							      // "" - container isn't named; as usual, names with spaces are enclosed
+							      // within quotes, otherwise no quotes
+	  CONTAINER_CFG 4 4 2 0				      // field 1, int, number of container channels;
+							      // field 2, int, number of container inputs; 
+							      // field 3, int, number of container outputs; 
+							      // field 4, ;
+	  <IN_PINS
+	  >
+	  <OUT_PINS
+	  PIN 0 2
+	  PIN 1 3
+	  >
+	-- Here regular FX chain chunk follows --	      // FX containers are nestable
+							      //
+	  FLOATPOS 0 0 0 0				      // Each container ends with the following 3 lines
+          FXID {CA586787-591F-4157-B5B3-888AB9F19CE3}	      //
+          WAK 0 0					      //	
+	<						      // Container end	
+
+
     <COMMENT                                                  //  Plugin comment. Not present if no comment.
         Y29tbWVudA==                                          //   Binary data, probably best to leave it alone
     >                                                         //  
