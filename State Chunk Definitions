@@ -804,10 +804,11 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 	-- Here regular FX chain chunk follows --	      // FX containers are nestable, so inside this FX chain chunk another 
 	  ........				   	      // container block may be found;
 	>						      //
-	  						      // Each FX container is followed by these 3 lines, same as in FX chunk
-	  FLOATPOS 0 0 0 0				      // 
-          FXID {CA586787-591F-4157-B5B3-888AB9F19CE3}	      // 
-          WAK 0 0					      //					      
+	  						      // Each FX container is followed by these 3 or 4 lines,
+	  FLOATPOS 0 0 0 0				      // same as in FX chunk
+          FXID {CA586787-591F-4157-B5B3-888AB9F19CE3}	      //
+          WAK 0 0					      //
+	  PARALLEL 1					      // Optional, depending on whether the relevant option is enabled	  					      
 							      //  --- FX container definition end
 
     <COMMENT                                                  //  Plugin comment. Not present if no comment.
