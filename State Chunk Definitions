@@ -767,9 +767,10 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     							      //  field 1, bool, 1 - 'Send all keyboard input to plug-in' option 
 							      //  is enabled in the FX instance RMB context menu or FX chain 'FX' menu
 							      //  field 2, int, 1 - show embedded FX UI on TCP, 2 - show on MCP
-    PARALLEL 1					      	      //  Appears if option 'Run selected FX in parallel with previous FX'
-							      //  is enabled, the flag is 2 if the option 'Run selected FX in parallel
-							      //  with previous FX (merge MIDI)' is enabled (since REAPER 7)						
+    PARALLEL 1					      	      //  field 1, int, appears when either of the following options is enabled
+							      //  1 - option 'Run selected FX in parallel with previous FX' is enabled;
+							      //  2 - option 'Run selected FX in parallel with previous FX (merge MIDI)' 
+							      //  is enabled (since REAPER 7)
 							      
 	<CONTAINER Container ""				      // --- Start of FX container definition (since REAPER 7)
 							      // "" - container isn't named; as usual, names with spaces are enclosed
