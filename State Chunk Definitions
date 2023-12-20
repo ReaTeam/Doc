@@ -557,7 +557,9 @@ TEMPOENVEX - Master tempo
 											    // field 9, int (bool), Loop, 1 on, 0 off
 											    // field 10, ??
 											    // field 11, ??
-											    // field 12, ??
+											    // field 12, int, 1 based index of AI since
+											    // starting the project, incremented even if
+											    // older AIs were deleted;
 											    // field 13, ??
 											    // field 14, ??
 											    // field 15, float, Transition time (sec)
