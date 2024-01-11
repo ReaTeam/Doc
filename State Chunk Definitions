@@ -340,9 +340,16 @@ Audio Item
     PLAYRATE 1.000 1 0.000 -1                           // see PLAYRATE above
     CHANMODE 1                                          // see CHANMODE above
     GUID {4EB7779B-D570-4CCF-8739-161D2D32C154}         // Take id. Leave it alone
-    <SOURCE WAVE                                        // Take source details
-    FILE "C:\Full\Path\To\AudioFile reversed.wav"       // Source filename
-    >                                                   // Source section end
+    <SOURCE SECTION					// If Section checkbox is enabled in the Media Item properties
+     LENGTH 0.77340136054422				// float, 'Length:' field value
+     STARTPOS 0.5					// float, 'Section:' field value
+     OVERLAP 0						// float,  'Fade:' field value
+      <SOURCE WAVE                                      // Take source details
+      FILE "C:\Full\Path\To\AudioFile reversed.wav"     // Source filename
+      >                                                 // Source section end
+    >							// End of the Take Section definition
+							// If Section checkbox isn't enabled in the Media Item properties
+							// only SOURCE WAVE definition is listed in the chunk
 >                                                       // Item section end
 
 --------------------------------------------------------------------------------------------------------------------
