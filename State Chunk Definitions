@@ -26,7 +26,10 @@ Contents:
 The Track state chunk contains all the settings for a track and all of it's items, envelopes, receives, plugins etc.
 <TRACK                                                        // Start of Track definition
     NAME "Track Name"                                         // Track name
-    PEAKCOL 16576                                             // Peak colour (items and takes override?)
+    PEAKCOL 16576                                             // Peak colour (items and takes override)
+							      // this is the default value to be returned by 
+							      // GetMediaTrackInfo_Value() function with 'I_CUSTOMCOLOR' 
+							      // attribute when no custom color has been applied
     BEAT -1                                                   // Track timebase (-1 = project default)
     AUTOMODE 0                                                // Automation mode
                                                               //   0 = Trim/Read
