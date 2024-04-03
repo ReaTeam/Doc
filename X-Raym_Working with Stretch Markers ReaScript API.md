@@ -106,7 +106,7 @@ for i, sm in ipairs( SMs) do
   local pos_b = SMs[i+1].pos + cumulated_offset -- next SM pos with cumulated offset
   --[[ 
      You new_pos_b calculation here and then, based on what you want to achieve
-  --]]
+  ]]
   local offset = new_pos_b - pos_b
   cumulated_offset = cumulated_offset + offset
   -- Setting new value
