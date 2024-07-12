@@ -4,7 +4,7 @@ Video Processor Structure
 
 Video processors are written in the EEL2 language, and are primarily code. If the first line is a comment beginning with //, it will be used as the name of the processor.
 
-The processor can define up to 24 parameters using special comment lines:
+The processor can define up to 40 parameters using special comment lines:
     //@param [<idx>[:varname]|varname] 'name' [defval minval maxval centval step] 
 For more information on the code language, please see the appendix near the bottom of this text.
 
@@ -24,7 +24,7 @@ project_h: project preferred video height (code can override this before drawing
 project_wh_valid: set nonzero if project_w/project_h reflect actual project setting (otherwise could be media-defined)
 colorspace: current rendering colorspace, e.g. 'RGBA', 'YV12', or 'YUY2'. You can override this before drawing (or between drawing). This may be set to 0 initially if the user has the Auto project colorspace set. It will be automatically changed if 0 and a drawing operation occurs or an input is successfully queried via input_info().
 param_wet: if in FX form, wet/dry mix of effect. 
-param1..param24: parameters
+param1..param40: parameters
 gfx_r: current drawing color (red 0..1)
 gfx_g: current drawing color (green 0..1)
 gfx_b: current drawing color (blue 0..1)
@@ -125,7 +125,7 @@ Additional options:
     If init_code_string specified, it will be executed in each thread context before processing
     If src specified (and >= -1), sr/sg/sb/sa, sy1/su/sv etc will be available to read. In this case only the intersection of valid rectangles between src and the destination buffer will be processed. 
     If src and src2 specified (and >= -1), s2r/s2g/s2b/s2a, s2y1/s2u/s2v etc will also be available to read. 
-    Note: variables _1-_99 are thread-local variables which will always be initialized to 0, and _0 will be initialized to the thread index (usually 0 or 1). 6.70+: _slice is an alias of _0. _slices is a count of the multiprocessing slices, _span is the number of calls per line, and _slice_size is the size of each slice in lines (the last slice may vary in size).
+    Note: variables _1-_99 are thread-local variables which will always be initialized to 0, and _0 will be initialized to the thread index (usually 0 or 1). 6.70+: _slice is the position of the slice (which may differ from _0 in 6.71+). _slices is a count of the multiprocessing slices, _span is the number of calls per line, and _slice_size is the size of each slice in lines (the last slice may vary in size).
 
 gfx_gradrect(x,y,w,h, r,g,b,a [,drdx,dgdx,dbdx,dadx, drdy,dgdy,dbdy,dady])
 Fills rectangle. r/g/b/a supply color at top left corner, drdx (if specified) is amount red changes per X-pixel, etc.
@@ -184,6 +184,18 @@ Converts YUV to r,g,b, not clamping [0..1]
 Advanced Functions
 ===============================================
 
+ui_get_state(ctx[,mouse_x, mouse_y,force_frame_in,mouse_wheel_state,mouse_hwheel_state])
+Gets UI state and context, only usable from Monitoring FX (returns 0 if used from track). Returns state (1/2/4 are l/r/m mouse buttons, 8/16/32 are ctrl/shift/alt, 1024 is whether configuration for this processor is visible). If 'ctx' set to -1, context is video window and any returned mouse coordinates are [0..1] (where 0,0 is upper left corner, 1,1 is lower right corner of the video area). If 'ctx' is set to [1..40], it means the user is editing that knob. If force_frame_in is specified and is positive, then the processor will be re-executed in this amount of time (even if no new video source is available)
+
+time_precise([val])
+Sets the parameter (or a temporary buffer if omitted) to a system-local timestamp in seconds, and returns a reference to that value. The granularity of the value returned is system defined (but generally significantly smaller than one second).
+
+on_parameter_change(pvar[, isdone])
+Notifies that the parameter pointed to by pvar (must be param1..param40 or a user-defined parameter) has changed. Specify isdone=1 when done modifying parameter (e.g. releasing touch)
+
+get_host_placement([chain_pos,flags])
+Returns track index, or -1 for master track, or -2 for hardware output FX. chain_pos will be position in chain. flags will have 1 set if takeFX.
+
 fft(buffer,size)
 Performs a FFT on the data in the local memory buffer at the offset specified by the first parameter. The size of the FFT is specified by the second parameter, which must be a power of two 16-32768. The outputs are permuted, so if you plan to use them in-order, call fft_permute(buffer, size) before and fft_ipermute(buffer,size) after in-order use. Inputs or outputs will need to be scaled down by 1/size. Notes:
     fft()/ifft() require real / imaginary input pairs, so a 256 point FFT actually works with 512 items.
@@ -214,15 +226,6 @@ Global Shared Memory
 gmem[] can be used for a shared memory buffer (similar to JSFX) -- you can specify a named buffer which can be shared with ReaScripts and JSFX, by using:
     //@gmem=sharedBufferName
 on a line by itself. Note that when synchronizing with ReaScripts or JSFX, all processing is asynchronous, so your code will have to deal with synchronization issues (including vast differences between project_time and playback_position, and including race conditions). For Lua ReaScripts, see the function gmem_attach().
-
-ui_get_state(ctx[,mouse_x, mouse_y,force_frame_in,mouse_wheel_state,mouse_hwheel_state])
-Gets UI state and context, only usable from Monitoring FX (returns 0 if used from track). Returns state (1/2/4 are l/r/m mouse buttons, 8/16/32 are ctrl/shift/alt, 1024 is whether configuration for this processor is visible). If 'ctx' set to -1, context is video window and any returned mouse coordinates are [0..1] (where 0,0 is upper left corner, 1,1 is lower right corner of the video area). If 'ctx' is set to [1..24], it means the user is editing that knob. If force_frame_in is specified and is positive, then the processor will be re-executed in this amount of time (even if no new video source is available)
-
-time_precise([val])
-Sets the parameter (or a temporary buffer if omitted) to a system-local timestamp in seconds, and returns a reference to that value. The granularity of the value returned is system defined (but generally significantly smaller than one second).
-
-on_parameter_change(pvar[, isdone])
-Notifies that the parameter pointed to by pvar (must be param1..param24 or a user-defined parameter) has changed. Specify isdone=1 when done modifying parameter (e.g. releasing touch)
 
 ===============================================
 String Functions
