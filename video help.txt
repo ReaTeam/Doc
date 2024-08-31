@@ -1,3 +1,6 @@
+To access this doc within REAPER click F1 while Video processor IDE is focused
+https://mespotin.uber.space/Ultraschall/Reaper_API_Video_Documentation.html
+
 ===============================================
 Video Processor Structure
 ===============================================
