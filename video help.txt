@@ -1,4 +1,4 @@
-To access this doc within REAPER click F1 while Video processor IDE is focused
+To access this doc inside REAPER click F1 while Video processor IDE is focused
 https://mespotin.uber.space/Ultraschall/Reaper_API_Video_Documentation.html
 
 ===============================================
