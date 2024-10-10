@@ -305,12 +305,14 @@ Audio Item
         >                                               // Source details end
     >                                                   // Source section end
     
-    TKM 0.5 "TEST 123" 21036800				// Take marker data
+    TKM 0.5 "TEST 123" 21036800	0.5			// Take marker data
     							// field 1 - float, position within take in sec
 							// field 2 - string, name, without quotes if consists of only one 
 							// character or word
 							// field 3 - integer, OS native color code	
 							// can be converted to RGB with: r, g, b = reaper.ColorFromNative(code)
+							// field 4 - marker length (protruding horizontal bar)
+							// supported since build 7.17
 							
     SM 0 0 -0.149425287 + 0.574712644 0.5 + 1.348114004 // Stretch marker data
     1.273401361
