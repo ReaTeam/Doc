@@ -265,6 +265,9 @@ Audio Item
     RESOURCEFN "filename.ext"                           // Name of the image file loaded in the notes, full path if located outside 
 							// of the resource directory
     IMGRESOURCEFLAGS 0                                  // ??
+    NOTESWND 38 176 529 558				// Item Notes window last coordinates							
+    COMP 1 1 0						// Take comps data: field 1 - comp index (1 based), 
+    COMP 2 0 0						// field 2 - active take index (0 based), field 3 - ???
     NAME "The first take"                               // First take name
     VOLPAN 1.0 0.0 1.0 -1.0                             // Volume and pan settings
                                                         // field 1, float, item trim
