@@ -268,8 +268,8 @@ Audio Item
 							// 0 - Do not display image and no Word wrap; &1 - Center/tile image; 
 							// &3 - Stretch image/text; &5 - Full height image; &8 - Word wrap.
     NOTESWND 38 176 529 558				// Item Notes window last coordinates
-    COMP 1 1 0						// Take comps data: field 1 - comp index (1 based), 
-    COMP 2 0 0						// field 2 - active take index (0 based), field 3 - ???
+    COMP 1 1 0						// Take comps data: field 1 - integer, comp index (1 based), 
+    COMP 2 0 0						// field 2 - integer, active take index (0 based), field 3 - ???
 							// Custom comp names are stored in RAM and in the project .RPP file once saved
     NAME "The first take"                               // First take name
     VOLPAN 1.0 0.0 1.0 -1.0                             // Volume and pan settings
@@ -317,7 +317,7 @@ Audio Item
 							// character or word
 							// field 3 - integer, OS native color code	
 							// can be converted to RGB with: r, g, b = reaper.ColorFromNative(code)
-							// field 4 - marker length in sec (protruding horizontal bar)
+							// field 4 - integer, marker length in sec (protruding horizontal bar)
 							// supported since build 7.17
 							
     SM 0 0 -0.149425287 + 0.574712644 0.5 + 1.348114004 // Stretch marker data
