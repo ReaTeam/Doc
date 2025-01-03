@@ -2,7 +2,7 @@ _If REAPER is run from the command line with an unrecognized parameter (like 're
 
 ## Usage:
 
-```reaper [options] [projectfile.rpp | fxchainpreset.RfxChain | vstbank.fxb | vstpatch.fxp | vstpatch.vstpreset | mediafile.wav | scriptfile.lua [...]]```
+```reaper [options] [projectfile.rpp | mediafile.wav | scriptfile.lua [...]] | fxchainpreset.RfxChain | vstbank.fxb | vstpatch.fxp | vstpatch.vstpreset```
 
 FX chain, VST plugin bank and preset will be applied to a new automatically added track. The bank/preset will trigger instantiation of the compatible plugin on the newly added track. The feature is supported since build 6.43.
 
