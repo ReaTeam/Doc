@@ -15,7 +15,7 @@ Since build 6.80 passing either project/template or a media file AND a script fi
 
 ## Options:
 
-- **-noactivate** : launch but do not activate (until build 7.29 only supported on Windows, since then on MacOS/Linux as well)
+- **-noactivate** : launch but do not activate (until build 7.29 was only supported on Windows, since then on MacOS/Linux as well)
 - **-audiocfg** : show audio configuration at startup
 - **-cfgfile file.ini** : use full path for alternate resource directory, otherwise uses default path
 - **-new** : start with new project
