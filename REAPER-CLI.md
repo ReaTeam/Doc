@@ -46,7 +46,7 @@ Since build 6.80 passing either project/template or a media file AND a script fi
     - NORMALIZE 1 -6.0 0 (1=peak, 2=true peak, 3=lufs-i, 4=lufs-s, 5=lufs-m,  
                          2nd parameter is dB,  
                          3rd parameter: 1=normalize only if too loud)
-    - BRICKWALL 1 -1.0 (1=peak, 2=true peak, 2nd parameter is dB)
+    - BRICKWALL 1 -1.0 (1=peak, 2=true peak, 2nd parameter is dB) _(since build 6.43)_
     - FADE 0.0 0.0 1 1 (fade-in length, fade-out length, fade-in shape, fade-out shape; length 0.001 = 1 ms)
     - OUTPATH 'path'
     - OUTPATTERN 'wildcardpattern'
