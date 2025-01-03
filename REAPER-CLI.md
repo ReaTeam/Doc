@@ -25,7 +25,7 @@ Since build 6.80 passing either project/template or a media file AND a script fi
 - **-nosplash** : do not show slpash screen window
 - **-splashlog /path/to/filename.log** : write splash screen message log to file; the first line of logfile.txt will include the version number, [source](https://forum.cockos.com/showthread.php?t=258280#4)
 - **-newinst | -nonewinst** : override preference for new instance checking
-- **-close[all][:save|:nosave][:exit]** : close project(s), optionally not prompting for save (**:exit** command since 7.29)
+- **-close[all][:save|:nosave][:exit]** : close project(s), optionally not prompting for save (**:exit** argument since 7.29)
 - **-batchconvert filelist.txt** : batch converter mode, filelist.txt includes:
   - list of files to convert:
     `filename.wav`
