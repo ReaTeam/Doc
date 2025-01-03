@@ -60,7 +60,7 @@ Since build 6.80 passing either project/template or a media file AND a script fi
           (contents of RENDER_METADATA block from project file)  
       \>
 
-## Windows-only options:
+## Windows-only options (until build 7.28, supported on MacOS as well since 7.29)
 
 - **-noactivate** : launch but do not activate
 
