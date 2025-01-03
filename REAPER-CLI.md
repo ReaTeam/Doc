@@ -26,7 +26,7 @@ Since build 6.80 passing either project/template or a media file AND a script fi
 - **-renderproject filename.rpp** : render project and exit
 - **-ignoreerrors** : do not show errors on load
 - **-nosplash** : do not show slpash screen window
-- **-splashlog /path/to/filename.log** : write splash screen message log to file; the first line of logfile.txt will include the version number, _[source](https://forum.cockos.com/showthread.php?t=258280#4)_
+- **-splashlog /path/to/filename.log** : write splash screen message log to file; the first line of logfile.txt will include the version number, _([source](https://forum.cockos.com/showthread.php?t=258280#4))_
 - **-newinst | -nonewinst** : override preference for new instance checking
 - **-close[all][:save|:nosave][:exit]** : close project(s), optionally not prompting for save _(**:exit** argument since 7.29)_
 - **-batchconvert filelist.txt** : batch converter mode, filelist.txt includes:
@@ -52,7 +52,7 @@ Since build 6.80 passing either project/template or a media file AND a script fi
     - OUTPATTERN 'wildcardpattern'
     - FXCHAIN 'fxchainfilename' (use full path if specified, otherwise FxChains directory)
     - FX_NCH 4 (if not specified, FX will be configured to 4 channels)
-    - CPULIMIT 0 (0 or omit=use all available CPU cores, 1=limit to 1 core, etc) -- _[since 6.81](https://forum.cockos.com/showthread.php?p=2690395)_
+    - CPULIMIT 0 (0 or omit=use all available CPU cores, 1=limit to 1 core, etc) -- _([since 6.81](https://forum.cockos.com/showthread.php?p=2690395))_
     - \<FXCHAIN  
           (contents of .RfxChain file)  
       \>
