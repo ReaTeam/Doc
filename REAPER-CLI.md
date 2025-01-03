@@ -17,7 +17,7 @@ Since build 6.80 passing either project/template or a media file AND a script fi
 
 ## Options:
 
-- **-noactivate** : launch but do not activate (until build 7.29 was only supported on Windows, since then on MacOS/Linux as well)
+- **-noactivate** : launch but do not activate _(until build 7.29 was only supported on Windows, since then on MacOS/Linux as well)_
 - **-audiocfg** : show audio configuration at startup
 - **-cfgfile file.ini** : use full path for alternate resource directory, otherwise uses default path
 - **-new** : start with new project
@@ -26,9 +26,9 @@ Since build 6.80 passing either project/template or a media file AND a script fi
 - **-renderproject filename.rpp** : render project and exit
 - **-ignoreerrors** : do not show errors on load
 - **-nosplash** : do not show slpash screen window
-- **-splashlog /path/to/filename.log** : write splash screen message log to file; the first line of logfile.txt will include the version number, [source](https://forum.cockos.com/showthread.php?t=258280#4)
+- **-splashlog /path/to/filename.log** : write splash screen message log to file; the first line of logfile.txt will include the version number, _[source](https://forum.cockos.com/showthread.php?t=258280#4)_
 - **-newinst | -nonewinst** : override preference for new instance checking
-- **-close[all][:save|:nosave][:exit]** : close project(s), optionally not prompting for save (**:exit** argument since 7.29)
+- **-close[all][:save|:nosave][:exit]** : close project(s), optionally not prompting for save _(**:exit** argument since 7.29)_
 - **-batchconvert filelist.txt** : batch converter mode, filelist.txt includes:
   - list of files to convert:
     `filename.wav`
@@ -46,13 +46,13 @@ Since build 6.80 passing either project/template or a media file AND a script fi
     - NORMALIZE 1 -6.0 0 (1=peak, 2=true peak, 3=lufs-i, 4=lufs-s, 5=lufs-m,  
                          2nd parameter is dB,  
                          3rd parameter: 1=normalize only if too loud)
-    - BRICKWALL 1 -1.0 (1=peak, 2=true peak, 2nd parameter is dB) _(since build 6.43)_
+    - BRICKWALL 1 -1.0 (1=peak, 2=true peak, 2nd parameter is dB) -- _(since build 6.43)_
     - FADE 0.0 0.0 1 1 (fade-in length, fade-out length, fade-in shape, fade-out shape; length 0.001 = 1 ms)
     - OUTPATH 'path'
     - OUTPATTERN 'wildcardpattern'
     - FXCHAIN 'fxchainfilename' (use full path if specified, otherwise FxChains directory)
     - FX_NCH 4 (if not specified, FX will be configured to 4 channels)
-    - CPULIMIT 0 (0 or omit=use all available CPU cores, 1=limit to 1 core, etc) -- [since 6.81](https://forum.cockos.com/showthread.php?p=2690395)
+    - CPULIMIT 0 (0 or omit=use all available CPU cores, 1=limit to 1 core, etc) -- _[since 6.81](https://forum.cockos.com/showthread.php?p=2690395)_
     - \<FXCHAIN  
           (contents of .RfxChain file)  
       \>
