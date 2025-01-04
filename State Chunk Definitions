@@ -155,10 +155,6 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //    channel number or 0 for 'use original'
                                                               //    val = device * 32 + channel (device 2, ch 4 == 68)
 
-    MAINSEND 1 0                                              // Master/parent send
-                                                              // field 1, int (bool)
-                                                              // field 2, ????
-
    CUSTOM_NOTE_ORDER 0 1 2 45 105 3                           // list of integers in the range of 0 - 127 representing note numbers
                                                               // Custom note order in Piano roll on the track, which can be changed 
                                                               // by Click+left drag.
@@ -188,7 +184,11 @@ The Track state chunk contains all the settings for a track and all of it's item
 							      //  assignment. Linking note names to specific MIDI channel is only
 							      //  possible via API using Get/SetTrackMIDINoteName(Ex) functions
 							      //  or by manual editing of the .rpp file.
-   
+
+    MAINSEND 1 0                                              // Master/parent send
+                                                              // field 1, int (bool)
+                                                              // field 2, ????
+
                                                               // --- Start of track envelopes ---
                                                               //     One definition block for each non-empty envelope.
                                                               //     See GetSetEnvelopeState() for full envelope definition.
