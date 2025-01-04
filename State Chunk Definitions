@@ -105,8 +105,8 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  val & 1 = prevent media buffering
                                                               //  val & 2 = prevent anticipative fx
 
-    <EXT						     // Extension-specific persistent data which can be added with GetSetEnvelopeInfo_String() 
-							     // function using 'P_EXT' parameter
+    <EXT						     // Extension-specific persistent data which can be added with 
+							     // GetSetEnvelopeInfo_String() function using 'P_EXT' parameter
     parmname string					     //  field 1, string - parmname, set with the function namesake argument
     >							     //  field 2, string - string, set with the function stringNeedBig  
 							     //  argument; to delete pass this argument as an empty string
@@ -193,26 +193,28 @@ The Track state chunk contains all the settings for a track and all of it's item
     HWOUT 512 0 1 0 0 0 0 -1:U -1			      //  field 1, int, output index: 0 - 511 - stereo output, 
 							      //  512 - 1023 - aux (rearoute) loopback stereo output which existed before v7.0, 
 							      //  or officially supported looback output available since v7.0 
-							      //  (before v7.0 could be enabled manually with 'rearoute_loopback=' key in reaper.ini 
-							      //  and had been supporting up to 512 channels since build 6.69, 
+							      //  (before v7.0 could be enabled manually with 'rearoute_loopback=' key 
+							      //  in reaper.ini and had been supporting up to 512 channels since build 6.69, 
 							      //  ref: https://forum.cockos.com/showthread.php?p=1796913#post1796913;
-							      //  since v7.0 can be enabled at Preferences -> Audio -> Virtual loopback audio hardware),
-							      //  1024 - 1535 - mono output, 1534 - 2047 - aux (rearoute) loopback mono output (of both types,
-							      //  see explanation above; if both types are enabled the number of channels allocated to each
-							      //  is 256 rather than 512)
+							      //  since v7.0 can be enabled at Preferences -> Audio -> Virtual loopback audio 
+							      //  hardware), 
+							      //  1024 - 1535 - mono output, 1534 - 2047 - aux (rearoute) loopback mono output 
+							      //  (of both types, see explanation above; if both types are enabled the number 
+							      //  of channels allocated to each is 256 rather than 512)
 							      //  (with mono channel count even integer corresponds to the odd channel number, 
 							      //  i.e. 1024 is mono 1, 1025 is mono 2 etc.);	
-							      //  field 2, int, send mode: 0 - Post-Fader (Post-Pan), 1 - Pref-Fader (Pre-FX), 3 - Pref-Fader (Post-FX);
+							      //  field 2, int, send mode: 0 - Post-Fader (Post-Pan), 1 - Pref-Fader (Pre-FX), 
+							      //  3 - Pref-Fader (Post-FX);
 							      //  field 3, float, volume: 1 is 0 dB;
 							      //  field 4, float, pan: the range is -1 - +1;
 							      //  field 5, int (bool), mute: 1 - On, 0 - Off;
 							      //  field 6, int (bool), invert polarity: 1 - On, 0 - Off;
 							      //  field 7, int, send source channel: -1 - None, 0 - 1023 stereo output, 
-							      //  1024 - 1535 - mono (even integer corresponds to the odd channel number, i.e. 1024 is mono 1, 
-							      //  1025 is mono 2 etc.);
+							      //  1024 - 1535 - mono (even integer corresponds to the odd channel number, 
+							      //  i.e. 1024 is mono 1, 1025 is mono 2 etc.);
 							      //  field 8, ????
-							      //  field 9, integer, automation mode: -1 - Track automation mode, 0 - Trim/read, 1 - Read,
-							      //  2 - Touch, 3 - Write, 4 - Latch, 5 - Latch Preview;
+							      //  field 9, integer, automation mode: -1 - Track automation mode, 0 - Trim/read, 
+							      //  1 - Read, 2 - Touch, 3 - Write, 4 - Latch, 5 - Latch Preview;
 
                                                               // --- Start of track envelopes ---
                                                               //     One definition block for each non-empty envelope.
