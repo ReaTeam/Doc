@@ -123,7 +123,7 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  field 4, float, pan
                                                               //  field 5, int (bool), mute
                                                               //  field 6, int (bool), mono sum
-                                                              //  field 7, int (bool), invert phase
+                                                              //  field 7, int (bool), invert polarity
                                                               //  field 8, int, source audio channels
                                                               //    -1 = none, 0 = 1+2, 1 = 2+3, 2 = 3+4 etc.
                                                               //    probably different if non-standard pairs aren't allowed
