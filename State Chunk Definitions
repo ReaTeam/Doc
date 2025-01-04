@@ -213,7 +213,7 @@ The Track state chunk contains all the settings for a track and all of it's item
 							      //  1024 - 1535 - mono (even integer corresponds to the odd channel number, 
 							      //  i.e. 1024 is mono 1, 1025 is mono 2 etc.);
 							      //  field 8, ????
-							      //  field 9, integer, automation mode: -1 - Track automation mode, 0 - Trim/read, 
+							      //  field 9, int, automation mode: -1 - Track automation mode, 0 - Trim/read, 
 							      //  1 - Read, 2 - Touch, 3 - Write, 4 - Latch, 5 - Latch Preview;
 
                                                               // --- Start of track envelopes ---
