@@ -189,7 +189,8 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               // field 1, int (bool)
                                                               // field 2, ????
 
-							      // --- Start of hardware send data, absent if no hardware sends ---
+							      // --- Start of hardware send data, one line per hardware send ---
+							      //                  --- absent if no hardware sends ---
     HWOUT 512 0 1 0 0 0 0 -1:U -1			      //  field 1, int, output index: 0 - 511 - stereo output, 
 							      //  512 - 1023 - aux (rearoute) loopback stereo output which existed before v7.0, 
 							      //  or officially supported looback output available since v7.0 
