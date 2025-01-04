@@ -155,6 +155,10 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //    channel number or 0 for 'use original'
                                                               //    val = device * 32 + channel (device 2, ch 4 == 68)
 
+    MAINSEND 1 0                                              // Master/parent send
+                                                              // field 1, int (bool)
+                                                              // field 2, ????
+
    CUSTOM_NOTE_ORDER 0 1 2 45 105 3                           // list of integers in the range of 0 - 127 representing note numbers
                                                               // Custom note order in Piano roll on the track, which can be changed 
                                                               // by Click+left drag.
@@ -193,10 +197,6 @@ The Track state chunk contains all the settings for a track and all of it's item
     >                                                         //   End of first track envelope
                                                               // --- End of track envelopes
 
-    MAINSEND 1 0                                              // Master/parent send
-                                                              // field 1, int (bool)
-                                                              // field 2, ????
-	
                                                               // --- Start of FX section ----
     <FXCHAIN                                                  //     Not present if track hasn't got/had FX ---
         (see chunk info below)
