@@ -199,7 +199,7 @@ The Track state chunk contains all the settings for a track and all of it's item
 							      //  ref: https://forum.cockos.com/showthread.php?p=1796913#post1796913;
 							      //  since v7.0 can be enabled at Preferences -> Audio -> Virtual loopback audio 
 							      //  hardware), 
-							      //  1024 - 1535 - mono output, 1534 - 2047 - aux (rearoute) loopback mono output 
+							      //  1024 - 1535 - mono output, 1536 - 2047 - aux (rearoute) loopback mono output 
 							      //  (of both types, see explanation above; if both types are enabled the number 
 							      //  of channels allocated to each is 256 rather than 512)
 							      //  (with mono channel count even integer corresponds to the odd channel number, 
