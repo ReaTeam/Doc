@@ -204,7 +204,7 @@ The Track state chunk contains all the settings for a track and all of it's item
 							      //  of channels allocated to each is 256 rather than 512)
 							      //  (with mono channel count even integer corresponds to the odd channel number, 
 							      //  i.e. 1024 is mono 1, 1025 is mono 2 etc.),
-							      //  the value is a bitfield, see explanation to 'I_DSTCHAN' paremeter
+							      //  the value is a bitfield, see explanation to 'I_DSTCHAN' parameter
 							      //  of SetTrackSendInfo_Value() function in the ReaScript API doc;
 							      //  field 2, int, send mode: 0 - Post-Fader (Post-Pan), 1 - Pref-Fader (Pre-FX), 
 							      //  3 - Pref-Fader (Post-FX);
@@ -217,7 +217,7 @@ The Track state chunk contains all the settings for a track and all of it's item
 							      //  i.e. 1024 is mono 1, 1025 is mono 2 etc.), 2048 - 3071 - multichannel
 							      //  with 4 channels, starting from channel 1, and from 2, 3 etc. if more than  4,
 							      //  3072 - 4095 - multichannel with 6 channels, same pattern, etc.,
-							      //  the value is a bitfield, see explanation to 'I_SRCCHAN' paremeter
+							      //  the value is a bitfield, see explanation to 'I_SRCCHAN' parameter
 							      //  of SetTrackSendInfo_Value() function in the ReaScript API doc;
 							      //  field 8, ????
 							      //  field 9, int, automation mode: -1 - Track automation mode, 0 - Trim/read, 
