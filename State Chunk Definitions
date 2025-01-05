@@ -203,7 +203,9 @@ The Track state chunk contains all the settings for a track and all of it's item
 							      //  (of both types, see explanation above; if both types are enabled the number 
 							      //  of channels allocated to each is 256 rather than 512)
 							      //  (with mono channel count even integer corresponds to the odd channel number, 
-							      //  i.e. 1024 is mono 1, 1025 is mono 2 etc.);
+							      //  i.e. 1024 is mono 1, 1025 is mono 2 etc.),
+							      //  the value is a bitfield, see explanation to 'I_DSTCHAN' paremeter
+							      //  of SetTrackSendInfo_Value() function in the ReaScript API doc;
 							      //  field 2, int, send mode: 0 - Post-Fader (Post-Pan), 1 - Pref-Fader (Pre-FX), 
 							      //  3 - Pref-Fader (Post-FX);
 							      //  field 3, float, volume: 1 is 0 dB;
