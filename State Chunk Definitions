@@ -562,6 +562,8 @@ TEMPOENVEX - Master tempo
     LANEHEIGHT 0 0                  			// Lane height
                                     			//   field 1, int, height in pixels, corresponds to the value associated 
 							//   with 'I_TCPH' parameter of GetEnvelopeInfo_Value() function
+							//   which is envelope control pane height including padding between
+							//   it and the lower env control panel
                                     			//   field 2, int, ??
     ARM 1                           			// Armed, int (bool)
     DEFSHAPE 0 -1 -1                    		// field 1 - Default point shape, int
