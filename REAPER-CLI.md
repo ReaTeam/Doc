@@ -2,7 +2,7 @@ _If REAPER is run from the command line with an unrecognized parameter (like 're
 
 ## Usage:
 
-```reaper [options] [projectfile.rpp | mediafile.wav | scriptfile.lua [...]] | fxchainpreset.RfxChain | vstbank.fxb | vstpatch.fxp | vstpatch.vstpreset```
+```reaper.exe [options] [projectfile.rpp | mediafile.wav | scriptfile.lua [...]] | fxchainpreset.RfxChain | vstbank.fxb | vstpatch.fxp | vstpatch.vstpreset```
 
 Multiple media files and/or scripts may be specified, and will be added or run in order.
 **-nonewinst** can be used to add media files and/or run scripts in an already-running instance of REAPER.
