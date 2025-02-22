@@ -209,14 +209,15 @@ The Track state chunk contains all the settings for a track and all of it's item
 							      //  since v7.0 
 							      //  (before v7.0 could be enabled manually with 'rearoute_loopback=' key 
 							      //  in reaper.ini and had been supporting up to 512 channels since build 
-							      //  6.69, ref: https://forum.cockos.com/showthread.php?p=1796913#post1796913;
-							      //  since v7.0 can be enabled at Preferences -> Audio -> Virtual loopback  
-							      //  audio hardware),
-							      //  1024 - 1535 - mono output, 1536 - 2047 - aux (rearoute) loopback mono 
-							      //  output (of both types, see explanation above; if both types are enabled 
-							      //  the number of channels allocated to each is 256 rather than 512)
-							      //  (with mono channel count even integer corresponds to the odd channel  
-							      // number, i.e. 1024 is mono 1, 1025 is mono 2 etc.),
+							      //  6.69, 
+							      //  ref: https://forum.cockos.com/showthread.php?p=1796913#post1796913;
+							      //  since v7.0 can be enabled at   
+							      //  Preferences -> Audio -> Virtual loopback audio hardware),
+							      //  1024 - 1535 - mono output, 1536 - 2047 - aux (rearoute) loopback  
+							      //  mono output (of both types, see explanation above; if both types are 
+							      //  enabled the number of channels allocated to each is 256 rather than 
+							      //  512) (with mono channel count even integer corresponds to the odd 
+							      //  channel number, i.e. 1024 is mono 1, 1025 is mono 2 etc.),
 							      //  the value is a bitfield, see explanation to 'I_DSTCHAN' parameter
 							      //  of SetTrackSendInfo_Value() function in the ReaScript API doc;
 							      //  field 2, int, send mode: 0 - Post-Fader (Post-Pan),  
