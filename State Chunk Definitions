@@ -105,13 +105,13 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  val & 1 = prevent media buffering
                                                               //  val & 2 = prevent anticipative fx
 
-   LAYOUTS "bd --- Small Full Meter + value readouts" "bc --- Small Full Meter"	// active TCP and MCP layouts,
-										// the attribute is absent if both
-										// are set to Global default, 
-										// and in the Master track chunk,
-										// if only one is set to Global default
-										// it's represented by an empty placeholder
-										// i.e. "" "bc --- Small Full Meter"
+   LAYOUTS "bd -- Small Full Meter + value readouts" "bc -- Small Full Meter"  // active TCP and MCP layouts,
+									       // the attribute is absent if both
+									       // are set to Global default, 
+									       // and in the Master track chunk,
+									       // if only one is set to Global default
+									       // it's represented by an empty placeholder
+									       // i.e. "" "bc --- Small Full Meter"
 
     <EXT						     // Extension-specific persistent data which can be added with 
 							     // GetSetEnvelopeInfo_String() function using 'P_EXT' parameter
