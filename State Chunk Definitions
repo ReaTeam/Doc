@@ -111,7 +111,11 @@ The Track state chunk contains all the settings for a track and all of it's item
 									       // and in the Master track chunk,
 									       // if only one is set to Global default
 									       // it's represented by an empty placeholder
-									       // i.e. "" "bc --- Small Full Meter"
+									       // i.e. "" "bc --- Small Full Meter",
+									       // if not an empty placeholder, the layout
+									       // name is only enclosed within quotes if
+									       // it contains spaces as is the rule in
+									       // the chunks
 
     <EXT						     // Extension-specific persistent data which can be added with 
 							     // GetSetEnvelopeInfo_String() function using 'P_EXT' parameter
