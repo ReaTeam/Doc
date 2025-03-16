@@ -357,8 +357,9 @@ Audio Item
         MODE 3                                          // Mode, 2 = Section and Reverse, 3 = Reverse
         STARTPOS 0.000                                  // Section start offset (in seconds)
         OVERLAP 0.010                                   // Section crossfade (in seconds)
-        <SOURCE WAVE                                    // Source details. Appears alone if SOURCE SECTION not set
-            FILE "C:Path\To\AudioFile.wav"              // Source file. 
+        <SOURCE WAVE                                    // Source details. Appears alone if SOURCE SECTION is not set;
+							// when the take is offline WAVE is replaced with _OFFLINE_WAVE
+            FILE "C:Path\To\AudioFile.wav"              // Source file.
         >                                               // Source details end
     >                                                   // Source section end
     
