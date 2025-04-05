@@ -100,7 +100,7 @@ The Track state chunk contains all the settings for a track and all of it's item
     <RECCFG 1                                                 // Recording format data. Not present if not changed.
         dmdnbwAAAD8AgAAAAIAAAAAgAAAAAAEAAA==                  //  binary data, leave it alone
     >                                                         //
-    MIDICOLORMAPFN "C:Path\To\note_color_map.png"	      // Path to note color map file, added after execution of the action
+    MIDICOLORMAPFN "C:Path\To\note_color_map.png"	      // Path to note color map file, is added after execution of the action
 							      // "View: Load note color map from file", cleared after execution
 							      // of the action "View: Clear note color map (use default)"
     FX 1                                                      // FX state, int, 0=bypassed, 1=active
