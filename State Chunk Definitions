@@ -295,7 +295,16 @@ Audio Item
                                                         //  ...
                                                         //  ...
                                                         //  ...
-    MUTE 0                                              // Is the item muted? int (bool)
+    MUTE 0 0                                            // field 1, int (bool) - item is or was muted if mute state was followed
+							// by item soloing with actions Item properties: Solo, 
+							// Item properties: Solo exclusive, Item properties: Toggle solo,
+							// Item properties: Toggle solo exclusive or via ReaScript APIbecause in this case 
+							// mute flag isn't cleared);
+							// field 2, int, 0 - item is and was not soloed; -1 - item is soloed
+							// (via actions Item properties: Solo, Item properties: Solo exclusive,
+							// Item properties: Toggle solo or via ReaScript API); 
+							// 1 - item was soloed and its solo was overridden by soloing of another item 
+							// (via action Item properties: Toggle solo exclusive or via ReaScript API)
     FADEFLAG 1                                          // ??, int, may not be present
     GROUP 2560                                          // A number of the group the item belongs to, if grouped
     IGUID {98E8ECDE-FF4D-4E06-87ED-43A5E7E6A61A}        // Item id. Leave it alone
