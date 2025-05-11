@@ -591,7 +591,7 @@ TEMPOENVEX - Master tempo
     VIS 1 1 1.0                     			// Visibility
                                     			//   field 1, int (bool), visible
                                     			//   field 2, int (bool), show in lane
-                                    			//   field 3, float, ??
+                                    			//   field 3, deprecated value, always 1.0 (source: schwa [p=2198426])
     LANEHEIGHT 0 0                  			// Lane height
                                     			//   field 1, int, height in pixels, corresponds to the value associated 
 							//   with 'I_TCPH' parameter of GetEnvelopeInfo_Value() function
@@ -606,8 +606,12 @@ TEMPOENVEX - Master tempo
                                     			//   3 = Fast Start
                                     			//   4 = Fast End
                                     			//   5 = Bezier
-							// field 2 - ??
-							// field 3 - ??
+							// field 2, int, pitch envelope range
+							// field 3, int, pitch envelope snap setting
+							// -1=global default, otherwise these are the LSB and MSB of the "pitchenvrange" 
+							// config variable, i.e. Preferences -> Editing Behavior -> Envelope Display ->
+							// Default pitch envelope range: ... semitones, snap: ... 
+							// (source: schwa [p=2198426])
     <EXT						// Extension-specific persistent data which can be added 
 							// with GetSetEnvelopeInfo_String() function
 							// using 'P_EXT' parameter
