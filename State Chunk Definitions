@@ -620,35 +620,41 @@ TEMPOENVEX - Master tempo
     							//  to delete, pass this argument as an empty string
     
     POOLEDENVINST 6 1.375 0.39917615841563 0.114936 0.354826 1 0.5 1 1 0 0 1280 0 0 0.012 0 // Automation item (AI) properties
-    											    // field 1, int, index (greater by 1 than 
-											    // the one displayed by default											    
-											    // in the Name field of AI Properties 
-											    // window)
-											    // field 2, float, Position (sec)
-											    // field 3, float, Length (sec)
-											    // field 4, float, Start offset (sec)
-											    // field 5, float, Play rate
-											    // field 6, int (bool), Baseline/amplitude 
-											    // affects pooled copies, 
-											    // (couldn't figure out which value is  
-											    // what because it's not updated  
-											    // consistently and seems to depend on the Loop 
-											    // (field 9) setting)
+    											    // field 1, int, pool index, 
+    											    // pooled instances have the same index 
+											    // (greater by 1 than the one displayed
+											    // by default in the Name field of AI									    
+											    // Properties window);
+											    // field 2, float/double, Position (sec);
+											    // field 3, float/double, Length (sec);
+											    // field 4, float/double, Start offset (sec);
+											    // field 5, float/double, Play rate;
+											    // field 6, int (bool), selected;
 											    // field 7, float, Baseline, 0 = -100, 
 											    // 0.5 = 0, 1 = 100;
 											    // field 8, float, Amplitude, -2 = -200, 
 											    // 1 = 100, 2 = 200;
+											    // Baseline/amplitude affects pooled copies;
 											    // field 9, int (bool), Loop, 1 on, 0 off
-											    // field 10, ??
-											    // field 11, ??
+											    // field 10, float/double, Position in QN  
+											    // (only used in certain contexts);
+											    // field 11, Length in QN
+											    // (only used in certain contexts);
 											    // field 12, int, 1 based index of AI since
 											    // starting the project, incremented even if
 											    // older AIs were deleted and regardless of
 											    // the AI being pooled;
-											    // field 13, ??
-											    // field 14, ??
-											    // field 15, float, Transition time (sec)
-											    // field 16, ??
+											    // field 13, int, muted;
+											    // field 14, float/double, Start offset in QN 
+											    // (only used in certain contexts);
+											    // field 15, float/double, Transition time (sec)
+											    // field 16, int, volume envelope maximum 
+											    // when this instance was created (matches the 1|4 
+											    // bits of the "volenvrange" config variable: 0=+6dB, 
+											    // 1=+0dB, 4=+12dB, 5=+24dB, i.e. Preferences -> 
+											    // Editing Behavior -> Envelope Display -> 
+											    // Volume envelope range); 
+											    // (source: schwa [p=2198410])
     
     PT 3.000000 -0.2 5 0 0 0 -0.7   			// Envelope point definition
                                     			//  field 1, float, position (seconds)
