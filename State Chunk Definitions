@@ -484,7 +484,7 @@ MIDI Item
         BANKPROGRAMFILE "C:\Path\To\GM.reabank"         // Path to ReaBank file used by the current item
         CFGEDITVIEW 3787.8 0.1 0 48 0 0 0               // Somehow related to H/V zoom levels and scrollbar positions
         CFGEDIT 1 1 0 1 1 16 1 1 1 1 1 0.06250000 0 0   // MIDI editor window configuration data
-        1024 768 0 2 0 0 0.00000000 0 0                 //  field 1, int, ??
+        1024 768 0 2 0 0 0.00000000 0 0 0 1 1 64        //  field 1, int, ??
                                                         //  field 2, int (bool), sync editor transport to project transport
                                                         //  field 3, int, ??
                                                         //  field 4, int (bool), show velocity handles
@@ -524,7 +524,10 @@ MIDI Item
                                                         //    1 = channel
                                                         //    2 = pitch
                                                         //    4 = source
-                                                        //  field 21, float, length of last drawn note in beats.ticks
+                                                        //  field 21, float, note length of last drawn note in beats.ticks
+                                                        //  which may have been the meaning in the past, currently (build 7.39)
+                                                        //  it's the note length set in the 'Note:' pull-up menu at the bottom
+                                                        //  of the MIDI Editor window
                                                         //  field 22, int, re-use editor window
                                                         //    0 = off
                                                         //    1 = re-use MIDI editor window
@@ -533,6 +536,10 @@ MIDI Item
 							//  field 24, int (bool), ME window maximized to full-screen
 							//  field 25, int (bool), swing enabled
 							//  field 26, float, swing % as fraction
+							//  field 27 ?????
+							//  field 28 ?????
+							//  field 29 ?????
+							//  field 30 ?????
         EVTFILTER 0 -1 -1 -1 -1 0 1                     // Event filter settings
                                                         //  field 1, int (16-bit mask), state of channel checkboxes
                                                         //    0000000000000000 (0)     - "All" is checked, 1-16 unchecked
