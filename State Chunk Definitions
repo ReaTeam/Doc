@@ -525,9 +525,10 @@ MIDI Item
                                                         //    2 = pitch
                                                         //    4 = source
                                                         //  field 21, float, note length of last drawn note in beats.ticks
-                                                        //  which may have been the meaning in the past, currently (build 7.39)
-                                                        //  it's the note length set in the 'Note:' pull-up menu at the bottom
-                                                        //  of the MIDI Editor window
+                                                        //  if the option 'Drawing or selecting a note sets the new note length'
+                                                        //  is enabled because it changes 'Note:' setting in the pull-up menu
+                                                        //  at the bottom of the MIDI Editor window, or if the setting is changed
+                                                        //  manually
                                                         //  field 22, int, re-use editor window
                                                         //    0 = off
                                                         //    1 = re-use MIDI editor window
