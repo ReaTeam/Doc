@@ -276,7 +276,7 @@ The Track state chunk contains all the settings for a track and all of it's item
 
                                     // --- Start of hardware send data, one line per hardware send ---
                                     //   --- absent if no hardware sends ---
-    HWOUT 512 0 1 0 0 0 0 -1:U -1	//  field 1, int, output index: 0 - 511 - stereo output, 
+    HWOUT 512 0 1 0 0 0 0 -1:U -1   //  field 1, int, output index: 0 - 511 - stereo output, 
                                     //  512 - 1023 - aux (rearoute) loopback stereo output which existed  
                                     //  before v7.0, or officially supported looback output available  
                                     //  since v7.0 
@@ -333,7 +333,7 @@ The Track state chunk contains all the settings for a track and all of it's item
                                       // --- Start of Input FX section (irrelevant for the Master track) ----	
     <FXCHAIN_REC                      //      Not present if track hasn't got/had Input FX ---								     
 	(see chunk info below)
-    >                                // --- End of Input FX section
+    >                                 // --- End of Input FX section
 	
                                       // --- Start of item definitions ---
     <ITEM                             // First item definition
@@ -365,15 +365,15 @@ Audio Item
                             //  ...
                             //  ...
     MUTE 0 0                // field 1, int (bool) 1 - item is or was muted if mute state was followed
-							// by item soloing with actions 'Item properties: Solo', 
-							// 'Item properties: Solo exclusive', 'Item properties: Toggle solo',
-							// 'Item properties: Toggle solo exclusive' or via ReaScript API because  
-							// in this case mute flag isn't cleared);
-							// field 2, int, 0 - item is and was not soloed; -1 - item is soloed
-							// (via actions 'Item properties: Solo', 'Item properties: Solo exclusive',
-							// 'Item properties: Toggle solo' or via ReaScript API); 
-							// 1 - item was soloed and its solo was overridden by soloing of another item 
-							// (via action 'Item properties: Toggle solo exclusive' or via ReaScript API)
+                            // by item soloing with actions 'Item properties: Solo', 
+                            // 'Item properties: Solo exclusive', 'Item properties: Toggle solo',
+                            // 'Item properties: Toggle solo exclusive' or via ReaScript API because  
+                            // in this case mute flag isn't cleared);
+                            // field 2, int, 0 - item is and was not soloed; -1 - item is soloed
+                            // (via actions 'Item properties: Solo', 'Item properties: Solo exclusive',
+                            // 'Item properties: Toggle solo' or via ReaScript API); 
+                            // 1 - item was soloed and its solo was overridden by soloing of another item 
+                            // (via action 'Item properties: Toggle solo exclusive' or via ReaScript API)
     FADEFLAG 1                                          // ??, int, may not be present
     GROUP 2560                                          // A number of the group the item belongs to, if grouped
     IGUID {98E8ECDE-FF4D-4E06-87ED-43A5E7E6A61A}        // Item id. Leave it alone
@@ -396,9 +396,9 @@ Audio Item
     RESOURCEFN "filename.ext"       // Name of the image file loaded in the notes, full path if located outside 
                                     // of the resource directory
     IMGRESOURCEFLAGS 0              // Bitfield of item notes settings; absent if item notes are empty
-	                                // 0 - Do not display image and no Word wrap; &1 - Center/tile image; 
+                                    // 0 - Do not display image and no Word wrap; &1 - Center/tile image; 
                                     // &3 - Stretch image/text; &5 - Full height image; &8 - Word wrap.
-    NOTESWND 38 176 529 558	        // Item Notes window last coordinates
+    NOTESWND 38 176 529 55          // Item Notes window last coordinates
     COMP 1 1 0                      // Take comps data: field 1 - integer, comp index (1 based), 
     COMP 2 0 0                      // field 2 - integer, active take index (0 based), field 3 - ???
                                     // Custom comp names are stored in RAM and in the project .RPP file once saved
@@ -410,7 +410,7 @@ Audio Item
                                     //   0.50 = -6 dB
                                     // field 2, float, first take pan, -1.00 = left, 1.00 = right
                                     // field 3, float, first take volume (other takes in TAKEVOLPAN below), 
-									// if negative 'Invert phase' setting is enabled
+                                    // if negative 'Invert phase' setting is enabled
                                     // field 4, float, first take pan law
     SOFFS 0.000                     // First take slip offset (in seconds)
     PLAYRATE 1.000 1 0.000 -1       // First take playrate settings
@@ -439,41 +439,41 @@ Audio Item
         STARTPOS 0.000                                  // Section start offset (in seconds)
         OVERLAP 0.010                                   // Section crossfade (in seconds)
         <SOURCE WAVE                                    // Source details. Appears alone if SOURCE SECTION is not set;
-														// when the take is offline WAVE is replaced with _OFFLINE_WAVE
+                                                        // when the take is offline WAVE is replaced with _OFFLINE_WAVE
             FILE "C:Path\To\AudioFile.wav"              // Source file.
         >                                               // Source details end
     >                                                   // Source section end
     
-    TKM 0.5 "TEST 123" 21036800	0.5			// Take marker data
-    										// field 1 - float, position within take in sec
-											// field 2 - string, name, without quotes if consists of only one 
-											// character or word
-											// field 3 - integer, OS native color code	
-											// can be converted to RGB with: r, g, b = reaper.ColorFromNative(code)
-											// field 4 - integer, marker length in sec (protruding horizontal bar)
-											// supported since build 7.17
+    TKM 0.5 "TEST 123" 21036800	0.5         // Take marker data
+                                            // field 1 - float, position within take in sec
+                                            // field 2 - string, name, without quotes if consists of only one 
+                                            // character or word
+                                            // field 3 - integer, OS native color code	
+                                            // can be converted to RGB with: r, g, b = reaper.ColorFromNative(code)
+                                            // field 4 - integer, marker length in sec (protruding horizontal bar)
+                                            // supported since build 7.17
 							
     SM 0 0 -0.149425287 + 0.574712644 0.5 + 1.348114004 1.273401361		// Stretch marker data
     							
-   														// Transient markers (guides) data
-    TMINFO 44100										// field 2 - item source sample rate
+                                                        // Transient markers (guides) data
+    TMINFO 44100                                        // field 2 - item source sample rate
     TM 104 671 6270 13233 678 676 673 19218 6385 677    // field 2 - distance in samples, at the above sample rate,  
-    680 6320											// of the first transient guide from the item start
-    													// returned by reaper.GetMediaItemInfo_Value(item, 'D_POSITION')
-   														// fields 3 onwards - distance in samples at the above sample rate 
-														// from previous transient guide
+    680 6320                                            // of the first transient guide from the item start
+                                                        // returned by reaper.GetMediaItemInfo_Value(item, 'D_POSITION')
+                                                        // fields 3 onwards - distance in samples at the above sample rate 
+                                                        // from previous transient guide
 							
     <TAKEFX                                             // -- Take FX section start
      (see chunk info below under Track/Take FX)         //
     >                                                   // -- Take FX section end
     TAKE_FX_HAVE_NEW_PDC_AUTOMATION_BEHAVIOR 1
-														// -- Take envelopes section start, one block per envelope    
-    <VOLENV												// Envelope alias (VOLENV, PANENV, MUTEENV, PITCHENV)
-      EGUID {5CB63539-0B47-4094-97FA-C62230F23208}		// Envelope ID
+                                                        // -- Take envelopes section start, one block per envelope    
+    <VOLENV                                             // Envelope alias (VOLENV, PANENV, MUTEENV, PITCHENV)
+      EGUID {5CB63539-0B47-4094-97FA-C62230F23208}      // Envelope ID
 	(see chunk info below under Envelope)
-    >													// -- Take envelopes section end    
+    >                                                   // -- Take envelopes section end    
     TAKE SEL                                            // Second take start. SEL only appears if this take is selected 
-							// or was last selected
+                                                        // or was last selected
     NAME "The second take"                              // Take name
     TAKEVOLPAN 0.0 1.0 -1.0                             // Take volume and pan settings
                                                         //  field 1, float, take pan
@@ -543,7 +543,7 @@ MIDI Item
                                                         //    131 = bank/program select
                                                         //    132 = text events
                                                         //    133 = sysex
-														//    166 = notaion events
+                                                        //    166 = notaion events
                                                         //  field 2, int, height of the lane in MIDI editor mode
                                                         //  field 3, int, height of the lane in inline editor mode
         BANKPROGRAMFILE "C:\Path\To\GM.reabank"         // Path to ReaBank file used by the current item
@@ -571,9 +571,9 @@ MIDI Item
                                                         //  field 11, int (bool), show grid
                                                         //  field 12, float, grid length, in quarter notes
                                                         //  field 13, field 14, int, (last-used UNmaximized) X and Y coords 
-														//  of upper left corner of ME window
+                                                        //  of upper left corner of ME window
                                                         //  field 15, field 16, int, (last-used UNmaximized) X and Y coords 
-														//  of bottom right corner of ME window
+                                                        //  of bottom right corner of ME window
                                                         //  field 17, int (bool), dock editor window
                                                         //  field 18, int, note row view modes
                                                         //    0 = show all rows
@@ -599,13 +599,13 @@ MIDI Item
                                                         //    1 = re-use MIDI editor window
                                                         //    2 = re-use MIDI editor window, keeping current item secondary
                                                         //  field 23, int (bool), show velocity numbers
-														//  field 24, int (bool), ME window maximized to full-screen
-														//  field 25, int (bool), swing enabled
-														//  field 26, float, swing % as fraction
-														//  field 27 ?????
-														//  field 28 ?????
-														//  field 29 ?????
-														//  field 30 ?????
+                                                        //  field 24, int (bool), ME window maximized to full-screen
+                                                        //  field 25, int (bool), swing enabled
+                                                        //  field 26, float, swing % as fraction
+                                                        //  field 27 ??
+                                                        //  field 28 ??
+                                                        //  field 29 ??
+                                                        //  field 30 ??
         EVTFILTER 0 -1 -1 -1 -1 0 1                     // Event filter settings
                                                         //  field 1, int (16-bit mask), state of channel checkboxes
                                                         //    0000000000000000 (0)     - "All" is checked, 1-16 unchecked
