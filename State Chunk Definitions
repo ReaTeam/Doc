@@ -26,11 +26,11 @@ Contents:
 The Track state chunk contains all the settings for a track and all of it's items, envelopes, receives, plugins etc.
 <TRACK                                                        // Start of Track definition
     NAME "Track Name"                                         // Track name
-    LOCK 1						      // Track controls are locked, absent altogether when not locked
+    LOCK 1						      					  	  // Track controls are locked, absent altogether when not locked
     PEAKCOL 16576                                             // Peak colour (items and takes override)
-							      // 16576 is the default value to be returned by 
-							      // GetMediaTrackInfo_Value() function with 'I_CUSTOMCOLOR' 
-							      // attribute when no custom track color has been applied
+							      						 	  // 16576 is the default value to be returned by 
+							      							  // GetMediaTrackInfo_Value() function with 'I_CUSTOMCOLOR' 
+							      							  // attribute when no custom track color has been applied
     BEAT -1                                                   // Track timebase (-1 = project default)
     AUTOMODE 0                                                // Automation mode
                                                               //   0 = Trim/Read
@@ -54,13 +54,13 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //   and track template, they don't change while the project is open
     BUSCOMP 0 0 0 41 8                                        // Collapse folder (bus compact?)
                                                               //  field 1, int, collapse state in Arrange 0=not collapsed, 
-							      //  1=collapsed medium, 2=collapsed small
+							      							  //  1=collapsed medium, 2=collapsed small
                                                               //  field 2, int, collapse state in the Mixer 0=not collapsed, 
                                                               //  1=collapsed;
-							      //  field 3, int, collapse state in track wiring, 0=not collapsed, 
-							      //  1=collapsed;
-							      //  field 4, int, track wiring routing window x position
-							      //  field 5, int, track wiring routing window y position
+							      							  //  field 3, int, collapse state in track wiring, 0=not collapsed, 
+							      							  //  1=collapsed;
+							      							  //  field 4, int, track wiring routing window x position
+							      							  //  field 5, int, track wiring routing window y position
     SHOWINMIX 1 0.6 0.5 1 0.5 -1 -1 -1                        // Show In Mixer
                                                               //  field 1, int (bool), show in mixer
                                                               //  field 2, float, ??
@@ -169,9 +169,9 @@ The Track state chunk contains all the settings for a track and all of it's item
     <RECCFG 1                                                 // Recording format data. Not present if not changed.
         dmdnbwAAAD8AgAAAAIAAAAAgAAAAAAEAAA==                  //  binary data, leave it alone
     >                                                         //
-    MIDICOLORMAPFN "C:Path\To\note_color_map.png"	      // Path to note color map file, is added after execution of the action
-							      // "View: Load note color map from file", cleared after execution
-							      // of the action "View: Clear note color map (use default)"
+    MIDICOLORMAPFN "C:Path\To\note_color_map.png"	      	  // Path to note color map file, is added after execution of the action
+							      						   	  // "View: Load note color map from file", cleared after execution
+							      							  // of the action "View: Clear note color map (use default)"
     FX 1                                                      // FX state, int, 0=bypassed, 1=active
     TRACKID {5619EDC5-E743-4BE8-AE9F-3B3469A111B5}            // REAPER track id, leave it alone
     PERF 0                                                    // Performance options, int (bitwise)
