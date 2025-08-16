@@ -132,7 +132,7 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  when it's no longer active, -1 - comping hasn't been enabled yet.
                                                               //  The attribute is absent when 'Fixed item lanes' mode hasn't been enabled yet.
                                                               //  and present when it was enabled at least once.
-	LANENAME 1 2 "" "lane name"                               //  List of lane names in ascending order, the attribute is absent 
+    LANENAME 1 2 "" "lane name"                               //  List of lane names in ascending order, the attribute is absent 
                                                               //  when 'Fixed item lanes' mode isn't enabled, names which contain spaces
                                                               //  as well as empty names are enclosed within double quotes ""
                                                               //  The attribute is absent when 'Fixed item lanes' mode hasn't been enabled yet
@@ -227,7 +227,7 @@ The Track state chunk contains all the settings for a track and all of it's item
     <AUXMUTEENV                                               //  Start of second receive envelope.
         (see chunk info below)                                //   ...
     >                                                         //  End of second receive envelope
-	                                                          // --- End of envelopes for first receive
+                                                              // --- End of envelopes for first receive
 								
     AUXRECV 3 0 1.000 0.000 0 0 0 0 0 -1.000 0 -1             // Second track receive settings (as above but no envelopes)
                                                               // --- End of receive data ---
