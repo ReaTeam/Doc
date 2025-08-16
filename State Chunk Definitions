@@ -277,40 +277,40 @@ The Track state chunk contains all the settings for a track and all of it's item
                                     // --- Start of hardware send data, one line per hardware send ---
                                     //   --- absent if no hardware sends ---
     HWOUT 512 0 1 0 0 0 0 -1:U -1	//  field 1, int, output index: 0 - 511 - stereo output, 
-							      	//  512 - 1023 - aux (rearoute) loopback stereo output which existed  
-							      	//  before v7.0, or officially supported looback output available  
-							      	//  since v7.0 
-							      	//  (before v7.0 could be enabled manually with 'rearoute_loopback=' key 
-							      	//  in reaper.ini and had been supporting up to 512 channels since build 
-							      	//  6.69, 
-							      	//  ref: https://forum.cockos.com/showthread.php?p=1796913#post1796913;
-							      	//  since v7.0 can be enabled at   
-							      	//  Preferences -> Audio -> Virtual loopback audio hardware),
-							      	//  1024 - 1535 - mono output, 1536 - 2047 - aux (rearoute) loopback  
-							      	//  mono output (of both types, see explanation above; if both types are 
-							      	//  enabled the number of channels allocated to each is 256 rather than 
-							      	//  512) (with mono channel count even integer corresponds to the odd 
-							      	//  channel number, i.e. 1024 is mono 1, 1025 is mono 2 etc.),
-							      	//  the value is a bitfield, see explanation to 'I_DSTCHAN' parameter
-							      	//  of SetTrackSendInfo_Value() function in the ReaScript API doc;
-							      	//  field 2, int, send mode: 0 - Post-Fader (Post-Pan),  
-							      	//  1 - Pref-Fader (Pre-FX), 3 - Pref-Fader (Post-FX);
-							      	//  field 3, float, volume: 1 is 0 dB;
-							      	//  field 4, float, pan: the range is -1 - +1;
-							      	//  field 5, int (bool), mute: 1 - On, 0 - Off;
-							      	//  field 6, int (bool), invert polarity: 1 - On, 0 - Off;
-							      	//  field 7, int, send source channel: -1 - None, 0 - 1023 stereo, 
-							      	//  1024 - 1535 - mono (even integer corresponds to the odd channel 
-							      	//  number, i.e. 1024 is mono 1, 1025 is mono 2 etc.), 
-							      	//  2048 - 3071 - multichannel with 4 channels, starting from channel 1, 
-							      	//  and from 2, 3 etc. if more than  4,
-							      	//  3072 - 4095 - multichannel with 6 channels, same pattern, etc.,
-							      	//  the value is a bitfield, see explanation to 'I_SRCCHAN' parameter
-							      	//  of SetTrackSendInfo_Value() function in the ReaScript API doc;
-							      	//  field 8, ????
-							      	//  field 9, int, automation mode: -1 - Track automation mode, 
-							      	//  0 - Trim/read, 1 - Read, 2 - Touch, 3 - Write, 4 - Latch, 
-							      	//  5 - Latch Preview;
+                                    //  512 - 1023 - aux (rearoute) loopback stereo output which existed  
+                                    //  before v7.0, or officially supported looback output available  
+                                    //  since v7.0 
+                                    //  (before v7.0 could be enabled manually with 'rearoute_loopback=' key 
+                                    //  in reaper.ini and had been supporting up to 512 channels since build 
+                                    //  6.69, 
+                                    //  ref: https://forum.cockos.com/showthread.php?p=1796913#post1796913;
+                                    //  since v7.0 can be enabled at   
+                                    //  Preferences -> Audio -> Virtual loopback audio hardware),
+                                    //  1024 - 1535 - mono output, 1536 - 2047 - aux (rearoute) loopback  
+                                    //  mono output (of both types, see explanation above; if both types are 
+                                    //  enabled the number of channels allocated to each is 256 rather than 
+                                    //  512) (with mono channel count even integer corresponds to the odd 
+                                    //  channel number, i.e. 1024 is mono 1, 1025 is mono 2 etc.),
+                                    //  the value is a bitfield, see explanation to 'I_DSTCHAN' parameter
+                                    //  of SetTrackSendInfo_Value() function in the ReaScript API doc;
+                                    //  field 2, int, send mode: 0 - Post-Fader (Post-Pan),  
+                                    //  1 - Pref-Fader (Pre-FX), 3 - Pref-Fader (Post-FX);
+                                    //  field 3, float, volume: 1 is 0 dB;
+                                    //  field 4, float, pan: the range is -1 - +1;
+                                    //  field 5, int (bool), mute: 1 - On, 0 - Off;
+                                    //  field 6, int (bool), invert polarity: 1 - On, 0 - Off;
+                                    //  field 7, int, send source channel: -1 - None, 0 - 1023 stereo, 
+                                    //  1024 - 1535 - mono (even integer corresponds to the odd channel 
+                                    //  number, i.e. 1024 is mono 1, 1025 is mono 2 etc.), 
+                                    //  2048 - 3071 - multichannel with 4 channels, starting from channel 1, 
+                                    //  and from 2, 3 etc. if more than  4,
+                                    //  3072 - 4095 - multichannel with 6 channels, same pattern, etc.,
+                                    //  the value is a bitfield, see explanation to 'I_SRCCHAN' parameter
+                                    //  of SetTrackSendInfo_Value() function in the ReaScript API doc;
+                                    //  field 8, ????
+                                    //  field 9, int, automation mode: -1 - Track automation mode, 
+                                    //  0 - Trim/read, 1 - Read, 2 - Touch, 3 - Write, 4 - Latch, 
+                                    //  5 - Latch Preview;
 
                                       // --- Start of track envelopes ---
                                       //     One definition block for each non-empty envelope.
@@ -380,28 +380,28 @@ Audio Item
                                                         // --- From this point, values mostly relate to the first take
                                                         //     except for field 1 of VOLPAN which is the item trim
     IID 424                 // Deprecated since build 6.54
-    						// Item ordinal number governing the order of overlapping items 
-							// displayed in lanes and especially those with identical start 
-    						// and end coordinates, when  
-							// 'Show overlapping media items in lanes (when room)' option
-							// is enabled. The greater the IID the lower the item's lane is.
-							// With the said option disabled or lanes fully collapsed 
-							// the visible/outermost item is the latest one on the track 
-							// out of all items it's overlapping, regardless of its IID							
+                            // Item ordinal number governing the order of overlapping items 
+                            // displayed in lanes and especially those with identical start 
+                            // and end coordinates, when  
+                            // 'Show overlapping media items in lanes (when room)' option
+                            // is enabled. The greater the IID the lower the item's lane is.
+                            // With the said option disabled or lanes fully collapsed 
+                            // the visible/outermost item is the latest one on the track 
+                            // out of all items it's overlapping, regardless of its IID							
 
     <NOTES                  // Notes block start
       |-1                   // Notes content
     >                       // Notes block end
 
     RESOURCEFN "filename.ext"       // Name of the image file loaded in the notes, full path if located outside 
-									// of the resource directory
+                                    // of the resource directory
     IMGRESOURCEFLAGS 0              // Bitfield of item notes settings; absent if item notes are empty
-									// 0 - Do not display image and no Word wrap; &1 - Center/tile image; 
-									// &3 - Stretch image/text; &5 - Full height image; &8 - Word wrap.
-    NOTESWND 38 176 529 558			// Item Notes window last coordinates
-    COMP 1 1 0						// Take comps data: field 1 - integer, comp index (1 based), 
-    COMP 2 0 0						// field 2 - integer, active take index (0 based), field 3 - ???
-									// Custom comp names are stored in RAM and in the project .RPP file once saved
+	                                // 0 - Do not display image and no Word wrap; &1 - Center/tile image; 
+                                    // &3 - Stretch image/text; &5 - Full height image; &8 - Word wrap.
+    NOTESWND 38 176 529 558	        // Item Notes window last coordinates
+    COMP 1 1 0                      // Take comps data: field 1 - integer, comp index (1 based), 
+    COMP 2 0 0                      // field 2 - integer, active take index (0 based), field 3 - ???
+                                    // Custom comp names are stored in RAM and in the project .RPP file once saved
     NAME "The first take"           // First take name
     VOLPAN 1.0 0.0 1.0 -1.0         // Volume and pan settings
                                     // field 1, float, item trim
