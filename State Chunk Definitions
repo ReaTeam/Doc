@@ -365,10 +365,11 @@ Audio Item
                             //  which is taken to be 1, the actual lane index can be calculated with the formula:
                             //  0.75 + 0.25 (field 2 below) / 0.25 = 4, i.e. first find the part of the track height
                             //  occupied by the current and preceding lanes (0.75 + 0.25), then divide by
-                            //  the ratio between track height and lane height (0.25), track height is divided 
-                            //  uniformely between lanes;
+                            //  the ratio between track height and lane height (0.25), which is the same as 
+                            //  reaper.GetMediaItemInfo_Value(item, 'I_FIXEDLANE');
                             //  field 2, float, ratio between track height and single fixed item lane height,
-                            //  where track height is 1, so 0.25 means there're 4 lanes, because 1 / 0.25 = 4;
+                            //  where track height is 1, so 0.25 means there're 4 lanes, because 1 / 0.25 = 4,
+                            //  track height is divided uniformely between lanes;
                             //  field 3, ??, the value of 2 seems constant.
     FADEIN 1 0.0 0.0        // Fade in settings
                             //  field 1, int, fade in curve type (0 - linear, etc.)
