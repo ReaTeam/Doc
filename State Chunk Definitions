@@ -26,7 +26,7 @@ Contents:
 The Track state chunk contains all the settings for a track and all of it's items, envelopes, receives, plugins etc.
 <TRACK                                                        // Start of Track definition
     NAME "Track Name"                                         // Track name
-    LOCK 1						      					  	  // Track controls are locked, absent altogether when not locked
+    LOCK 1                                                    // Track controls are locked, absent altogether when not locked
     PEAKCOL 16576                                             // Peak colour (items and takes override)
                                                               // 16576 is the default value to be returned by 
                                                               // GetMediaTrackInfo_Value() function with 'I_CUSTOMCOLOR' 
@@ -54,7 +54,7 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //   and track template, they don't change while the project is open
     BUSCOMP 0 0 0 41 8                                        // Collapse folder (bus compact?)
                                                               //  field 1, int, collapse state in Arrange 0=not collapsed, 
-							      							  //  1=collapsed medium, 2=collapsed small
+	                                                          //  1=collapsed medium, 2=collapsed small
                                                               //  field 2, int, collapse state in the Mixer 0=not collapsed, 
                                                               //  1=collapsed;
                                                               //  field 3, int, collapse state in track wiring, 0=not collapsed, 
@@ -169,9 +169,9 @@ The Track state chunk contains all the settings for a track and all of it's item
     <RECCFG 1                                                 // Recording format data. Not present if not changed.
         dmdnbwAAAD8AgAAAAIAAAAAgAAAAAAEAAA==                  //  binary data, leave it alone
     >                                                         //
-    MIDICOLORMAPFN "C:Path\To\note_color_map.png"	      	  // Path to note color map file, is added after execution of the action
-							      						   	  // "View: Load note color map from file", cleared after execution
-							      							  // of the action "View: Clear note color map (use default)"
+    MIDICOLORMAPFN "C:Path\To\note_color_map.png"             // Path to note color map file, is added after execution of the action
+                                                              // "View: Load note color map from file", cleared after execution
+                                                              // of the action "View: Clear note color map (use default)"
     FX 1                                                      // FX state, int, 0=bypassed, 1=active
     TRACKID {5619EDC5-E743-4BE8-AE9F-3B3469A111B5}            // REAPER track id, leave it alone
     PERF 0                                                    // Performance options, int (bitwise)
@@ -179,22 +179,22 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  val & 2 = prevent anticipative fx
 
    LAYOUTS "bd -- Small Full Meter + value readouts" "bc -- Small Full Meter"  // active TCP and MCP layouts,
-									       									   // the attribute is absent if both
-									       									   // are set to Global default, 
-									       									   // and in the Master track chunk,
-									       									   // if only one is set to Global default
-									       									   // it's represented by an empty placeholder
-									       									   // i.e. "" "bc -- Small Full Meter",
-									       									   // if not an empty placeholder, the layout
-									       									   // name is only enclosed within quotes if
-									       									   // it contains spaces as is the rule in
-									       									   // the chunks
+                                                                               // the attribute is absent if both
+                                                                               // are set to Global default, 
+                                                                               // and in the Master track chunk,
+                                                                               // if only one is set to Global default
+                                                                               // it's represented by an empty placeholder
+                                                                               // i.e. "" "bc -- Small Full Meter",
+                                                                               // if not an empty placeholder, the layout
+                                                                               // name is only enclosed within quotes if
+                                                                               // it contains spaces as is the rule in
+                                                                               // the chunks
 
-    <EXT						     					// Extension-specific persistent data which can be added with 
-							     						// GetSetEnvelopeInfo_String() function using 'P_EXT' parameter
-    parmname string					     				//  field 1, string - parmname, set with the function namesake argument
-    >							     					//  field 2, string - string, set with the function stringNeedBig  
-							     						//  argument; to delete pass this argument as an empty string
+    <EXT                                                // Extension-specific persistent data which can be added with 
+                                                        // GetSetEnvelopeInfo_String() function using 'P_EXT' parameter
+    parmname string                                     //  field 1, string - parmname, set with the function namesake argument
+    >                                                   //  field 2, string - string, set with the function stringNeedBig  
+                                                        //  argument; to delete pass this argument as an empty string
 
                                                               // --- Start of receive data ---
                                                               //     One for each receive or not present if no receives
@@ -248,34 +248,34 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               // View -> Show/hide note rows in the MIDI Editor
    
   <MIDINOTENAMES                  // Custom MIDI note names applied to Piano roll in all MIDI items 
-   -1 36 "My note 1" 0 36		  //  on the track
-   -1 38 "My note 2" 0 38		  //  field 1, int, MIDI channel number, -1 = Omni, named notes can be 
-   -1 40 "My note 3" 0 40		  //  assigned to different channels, and the same named note can be 
-   -1 41 "My note 4" 0 41		  //  assigned to more that one channel, in which case its listed as many 
-   -1 43 "My note 5" 0 43		  //  times as there're channels it's assigned to appearing under  
-  >							      //  different channel numbers;
-   				      			  //  field 2, int, 0-based note number; field 3, string, note name,
-  							      //  if the name contains spaces it's enclosed within quotes; 
-							      //  field 4 ??; field 5, int, note number.
-							      //  Named notes assigned to specific MIDI channels are only displayed 
-							      //  when such channels are selected in the MIDI Editor channel filter,
-							      //  unless they're also assigned to Omni in which case they will be 
-							      //  displayed if any other channel is selected in the filter as well.
-							      //  Named notes assigned to Omni will be displayed alongside named notes 
-							      //  assigned to specific MIDI channels unless there're blank names
-							      //  assigned to such specific MIDI channel whose note numbers match 
-							      //  the named note numbers assigned to Omni.
-							      //  Manual input of note names in the MIDI Editor always results in Omni
-							      //  assignment. Linking note names to specific MIDI channel is only
-							      //  possible via API using Get/SetTrackMIDINoteName(Ex) functions
-							      //  or by manual editing of the .rpp file.
+   -1 36 "My note 1" 0 36         //  on the track
+   -1 38 "My note 2" 0 38         //  field 1, int, MIDI channel number, -1 = Omni, named notes can be 
+   -1 40 "My note 3" 0 40         //  assigned to different channels, and the same named note can be 
+   -1 41 "My note 4" 0 41         //  assigned to more that one channel, in which case its listed as many 
+   -1 43 "My note 5" 0 43         //  times as there're channels it's assigned to appearing under  
+  >                               //  different channel numbers;
+                                  //  field 2, int, 0-based note number; field 3, string, note name,
+                                  //  if the name contains spaces it's enclosed within quotes; 
+                                  //  field 4 ??; field 5, int, note number.
+                                  //  Named notes assigned to specific MIDI channels are only displayed 
+                                  //  when such channels are selected in the MIDI Editor channel filter,
+                                  //  unless they're also assigned to Omni in which case they will be 
+                                  //  displayed if any other channel is selected in the filter as well.
+                                  //  Named notes assigned to Omni will be displayed alongside named notes 
+                                  //  assigned to specific MIDI channels unless there're blank names
+                                  //  assigned to such specific MIDI channel whose note numbers match 
+                                  //  the named note numbers assigned to Omni.
+                                  //  Manual input of note names in the MIDI Editor always results in Omni
+                                  //  assignment. Linking note names to specific MIDI channel is only
+                                  //  possible via API using Get/SetTrackMIDINoteName(Ex) functions
+                                  //  or by manual editing of the .rpp file.
 
-    MAINSEND 1 0		  		  // Master/parent send
+    MAINSEND 1 0                  // Master/parent send
                           		  // field 1, int (bool)
                           		  // field 2, ????
 
-							      	// --- Start of hardware send data, one line per hardware send ---
-							      	//   --- absent if no hardware sends ---
+                                    // --- Start of hardware send data, one line per hardware send ---
+                                    //   --- absent if no hardware sends ---
     HWOUT 512 0 1 0 0 0 0 -1:U -1	//  field 1, int, output index: 0 - 511 - stereo output, 
 							      	//  512 - 1023 - aux (rearoute) loopback stereo output which existed  
 							      	//  before v7.0, or officially supported looback output available  
@@ -325,15 +325,15 @@ The Track state chunk contains all the settings for a track and all of it's item
         (see chunk info below)
     >                                 // --- End of FX section
     
-    							      // --- Start of FREEZE section ----
-    <FREEZE 0						  //     Not present if track wasn't frozen ---
+                                      // --- Start of FREEZE section ----
+    <FREEZE 0                         //     Not present if track wasn't frozen ---
         (see chunk info below)
-    >							      // --- End of FREEZE section
+    >                                 // --- End of FREEZE section
     
-       							      // --- Start of Input FX section (irrelevant for the Master track) ----	
-    <FXCHAIN_REC					  //      Not present if track hasn't got/had Input FX ---								     
+                                      // --- Start of Input FX section (irrelevant for the Master track) ----	
+    <FXCHAIN_REC                      //      Not present if track hasn't got/had Input FX ---								     
 	(see chunk info below)
-    >   						      // --- End of Input FX section
+    >                                // --- End of Input FX section
 	
                                       // --- Start of item definitions ---
     <ITEM                             // First item definition
