@@ -729,15 +729,15 @@ TEMPOENVEX - Master tempo
                                                                                             // Envelope Display-> Volume envelope range); 
                                                                                             // (source: schwa [p=2198410])
 											    
-    PT 3.000000 -0.2 5 0 0 0 -0.7   			// Envelope point definition
-                                    			//  field 1, float, position (seconds)
-                                    			//  field 2, float, value
-                                    			//  field 3, int, shape (-1 = envelope default?)
-                                    			//  field 4, int, optional, ?? (TEMPOENVEX time sig = 65536 * 
+    PT 3.000000 -0.2 5 0 0 0 -0.7               // Envelope point definition
+                                                //  field 1, float, position (seconds)
+                                                //  field 2, float, value
+                                                //  field 3, int, shape (-1 = envelope default?)
+                                                //  field 4, int, optional, ?? (TEMPOENVEX time sig = 65536 * 
                                                 //  time signature denominator + time signature numerator)
-                                    			//  field 5, int (bool), selected (optional)
-                                    			//  field 6, int, ?? (optional)
-                                    			//  field 7, float, bezier tension (optional)
+                                                //  field 5, int (bool), selected (optional)
+                                                //  field 6, int, ?? (optional)
+                                                //  field 7, float, bezier tension (optional)
 >
 
 PARMENV contains extra data denoting which plugin parameter is controlled and what the minimum, maximum and default values are.
@@ -985,19 +985,19 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
      >                                                   //  
 	
                                                          // --- Start of second plugin definition
-    BYPASS 0 0                                           //  ...
-    <JS "Guitar/tremolo" ""                              //  Start of JS plugin data
-        (see Jesusonic plugin info below)                //
-    >                                                    //
-    JS_DIMS 489 305                                      //  Dimensions of JS plugin UI
-    FLOATPOS 0 0 0 0                                     //  ...
-    FXID {BE5D3334-6675-4DAD-AFDD-F4489878D82A}          //  ...
-    WAK 0 0                                              //  ...
-    <COMMENT                                             //  ...
-        Y29tbWVudA==                                     //  ...
-    >                                                    //  ...
+     BYPASS 0 0                                          //  ...
+     <JS "Guitar/tremolo" ""                             //  Start of JS plugin data
+         (see Jesusonic plugin info below)               //
+     >                                                   //
+     JS_DIMS 489 305                                     //  Dimensions of JS plugin UI
+     FLOATPOS 0 0 0 0                                    //  ...
+     FXID {BE5D3334-6675-4DAD-AFDD-F4489878D82A}         //  ...
+     WAK 0 0                                             //  ...
+     <COMMENT                                            //  ...
+         Y29tbWVudA==                                    //  ...
+     >                                                   //  ...
 
-    >                                                     // --- End of FX section
+    >                                                    // --- End of FX section
 
 
 --------------------------------------------------------------------------------------------------------------------
