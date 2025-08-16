@@ -768,7 +768,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                                               //  field 3, int, width
                                                               //  field 4, int, height
     SHOW 0                                                    //  field 1, int, index of an FX currently open in the chain 
-							      							  // (NOT zero based)
+                                                              // (NOT zero based)
     LASTSEL 1                                                 // Index of selected plugin (zero based), int
     DOCKED 0                                                  // FX window is docked, int (bool)
 	
@@ -780,15 +780,15 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
         (see VST(i) plugin info below)                        //
     >                                                         //
     WET 0.5                                                   //  Amount of plugin wet output set on the plugin UI wrapper, 
-							      							  //  if not 100%;
-    PRESETNAME "stock - Basic 11 band"			      		  //  Name of current plugin preset selected in the preset drop-down list;
-							      							  //  In VST3 plugins may list .vstpreset file path enclosed within quotes,
-							      							  //  e.g. "C:\VST3 presets\test4.vstpreset"
+                                                              //  if not 100%;
+    PRESETNAME "stock - Basic 11 band"                        //  Name of current plugin preset selected in the preset drop-down list;
+                                                              //  In VST3 plugins may list .vstpreset file path enclosed within quotes,
+                                                              //  e.g. "C:\VST3 presets\test4.vstpreset"
     FLOATPOS 0 0 0 0                                          //  Plugin floating window pos, int;
-    						              					  //  FLOAT - plugin UI is open in a floating window; FLOATPOS - plugin UI 
-							      							  //  is NOT open in a floating window;
-    							      						  //  field 1 - top; field 2 - left; field 3 - width; field 4 - height;
-							      							  //  If at least field 3 or 4 is 0, plugin window doesn't float							       
+                                                              //  FLOAT - plugin UI is open in a floating window; FLOATPOS - plugin UI 
+                                                              //  is NOT open in a floating window;
+                                                              //  field 1 - top; field 2 - left; field 3 - width; field 4 - height;
+                                                              //  If at least field 3 or 4 is 0, plugin window doesn't float							       
 
     PARMALIAS 3 "Compression"                                 //  Names and indices of renamed FX parameters
     PARMALIAS 4 "DS Freq"                                     //  
@@ -797,188 +797,188 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 
     FXID {1191A7FE-F583-477E-8416-D9F0F58226CD}               //  Plugin id, leave it alone
     
-								  // -- Start of Parameter modulation settings
-								  //
+                                  // -- Start of Parameter modulation settings
+                                  //
     <PROGRAMENV 12:bypass 0       //  One block per each parameter with engaged parameter modulation
-								  //   field 1, int, parameter index (zero based)
-								  //   Plugin wrapper parameters, such as Bypass here, are named, 
-								  //   plugin native parameters are only referenced by their indices
-								  //   field 2, bool, 0 - enabled, 1 - bypassed  
-								  //   (set by (un)ticking checkbox 'Enable parameter modulation' 
-								  //   in Parameter modulation dialogue)
-      PARAMBASE 0.5				  //   float, 'Baseline value (envelope overrides)' in the range of 0-1;
-      LFO 1					 	  //   bool, 'LFO' checkbox, 0 - disabled, 1 - enabled,
-								  //   all LFO related parameters are only present in the block 
-								  //   if this setting is 1;
-      LFOWT 1 0					  //   field 1, float, LFO Strength, 0 - 0.0%, 1 - 100.0%;
-								  //   field 2, int, LFO Direction, -1 - negative, 0 - center, 
-								  //   1 - positive;
-      AUDIOCTL 0				  //   bool, 'Audio control signal (sidechain)' checkbox, 0 - disabled, 
-								  //   1 - enabled;
-								  //   all audio control related parameters are only present in the block 
-								  //   if this setting is 1;
-      AUDIOCTLWT 1 1			  //   field 1, float, Strength, 0 - 0.0%, 1 - 100.0%;
-					      		  //   field 2, int, Direction, -1 - negative, 0 - center, 1 - positive;
+                                  //   field 1, int, parameter index (zero based)
+                                  //   Plugin wrapper parameters, such as Bypass here, are named, 
+                                  //   plugin native parameters are only referenced by their indices
+                                  //   field 2, bool, 0 - enabled, 1 - bypassed  
+                                  //   (set by (un)ticking checkbox 'Enable parameter modulation' 
+                                  //   in Parameter modulation dialogue)
+      PARAMBASE 0.5               //   float, 'Baseline value (envelope overrides)' in the range of 0-1;
+      LFO 1                       //   bool, 'LFO' checkbox, 0 - disabled, 1 - enabled,
+                                  //   all LFO related parameters are only present in the block 
+                                  //   if this setting is 1;
+      LFOWT 1 0                   //   field 1, float, LFO Strength, 0 - 0.0%, 1 - 100.0%;
+                                  //   field 2, int, LFO Direction, -1 - negative, 0 - center, 
+                                  //   1 - positive;
+      AUDIOCTL 0                  //   bool, 'Audio control signal (sidechain)' checkbox, 0 - disabled, 
+                                  //   1 - enabled;
+                                  //   all audio control related parameters are only present in the block 
+                                  //   if this setting is 1;
+      AUDIOCTLWT 1 1              //   field 1, float, Strength, 0 - 0.0%, 1 - 100.0%;
+                                  //   field 2, int, Direction, -1 - negative, 0 - center, 1 - positive;
       LFOSHAPE 0                  //   int, 0 - sine, 1 - square, 2 - saw L, 3 - saw R, 4 - triangle, 
-							      //   5 - random;
+                                  //   5 - random;
       LFOSYNC 0 0 0               //   field 1, bool, Tempo sync, 0 - disabled, 1 - enabled;
-								  //   field 2 - ??
-								  //   field 3, bool, Phase reset, 0 - On seek/loop (deterministic 
-								  //   output), 1 - Free running (non-deterministic output);
+                                  //   field 2 - ??
+                                  //   field 3, bool, Phase reset, 0 - On seek/loop (deterministic 
+                                  //   output), 1 - Free running (non-deterministic output);
       LFOSPEED 0.124573 0         //   field 1, float, Speed in the range of 0 - 0 Hz, 
-							      //   0.124573 (center) - 1 Hz, 1 - 8.000 Hz;
-							      //   if Tempo sync is enabled: 0 - 8 QN, 0.9 (center) - 1 QN, 
-							      //   1 - 0.25 QN;
-							      //   field 2, float, Phase in the range of 0 - 1;
-      CHAN 0				      //   int, Track audio channel number, mono channels count is 0-based, 
-							      //   stereo channel is incremented by 2 for each next stereo pairs 
-							      //   starting from 0, e.g. 0 - 1+2, 2 - 3+4, 4 - 5+6, 6 - 7+8 etc.;
-      STEREO 0				      //   bool, 0 - mono channel is selected in 'Track audio channel' menu, 
-							      //   1 - stereo channel is selected;
-      RMS 0 0				      //   field 1, float, Attack time in the range of 0 - 1000 ms;
-							      //   field 2, float, Release time in the range of 0 - 1000 ms;
-      DBLO -60			      	  //   float, 'Min volume' setting in the range of -60.00 - 11.9 dB 
-							      //   (although readout shows 12.00);
-      DBHI 12			      	  //   float, 'Max volume' setting in the range of -59.9 - 12.00 dB 
-							      //   (although readout shows -60.00);
-      X2 0.5			      	  //   float, 'Audio control signal shaping' node X coordinate 
-							      //   in the range of 0 - 1;
-      Y2 0.5			      	  //   float, 'Audio control signal shaping' node Y coordinate 
-							      //   in the range of 0 - 1;
+                                  //   0.124573 (center) - 1 Hz, 1 - 8.000 Hz;
+                                  //   if Tempo sync is enabled: 0 - 8 QN, 0.9 (center) - 1 QN, 
+                                  //   1 - 0.25 QN;
+                                  //   field 2, float, Phase in the range of 0 - 1;
+      CHAN 0                      //   int, Track audio channel number, mono channels count is 0-based, 
+                                  //   stereo channel is incremented by 2 for each next stereo pairs 
+                                  //   starting from 0, e.g. 0 - 1+2, 2 - 3+4, 4 - 5+6, 6 - 7+8 etc.;
+      STEREO 0                    //   bool, 0 - mono channel is selected in 'Track audio channel' menu, 
+                                  //   1 - stereo channel is selected;
+      RMS 0 0                     //   field 1, float, Attack time in the range of 0 - 1000 ms;
+                                  //   field 2, float, Release time in the range of 0 - 1000 ms;
+      DBLO -60                    //   float, 'Min volume' setting in the range of -60.00 - 11.9 dB 
+                                  //   (although readout shows 12.00);
+      DBHI 12                     //   float, 'Max volume' setting in the range of -59.9 - 12.00 dB 
+                                  //   (although readout shows -60.00);
+      X2 0.5                      //   float, 'Audio control signal shaping' node X coordinate 
+                                  //   in the range of 0 - 1;
+      Y2 0.5                      //   float, 'Audio control signal shaping' node Y coordinate 
+                                  //   in the range of 0 - 1;
       PLINK 1 2:-1 6 0            //  Parameter modulation linkage data
-							      //   field 1, float, param modulation Scale value
-							      //   -1 - -100%, 0 - 0%, 1 - 100% and everything in between as decimals;
-							      //   field 2, int, a colon delimited pair of the Master parameter 
-							      //   0-based index and a difference between the Master plugin and 
-							      //   the current (Slave) plugin indices (also 0-based) in the FX chain, 
-							      //   negative difference indicates that the Master plugin sits earlier
-							      //   in the chain, difference 0 means self-linking (within same plugin)
-							      //   field 2 contains -100 when the parameter is linked to MIDI;
-							      //   field 3, int, Master parameter 0-based index, may or may not be 
-							      //   formatted as as a colon delimited pair of the Master parameter 
-							      //   index and either its name or its internal index inside the Master  
-							      //   plugin, e.g. 6:5, where 5 is the index assigned to the parameter 
-							      //   inside the plugin, or 6:_SafeBass, where SafeBass is the parameter 
-							      //   name, VST3 plugins seem to tend to have indices rather than names, 
-							      //   with 3d party plugins this piece of data if incorrect will render 
-							      //   parameter modulation inoperable, BUT its complete absence won't  
-							      //   affect the functionality, if second integer of the field 2 is 0
-							      //   field 3 integer refers to the index of the Master parameter within 
-							      //   the same plugin. Both fields 2 and 3 contain -1 when option 
-							      //   'Link from MIDI or FX parameter' is enabled but the parameter
-							      //   isn't linked and there's no linkage to MIDI;
-							      //   field 4, float, param modulation Offset value
-							      //   -1 - -100%, 0 - 0%, 1 - 100% and everything in between as decimals;
-      MIDIPLINK 0 0 176 14		  //  Parameter modulation MIDI linkage data
-							      //   field 1, int, MIDI bus number (0-15);
-							      //   field 2, int, MIDI channel number (1-16);
-							      //   field 3, int, MIDI message type code: 176 - CC, 144 - Note, 
-							      //   160 - Aftertouch, 192 - Program Change, 208 - Channel Pressure, 
-							      //   224 - Pitch;
-							      //   field 4, int, message number (0-127) if CC type message (176), 
-							      //   including numbers of 14 bit messages (128-159), note number (0-127)
-							      //   if Note type message (144) or Aftertouch type message (160), 
-							      //   and 0 if another message type;
-							      //   if MIDI linkage is enabled the modified PLINK data are kept 
-							      //   in the chunk but not vice versa;
-      MODWND 0 204 147 552 506	  //  Parameter modulaition dialogue data                       
-							      //   field 1, bool, parameter modulation dialogue state,
+                                  //   field 1, float, param modulation Scale value
+                                  //   -1 - -100%, 0 - 0%, 1 - 100% and everything in between as decimals;
+                                  //   field 2, int, a colon delimited pair of the Master parameter 
+                                  //   0-based index and a difference between the Master plugin and 
+                                  //   the current (Slave) plugin indices (also 0-based) in the FX chain, 
+                                  //   negative difference indicates that the Master plugin sits earlier
+                                  //   in the chain, difference 0 means self-linking (within same plugin)
+                                  //   field 2 contains -100 when the parameter is linked to MIDI;
+                                  //   field 3, int, Master parameter 0-based index, may or may not be 
+                                  //   formatted as as a colon delimited pair of the Master parameter 
+                                  //   index and either its name or its internal index inside the Master  
+                                  //   plugin, e.g. 6:5, where 5 is the index assigned to the parameter 
+                                  //   inside the plugin, or 6:_SafeBass, where SafeBass is the parameter 
+                                  //   name, VST3 plugins seem to tend to have indices rather than names, 
+                                  //   with 3d party plugins this piece of data if incorrect will render 
+                                  //   parameter modulation inoperable, BUT its complete absence won't  
+                                  //   affect the functionality, if second integer of the field 2 is 0
+                                  //   field 3 integer refers to the index of the Master parameter within 
+                                  //   the same plugin. Both fields 2 and 3 contain -1 when option 
+                                  //   'Link from MIDI or FX parameter' is enabled but the parameter
+                                  //   isn't linked and there's no linkage to MIDI;
+                                  //   field 4, float, param modulation Offset value
+                                  //   -1 - -100%, 0 - 0%, 1 - 100% and everything in between as decimals;
+      MIDIPLINK 0 0 176 14        //  Parameter modulation MIDI linkage data
+                                  //   field 1, int, MIDI bus number (0-15);
+                                  //   field 2, int, MIDI channel number (1-16);
+                                  //   field 3, int, MIDI message type code: 176 - CC, 144 - Note, 
+                                  //   160 - Aftertouch, 192 - Program Change, 208 - Channel Pressure, 
+                                  //   224 - Pitch;
+                                  //   field 4, int, message number (0-127) if CC type message (176), 
+                                  //   including numbers of 14 bit messages (128-159), note number (0-127)
+                                  //   if Note type message (144) or Aftertouch type message (160), 
+                                  //   and 0 if another message type;
+                                  //   if MIDI linkage is enabled the modified PLINK data are kept 
+                                  //   in the chunk but not vice versa;
+      MODWND 0 204 147 552 506    //  Parameter modulaition dialogue data                       
+                                  //   field 1, bool, parameter modulation dialogue state,
     >                             //   0 - closed, 1 - open, the element is added if parameter 
-							      //   modulation dialogue was opened at least once
-							      //   fields 2-5, pixel, parameter modulation dialogue coordinates: 
-							      //   left, top, right, bottom 
-							      //
-                                                              //  --- Start of parameter envelopes for this plugin.
-                                                              //      One block for each non-empty envelope.
-    <PARMENV 2 0.0 1.0 0.5                                    //      First parameter envelope
-        (see envelope chunk info)                             //      (irrelevant for Input and Monitor FX)
-    >                                                         //
-                                                              //  --- End of parameter envelopes
+                                  //   modulation dialogue was opened at least once
+                                  //   fields 2-5, pixel, parameter modulation dialogue coordinates: 
+                                  //   left, top, right, bottom 
+                                  //
+                                      //  --- Start of parameter envelopes for this plugin.
+                                      //      One block for each non-empty envelope.
+    <PARMENV 2 0.0 1.0 0.5            //      First parameter envelope
+        (see envelope chunk info)     //      (irrelevant for Input and Monitor FX)
+    >                                 //
+                                      //  --- End of parameter envelopes
 							      
-							      //  NOTE: If both envelope (PARMENV) and parameter modulation  
-							      //  (PROGRAMENV) are enabled for the same plugin parameter 
-							      //  the PARMENV data are followed by PROGRAMENV data.
+                                  //  NOTE: If both envelope (PARMENV) and parameter modulation  
+                                  //  (PROGRAMENV) are enabled for the same plugin parameter 
+                                  //  the PARMENV data are followed by PROGRAMENV data.
 							      
-							      //  -- Start of MIDI/OSC controller assignments
-    PARMLEARN 0 1968 2			  //  field 1, int, parameter idx
-    PARMLEARN 1 2736 2			  //  field 2, int, a number assigned by REAPER to a MIDI controller e.g. 
-    PARMLEARN 2 944 2			  //  (CC0 = 176, CC1 = 432, 944 = CC3, 1968 = CC7, 2736 =  CC10), 
-							      //  the step equals 256;
-							      //  In CC Mode: Absolute - CC0 = 176, Relative 1 - CC0 = 65712,  
-							      //  Relative 2 - CC0 = 131248, Relative 3 - CC0 = 196784, 
-							      //  Toggle - CC0 = 262320;
-   							      //  field 3, int, 2 - Soft takeover (absolute mode only) or 2+0, 
-					      		  //  1 - Enable only when track or item is selected, 3 - 1+2, 
-							      //  4 - Enable only when effect configuration is focused, 
-					      	      //  20 - Enable only when effect configuration is visible, 
-							      //  0 - Arm envelope for selected parameter;
-	      						   //  -- End of MIDI/OSC controller assignments
+                                  //  -- Start of MIDI/OSC controller assignments
+    PARMLEARN 0 1968 2            //  field 1, int, parameter idx
+    PARMLEARN 1 2736 2            //  field 2, int, a number assigned by REAPER to a MIDI controller e.g. 
+    PARMLEARN 2 944 2             //  (CC0 = 176, CC1 = 432, 944 = CC3, 1968 = CC7, 2736 =  CC10), 
+                                  //  the step equals 256;
+                                  //  In CC Mode: Absolute - CC0 = 176, Relative 1 - CC0 = 65712,  
+                                  //  Relative 2 - CC0 = 131248, Relative 3 - CC0 = 196784, 
+                                  //  Toggle - CC0 = 262320;
+                                  //  field 3, int, 2 - Soft takeover (absolute mode only) or 2+0, 
+                                  //  1 - Enable only when track or item is selected, 3 - 1+2, 
+                                  //  4 - Enable only when effect configuration is focused, 
+                                  //  20 - Enable only when effect configuration is visible, 
+                                  //  0 - Arm envelope for selected parameter;
+                                  //  -- End of MIDI/OSC controller assignments
 							      
     PARM_TCP 12:bypass 13:wet 4 2 0       //  Show in track controls (FX params visible in TCP/MCP), irrelevant  
                                           //  for Input, Take and Monitor FX;
-										  //  Plugin wrapper parameters format is index:name, ReaPlug  
-										  //  and VST2 plugin own params are referenced by their indices only, 
-										  //  the indices count is 0 based;
-										  //  Since build 6.48 (wasn't able to figure out which change in the 
-										  //  changelog refers to this) for ReaPlugs and some VST2 plugins 
-										  //  the format includes FX parameter names, e.g. 
-										  //  PARM_TCP 4:_1__Length 7:_1__Hipass 10:_1__Volume
-										  //  Examples of VST3 plugins format: 
-										  //  1) 0:1652125811 1:1835232512 3:1835232514;
-										  //  2) 0:720135338 1:720135339 2:720135340;
-										  //  3) 0:65536 1:0 8:7, where the first number is the REAPER assigned 
-										  //  0-based index and the second one is plugin's own internal index.
+                                          //  Plugin wrapper parameters format is index:name, ReaPlug  
+                                          //  and VST2 plugin own params are referenced by their indices only, 
+                                          //  the indices count is 0 based;
+                                          //  Since build 6.48 (wasn't able to figure out which change in the 
+                                          //  changelog refers to this) for ReaPlugs and some VST2 plugins 
+                                          //  the format includes FX parameter names, e.g. 
+                                          //  PARM_TCP 4:_1__Length 7:_1__Hipass 10:_1__Volume
+                                          //  Examples of VST3 plugins format: 
+                                          //  1) 0:1652125811 1:1835232512 3:1835232514;
+                                          //  2) 0:720135338 1:720135339 2:720135340;
+                                          //  3) 0:65536 1:0 8:7, where the first number is the REAPER assigned 
+                                          //  0-based index and the second one is plugin's own internal index.
 
 							      
     WAK 0 0                       //  WAK = Want All Keys 
-							      //  (https://forums.cockos.com/showthread.php?p=2420594)
-    							  //  field 1, bool, 1 - 'Send all keyboard input to plug-in' option 
-							      //  is enabled in the FX instance RMB context menu or FX chain 'FX' menu
-							      //  field 2, int, 1 - show embedded FX UI on TCP, 2 - show on MCP
-    PARALLEL 1					  //  field 1, int, appears when either of the following options is enabled
-							      //  1 - option 'Run selected FX in parallel with previous FX' is enabled;
-							      //  2 - option 'Run selected FX in parallel with previous FX (merge MIDI)' 
-							      //  is enabled (since REAPER 7)
+                                  //  (https://forums.cockos.com/showthread.php?p=2420594)
+                                  //  field 1, bool, 1 - 'Send all keyboard input to plug-in' option 
+                                  //  is enabled in the FX instance RMB context menu or FX chain 'FX' menu
+                                  //  field 2, int, 1 - show embedded FX UI on TCP, 2 - show on MCP
+    PARALLEL 1                    //  field 1, int, appears when either of the following options is enabled
+                                  //  1 - option 'Run selected FX in parallel with previous FX' is enabled;
+                                  //  2 - option 'Run selected FX in parallel with previous FX (merge MIDI)' 
+                                  //  is enabled (since REAPER 7)
 							      
-	<CONTAINER Container ""		  // --- Start of FX container definition (since REAPER 7)
-							      // "" - container isn't named; as usual, names with spaces are enclosed
-							      // within quotes, otherwise no quotes;
-	  CONTAINER_CFG 4 4 2 0		  // field 1, int, number of container channels;
-							      // field 2, int, number of container inputs; 
-							      // field 3, int, number of container outputs; 
-							      // field 4 ????
-	  <IN_PINS					  // The Input pin indices are not listed if all container Input pins 
-	  >						      // are mapped to the track channels with corresponding indices: 
-							      // 0 to 0, 1 to 1 etc., the count is 0-based;
-	----------------------		  //
-	  <IN_PINS					  // If all container Input pins are disabled, or only some
-	   PIN 0					  // while others are mapped to the corresponding track channels 
-	   PIN 1					  // (see above), only indices of disabled pins are listed in the block,
-	   PIN 2					  // here pins 1-4 (0-3 in 0-based count);
-	   PIN 3					  //
-	  >						      //
-	----------------------		  //
-	  <IN_PINS					  // If container Input pins are mapped to track channels whose
-	   PIN 0					  // indices differ from the Input pins mapped to them, these are 
-	   PIN 1 0					  // listed as pairs of indices: Input pin 2 is mapped to track channel 1,
-	   PIN 2					  // Input pin 4 is mapped to track channel 3, in the chunk the count is
-	   PIN 3 2					  // 0-based; two other entries refer to disabled container Input pins.
-	  >						      //
-	  <OUT_PINS					  // The principle of FX container Input pin representation described 
-	   PIN 0 2					  // above applies to FX container Output pins as well; here Output pin 1 
-	   PIN 1 3					  // is mapped to track 3, Output pin 2 - to track 4, Output pins 3 & 4 
-	  >						      // are mapped to tracks with corresponding indices, i.e. 3 & 4 hence 
-							      // these are not listed;
-							      //
-	-- Here regular FX chain chunk follows --	      	 // FX containers are nestable, so inside this FX chain chunk another 
-	  ........				   	      				  	 // container block may be found;
-	>						      					 	 //
-	  						      					  	 // Each FX container is followed by these 3 or 4 lines,
-	  FLOATPOS 0 0 0 0				      				 // same as in FX chunk
-          FXID {CA586787-591F-4157-B5B3-888AB9F19CE3}	 //
-          WAK 0 0					      				 //
-	  PARALLEL 1					      				 // Optional, depending on whether the relevant option is enabled	  					      
-							      						 //  --- FX container definition end
+	<CONTAINER Container ""	      // --- Start of FX container definition (since REAPER 7)
+                                  // "" - container isn't named; as usual, names with spaces are enclosed
+                                  // within quotes, otherwise no quotes;
+	  CONTAINER_CFG 4 4 2 0	      // field 1, int, number of container channels;
+                                  // field 2, int, number of container inputs; 
+                                  // field 3, int, number of container outputs; 
+                                  // field 4 ??
+	  <IN_PINS                    // The Input pin indices are not listed if all container Input pins 
+	  >                           // are mapped to the track channels with corresponding indices: 
+                                  // 0 to 0, 1 to 1 etc., the count is 0-based;
+	----------------------        //
+	  <IN_PINS                    // If all container Input pins are disabled, or only some
+	   PIN 0                      // while others are mapped to the corresponding track channels 
+	   PIN 1                      // (see above), only indices of disabled pins are listed in the block,
+	   PIN 2                      // here pins 1-4 (0-3 in 0-based count);
+	   PIN 3                      //
+	  >                           //
+	----------------------        //
+	  <IN_PINS                    // If container Input pins are mapped to track channels whose
+	   PIN 0                      // indices differ from the Input pins mapped to them, these are 
+	   PIN 1 0                    // listed as pairs of indices: Input pin 2 is mapped to track channel 1,
+	   PIN 2                      // Input pin 4 is mapped to track channel 3, in the chunk the count is
+	   PIN 3 2                    // 0-based; two other entries refer to disabled container Input pins.
+	  >                           //
+	  <OUT_PINS                   // The principle of FX container Input pin representation described 
+	   PIN 0 2                    // above applies to FX container Output pins as well; here Output pin 1 
+	   PIN 1 3                    // is mapped to track 3, Output pin 2 - to track 4, Output pins 3 & 4 
+	  >                           // are mapped to tracks with corresponding indices, i.e. 3 & 4 hence 
+                                  // these are not listed;
+                                  //
+	-- Here regular FX chain chunk follows --            // FX containers are nestable, so inside this FX chain chunk another 
+	  ........                                           // container block may be found;
+	>                                                    //
+                                                         // Each FX container is followed by these 3 or 4 lines,
+	  FLOATPOS 0 0 0 0                                   // same as in FX chunk
+          FXID {CA586787-591F-4157-B5B3-888AB9F19CE3}    //
+          WAK 0 0                                        //
+	  PARALLEL 1                                         // Optional, depending on whether the relevant option is enabled	  					      
+                                                         //  --- FX container definition end
 
     <COMMENT                                             //  Plugin comment. Not present if no comment.
         Y29tbWVudA==                                     //   Binary data, probably best to leave it alone
@@ -989,7 +989,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     <JS "Guitar/tremolo" ""                              //  Start of JS plugin data
         (see Jesusonic plugin info below)                //
     >                                                    //
-    JS_DIMS 489 305					      				 //  Dimensions of JS plugin UI
+    JS_DIMS 489 305                                      //  Dimensions of JS plugin UI
     FLOATPOS 0 0 0 0                                     //  ...
     FXID {BE5D3334-6675-4DAD-AFDD-F4489878D82A}          //  ...
     WAK 0 0                                              //  ...
