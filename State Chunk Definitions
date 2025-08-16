@@ -453,9 +453,8 @@ Audio Item
 											// field 4 - integer, marker length in sec (protruding horizontal bar)
 											// supported since build 7.17
 							
-    SM 0 0 -0.149425287 + 0.574712644 0.5 + 1.348114004 // Stretch marker data
-    1.273401361
-							
+    SM 0 0 -0.149425287 + 0.574712644 0.5 + 1.348114004 1.273401361		// Stretch marker data
+    							
    														// Transient markers (guides) data
     TMINFO 44100										// field 2 - item source sample rate
     TM 104 671 6270 13233 678 676 673 19218 6385 677    // field 2 - distance in samples, at the above sample rate,  
