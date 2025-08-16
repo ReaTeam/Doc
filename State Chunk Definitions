@@ -54,7 +54,7 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //   and track template, they don't change while the project is open
     BUSCOMP 0 0 0 41 8                                        // Collapse folder (bus compact?)
                                                               //  field 1, int, collapse state in Arrange 0=not collapsed, 
-	                                                          //  1=collapsed medium, 2=collapsed small
+                                                              //  1=collapsed medium, 2=collapsed small
                                                               //  field 2, int, collapse state in the Mixer 0=not collapsed, 
                                                               //  1=collapsed;
                                                               //  field 3, int, collapse state in track wiring, 0=not collapsed, 
