@@ -671,14 +671,14 @@ TEMPOENVEX - Master tempo
                                                     //   which is envelope control panel height including padding between
                                                     //   it and the lower env control panel
                                                     //   field 2, int, ??
-    ARM 1                           				// Armed, int (bool)
-    DEFSHAPE 0 -1 -1                    			// field 1 - Default point shape, int
-                                    				//   0 = Linear
-                                    				//   1 = Square
-                                    				//   2 = Slow Start/End
-                                    				//   3 = Fast Start
-                                    				//   4 = Fast End
-                                    				//   5 = Bezier
+    ARM 1                                           // Armed, int (bool)
+    DEFSHAPE 0 -1 -1                                // field 1 - Default point shape, int
+                                                    //   0 = Linear
+                                                    //   1 = Square
+                                                    //   2 = Slow Start/End
+                                                    //   3 = Fast Start
+                                                    //   4 = Fast End
+                                                    //   5 = Bezier
                                                     // field 2, int, pitch envelope range
                                                     // field 3, int, pitch envelope snap setting
                                                     // -1=global default, otherwise these are the LSB and MSB of the "pitchenvrange" 
@@ -734,7 +734,7 @@ TEMPOENVEX - Master tempo
                                     			//  field 2, float, value
                                     			//  field 3, int, shape (-1 = envelope default?)
                                     			//  field 4, int, optional, ?? (TEMPOENVEX time sig = 65536 * 
-												//  time signature denominator + time signature numerator)
+                                                //  time signature denominator + time signature numerator)
                                     			//  field 5, int (bool), selected (optional)
                                     			//  field 6, int, ?? (optional)
                                     			//  field 7, float, bezier tension (optional)
