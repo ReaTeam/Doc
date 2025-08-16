@@ -1,6 +1,9 @@
 Original by IXix
 Cockos Wiki: http://wiki.cockos.com/wiki/index.php/State_Chunk_Definitions
 
+NOTE ON FORMATTING: USE REGULAR SPACE RATHER THAN TAB TO CREATE IDENTATION AND SEPARATE COMMENTS FROM THE CODE TO ENSURE FORWARD COMPATIBILITY 
+BECAUSE GITHUB MAY CHANGE THE LENGTH OF TAB SPACE WHICH WILL BREAK FORMATTING LIKE WHAT HAPPENED DURING UPDATE OF THE DOC ON AUG 16, 2025.
+
 This page details what is known about various state chunk definitions such as are returned by API functions. 
 There are still some question marks (gaps) in the definitions and several plugin formats are completely undocumented so please fill in any gaps you can. Thanks to all who have spent time poking around these things. It's a tedious business.
 Please note that comments, empty lines and indentation are for illustration only.
