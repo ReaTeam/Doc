@@ -658,19 +658,19 @@ AUXMUTEENV - Track send mute (0.0 to 1.0)
 PARMENV - Plugin parameter (value range defined by additional parameters after type tag)
 TEMPOENVEX - Master tempo
 
-<VOLENV2                            				// Type. PARMENV has additional fields on this line (see below)
-    EGUID {1A24257D-0EE1-4D1C-8BF7-7D795608ED97}	// Envelope GUID
-    ACT 1 -1                          				// field 1, int (bool) Active, field 2 ??
-    VIS 1 1 1.0                     				// Visibility
-                                    				//   field 1, int (bool), visible
-                                    				//   field 2, int (bool), show in lane
-                                    				//   field 3, deprecated value, always 1.0 (source: schwa [p=2198426])
-    LANEHEIGHT 0 0                  				// Lane height
-                                    				//   field 1, int, height in pixels, corresponds to the value associated 
-													//   with 'I_TCPH' parameter of GetEnvelopeInfo_Value() function
-													//   which is envelope control panel height including padding between
-													//   it and the lower env control panel
-                                    				//   field 2, int, ??
+<VOLENV2                                            // Type. PARMENV has additional fields on this line (see below)
+    EGUID {1A24257D-0EE1-4D1C-8BF7-7D795608ED97}    // Envelope GUID
+    ACT 1 -1                                        // field 1, int (bool) Active, field 2 ??
+    VIS 1 1 1.0                                     // Visibility
+                                                    //   field 1, int (bool), visible
+                                                    //   field 2, int (bool), show in lane
+                                                    //   field 3, deprecated value, always 1.0 (source: schwa [p=2198426])
+    LANEHEIGHT 0 0                                  // Lane height
+                                                    //   field 1, int, height in pixels, corresponds to the value associated 
+                                                    //   with 'I_TCPH' parameter of GetEnvelopeInfo_Value() function
+                                                    //   which is envelope control panel height including padding between
+                                                    //   it and the lower env control panel
+                                                    //   field 2, int, ??
     ARM 1                           				// Armed, int (bool)
     DEFSHAPE 0 -1 -1                    			// field 1 - Default point shape, int
                                     				//   0 = Linear
@@ -679,55 +679,55 @@ TEMPOENVEX - Master tempo
                                     				//   3 = Fast Start
                                     				//   4 = Fast End
                                     				//   5 = Bezier
-													// field 2, int, pitch envelope range
-													// field 3, int, pitch envelope snap setting
-													// -1=global default, otherwise these are the LSB and MSB of the "pitchenvrange" 
-													// config variable, i.e. Preferences -> Editing Behavior -> Envelope Display ->
-													// Default pitch envelope range: ... semitones, snap: ... 
-													// (source: schwa [p=2198426])
-    <EXT											// Extension-specific persistent data which can be added 
-													// with GetSetEnvelopeInfo_String() function
-													// using 'P_EXT' parameter
-    parmname string									//  field 1, string - parmname, set with the function namesake argument
-    >												//  field 2, string - string, set with the function stringNeedBig argument; 
-    												//  to delete, pass this argument as an empty string
+                                                    // field 2, int, pitch envelope range
+                                                    // field 3, int, pitch envelope snap setting
+                                                    // -1=global default, otherwise these are the LSB and MSB of the "pitchenvrange" 
+                                                    // config variable, i.e. Preferences -> Editing Behavior -> Envelope Display ->
+                                                    // Default pitch envelope range: ... semitones, snap: ... 
+                                                    // (source: schwa [p=2198426])
+    <EXT                                            // Extension-specific persistent data which can be added 
+                                                    // with GetSetEnvelopeInfo_String() function
+                                                    // using 'P_EXT' parameter
+    parmname string                                 //  field 1, string - parmname, set with the function namesake argument
+    >                                               //  field 2, string - string, set with the function stringNeedBig argument; 
+                                                    //  to delete, pass this argument as an empty string
     
     POOLEDENVINST 6 1.375 0.39917615841563 0.114936 0.354826 1 0.5 1 1 0 0 1280 0 0 0.012 0 // Automation item (AI) properties
-    																						// field 1, int, pool index, 
-    																						// pooled instances have the same index 
-											    											// (greater by 1 than the one displayed
-											    											// by default in the Name field of AI									    
-											    											// Properties window);
-											   		 										// field 2, float/double, Position (sec);
-											    											// field 3, float/double, Length (sec);
-																						    // field 4, float/double, Start offset (sec);
-																						    // field 5, float/double, Play rate;
-																						    // field 6, int (bool), selected;
-																						    // field 7, float, Baseline, 0 = -100, 
-																						    // 0.5 = 0, 1 = 100;
-																						    // field 8, float, Amplitude, -2 = -200, 
-																						    // 1 = 100, 2 = 200;
-																						    // Baseline/amplitude affects pooled copies;
-																						    // field 9, int (bool), Loop, 1 on, 0 off
-																						    // field 10, float/double, Position in QN  
-																						    // (only used in certain contexts);
-																						    // field 11, Length in QN
-																						    // (only used in certain contexts);
-																						    // field 12, int, 1 based index of AI since
-																						    // starting the project, incremented even if
-																						    // older AIs were deleted and regardless of
-																						    // the AI being pooled;
-																						    // field 13, int, muted;
-																						    // field 14, float/double, Start offset in QN 
-																						    // (only used in certain contexts);
-																						    // field 15, float/double, Transition time (sec)
-																						    // field 16, int, volume envelope maximum 
-																						    // when this instance was created (matches the 1|4 
-																						    // bits of the "volenvrange" config variable: 
-																						    // 0=+6dB, 1=+0dB, 4=+12dB, 5=+24dB, i.e. 
-																						    // Preferences -> Editing Behavior ->
-																						    // Envelope Display-> Volume envelope range); 
-																						    // (source: schwa [p=2198410])
+                                                                                            // field 1, int, pool index, 
+                                                                                            // pooled instances have the same index 
+                                                                                            // (greater by 1 than the one displayed
+                                                                                            // by default in the Name field of AI									    
+                                                                                            // Properties window);
+                                                                                            // field 2, float/double, Position (sec);
+                                                                                            // field 3, float/double, Length (sec);
+                                                                                            // field 4, float/double, Start offset (sec);
+                                                                                            // field 5, float/double, Play rate;
+                                                                                            // field 6, int (bool), selected;
+                                                                                            // field 7, float, Baseline, 0 = -100, 
+                                                                                            // 0.5 = 0, 1 = 100;
+                                                                                            // field 8, float, Amplitude, -2 = -200, 
+                                                                                            // 1 = 100, 2 = 200;
+                                                                                            // Baseline/amplitude affects pooled copies;
+                                                                                            // field 9, int (bool), Loop, 1 on, 0 off
+                                                                                            // field 10, float/double, Position in QN  
+                                                                                            // (only used in certain contexts);
+                                                                                            // field 11, Length in QN
+                                                                                            // (only used in certain contexts);
+                                                                                            // field 12, int, 1 based index of AI since
+                                                                                            // starting the project, incremented even if
+                                                                                            // older AIs were deleted and regardless of
+                                                                                            // the AI being pooled;
+                                                                                            // field 13, int, muted;
+                                                                                            // field 14, float/double, Start offset in QN 
+                                                                                            // (only used in certain contexts);
+                                                                                            // field 15, float/double, Transition time (sec)
+                                                                                            // field 16, int, volume envelope maximum 
+                                                                                            // when this instance was created (matches the 1|4 
+                                                                                            // bits of the "volenvrange" config variable: 
+                                                                                            // 0=+6dB, 1=+0dB, 4=+12dB, 5=+24dB, i.e. 
+                                                                                            // Preferences -> Editing Behavior ->
+                                                                                            // Envelope Display-> Volume envelope range); 
+                                                                                            // (source: schwa [p=2198410])
 											    
     PT 3.000000 -0.2 5 0 0 0 -0.7   			// Envelope point definition
                                     			//  field 1, float, position (seconds)
@@ -743,16 +743,16 @@ TEMPOENVEX - Master tempo
 PARMENV contains extra data denoting which plugin parameter is controlled and what the minimum, maximum and default values are.
 
 <PARMENV 1 0.0 1469.0 734.5         			// Type
-<PARMENV 5:_1__Feedback 0 2 1					//  field 1, int, param index - zero based top to bottom.
-<PARMENV 5:_Sample_start_offset 0 2 1			//  Since build 6.52 names of ReaPlugs parameters are also specified 
-												// in the format _paramname or _param_name
-												//  Previously only plugin wrapper 'wet' and 'bypass' parameter names 
-												// were displayed without being preceded by		
-												//  the underscore, e.g. 31:wet, 12:bypass
-  	                                    		// REAPER tags additional bypass and wet params onto the end, in that order
-												//  field 2, float, minimum value 
-												//  field 3, float, maximum value
-												//  field 4, float, center/default value
+<PARMENV 5:_1__Feedback 0 2 1                   //  field 1, int, param index - zero based top to bottom.
+<PARMENV 5:_Sample_start_offset 0 2 1           //  Since build 6.52 names of ReaPlugs parameters are also specified 
+                                                // in the format _paramname or _param_name
+                                                //  Previously only plugin wrapper 'wet' and 'bypass' parameter names 
+                                                // were displayed without being preceded by		
+                                                //  the underscore, e.g. 31:wet, 12:bypass
+                                                // REAPER tags additional bypass and wet params onto the end, in that order
+                                                //  field 2, float, minimum value 
+                                                //  field 3, float, maximum value
+                                                //  field 4, float, center/default value
    /* snip */
 >
 
