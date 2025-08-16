@@ -271,8 +271,8 @@ The Track state chunk contains all the settings for a track and all of it's item
                                   //  or by manual editing of the .rpp file.
 
     MAINSEND 1 0                  // Master/parent send
-                          		  // field 1, int (bool)
-                          		  // field 2, ????
+                                  // field 1, int (bool)
+                                  // field 2, ????
 
                                     // --- Start of hardware send data, one line per hardware send ---
                                     //   --- absent if no hardware sends ---
@@ -742,7 +742,7 @@ TEMPOENVEX - Master tempo
 
 PARMENV contains extra data denoting which plugin parameter is controlled and what the minimum, maximum and default values are.
 
-<PARMENV 1 0.0 1469.0 734.5         			// Type
+<PARMENV 1 0.0 1469.0 734.5                     // Type
 <PARMENV 5:_1__Feedback 0 2 1                   //  field 1, int, param index - zero based top to bottom.
 <PARMENV 5:_Sample_start_offset 0 2 1           //  Since build 6.52 names of ReaPlugs parameters are also specified 
                                                 // in the format _paramname or _param_name
@@ -940,10 +940,10 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                   //  2 - option 'Run selected FX in parallel with previous FX (merge MIDI)' 
                                   //  is enabled (since REAPER 7)
 							      
-	<CONTAINER Container ""	      // --- Start of FX container definition (since REAPER 7)
+	<CONTAINER Container ""       // --- Start of FX container definition (since REAPER 7)
                                   // "" - container isn't named; as usual, names with spaces are enclosed
                                   // within quotes, otherwise no quotes;
-	  CONTAINER_CFG 4 4 2 0	      // field 1, int, number of container channels;
+	  CONTAINER_CFG 4 4 2 0       // field 1, int, number of container channels;
                                   // field 2, int, number of container inputs; 
                                   // field 3, int, number of container outputs; 
                                   // field 4 ??
