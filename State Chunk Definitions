@@ -121,14 +121,14 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  then 4294967295 - 4294967289 = 6, 6&1 == 1 false, 6&2 = 2 true, 6&4 = 4 true, 
                                                               //  which means lane 1 plays, lanes 2 and 3 do not (toggled to off);
                                                               //  LANESOLO attribute is absent when 'Fixed item lanes' mode hasn't been enabled 
-                                                              //  yet or when 'Play all lanes' option is enabled as is the case immediately after  
-                                                              //  enabling 'Fixed item lanes' on a track that hasn't had any, and it is present 
-                                                              //  when only one lane is enabled as playing, out of several, or when all lanes were 
-                                                              //  enabled as playing by Ctrl+click or with 'Toggle playing lane' regardless
-                                                              //  of the FIL mode's being currently enabled.
+                                                              //  yet or when 'Play all lanes' option is enabled as is the case immediately   
+                                                              //  after enabling 'Fixed item lanes' on a track that hasn't had any, and it is  
+                                                              //  present when only one lane is enabled as playing, out of several, or when all 
+                                                              //  lanes were enabled as playing by Ctrl+click or with 'Toggle playing lane' 
+                                                              //  regardless of the FIL mode's being currently enabled.
     LANEREC 1 -1 -1                                           //  Only present when there's a record or comping enabled lane.
-                                                              //  field 1, int, 0-based index of a record enabled lane, lane record enabled state
-                                                              //  is exclusive; -1 - no record enabled lane;
+                                                              //  field 1, int, 0-based index of a record enabled lane, lane record enabled 
+                                                              //  state is exclusive; -1 - no record enabled lane;
                                                               //  field 2, int, 0-based index of a comping enabled lane, lane comping enabled
                                                               //  state is exclusive, -1 - comping is disabled;
                                                               //  field 3, int, 0-based index of the last comping enabled lane 
