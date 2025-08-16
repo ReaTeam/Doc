@@ -179,22 +179,22 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  val & 2 = prevent anticipative fx
 
    LAYOUTS "bd -- Small Full Meter + value readouts" "bc -- Small Full Meter"  // active TCP and MCP layouts,
-									       // the attribute is absent if both
-									       // are set to Global default, 
-									       // and in the Master track chunk,
-									       // if only one is set to Global default
-									       // it's represented by an empty placeholder
-									       // i.e. "" "bc -- Small Full Meter",
-									       // if not an empty placeholder, the layout
-									       // name is only enclosed within quotes if
-									       // it contains spaces as is the rule in
-									       // the chunks
+									       									   // the attribute is absent if both
+									       									   // are set to Global default, 
+									       									   // and in the Master track chunk,
+									       									   // if only one is set to Global default
+									       									   // it's represented by an empty placeholder
+									       									   // i.e. "" "bc -- Small Full Meter",
+									       									   // if not an empty placeholder, the layout
+									       									   // name is only enclosed within quotes if
+									       									   // it contains spaces as is the rule in
+									       									   // the chunks
 
-    <EXT						     // Extension-specific persistent data which can be added with 
-							     // GetSetEnvelopeInfo_String() function using 'P_EXT' parameter
-    parmname string					     //  field 1, string - parmname, set with the function namesake argument
-    >							     //  field 2, string - string, set with the function stringNeedBig  
-							     //  argument; to delete pass this argument as an empty string
+    <EXT						     					// Extension-specific persistent data which can be added with 
+							     						// GetSetEnvelopeInfo_String() function using 'P_EXT' parameter
+    parmname string					     				//  field 1, string - parmname, set with the function namesake argument
+    >							     					//  field 2, string - string, set with the function stringNeedBig  
+							     						//  argument; to delete pass this argument as an empty string
 
                                                               // --- Start of receive data ---
                                                               //     One for each receive or not present if no receives
@@ -248,13 +248,13 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               // View -> Show/hide note rows in the MIDI Editor
    
   <MIDINOTENAMES                                              // Custom MIDI note names applied to Piano roll in all MIDI items 
-   -1 36 "My note 1" 0 36				      //  on the track
-   -1 38 "My note 2" 0 38                                     //  field 1, int, MIDI channel number, -1 = Omni, named notes can be 
-   -1 40 "My note 3" 0 40				      //  assigned to different channels, and the same named note can be 
-   -1 41 "My note 4" 0 41				      //  assigned to more that one channel, in which case its listed as many 
-   -1 43 "My note 5" 0 43				      //  times as there're channels it's assigned to appearing under  
+   -1 36 "My note 1" 0 36		  //  on the track
+   -1 38 "My note 2" 0 38		  //  field 1, int, MIDI channel number, -1 = Omni, named notes can be 
+   -1 40 "My note 3" 0 40		  //  assigned to different channels, and the same named note can be 
+   -1 41 "My note 4" 0 41		  //  assigned to more that one channel, in which case its listed as many 
+   -1 43 "My note 5" 0 43		  //  times as there're channels it's assigned to appearing under  
   >							      //  different channel numbers;
-   				      			      //  field 2, int, 0-based note number; field 3, string, note name,
+   				      			  //  field 2, int, 0-based note number; field 3, string, note name,
   							      //  if the name contains spaces it's enclosed within quotes; 
 							      //  field 4 ??; field 5, int, note number.
 							      //  Named notes assigned to specific MIDI channels are only displayed 
@@ -270,78 +270,78 @@ The Track state chunk contains all the settings for a track and all of it's item
 							      //  possible via API using Get/SetTrackMIDINoteName(Ex) functions
 							      //  or by manual editing of the .rpp file.
 
-    MAINSEND 1 0                                              // Master/parent send
-                                                              // field 1, int (bool)
-                                                              // field 2, ????
+    MAINSEND 1 0		  		  // Master/parent send
+                          		  // field 1, int (bool)
+                          		  // field 2, ????
 
-							      // --- Start of hardware send data, one line per hardware send ---
-							      //                  --- absent if no hardware sends ---
-    HWOUT 512 0 1 0 0 0 0 -1:U -1			      //  field 1, int, output index: 0 - 511 - stereo output, 
-							      //  512 - 1023 - aux (rearoute) loopback stereo output which existed  
-							      //  before v7.0, or officially supported looback output available  
-							      //  since v7.0 
-							      //  (before v7.0 could be enabled manually with 'rearoute_loopback=' key 
-							      //  in reaper.ini and had been supporting up to 512 channels since build 
-							      //  6.69, 
-							      //  ref: https://forum.cockos.com/showthread.php?p=1796913#post1796913;
-							      //  since v7.0 can be enabled at   
-							      //  Preferences -> Audio -> Virtual loopback audio hardware),
-							      //  1024 - 1535 - mono output, 1536 - 2047 - aux (rearoute) loopback  
-							      //  mono output (of both types, see explanation above; if both types are 
-							      //  enabled the number of channels allocated to each is 256 rather than 
-							      //  512) (with mono channel count even integer corresponds to the odd 
-							      //  channel number, i.e. 1024 is mono 1, 1025 is mono 2 etc.),
-							      //  the value is a bitfield, see explanation to 'I_DSTCHAN' parameter
-							      //  of SetTrackSendInfo_Value() function in the ReaScript API doc;
-							      //  field 2, int, send mode: 0 - Post-Fader (Post-Pan),  
-							      //  1 - Pref-Fader (Pre-FX), 3 - Pref-Fader (Post-FX);
-							      //  field 3, float, volume: 1 is 0 dB;
-							      //  field 4, float, pan: the range is -1 - +1;
-							      //  field 5, int (bool), mute: 1 - On, 0 - Off;
-							      //  field 6, int (bool), invert polarity: 1 - On, 0 - Off;
-							      //  field 7, int, send source channel: -1 - None, 0 - 1023 stereo, 
-							      //  1024 - 1535 - mono (even integer corresponds to the odd channel 
-							      //  number, i.e. 1024 is mono 1, 1025 is mono 2 etc.), 
-							      //  2048 - 3071 - multichannel with 4 channels, starting from channel 1, 
-							      //  and from 2, 3 etc. if more than  4,
-							      //  3072 - 4095 - multichannel with 6 channels, same pattern, etc.,
-							      //  the value is a bitfield, see explanation to 'I_SRCCHAN' parameter
-							      //  of SetTrackSendInfo_Value() function in the ReaScript API doc;
-							      //  field 8, ????
-							      //  field 9, int, automation mode: -1 - Track automation mode, 
-							      //  0 - Trim/read, 1 - Read, 2 - Touch, 3 - Write, 4 - Latch, 
-							      //  5 - Latch Preview;
+							      	// --- Start of hardware send data, one line per hardware send ---
+							      	//   --- absent if no hardware sends ---
+    HWOUT 512 0 1 0 0 0 0 -1:U -1	//  field 1, int, output index: 0 - 511 - stereo output, 
+							      	//  512 - 1023 - aux (rearoute) loopback stereo output which existed  
+							      	//  before v7.0, or officially supported looback output available  
+							      	//  since v7.0 
+							      	//  (before v7.0 could be enabled manually with 'rearoute_loopback=' key 
+							      	//  in reaper.ini and had been supporting up to 512 channels since build 
+							      	//  6.69, 
+							      	//  ref: https://forum.cockos.com/showthread.php?p=1796913#post1796913;
+							      	//  since v7.0 can be enabled at   
+							      	//  Preferences -> Audio -> Virtual loopback audio hardware),
+							      	//  1024 - 1535 - mono output, 1536 - 2047 - aux (rearoute) loopback  
+							      	//  mono output (of both types, see explanation above; if both types are 
+							      	//  enabled the number of channels allocated to each is 256 rather than 
+							      	//  512) (with mono channel count even integer corresponds to the odd 
+							      	//  channel number, i.e. 1024 is mono 1, 1025 is mono 2 etc.),
+							      	//  the value is a bitfield, see explanation to 'I_DSTCHAN' parameter
+							      	//  of SetTrackSendInfo_Value() function in the ReaScript API doc;
+							      	//  field 2, int, send mode: 0 - Post-Fader (Post-Pan),  
+							      	//  1 - Pref-Fader (Pre-FX), 3 - Pref-Fader (Post-FX);
+							      	//  field 3, float, volume: 1 is 0 dB;
+							      	//  field 4, float, pan: the range is -1 - +1;
+							      	//  field 5, int (bool), mute: 1 - On, 0 - Off;
+							      	//  field 6, int (bool), invert polarity: 1 - On, 0 - Off;
+							      	//  field 7, int, send source channel: -1 - None, 0 - 1023 stereo, 
+							      	//  1024 - 1535 - mono (even integer corresponds to the odd channel 
+							      	//  number, i.e. 1024 is mono 1, 1025 is mono 2 etc.), 
+							      	//  2048 - 3071 - multichannel with 4 channels, starting from channel 1, 
+							      	//  and from 2, 3 etc. if more than  4,
+							      	//  3072 - 4095 - multichannel with 6 channels, same pattern, etc.,
+							      	//  the value is a bitfield, see explanation to 'I_SRCCHAN' parameter
+							      	//  of SetTrackSendInfo_Value() function in the ReaScript API doc;
+							      	//  field 8, ????
+							      	//  field 9, int, automation mode: -1 - Track automation mode, 
+							      	//  0 - Trim/read, 1 - Read, 2 - Touch, 3 - Write, 4 - Latch, 
+							      	//  5 - Latch Preview;
 
-                                                              // --- Start of track envelopes ---
-                                                              //     One definition block for each non-empty envelope.
-                                                              //     See GetSetEnvelopeState() for full envelope definition.
-    <VOLENV2                                                  //   First track envelope.
-        (definition removed)                                  //   ...
-    >                                                         //   End of first track envelope
-                                                              // --- End of track envelopes
+                                      // --- Start of track envelopes ---
+                                      //     One definition block for each non-empty envelope.
+                                      //     See GetSetEnvelopeState() for full envelope definition.
+    <VOLENV2                          //   First track envelope.
+        (definition removed)          //   ...
+    >                                 //   End of first track envelope
+                                      // --- End of track envelopes
 
-                                                              // --- Start of FX section ----
-    <FXCHAIN                                                  //     Not present if track hasn't got/had FX ---
+                                      // --- Start of FX section ----
+    <FXCHAIN                          //     Not present if track hasn't got/had FX ---
         (see chunk info below)
-    >                                                         // --- End of FX section
+    >                                 // --- End of FX section
     
     							      // --- Start of FREEZE section ----
-    <FREEZE 0						      //     Not present if track wasn't frozen ---
+    <FREEZE 0						  //     Not present if track wasn't frozen ---
         (see chunk info below)
     >							      // --- End of FREEZE section
     
        							      // --- Start of Input FX section (irrelevant for the Master track) ----	
-    <FXCHAIN_REC					      //      Not present if track hasn't got/had Input FX ---								     
+    <FXCHAIN_REC					  //      Not present if track hasn't got/had Input FX ---								     
 	(see chunk info below)
     >   						      // --- End of Input FX section
 	
-                                                              // --- Start of item definitions ---
-    <ITEM                                                     // First item definition
+                                      // --- Start of item definitions ---
+    <ITEM                             // First item definition
         (see chunk info below) 
-    >                                                         // End of first item
-                                                              // --- End of item definitions
+    >                                 // End of first item
+                                      // --- End of item definitions
 																
->                                                             // End of Track definition
+>                                     // End of Track definition
 
 --------------------------------------------------------------------------------------------------------------------
 
