@@ -88,14 +88,14 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  &8 - 'Big lanes' option is enabled, false means 'Small lanes' 
                                                               //  option is enabled, 
                                                               //  &32 - 'Hide all buttons' option is enabled; 
-                                                              //  field 2, boolean, 1 - 'Allow editing source media while comping' 
+                                                              //  field 2, int (bool), 1 - 'Allow editing source media while comping' 
                                                               //  option is enabled;
-                                                              //  field 3, boolean, 1 - 'Show/play only lane' option is enabled
+                                                              //  field 3, int (bool), 1 - 'Show/play only lane' option is enabled
                                                               //  (index of the playing lane is the 1st field of LANESOLO attribute),
                                                               //  in this mode lanes only play exclusively;
-                                                              //  field 4, boolean, 1 - 'Media items in higher numbered lanes mask 
+                                                              //  field 4, int (bool), 1 - 'Media items in higher numbered lanes mask 
                                                               //  playback of lower lanes' option is enabled;
-                                                              //  field 5, int, bitfield, 0	 - Project default recording behavior 
+                                                              //  field 5, int (bitfield), 0	 - Project default recording behavior 
                                                               //  set at Options -> New recording that overlaps existing media items,
                                                               //  &1 - New recording add lanes in layers (multiple lanes play at once),
                                                               //  &2 - New recording add lanes (lanes play exclusively),
@@ -103,7 +103,7 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  FIXEDLANES attribute is present in track chunk by default, it's absent 
                                                               //  when 'Small lanes' and 'Create comp areas for new recording while comping' 
                                                               //  options are enabled.
-    LANESOLO 7 0 0 0 0 0 0 0                                  //  field 1, int, bitfield, 0 - no lane plays, &1 - lane 1 plays, 
+    LANESOLO 7 0 0 0 0 0 0 0                                  //  field 1, int (bitfield), 0 - no lane plays, &1 - lane 1 plays, 
                                                               //  &2 - lane 2 plays, &4 - lane 3 plays etc,
                                                               //  he value isn't updated after the last playing lane has been deleted 
                                                               //  and no other lane is a playing one;
