@@ -1,6 +1,7 @@
 Original by IXix
 Cockos Wiki: http://wiki.cockos.com/wiki/index.php/State_Chunk_Definitions
 
+!!!!!!
 NOTE ON FORMATTING: USE REGULAR SPACE RATHER THAN TAB TO CREATE IDENTATION AND SEPARATE COMMENTS FROM THE CODE TO ENSURE FORWARD COMPATIBILITY 
 BECAUSE GITHUB MAY CHANGE THE LENGTH OF TAB SPACE WHICH WILL BREAK FORMATTING LIKE WHAT HAPPENED DURING UPDATE OF THE DOC ON AUG 16, 2025.
 
@@ -52,14 +53,18 @@ The Track state chunk contains all the settings for a track and all of it's item
     IPHASE 0                                                  // Invert phase, int (bool)
     ISBUS 0 0                                                 // Folder settings
 															  //  field 1, int, folder state:
-															  //   0 = normal track
-															  //   1 = track is folder
-															  //   2 = track is last in folder
+															  //   0 - regular track (both top level and folder child);
+															  //   1 - folder parent (both top level and nested);
+															  //   2 - the very last track in the folder.
 															  //  field 2, int, track "indentation" increase:
-															  //   0 if no indentation change (normal tracks)
-															  //   1 for folder tracks (as 1 indentation level is to be increased)
-															  //   -n for n folder levels to backtrack (only for last tracks in folder)
-															  //    (varies depending on number of folders closed at once)
+															  //   0 - regular track (both top level and folder child),
+															  //   no change in indentation;
+															  //   1 - folder parent (both top level and nested),
+															  //   as 1 indentation level is to be increased;
+															  //  -n - the very last track in the folder, the value n depends 
+															  //   on the total count of folder levels including the topmost,
+															  //   if the last track in the folder has never been followed by
+															  //   another (regular) track, this field value is -1
     BUSCOMP 0 0 0 41 8                                        // Collapse folder (bus compact?)
                                                               //  field 1, int, collapse state in Arrange 0=not collapsed, 
                                                               //  1=collapsed medium, 2=collapsed small
