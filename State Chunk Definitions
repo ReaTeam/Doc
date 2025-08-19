@@ -50,11 +50,16 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  field 2, int, solo, 0= no solo, 1 = solo, 2 = solo-in-place
                                                               //  field 3, int (bool), solo defeat
     IPHASE 0                                                  // Invert phase, int (bool)
-    ISBUS 0 0                                                 // ??, Unknown but related to folder tracks 
-                                                              //   1 1 = folder parent (both top level and nested), 
-                                                              //   2 -1 = last child in folder, 0 0 = rest;
-                                                              //   values other than 0 0 only listed in the project file
-                                                              //   and track template, they don't change while the project is open
+    ISBUS 0 0                                                 // Folder settings
+															  //  field 1, int, folder state:
+															  //   0 = normal track
+															  //   1 = track is folder
+															  //   2 = track is last in folder
+															  //  field 2, int, track "indentation" increase:
+															  //   0 if no indentation change (normal tracks)
+															  //   1 for folder tracks (as 1 indentation level is to be increased)
+															  //   -n for n folder levels to backtrack (only for last tracks in folder)
+															  //    (varies depending on number of folders closed at once)
     BUSCOMP 0 0 0 41 8                                        // Collapse folder (bus compact?)
                                                               //  field 1, int, collapse state in Arrange 0=not collapsed, 
                                                               //  1=collapsed medium, 2=collapsed small
