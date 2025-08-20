@@ -64,7 +64,10 @@ The Track state chunk contains all the settings for a track and all of it's item
 															  //  -n - the very last track in the folder, the value n depends 
 															  //   on the total count of folder levels including the topmost,
 															  //   if the last track in the folder has never been followed by
-															  //   another (regular) track, this field value is -1
+															  //   another (regular) track, this field value is -1 regardless
+															  //   of the folder depth.
+															  //   In practice regular track values are always 0 0, folder 
+															  //   parent tracks 1 1 and last track in the folder 2 -n
     BUSCOMP 0 0 0 41 8                                        // Collapse folder (bus compact?)
                                                               //  field 1, int, collapse state in Arrange 0=not collapsed, 
                                                               //  1=collapsed medium, 2=collapsed small
