@@ -504,10 +504,10 @@ Audio Item
     TAKE NULL                                           //  Second take start. An empty take inserted with actions 
                                                         //  'Item: Add an empty take before/after the active take',
                                                         //  if active and the item is selected, SEL attribute follows NULL;
-                                                        //  such take pointer cannot be retrieved with GetActiveTake()
-                                                        //  but it's accounted for with CountTakes() and the pointer
-                                                        //  can be retrieved with 
-                                                        //  reaper.GetTake(reaper.GetMediaItemInfo_Value(item, 'I_CURTAKE'))
+                                                        //  such take pointer cannot be retrieved either with GetActiveTake()
+                                                        //  or with 
+                                                        //  reaper.GetTake(item, reaper.GetMediaItemInfo_Value(item, 'I_CURTAKE'))
+                                                        //  even though it's included in the total take count.
     TAKE SEL                                            // Third take start. SEL only appears if this take is active 
                                                         // in a selected item;
     NAME "The second take"                              // Take name
