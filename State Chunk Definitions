@@ -459,7 +459,13 @@ Audio Item
                                     //    524288-524291 - élastique 2.1 SOLOIST (4 presets)
     CHANMODE 0                      // First take channel mode, int
                                     //   0 = normal, 1 = reverse stereo, 2 = mono (downmix)
-                                    //   3 = mono (left), 4 = mono (right)
+                                    //   3 = mono (left), 4 = mono (right),
+                                    //   5-194 = Mono (3-128), the break point is channel 65
+                                    //   whose index is 131, so mono channel ranges are
+                                    //   5-66 = 3-64, 131-194 = 65-128;
+                                    //   67-257 = Stereo (1-128), the break point is channel 
+                                    //   65/66 whose index is 195, so stereo channel ranges are
+                                    //   67-130 = 1/2-64/65, 195-257 = 65/66-127/128
 
     GUID {4EB7779B-D570-4CCF-8739-161D2D32C154}         // First take id. Leave it alone
     <SOURCE SECTION                                     // Source section start (only present when changed in Item properties)
