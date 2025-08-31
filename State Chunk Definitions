@@ -465,7 +465,9 @@ Audio Item
                                     //   5-66 = 3-64, 131-194 = 65-128;
                                     //   67-257 = Stereo (1-128), the break point is channel 
                                     //   65/66 whose index is 195, so stereo channel ranges are
-                                    //   67-130 = 1/2-64/65, 195-257 = 65/66-127/128
+                                    //   67-130 = 1/2-64/65, 195-257 = 65/66-127/128;
+                                    //   These are the values which are set and retrieved with
+                                    //   Get/SetMediaItemTakeInfo_Value() 'I_CHANMODE' attribute
 
     GUID {4EB7779B-D570-4CCF-8739-161D2D32C154}         // First take id. Leave it alone
     <SOURCE SECTION                                     // Source section start (only present when changed in Item properties)
