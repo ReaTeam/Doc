@@ -28,25 +28,29 @@ Since build 6.80 passing either project/template or a media file AND a script fi
 - **-nosplash** : do not show slpash screen window
 - **-splashlog /path/to/filename.log** : write splash screen message log to file; the first line of logfile.txt will include the version number, _([source](https://forum.cockos.com/showthread.php?t=258280#4))_
 - **-newinst | -nonewinst** : override preference for new instance checking
-- **-close[all][:save|:nosave][:exit]** : close project(s), optionally not prompting for save _(**:exit** argument since 7.29)_
+- **-close[all][:save|:nosave][:exit]** : close project(s), optionally not prompting for save and exiting _(**:exit** argument since 7.29)_
+- **-noactivate** : launch but do not activate
 - **-batchconvert filelist.txt** : batch converter mode, filelist.txt includes:
   - list of files to convert:
     `filename.wav`
       or
     `filename.wav(TAB CHARACTER)outputfile.wav`
-  - \<CONFIG ...> block (optional) which can contain:
+      plus any number of additional files
+  - \<CONFIG ...> block (optional, can be generated via the Batch Converter presets button) which can contain:
     - SRATE 44100 (omit to use source samplerate)
-    - NCH 2 (omit to use source channel count)
+    - NCH 2 (omit to use source channel count; *since build 7.46:* -1=explode channels to separate files; -3=explode stereo pairs to separate files)
     - RSMODE modeidx (resample mode, copy from project file)
     - DITHER 3 (1=dither, 2=noise shaping, 3=both)
     - USESRCSTART 1 (1=write source media BWF start offset to output)
     - USESRCMETADATA 1 (1=attempt to preserve original media file metadata if possible)
+    - TRIM_START 0.0 	(trim leading silence, 0.5=-6dB peak)
+    - TRIM_END 0.0 	(trim trailing silence, 0.5=-6dB peak)       
     - PAD_START 1.0 (leading silence in sec, can be negative)
     - PAD_END 1.0 (trailing silence in sec, can be negative)
     - NORMALIZE 1 -6.0 0 (1=peak, 2=true peak, 3=lufs-i, 4=lufs-s, 5=lufs-m,  
                          2nd parameter is dB,  
                          3rd parameter: 1=normalize only if too loud)
-    - BRICKWALL 1 -1.0 (1=peak, 2=true peak, 2nd parameter is dB) -- _(since 6.43)_
+    - BRICKWALL 1 -1.0 (1=peak, 2=true peak, 2nd parameter is dB ceiling) -- _(since 6.43)_
     - FADE 0.0 0.0 1 1 (fade-in length, fade-out length, fade-in shape, fade-out shape; length 0.001 = 1 ms)
     - OUTPATH 'path'
     - OUTPATTERN 'wildcardpattern'
@@ -57,7 +61,7 @@ Since build 6.80 passing either project/template or a media file AND a script fi
           (contents of .RfxChain file)  
       \>
     - \<OUTFMT  
-          (base64 data, e.g. contents <RECORD_CFG block from project file)  
+          (base64 data, e.g. contents of <RENDER_CFG or <RECORD_CFG block from project file)  
       \>
     - \<METADATA  
           (contents of RENDER_METADATA block from project file)  
