@@ -1,4 +1,12 @@
-_If REAPER is run from the command line with an unrecognized parameter (like 'reaper -?' for example) the command line help will be displayed, including documentation for the -batchconvert file list ([source](https://forum.cockos.com/showthread.php?p=2690395#5))._
+_If REAPER is run from the command line with an unrecognized parameter (like 'reaper -?' for example) the command line help will be displayed, including documentation for the -batchconvert file list ([source](https://forum.cockos.com/showthread.php?p=2690395#5))._  
+_E.g. on Windows_  
+_(reaper.exe installation path is on the system drive)_  
+`C:\Users\%USER NAME%>cd ..`  
+`C:\Users>cd ..`  
+`C:\>Prorgam Files\REAPER\reaper.exe -?`  
+_(reaper.exe installation path is on drive D)_  
+`C:\Users\%USER NAME%>D:`  
+`D:\>Prorgam Files\REAPER\reaper.exe -?`
 
 ## Usage:
 
