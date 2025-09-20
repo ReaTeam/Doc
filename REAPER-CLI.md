@@ -43,10 +43,10 @@ Since build 6.80 passing either project/template or a media file AND a script fi
     - DITHER 3 (1=dither, 2=noise shaping, 3=both)
     - USESRCSTART 1 (1=write source media BWF start offset to output)
     - USESRCMETADATA 1 (1=attempt to preserve original media file metadata if possible)
-    - TRIM_START 0.0 	(trim leading silence, 0.5=-6dB peak)
-    - TRIM_END 0.0 	(trim trailing silence, 0.5=-6dB peak)       
-    - PAD_START 1.0 (leading silence in sec, can be negative)
-    - PAD_END 1.0 (trailing silence in sec, can be negative)
+    - TRIM_START 0.0 	(trim leading silence, 0.5=-6dB peak) (*since build 7.29*)
+    - TRIM_END 0.0 	(trim trailing silence, 0.5=-6dB peak) (*since build 7.29*)
+    - PAD_START 1.0 (leading silence in sec, can be negative) (*since build 7.29*)
+    - PAD_END 1.0 (trailing silence in sec, can be negative) (*since build 7.29*)
     - NORMALIZE 1 -6.0 0 (1=peak, 2=true peak, 3=lufs-i, 4=lufs-s, 5=lufs-m,  
                          2nd parameter is dB,  
                          3rd parameter: 1=normalize only if too loud)
