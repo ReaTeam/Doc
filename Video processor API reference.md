@@ -23,7 +23,7 @@ Special Variables Used by Processors
 `project_w`: project preferred video width (code can override this before drawing)  
 `project_h`: project preferred video height (code can override this before drawing)  
 `project_wh_valid`: set nonzero if project_w/project_h reflect actual project setting (otherwise could be media-defined)  
-`colorspace`: current rendering colorspace, e.g. 'RGBA', 'YV12', or 'YUY2'. You can override this before drawing (or between drawing). This may be set to 0 initially if the user has the Auto project colorspace set. It will be automatically changed if 0 and a drawing operation occurs or an input is successfully queried via input_info().  
+`colorspace`: current rendering colorspace, e.g. `RGBA`, `YV12`, or `YUY2`. You can override this before drawing (or between drawing). This may be set to 0 initially if the user has the Auto project colorspace set. It will be automatically changed if 0 and a drawing operation occurs or an input is successfully queried via `input_info()`.  
 `param_wet`: if in FX form, wet/dry mix of effect.  
 `param1..param40`: parameters  
 `gfx_r`: current drawing color (red 0..1)  
@@ -35,13 +35,13 @@ Special Variables Used by Processors
     0 = normal  
     1 = additive  
     3 = multiply (very different in YUV vs RGBA)  
-    17 = (dest + src*gfx_a)*.5 + .5 (only valid when using YUV colorspaces)  
-    18 = dest + (src-0.5)*gfx_a*2.0 (only valid when using YUV colorspaces)  
-    19 = absolute difference: abs(dest-src)*gfx_a (only valid when using YUV colorspaces)  
+    17 = `(dest + src*gfx_a)*.5 + .5` (only valid when using YUV colorspaces)  
+    18 = `dest + (src-0.5)*gfx_a*2.0` (only valid when using YUV colorspaces)  
+    19 = absolute difference: `abs(dest-src)*gfx_a` (only valid when using YUV colorspaces)  
     0x100 (flag ORed to above mode) for blit() to enable filtering (if possible)  
     0x10000 (flag ORed to above mode) to use source alpha (only valid when using RGBA colorspace)  
     0x40000 (flag ORed to above mode) to use extra clamping in normal mode (for out of range alpha/gradient values)  
-    0x80000 (flag ORed to above mode) to interpret gfx_r/gfx_g/gfx_b as YUV values (in YUV colorspaces)  
+    0x80000 (flag ORed to above mode) to interpret `gfx_r/gfx_g/gfx_b` as YUV values (in YUV colorspaces)  
 `gfx_dest`: destination image handle, or -1 for main framebuffer  
 
 `===============================================`  
