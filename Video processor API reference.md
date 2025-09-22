@@ -216,8 +216,8 @@ Performs an inverse FFT, taking `size/2` complex input pairs (the first being DC
 `fft_permute(buffer,size)`  
 Permutes the output of `fft()` to have bands in-order.
 
-fft_ipermute(buffer,size)
-Permutes the input for ifft(), taking bands from in-order to the order ifft() requires. See fft() for more information.
+`fft_ipermute(buffer,size)`  
+Permutes the input for `ifft()`, taking bands from in-order to the order `ifft()` requires. See `fft()` for more information.
 
 `convolve_c(dest,src,size)`  
 Multiplies each of `size` complex pairs in `dest` by the complex pairs in `src`. Often used for convolution.
