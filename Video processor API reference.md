@@ -22,7 +22,7 @@ For more information on the code language, please see the appendix near the bott
 `framerate`: project FPS (30.0, 29.97, etc)  
 `project_w`: project preferred video width (code can override this before drawing)  
 `project_h`: project preferred video height (code can override this before drawing)  
-`project_wh_valid`: set nonzero if project_w/project_h reflect actual project setting (otherwise could be media-defined)  
+`project_wh_valid`: set nonzero if `project_w/project_h` reflect actual project setting (otherwise could be media-defined)  
 `colorspace`: current rendering colorspace, e.g. `RGBA`, `YV12`, or `YUY2`. You can override this before drawing (or between drawing). This may be set to 0 initially if the user has the Auto project colorspace set. It will be automatically changed if 0 and a drawing operation occurs or an input is successfully queried via `input_info()`.  
 `param_wet`: if in FX form, wet/dry mix of effect.  
 `param1..param40`: parameters  
