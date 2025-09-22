@@ -1,3 +1,5 @@
+_The document is accessible via F1 shortcut within the Video processor IDE_
+
 `===============================================`  
 ### Video Processor Structure  
 `===============================================`  
