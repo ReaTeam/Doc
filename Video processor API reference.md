@@ -39,7 +39,7 @@ For more information on the code language, please see the appendix near the bott
     `3` = multiply (very different in `YUV` vs `RGBA`)  
     `17` = `(dest + src*gfx_a)*.5 + .5` (only valid when using `YUV` colorspaces)  
     `18` = `dest + (src-0.5)*gfx_a*2.0` (only valid when using `YUV` colorspaces)  
-    `19` = absolute difference: `abs(dest-src)*gfx_a` (only valid when using YUV colorspaces)  
+    `19` = absolute difference: `abs(dest-src)*gfx_a` (only valid when using `YUV` colorspaces)  
     `0x100` (flag ORed to above mode) for `blit()` to enable filtering (if possible)  
     `0x10000` (flag ORed to above mode) to use source alpha (only valid when using `RGBA` colorspace)  
     `0x40000` (flag ORed to above mode) to use extra clamping in normal mode (for out of range alpha/gradient values)  
