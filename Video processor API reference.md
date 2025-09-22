@@ -1,5 +1,5 @@
 `===============================================`  
-Video Processor Structure  
+### Video Processor Structure  
 `===============================================`  
 
 Video processors are written in the EEL2 language, and are primarily code. If the first line is a comment beginning with `//`, it will be used as the name of the processor.  
@@ -9,7 +9,7 @@ The processor can define up to 40 parameters using special comment lines:
 For more information on the code language, please see the appendix near the bottom of this text.  
 
 `===============================================`  
-Special Variables Used by Processors  
+### Special Variables Used by Processors  
 `===============================================` 
 
 `project_time`: project time in seconds  
@@ -45,7 +45,7 @@ Special Variables Used by Processors
 `gfx_dest`: destination image handle, or -1 for main framebuffer  
 
 `===============================================`  
-Video Processor Specific Functions  
+### Video Processor Specific Functions  
 `===============================================`  
 
 `input_count()`  
@@ -116,9 +116,9 @@ Fills a rectangle with the current `color/mode/alpha`
 
 `gfx_evalrect(x,y,w,h,code_string[,flags,src,init_code_string,src2])`  
 Processes a rectangle with code_string being executed for every pixel/pixel-group. Returns -1 if code_string failed to compile. Code should reference per pixel values (0-255, unclamped), depending on colorspace:  
-    RGBA:  `r/g/b/a` (0-255, unclamped  
-    YUY2: `y1,y2, u, v` (0-255, unclamped; u/v are centered at 128)  
-    YV12: `y1-y4, u, v` (0-255, unclamped; u/v are centered at 128)  
+    `RGBA`:  `r/g/b/a` (0-255, unclamped)  
+    `YUY2`: `y1,y2, u, v` (0-255, unclamped; u/v are centered at 128)  
+    `YV12`: `y1-y4, u, v` (0-255, unclamped; u/v are centered at 128)  
 Additional options:  
     `flags|=1` in order to prevent multiprocessing (if your routine needs  to process pixels in-order)  
     `flags|=2` to ignore output (analysis-only). This is only valid when not using `src2` and not using one of the 4/8 modes.  
@@ -182,7 +182,7 @@ Converts `r,g,b` to `YUV`, does not clamp `[0..1]`
 Converts YUV to `r,g,b`, not clamping `[0..1]`
 
 `===============================================`  
-Advanced Functions  
+### Advanced Functions  
 `===============================================`  
 
 ui_get_state(ctx[,mouse_x, mouse_y,force_frame_in,mouse_wheel_state,mouse_hwheel_state])
