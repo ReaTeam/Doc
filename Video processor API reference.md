@@ -7,7 +7,7 @@ _The document is accessible via F1 shortcut within the Video processor IDE_
 **[Video Processor Specific Functions]([#video-processor-specific-functions)**  
 **[Advanced Functions](#advanced-functions)**  
 **[Global Shared Memory](#global-shared-memory)**  
-**[String Functions](#string-functions))**  
+**[String Functions](#string-functions)**  
   
 `===============================================`  
 ### Video Processor Structure  
