@@ -200,7 +200,8 @@ Notifies that the parameter pointed to by pvar (must be `param1..param40` or a u
 Returns track index, or -1 for master track, or -2 for hardware output FX. `chain_pos` will be position in chain. `flags` will have `1` set if takeFX, `4` if inactive project, `8` if in container (in this case, `chain_pos` will be set to the address, see `TrackFX_GetParamEx` etc).
 
 `fft(buffer,size)`  
-Performs a FFT on the data in the local memory buffer at the offset specified by the first parameter. The `size` of the FFT is specified by the second parameter, which must be a power of two 16-32768. The outputs are permuted, so if you plan to use them in-order, call `fft_permute(buffer, size)` before and `fft_ipermute(buffer,size)` after in-order use. Inputs or outputs will need to be scaled down by `1/size`. Notes:  
+Performs a FFT on the data in the local memory buffer at the offset specified by the first parameter. The `size` of the FFT is specified by the second parameter, which must be a power of two 16-32768. The outputs are permuted, so if you plan to use them in-order, call `fft_permute(buffer, size)` before and `fft_ipermute(buffer,size)` after in-order use. Inputs or outputs will need to be scaled down by `1/size`.  
+Notes:  
     `fft()/ifft()` require real / imaginary input pairs, so a 256 point FFT actually works with 512 items.
     `fft()/ifft()` must NOT cross a 65,536 item boundary, so be sure to specify the offset accordingly.
 
