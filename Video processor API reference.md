@@ -122,7 +122,7 @@ Processes a rectangle with code_string being executed for every pixel/pixel-grou
 Additional options:  
     `flags|=1` in order to prevent multiprocessing (if your routine needs  to process pixels in-order)  
     `flags|=2` to ignore output (analysis-only). This is only valid when not using `src2` and not using one of the 4/8 modes.  
-    `flags|=4,8` -- only valid in RGBA/YV12, and only if src/src2 not specified. `flags&8` means process in vertical slices (top to bottom unless `flags&4`). `flags&4` but not `flags&8` means right-to-left. In each case `y1-y4` are reordered for convenience (the same filter code can typically be used in various orientations).  
+    `flags|=4,8` only valid in `RGBA/YV12`, and only if `src/src2` not specified. `flags&8` means process in vertical slices (top to bottom unless `flags&4`). `flags&4` but not `flags&8` means right-to-left. In each case `y1-y4` are reordered for convenience (the same filter code can typically be used in various orientations).  
     If init_code_string specified, it will be executed in each thread context before processing  
     If `src` specified (and >= -1), `sr/sg/sb/sa`, `sy1/su/sv` etc will be available to read. In this case only the intersection of valid rectangles between `src` and the destination buffer will be processed.  
     If `src` and `src2` specified (and >= -1), `s2r/s2g/s2b/s2a`, `s2y1/s2u/s2v` etc will also be available to read.  
