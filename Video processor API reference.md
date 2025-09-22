@@ -38,7 +38,7 @@ Special Variables Used by Processors
     17 = `(dest + src*gfx_a)*.5 + .5` (only valid when using YUV colorspaces)  
     18 = `dest + (src-0.5)*gfx_a*2.0` (only valid when using YUV colorspaces)  
     19 = absolute difference: `abs(dest-src)*gfx_a` (only valid when using YUV colorspaces)  
-    0x100 (flag ORed to above mode) for blit() to enable filtering (if possible)  
+    0x100 (flag ORed to above mode) for `blit()` to enable filtering (if possible)  
     0x10000 (flag ORed to above mode) to use source alpha (only valid when using RGBA colorspace)  
     0x40000 (flag ORed to above mode) to use extra clamping in normal mode (for out of range alpha/gradient values)  
     0x80000 (flag ORed to above mode) to interpret `gfx_r/gfx_g/gfx_b` as YUV values (in YUV colorspaces)  
@@ -48,142 +48,142 @@ Special Variables Used by Processors
 Video Processor Specific Functions  
 `===============================================`  
 
-input_count()
-Returns number of inputs available (total), range [0..n)
+`input_count()`  
+Returns number of inputs available (total), range [0..n)]  
 
-input_track_count()
-Returns the number of available inputs on discrete tracks
+`input_track_count()`  
+Returns the number of available inputs on discrete tracks  
 
-input_track(x)
-Returns input for bottommost item or FX on discrete-track x (0 is first track with video item above current, etc)
+`input_track(x)`  
+Returns input for bottommost item or FX on discrete-track x (0 is first track with video item above current, etc)  
 
-input_track_exact_count()
-Returns the number of tracks above the current track that could possibly contain video items.
+`input_track_exact_count()`  
+Returns the number of tracks above the current track that could possibly contain video items.  
 
-input_track_exact(x)
+`input_track_exact(x)`  
 Returns input for bottommost item or FX on track relative to current track. Returns -1000 if track does not contain any video items at the current time, or -10000 if no further tracks contain video.
 
-input_next_item(x)
+`input_next_item(x)`  
 Returns the next input after x which is on a different item or track
 
-input_next_track(x)
+`input_next_track(x)`  
 Returns the next input after x which is on a different track
 
-input_ismaster()
+`input_ismaster()`  
 Returns 1.0 if current FX is on master chain, 2.0 if on monitoring FX chain
 
-input_info(input, w, h[,srctime, wet, parm1, ...])
-Returns 1 if input is available, sets w/h to dimensions. If srctime specified, it will be set with the source-local time of the underlying media. if input is a video processor in effect form, automated parameters can be queried via wet/parm1/...
+`input_info(input, w, h[,srctime, wet, parm1, ...])`  
+Returns 1 if input is available, sets `w/h` to dimensions. If srctime specified, it will be set with the source-local time of the underlying media. if input is a video processor in effect form, automated parameters can be queried via `wet/parm1/...`
 
-input_get_name(input, #str)
+`input_get_name(input, #str)`  
 Gets the input take name or track name. returns >0 on success
 
-input_match(startidx,#pattern[,...])
-Searches inputs for input starting at startidx whose track or item matches #pattern (see EEL2 match() for syntax), returns -10000 if not found.
+`input_match(startidx,#pattern[,...])`  
+Searches inputs for input starting at startidx whose track or item matches #pattern (see EEL2 `match()` for syntax), returns -10000 if not found.
 
-input_matchi(startidx,#pattern[,...])
-Searches inputs for input starting at startidx whose track or item case-insensitively matches #pattern (see EEL2 matchi() for syntax), returns -10000 if not found.
+`input_matchi(startidx,#pattern[,...])`  
+Searches inputs for input starting at startidx whose track or item case-insensitively matches #pattern (see EEL2 `matchi()` for syntax), returns -10000 if not found.
 
-gfx_img_alloc([w,h,clear])
+`gfx_img_alloc([w,h,clear])`  
 Returns an image index for drawing (can create up to 32 images). contents of image undefined unless clear set.
 
-gfx_img_resize(handle,w,h[,clear])
+`gfx_img_resize(handle,w,h[,clear])`  
 Sets an image size (handle can be -1 for main framebuffer). contents of image undefined after resize, unless clear set. clear=-1 will only clear if resize occurred. Returns the image handle (if handle is invalid, returns a newly-allocated image handle)
 
-gfx_img_hold(handle)
-Retains (cheaply) a read-only copy of an image in handle. This copy should be released using gfx_img_free() when finished. Up to 32 images can be held.
+`gfx_img_hold(handle)`  
+Retains (cheaply) a read-only copy of an image in handle. This copy should be released using `gfx_img_free()` when finished. Up to 32 images can be held.
 
-gfx_img_getptr(handle)
-Gets a unique identifier for an image, valid for while the image is retained. can be used (along with gfx_img_hold) to detect when frames change in a low frame rate video
+`gfx_img_getptr(handle)`  
+Gets a unique identifier for an image, valid for while the image is retained. can be used (along with `gfx_img_hold`) to detect when frames change in a low frame rate video
 
-gfx_img_free(handle)
+`gfx_img_free(handle)`  
 Releases an earlier allocated image index.
 
-gfx_img_info(handle,w,h)
+`gfx_img_info(handle,w,h)`  
 Gets dimensions of image, returns 1 if valid (resize if inexplicably invalidated)
 
-gfx_set(r,[g=r,b=r,a=1,mode=0,dest,a2=1])
-Updates r/g/b/a/mode to values specified, dest is only updated if parameter specified.
+`gfx_set(r,[g=r,b=r,a=1,mode=0,dest,a2=1])`  
+Updates `r/g/b/a/mode` to values specified, dest is only updated if parameter specified.
 
-gfx_blit(input[,preserve_aspect=0,x,y,w,h,srcx,srcy,srcw,srch])
+`gfx_blit(input[,preserve_aspect=0,x,y,w,h,srcx,srcy,srcw,srch])`  
 Draws input to framebuffer. preserve_aspect=-1 for no fill in pad areas
 
-gfx_fillrect(x,y,w,h)
-Fills a rectangle with the current color/mode/alpha
+`gfx_fillrect(x,y,w,h)`  
+Fills a rectangle with the current `color/mode/alpha`
 
-gfx_procrect(x,y,w,h,channel_tab[,mode])
-Processes a rectangle with 768-entry channel table [256 items of 0..1 per channel]. specify mode=1 to use Y value for U/V source channels (colorization mode)
+`gfx_procrect(x,y,w,h,channel_tab[,mode])`  
+`Processes a rectangle with 768-entry channel table [256 items of 0..1 per channel]. specify mode=1 to use Y value for U/V source channels (colorization mode)
 
-gfx_evalrect(x,y,w,h,code_string[,flags,src,init_code_string,src2])
-Processes a rectangle with code_string being executed for every pixel/pixel-group. Returns -1 if code_string failed to compile. Code should reference per pixel values (0-255, unclamped), depending on colorspace:
-    RGBA:  r/g/b/a (0-255, unclamped)
-    YUY2: y1,y2, u, v (0-255, unclamped; u/v are centered at 128)
-    YV12: y1-y4, u, v (0-255, unclamped; u/v are centered at 128)
-Additional options:
-    flags|=1 in order to prevent multiprocessing (if your routine needs  to process pixels in-order)
-    flags|=2 to ignore output (analysis-only). This is only valid when not using src2 and not using one of the 4/8 modes.
-    flags|=4,8 -- only valid in RGBA/YV12, and only if src/src2 not specified. flags&8 means process in vertical slices (top to bottom unless flags&4). flags&4 but not flags&8 means right-to-left. In each case y1-y4 are reordered for convenience (the same filter code can typically be used in various orientations).
-    If init_code_string specified, it will be executed in each thread context before processing
-    If src specified (and >= -1), sr/sg/sb/sa, sy1/su/sv etc will be available to read. In this case only the intersection of valid rectangles between src and the destination buffer will be processed. 
-    If src and src2 specified (and >= -1), s2r/s2g/s2b/s2a, s2y1/s2u/s2v etc will also be available to read. 
-    Note: variables _1-_99 are thread-local variables which will always be initialized to 0, and _0 will be initialized to the thread index (usually 0 or 1). 6.70+: _slice is the position of the slice (which may differ from _0 in 6.71+). _slices is a count of the multiprocessing slices, _span is the number of calls per line, and _slice_size is the size of each slice in lines (the last slice may vary in size).
+`gfx_evalrect(x,y,w,h,code_string[,flags,src,init_code_string,src2])`  
+Processes a rectangle with code_string being executed for every pixel/pixel-group. Returns -1 if code_string failed to compile. Code should reference per pixel values (0-255, unclamped), depending on colorspace:  
+    RGBA:  `r/g/b/a` (0-255, unclamped  
+    YUY2: `y1,y2, u, v` (0-255, unclamped; u/v are centered at 128)  
+    YV12: `y1-y4, u, v` (0-255, unclamped; u/v are centered at 128)  
+Additional options:  
+    `flags|=1` in order to prevent multiprocessing (if your routine needs  to process pixels in-order)  
+    `flags|=2` to ignore output (analysis-only). This is only valid when not using `src2` and not using one of the 4/8 modes.  
+    `flags|=4,8` -- only valid in RGBA/YV12, and only if src/src2 not specified. `flags&8` means process in vertical slices (top to bottom unless `flags&4`). `flags&4` but not `flags&8` means right-to-left. In each case `y1-y4` are reordered for convenience (the same filter code can typically be used in various orientations).  
+    If init_code_string specified, it will be executed in each thread context before processing  
+    If `src` specified (and >= -1), `sr/sg/sb/sa`, `sy1/su/sv` etc will be available to read. In this case only the intersection of valid rectangles between `src` and the destination buffer will be processed.  
+    If `src` and `src2` specified (and >= -1), `s2r/s2g/s2b/s2a`, `s2y1/s2u/s2v` etc will also be available to read.  
+    Note: variables `_1-_99` are thread-local variables which will always be initialized to 0, and _0 will be initialized to the thread index (usually 0 or 1). 6.70+: `_slice` is the position of the slice (which may differ from _0 in 6.71+). `_slices` is a count of the multiprocessing slices, `_span` is the number of calls per line, and _slice_size is the size of each slice in lines (the last slice may vary in size).  
 
-gfx_gradrect(x,y,w,h, r,g,b,a [,drdx,dgdx,dbdx,dadx, drdy,dgdy,dbdy,dady])
+`gfx_gradrect(x,y,w,h, r,g,b,a [,drdx,dgdx,dbdx,dadx, drdy,dgdy,dbdy,dady])`  
 Fills rectangle. r/g/b/a supply color at top left corner, drdx (if specified) is amount red changes per X-pixel, etc.
 
-gfx_rotoblit(srcidx, angle [,x, y, w, h, srcx, srcy, w, h, cliptosrcrect=0, centxoffs=0, centyoffs=0])
-Blits with rotate. This function behaves a bit odd when the source and destination sizes/aspect ratios differ, so gfx_deltablit() is generally more useful.
+`gfx_rotoblit(srcidx, angle [,x, y, w, h, srcx, srcy, w, h, cliptosrcrect=0, centxoffs=0, centyoffs=0])`  
+Blits with rotate. This function behaves a bit odd when the source and destination sizes/aspect ratios differ, so `gfx_deltablit()` is generally more useful.
 
-gfx_deltablit(srcidx, x,y,w,h, srcx,srcy, dsdx, dtdx, dsdy, dtdy, dsdxdy, dtdxdy[, dadx, dady, dadxdy])
-Blits with source pixel transformation control. S and T refer to source coordinates: dsdx is  how much the source X position changes with each X destination pixel, dtdx is how much the source Y position changes with each X destination pixel, etc.
+`gfx_deltablit(srcidx, x,y,w,h, srcx,srcy, dsdx, dtdx, dsdy, dtdy, dsdxdy, dtdxdy[, dadx, dady, dadxdy])`  
+Blits with source pixel transformation control. `S` and `T` refer to source coordinates: `dsdx` is  how much the source `X` position changes with each `X` destination pixel, `dtdx` is how much the source `Y` position changes with each `X` destination pixel, etc.
 
-gfx_xformblit(srcidx, x,y,w,h,  wdiv, hdiv, tab[, wantalpha=0])
-Blits with a transformation table. tab is wdiv*hdiv*2 table of source point coordinates. If wantalpha=1, tab is wdiv*hdiv*3 table of src points including alpha for each point.
+`gfx_xformblit(srcidx, x,y,w,h,  wdiv, hdiv, tab[, wantalpha=0])`  
+Blits with a transformation table. tab is `wdiv*hdiv*2` table of source point coordinates. If `wantalpha=1`, tab is `wdiv*hdiv*3` table of src points including alpha for each point.
 
-gfx_keyedblit(input[,x,y,w,h,srcx,srcy,kv1,kv2,kv3,kv4])
-Chroma-key blits, using the source color as key. kv1-kv4 meaning depends on colorspace:
-    YV12/YUY2:
-        kv1 is U target (-0.5 default)
-        kv2 is V target (-0.5 default)
-        kv3 is closeness-factor (0.4 default)
-        kv4 is the gain (2.0 default)
-    RGBA:
-        kv1 is green-factor (1.0 default)
-        kv2 is blue-factor (-1.0 default)
-        kv3 is offset (-1.0 default)
-        kv4 enables spill removal (1.0 default)
+`gfx_keyedblit(input[,x,y,w,h,srcx,srcy,kv1,kv2,kv3,kv4])`  
+Chroma-key blits, using the source color as key. kv1-kv4 meaning depends on colorspace:  
+    `YV12/YUY2`:  
+        `kv1` is `U` target (-0.5 default)  
+        `kv2` is `V` target (-0.5 default)  
+        `kv3` is closeness-factor (0.4 default)  
+        `kv4` is the gain (2.0 default)  
+    `RGBA`:  
+        `kv1` is green-factor (1.0 default)  
+        `kv2` is blue-factor (-1.0 default)  
+        `kv3` is offset (-1.0 default)  
+        `kv4` enables spill removal (1.0 default)  
 
-gfx_destkeyedblit(input[,x,y,w,h,srcx,srcy,kv1,kv2,kv3,kv4])
-Chroma-key blits, using destination color as key. ignores gfx_a and gfx_mode. See gfx_keyedblit() for kv1-kv4 explanation.
+`gfx_destkeyedblit(input[,x,y,w,h,srcx,srcy,kv1,kv2,kv3,kv4])`  
+Chroma-key blits, using destination color as key. ignores `gfx_a` and `gfx_mode`. See `gfx_keyedblit()` for `kv1-kv4` explanation.
 
-gfx_setfont(pxsize[,#fontname, flags)
-Sets a font. flags are specified as a multibyte integer, using a combination of the following flags (specify multiple as 'BI' or 'OI' or 'OBI' etc):
-    'B' - Bold
-    'I' - Italics
-    'R' - Blur
-    'V' - Invert
-    'M' - Mono
-    'S' - Shadow
-    'O' - Outline
+`gfx_setfont(pxsize[,#fontname, flags)`  
+Sets a font. flags are specified as a multibyte integer, using a combination of the following flags (specify multiple as `BI` or `OI` or `OBI` etc):
+    `B` - Bold
+    `I` - Italics
+    `R` - Blur
+    `V` - Invert
+    `M` - Mono
+    `S` - Shadow
+    `O` - Outline
 
-gfx_str_measure(#string[,w,h])
+`gfx_str_measure(#string[,w,h])`  
 Measures the size of #string, returns width
 
-gfx_str_draw(#string[,x,y,fxc_r,fxc_g,fxc_b])
-Draw string, fxc_r/g/b are the FX color if Shadow/Outline are set in the font
+`gfx_str_draw(#string[,x,y,fxc_r,fxc_g,fxc_b])`  
+Draw string, `fxc_r/g/b` are the FX color if Shadow/Outline are set in the font
 
-gfx_getpixel(input,x,y,v1,v2,v3[,v4])
-Gets the value of a pixel from input at x,y. v1/v2/v3 will be YUV or RGB (v4 can be used to get A), returns 1 on success
+`gfx_getpixel(input,x,y,v1,v2,v3[,v4])`  
+Gets the value of a pixel from input at `x,y`. `v1/v2/v3` will be `YUV` or `RGB` (`v4` can be used to get `A`), returns 1 on success
 
-rgb2yuv(r,g,b)
-Converts r,g,b to YUV, does not clamp [0..1]
+`rgb2yuv(r,g,b)`  
+Converts `r,g,b` to `YUV`, does not clamp `[0..1]`
 
-yuv2rgb(r,g,b)
-Converts YUV to r,g,b, not clamping [0..1]
+`yuv2rgb(r,g,b)`  
+Converts YUV to `r,g,b`, not clamping `[0..1]`
 
-===============================================
-Advanced Functions
-===============================================
+`===============================================`  
+Advanced Functions  
+`===============================================`  
 
 ui_get_state(ctx[,mouse_x, mouse_y,force_frame_in,mouse_wheel_state,mouse_hwheel_state])
 Gets UI state and context, only usable from Monitoring FX (returns 0 if used from track). Returns state (1/2/4 are l/r/m mouse buttons, 8/16/32 are ctrl/shift/alt, 1024 is whether configuration for this processor is visible). If 'ctx' set to -1, context is video window and any returned mouse coordinates are [0..1] (where 0,0 is upper left corner, 1,1 is lower right corner of the video area). If 'ctx' is set to [1..40], it means the user is editing that knob. If force_frame_in is specified and is positive, then the processor will be re-executed in this amount of time (even if no new video source is available)
