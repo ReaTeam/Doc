@@ -220,17 +220,17 @@ Permutes the input for ifft(), taking bands from in-order to the order ifft() re
 convolve_c(dest,src,size)
 Multiplies each of size complex pairs in dest by the complex pairs in src. Often used for convolution.
 
-===============================================
-Global Shared Memory
-===============================================
+`===============================================`  
+### Global Shared Memory
+`===============================================`  
 
 gmem[] can be used for a shared memory buffer (similar to JSFX) -- you can specify a named buffer which can be shared with ReaScripts and JSFX, by using:
     //@gmem=sharedBufferName
 on a line by itself. Note that when synchronizing with ReaScripts or JSFX, all processing is asynchronous, so your code will have to deal with synchronization issues (including vast differences between project_time and playback_position, and including race conditions). For Lua ReaScripts, see the function gmem_attach().
 
-===============================================
-String Functions
-===============================================
+`===============================================`  
+### String Functions
+`===============================================`  
 
 sprintf(#dest,"format"[, ...])
 Formats a string and stores it in #dest. Format specifiers begin with %, and may include:
