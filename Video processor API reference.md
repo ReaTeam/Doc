@@ -12,26 +12,26 @@ For more information on the code language, please see the appendix near the bott
 Special Variables Used by Processors  
 `===============================================` 
 
-project_time: project time in seconds  
-project_timeoffs: project setting time offset in seconds  
-project_tempo: current tempo in BPM  
-project_ts_num: current time signature numerator  
-project_ts_denom: current time signature denominator  
-project_time_qn: current project position in QN  
-time: item time in seconds (if in item)  
-framerate: project FPS (30.0, 29.97, etc)  
-project_w: project preferred video width (code can override this before drawing)  
-project_h: project preferred video height (code can override this before drawing)  
-project_wh_valid: set nonzero if project_w/project_h reflect actual project setting (otherwise could be media-defined)  
-colorspace: current rendering colorspace, e.g. 'RGBA', 'YV12', or 'YUY2'. You can override this before drawing (or between drawing). This may be set to 0 initially if the user has the Auto project colorspace set. It will be automatically changed if 0 and a drawing operation occurs or an input is successfully queried via input_info().  
-param_wet: if in FX form, wet/dry mix of effect.  
-param1..param40: parameters  
-gfx_r: current drawing color (red 0..1)  
-gfx_g: current drawing color (green 0..1)  
-gfx_b: current drawing color (blue 0..1)  
-gfx_a: current drawing alpha (0..1)  
-gfx_a2: current drawing color alpha channel value (RGB-only, 0..1, defaults to 1)  
-gfx_mode: drawing mode  
+`project_time`: project time in seconds  
+`project_timeoffs`: project setting time offset in seconds  
+`project_tempo`: current tempo in BPM  
+`project_ts_num`: current time signature numerator  
+`project_ts_denom`: current time signature denominator  
+`project_time_qn`: current project position in QN  
+`time`: item time in seconds (if in item)  
+`framerate`: project FPS (30.0, 29.97, etc)  
+`project_w`: project preferred video width (code can override this before drawing)  
+`project_h`: project preferred video height (code can override this before drawing)  
+`project_wh_valid`: set nonzero if project_w/project_h reflect actual project setting (otherwise could be media-defined)  
+`colorspace`: current rendering colorspace, e.g. 'RGBA', 'YV12', or 'YUY2'. You can override this before drawing (or between drawing). This may be set to 0 initially if the user has the Auto project colorspace set. It will be automatically changed if 0 and a drawing operation occurs or an input is successfully queried via input_info().  
+`param_wet`: if in FX form, wet/dry mix of effect.  
+`param1..param40`: parameters  
+`gfx_r`: current drawing color (red 0..1)  
+`gfx_g`: current drawing color (green 0..1)  
+`gfx_b`: current drawing color (blue 0..1)  
+`gfx_a`: current drawing alpha (0..1)  
+`gfx_a2`: current drawing color alpha channel value (RGB-only, 0..1, defaults to 1)  
+`gfx_mode`: drawing mode  
     0 = normal  
     1 = additive  
     3 = multiply (very different in YUV vs RGBA)  
@@ -42,7 +42,7 @@ gfx_mode: drawing mode
     0x10000 (flag ORed to above mode) to use source alpha (only valid when using RGBA colorspace)  
     0x40000 (flag ORed to above mode) to use extra clamping in normal mode (for out of range alpha/gradient values)  
     0x80000 (flag ORed to above mode) to interpret gfx_r/gfx_g/gfx_b as YUV values (in YUV colorspaces)  
-gfx_dest: destination image handle, or -1 for main framebuffer  
+`gfx_dest`: destination image handle, or -1 for main framebuffer  
 
 `===============================================`  
 Video Processor Specific Functions  
