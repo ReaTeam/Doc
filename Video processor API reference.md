@@ -49,7 +49,7 @@ For more information on the code language, please see the appendix near the bott
 `===============================================`  
 
 `input_count()`  
-Returns number of inputs available (total), range [0..n]  
+Returns number of inputs available (total), range `[0..n]`  
 
 `input_track_count()`  
 Returns the number of available inputs on discrete tracks  
@@ -112,7 +112,7 @@ Draws input to framebuffer. preserve_aspect=-1 for no fill in pad areas
 Fills a rectangle with the current `color/mode/alpha`
 
 `gfx_procrect(x,y,w,h,channel_tab[,mode])`  
-`Processes a rectangle with 768-entry channel table [256 items of 0..1 per channel]. specify mode=1 to use Y value for U/V source channels (colorization mode)
+`Processes a rectangle with 768-entry channel table [256 items of 0..1 per channel]. specify mode=1 to use `Y` value for `U/V` source channels (colorization mode)
 
 `gfx_evalrect(x,y,w,h,code_string[,flags,src,init_code_string,src2])`  
 Processes a rectangle with code_string being executed for every pixel/pixel-group. Returns -1 if code_string failed to compile. Code should reference per pixel values (0-255, unclamped), depending on colorspace:  
@@ -129,7 +129,7 @@ Additional options:
     Note: variables `_1-_99` are thread-local variables which will always be initialized to 0, and _0 will be initialized to the thread index (usually 0 or 1). 6.70+: `_slice` is the position of the slice (which may differ from _0 in 6.71+). `_slices` is a count of the multiprocessing slices, `_span` is the number of calls per line, and _slice_size is the size of each slice in lines (the last slice may vary in size).  
 
 `gfx_gradrect(x,y,w,h, r,g,b,a [,drdx,dgdx,dbdx,dadx, drdy,dgdy,dbdy,dady])`  
-Fills rectangle. r/g/b/a supply color at top left corner, drdx (if specified) is amount red changes per X-pixel, etc.
+Fills rectangle. `r/g/b/a` supply color at top left corner, `drdx` (if specified) is amount red changes per X-pixel, etc.
 
 `gfx_rotoblit(srcidx, angle [,x, y, w, h, srcx, srcy, w, h, cliptosrcrect=0, centxoffs=0, centyoffs=0])`  
 Blits with rotate. This function behaves a bit odd when the source and destination sizes/aspect ratios differ, so `gfx_deltablit()` is generally more useful.
@@ -179,7 +179,7 @@ Gets the value of a pixel from input at `x,y`. `v1/v2/v3` will be `YUV` or `RGB`
 Converts `r,g,b` to `YUV`, does not clamp `[0..1]`
 
 `yuv2rgb(r,g,b)`  
-Converts YUV to `r,g,b`, not clamping `[0..1]`
+Converts `YUV` to `r,g,b`, not clamping `[0..1]`
 
 `===============================================`  
 ### Advanced Functions  
