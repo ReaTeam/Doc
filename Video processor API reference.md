@@ -157,14 +157,14 @@ Chroma-key blits, using the source color as key. kv1-kv4 meaning depends on colo
 Chroma-key blits, using destination color as key. ignores `gfx_a` and `gfx_mode`. See `gfx_keyedblit()` for `kv1-kv4` explanation.
 
 `gfx_setfont(pxsize[,#fontname, flags)`  
-Sets a font. flags are specified as a multibyte integer, using a combination of the following flags (specify multiple as `BI` or `OI` or `OBI` etc):
-    `B` - Bold
-    `I` - Italics
-    `R` - Blur
-    `V` - Invert
-    `M` - Mono
-    `S` - Shadow
-    `O` - Outline
+Sets a font. flags are specified as a multibyte integer, using a combination of the following flags (specify multiple as `BI` or `OI` or `OBI` etc):  
+    `B` - Bold  
+    `I` - Italics  
+    `R` - Blur  
+    `V` - Invert  
+    `M` - Mono  
+    `S` - Shadow  
+    `O` - Outline  
 
 `gfx_str_measure(#string[,w,h])`  
 Measures the size of #string, returns width
