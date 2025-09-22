@@ -92,7 +92,7 @@ Returns 1 if input is available, sets `w/h` to dimensions. If srctime specified,
 Gets the input take name or track name. returns >0 on success
 
 `input_match(startidx,#pattern[,...])`  
-Searches inputs for input starting at startidx whose track or item matches #pattern (see EEL2 `match()` for syntax), returns -10000 if not found.
+Searches inputs for input starting at `startidx` whose track or item matches `#pattern` (see EEL2 `match()` for syntax), returns -10000 if not found.
 
 `input_matchi(startidx,#pattern[,...])`  
 Searches inputs for input starting at startidx whose track or item case-insensitively matches #pattern (see EEL2 `matchi()` for syntax), returns -10000 if not found.
@@ -101,7 +101,7 @@ Searches inputs for input starting at startidx whose track or item case-insensit
 Returns an image index for drawing (can create up to 32 images). contents of image undefined unless clear set.
 
 `gfx_img_resize(handle,w,h[,clear])`  
-Sets an image size (handle can be -1 for main framebuffer). contents of image undefined after resize, unless clear set. clear=-1 will only clear if resize occurred. Returns the image handle (if handle is invalid, returns a newly-allocated image handle)
+Sets an image size (handle can be -1 for main framebuffer). contents of image undefined after resize, unless clear set. `clear=-1` will only clear if resize occurred. Returns the image handle (if handle is invalid, returns a newly-allocated image handle)
 
 `gfx_img_hold(handle)`  
 Retains (cheaply) a read-only copy of an image in handle. This copy should be released using `gfx_img_free()` when finished. Up to 32 images can be held.
@@ -119,22 +119,22 @@ Gets dimensions of image, returns 1 if valid (resize if inexplicably invalidated
 Updates `r/g/b/a/mode` to values specified, dest is only updated if parameter specified.
 
 `gfx_blit(input[,preserve_aspect=0,x,y,w,h,srcx,srcy,srcw,srch])`  
-Draws input to framebuffer. preserve_aspect=-1 for no fill in pad areas
+Draws input to framebuffer. `preserve_aspect=-1` for no fill in pad areas
 
 `gfx_fillrect(x,y,w,h)`  
 Fills a rectangle with the current `color/mode/alpha`
 
 `gfx_procrect(x,y,w,h,channel_tab[,mode])`  
-`Processes a rectangle with 768-entry channel table [256 items of 0..1 per channel]. specify mode=1 to use `Y` value for `U/V` source channels (colorization mode)
+`Processes a rectangle with 768-entry channel table [256 items of 0..1 per channel]. specify `mode=1` to use `Y` value for `U/V` source channels (colorization mode)
 
 `gfx_evalrect(x,y,w,h,code_string[,flags,src,init_code_string,src2])`  
-Processes a rectangle with code_string being executed for every pixel/pixel-group. Returns -1 if code_string failed to compile. Code should reference per pixel values (0-255, unclamped), depending on colorspace:  
+Processes a rectangle with `code_string` being executed for every pixel/pixel-group. Returns -1 if `code_string` failed to compile. Code should reference per pixel values (0-255, unclamped), depending on colorspace:  
     `RGBA`: `r/g/b/a` (0-255, unclamped)  
     `YUY2`: `y1,y2, u, v` (0-255, unclamped; `u/v` are centered at 128)  
     `YV12`: `y1-y4, u, v` (0-255, unclamped; `u/v` are centered at 128)  
 Additional options:  
     `flags|=1` in order to prevent multiprocessing (if your routine needs  to process pixels in-order)  
-    `flags|=2` to ignore output (analysis-only). This is only valid when not using `src2` and not using one of the 4/8 modes.  
+    `flags|=2` to ignore output (analysis-only). This is only valid when not using `src2` and not using one of the `4/8` modes.  
     `flags|=4,8` only valid in `RGBA/YV12`, and only if `src/src2` not specified. `flags&8` means process in vertical slices (top to bottom unless `flags&4`). `flags&4` but not `flags&8` means right-to-left. In each case `y1-y4` are reordered for convenience (the same filter code can typically be used in various orientations).  
     If init_code_string specified, it will be executed in each thread context before processing  
     If `src` specified (and >= -1), `sr/sg/sb/sa`, `sy1/su/sv` etc will be available to read. In this case only the intersection of valid rectangles between `src` and the destination buffer will be processed.  
@@ -151,10 +151,10 @@ Blits with rotate. This function behaves a bit odd when the source and destinati
 Blits with source pixel transformation control. `S` and `T` refer to source coordinates: `dsdx` is  how much the source `X` position changes with each `X` destination pixel, `dtdx` is how much the source `Y` position changes with each `X` destination pixel, etc.
 
 `gfx_xformblit(srcidx, x,y,w,h,  wdiv, hdiv, tab[, wantalpha=0])`  
-Blits with a transformation table. tab is `wdiv*hdiv*2` table of source point coordinates. If `wantalpha=1`, tab is `wdiv*hdiv*3` table of src points including alpha for each point.
+Blits with a transformation table. `tab` is `wdiv*hdiv*2` table of source point coordinates. If `wantalpha=1`, `tab` is `wdiv*hdiv*3` table of src points including alpha for each point.
 
 `gfx_keyedblit(input[,x,y,w,h,srcx,srcy,kv1,kv2,kv3,kv4])`  
-Chroma-key blits, using the source color as key. kv1-kv4 meaning depends on colorspace:  
+Chroma-key blits, using the source color as key. `kv1-kv4` meaning depends on colorspace:  
     `YV12/YUY2`:  
         `kv1` is `U` target (-0.5 default)  
         `kv2` is `V` target (-0.5 default)  
@@ -170,7 +170,7 @@ Chroma-key blits, using the source color as key. kv1-kv4 meaning depends on colo
 Chroma-key blits, using destination color as key. ignores `gfx_a` and `gfx_mode`. See `gfx_keyedblit()` for `kv1-kv4` explanation.
 
 `gfx_setfont(pxsize[,#fontname, flags)`  
-Sets a font. flags are specified as a multibyte integer, using a combination of the following flags (specify multiple as `BI` or `OI` or `OBI` etc):  
+Sets a font. `flags` are specified as a multibyte integer, using a combination of the following `flags` (specify multiple as `BI` or `OI` or `OBI` etc):  
     `B` - Bold  
     `I` - Italics  
     `R` - Blur  
