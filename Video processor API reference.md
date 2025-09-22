@@ -32,16 +32,16 @@ For more information on the code language, please see the appendix near the bott
 `gfx_a`: current drawing alpha (0..1)  
 `gfx_a2`: current drawing color alpha channel value (RGB-only, 0..1, defaults to 1)  
 `gfx_mode`: drawing mode  
-    0 = normal  
-    1 = additive  
-    3 = multiply (very different in YUV vs RGBA)  
-    17 = `(dest + src*gfx_a)*.5 + .5` (only valid when using YUV colorspaces)  
-    18 = `dest + (src-0.5)*gfx_a*2.0` (only valid when using YUV colorspaces)  
-    19 = absolute difference: `abs(dest-src)*gfx_a` (only valid when using YUV colorspaces)  
-    0x100 (flag ORed to above mode) for `blit()` to enable filtering (if possible)  
-    0x10000 (flag ORed to above mode) to use source alpha (only valid when using RGBA colorspace)  
-    0x40000 (flag ORed to above mode) to use extra clamping in normal mode (for out of range alpha/gradient values)  
-    0x80000 (flag ORed to above mode) to interpret `gfx_r/gfx_g/gfx_b` as YUV values (in YUV colorspaces)  
+    `0` = normal  
+    `1` = additive  
+    `3` = multiply (very different in `YUV` vs `RGBA`)  
+    `17` = `(dest + src*gfx_a)*.5 + .5` (only valid when using `YUV` colorspaces)  
+    `18` = `dest + (src-0.5)*gfx_a*2.0` (only valid when using `YUV` colorspaces)  
+    `19` = absolute difference: `abs(dest-src)*gfx_a` (only valid when using YUV colorspaces)  
+    `0x100` (flag ORed to above mode) for `blit()` to enable filtering (if possible)  
+    `0x10000` (flag ORed to above mode) to use source alpha (only valid when using `RGBA` colorspace)  
+    `0x40000` (flag ORed to above mode) to use extra clamping in normal mode (for out of range alpha/gradient values)  
+    `0x80000` (flag ORed to above mode) to interpret `gfx_r/gfx_g/gfx_b` as `YUV` values (in `YUV` colorspaces)  
 `gfx_dest`: destination image handle, or -1 for main framebuffer  
 
 `===============================================`  
@@ -49,13 +49,13 @@ For more information on the code language, please see the appendix near the bott
 `===============================================`  
 
 `input_count()`  
-Returns number of inputs available (total), range [0..n)]  
+Returns number of inputs available (total), range [0..n]  
 
 `input_track_count()`  
 Returns the number of available inputs on discrete tracks  
 
 `input_track(x)`  
-Returns input for bottommost item or FX on discrete-track x (0 is first track with video item above current, etc)  
+Returns input for bottommost item or FX on discrete-track `x` (0 is first track with video item above current, etc)  
 
 `input_track_exact_count()`  
 Returns the number of tracks above the current track that could possibly contain video items.  
@@ -116,7 +116,7 @@ Fills a rectangle with the current `color/mode/alpha`
 
 `gfx_evalrect(x,y,w,h,code_string[,flags,src,init_code_string,src2])`  
 Processes a rectangle with code_string being executed for every pixel/pixel-group. Returns -1 if code_string failed to compile. Code should reference per pixel values (0-255, unclamped), depending on colorspace:  
-    `RGBA`:  `r/g/b/a` (0-255, unclamped)  
+    `RGBA`: `r/g/b/a` (0-255, unclamped)  
     `YUY2`: `y1,y2, u, v` (0-255, unclamped; u/v are centered at 128)  
     `YV12`: `y1-y4, u, v` (0-255, unclamped; u/v are centered at 128)  
 Additional options:  
