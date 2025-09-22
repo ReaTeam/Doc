@@ -119,8 +119,8 @@ Fills a rectangle with the current `color/mode/alpha`
 `gfx_evalrect(x,y,w,h,code_string[,flags,src,init_code_string,src2])`  
 Processes a rectangle with code_string being executed for every pixel/pixel-group. Returns -1 if code_string failed to compile. Code should reference per pixel values (0-255, unclamped), depending on colorspace:  
     `RGBA`: `r/g/b/a` (0-255, unclamped)  
-    `YUY2`: `y1,y2, u, v` (0-255, unclamped; u/v are centered at 128)  
-    `YV12`: `y1-y4, u, v` (0-255, unclamped; u/v are centered at 128)  
+    `YUY2`: `y1,y2, u, v` (0-255, unclamped; `u/v` are centered at 128)  
+    `YV12`: `y1-y4, u, v` (0-255, unclamped; `u/v` are centered at 128)  
 Additional options:  
     `flags|=1` in order to prevent multiprocessing (if your routine needs  to process pixels in-order)  
     `flags|=2` to ignore output (analysis-only). This is only valid when not using `src2` and not using one of the 4/8 modes.  
