@@ -209,7 +209,7 @@ Notes:
 Performs an inverse FFT. For more information see `fft()`.
 
 `fft_real(buffer,size)`  
-Performs a real FFT, taking size input samples and producing size/2 complex output pairs. Usually used along with fft_permute(size/2). Inputs/outputs will need to be scaled by 0.5/size. The first output complex pair will be (DC, nyquist).
+Performs a real FFT, taking size input samples and producing `size/2` complex output pairs. Usually used along with `fft_permute(size/2)`. Inputs/outputs will need to be scaled by `0.5/size`. The first output complex pair will be (DC, nyquist).
 
 `ifft_real(buffer,size)`  
 Performs an inverse FFT, taking `size/2` complex input pairs (the first being DC, nyquist) and producing size real output values. Usually used along with `fft_ipermute(size/2)`.
