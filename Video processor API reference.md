@@ -74,57 +74,57 @@ Returns the number of tracks above the current track that could possibly contain
 Returns input for bottommost item or FX on track relative to current track. Returns -1000 if track does not contain any video items at the current time, or -10000 if no further tracks contain video.
 
 `input_next_item(x)`  
-Returns the next input after x which is on a different item or track
+Returns the next input after `x` which is on a different item or track
 
 `input_next_track(x)`  
-Returns the next input after x which is on a different track
+Returns the next input after `x` which is on a different track
 
 `input_ismaster()`  
 Returns 1.0 if current FX is on master chain, 2.0 if on monitoring FX chain
 
-`input_info(input, w, h[,srctime, wet, parm1, ...])`  
-Returns 1 if input is available, sets `w/h` to dimensions. If srctime specified, it will be set with the source-local time of the underlying media. if input is a video processor in effect form, automated parameters can be queried via `wet/parm1/...`
+`input_info(input, w, h[, srctime, wet, parm1, ...])`  
+Returns 1 if input is available, sets `w/h` to dimensions. If srctime specified, it will be set with the source-local time of the underlying media. If `input` is a video processor in effect form, automated parameters can be queried via `wet/parm1/...`
 
 `input_get_name(input, #str)`  
-Gets the input take name or track name. returns >0 on success
+Gets the `input` take name or track name. Returns >0 on success
 
-`input_match(startidx,#pattern[,...])`  
+`input_match(startidx, #pattern[,...])`  
 Searches inputs for input starting at `startidx` whose track or item matches `#pattern` (see EEL2 `match()` for syntax), returns -10000 if not found.
 
-`input_matchi(startidx,#pattern[,...])`  
+`input_matchi(startidx, #pattern[,...])`  
 Searches inputs for input starting at startidx whose track or item case-insensitively matches #pattern (see EEL2 `matchi()` for syntax), returns -10000 if not found.
 
-`gfx_img_alloc([w,h,clear])`  
-Returns an image index for drawing (can create up to 32 images). contents of image undefined unless clear set.
+`gfx_img_alloc([w, h, clear])`  
+Returns an image index for drawing (can create up to 32 images). Contents of image undefined unless `clear` is set.
 
-`gfx_img_resize(handle,w,h[,clear])`  
-Sets an image size (handle can be -1 for main framebuffer). contents of image undefined after resize, unless clear set. `clear=-1` will only clear if resize occurred. Returns the image handle (if handle is invalid, returns a newly-allocated image handle)
+`gfx_img_resize(handle, w, h[, clear])`  
+Sets an image size (`handle` can be -1 for main framebuffer). contents of image undefined after resize, unless `clear` is set. `clear=-1` will only clear if resize occurred. Returns the image handle (if `handle` is invalid, returns a newly-allocated image handle)
 
 `gfx_img_hold(handle)`  
-Retains (cheaply) a read-only copy of an image in handle. This copy should be released using `gfx_img_free()` when finished. Up to 32 images can be held.
+Retains (cheaply) a read-only copy of an image in `handle`. This copy should be released using `gfx_img_free()` when finished. Up to 32 images can be held.
 
 `gfx_img_getptr(handle)`  
-Gets a unique identifier for an image, valid for while the image is retained. can be used (along with `gfx_img_hold`) to detect when frames change in a low frame rate video
+Gets a unique identifier for an image, valid for while the image is retained. Can be used (along with `gfx_img_hold`) to detect when frames change in a low frame rate video
 
 `gfx_img_free(handle)`  
 Releases an earlier allocated image index.
 
-`gfx_img_info(handle,w,h)`  
+`gfx_img_info(handle, w, h)`  
 Gets dimensions of image, returns 1 if valid (resize if inexplicably invalidated)
 
-`gfx_set(r,[g=r,b=r,a=1,mode=0,dest,a2=1])`  
-Updates `r/g/b/a/mode` to values specified, dest is only updated if parameter specified.
+`gfx_set(r,[ g=r, b=r, a=1, mode=0, dest, a2=1])`  
+Updates `r/g/b/a/mode` to values specified, `dest` is only updated if parameter is specified.
 
-`gfx_blit(input[,preserve_aspect=0,x,y,w,h,srcx,srcy,srcw,srch])`  
-Draws input to framebuffer. `preserve_aspect=-1` for no fill in pad areas
+`gfx_blit(input[, preserve_aspect=0, x, y, w, h, srcx, srcy, srcw, srch])`  
+Draws `input` to framebuffer. `preserve_aspect=-1` for no fill in pad areas
 
-`gfx_fillrect(x,y,w,h)`  
+`gfx_fillrect(x, y, w, h)`  
 Fills a rectangle with the current `color/mode/alpha`
 
-`gfx_procrect(x,y,w,h,channel_tab[,mode])`  
-`Processes a rectangle with 768-entry channel table [256 items of 0..1 per channel]. specify `mode=1` to use `Y` value for `U/V` source channels (colorization mode)
+`gfx_procrect(x, y, w, h, channel_tab[, mode])`  
+`Processes a rectangle with 768-entry channel table [256 items of 0..1 per channel]. Specify `mode=1` to use `Y` value for `U/V` source channels (colorization mode)
 
-`gfx_evalrect(x,y,w,h,code_string[,flags,src,init_code_string,src2])`  
+`gfx_evalrect(x, y, w, h, code_string[, flags, src, init_code_string, src2])`  
 Processes a rectangle with `code_string` being executed for every pixel/pixel-group. Returns -1 if `code_string` failed to compile. Code should reference per pixel values (0-255, unclamped), depending on colorspace:  
     `RGBA`: `r/g/b/a` (0-255, unclamped)  
     `YUY2`: `y1,y2, u, v` (0-255, unclamped; `u/v` are centered at 128)  
@@ -133,24 +133,25 @@ Additional options:
     `flags|=1` in order to prevent multiprocessing (if your routine needs  to process pixels in-order)  
     `flags|=2` to ignore output (analysis-only). This is only valid when not using `src2` and not using one of the `4/8` modes.  
     `flags|=4,8` only valid in `RGBA/YV12`, and only if `src/src2` not specified. `flags&8` means process in vertical slices (top to bottom unless `flags&4`). `flags&4` but not `flags&8` means right-to-left. In each case `y1-y4` are reordered for convenience (the same filter code can typically be used in various orientations).  
-    If init_code_string specified, it will be executed in each thread context before processing  
-    If `src` specified (and >= -1), `sr/sg/sb/sa`, `sy1/su/sv` etc will be available to read. In this case only the intersection of valid rectangles between `src` and the destination buffer will be processed.  
-    If `src` and `src2` specified (and >= -1), `s2r/s2g/s2b/s2a`, `s2y1/s2u/s2v` etc will also be available to read.  
-    Note: variables `_1-_99` are thread-local variables which will always be initialized to 0, and _0 will be initialized to the thread index (usually 0 or 1). 6.70+: `_slice` is the position of the slice (which may differ from _0 in 6.71+). `_slices` is a count of the multiprocessing slices, `_span` is the number of calls per line, and _slice_size is the size of each slice in lines (the last slice may vary in size).  
+    If `init_code_string` is specified, it will be executed in each thread context before processing  
+    If `src` specified (and >= -1), `sr/sg/sb/sa`, `sy1/su/sv` etc. will be available to read. In this case only the intersection of valid rectangles between `src` and the destination buffer will be processed.  
+    If `src` and `src2` are specified (and >= -1), `s2r/s2g/s2b/s2a`, `s2y1/s2u/s2v` etc. will also be available to read.  
+    Note: variables `_1-_99` are thread-local variables which will always be initialized to 0, and `_0` will be initialized to the thread index (usually 0 or 1).  
+    6.70+: `_slice` is the position of the slice (which may differ from `_0` in 6.71+). `_slices` is a count of the multiprocessing slices, `_span` is the number of calls per line, and `_slice_size` is the size of each slice in lines (the last slice may vary in size).  
 
-`gfx_gradrect(x,y,w,h, r,g,b,a [,drdx,dgdx,dbdx,dadx, drdy,dgdy,dbdy,dady])`  
+`gfx_gradrect(x, y, w, h, r, g, b, a[, drdx, dgdx, dbdx, dadx, drdy, dgdy, dbdy, dady])`  
 Fills rectangle. `r/g/b/a` supply color at top left corner, `drdx` (if specified) is amount red changes per X-pixel, etc.
 
-`gfx_rotoblit(srcidx, angle [,x, y, w, h, srcx, srcy, w, h, cliptosrcrect=0, centxoffs=0, centyoffs=0])`  
+`gfx_rotoblit(srcidx, angle[,x, y, w, h, srcx, srcy, w, h, cliptosrcrect=0, centxoffs=0, centyoffs=0])`  
 Blits with rotate. This function behaves a bit odd when the source and destination sizes/aspect ratios differ, so `gfx_deltablit()` is generally more useful.
 
-`gfx_deltablit(srcidx, x,y,w,h, srcx,srcy, dsdx, dtdx, dsdy, dtdy, dsdxdy, dtdxdy[, dadx, dady, dadxdy])`  
+`gfx_deltablit(srcidx, x, y, w, h, srcx, srcy, dsdx, dtdx, dsdy, dtdy, dsdxdy, dtdxdy[, dadx, dady, dadxdy])`  
 Blits with source pixel transformation control. `S` and `T` refer to source coordinates: `dsdx` is  how much the source `X` position changes with each `X` destination pixel, `dtdx` is how much the source `Y` position changes with each `X` destination pixel, etc.
 
-`gfx_xformblit(srcidx, x,y,w,h,  wdiv, hdiv, tab[, wantalpha=0])`  
+`gfx_xformblit(srcidx, x, y, w, h, wdiv, hdiv, tab[, wantalpha=0])`  
 Blits with a transformation table. `tab` is `wdiv*hdiv*2` table of source point coordinates. If `wantalpha=1`, `tab` is `wdiv*hdiv*3` table of src points including alpha for each point.
 
-`gfx_keyedblit(input[,x,y,w,h,srcx,srcy,kv1,kv2,kv3,kv4])`  
+`gfx_keyedblit(input[, x, y, w, h, srcx, srcy, kv1, kv2, kv3, kv4])`  
 Chroma-key blits, using the source color as key. `kv1-kv4` meaning depends on colorspace:  
     `YV12/YUY2`:  
         `kv1` is `U` target (-0.5 default)  
@@ -163,10 +164,10 @@ Chroma-key blits, using the source color as key. `kv1-kv4` meaning depends on co
         `kv3` is offset (-1.0 default)  
         `kv4` enables spill removal (1.0 default)  
 
-`gfx_destkeyedblit(input[,x,y,w,h,srcx,srcy,kv1,kv2,kv3,kv4])`  
-Chroma-key blits, using destination color as key. ignores `gfx_a` and `gfx_mode`. See `gfx_keyedblit()` for `kv1-kv4` explanation.
+`gfx_destkeyedblit(input[, x, y, w, h, srcx, srcy, kv1, kv2, kv3, kv4])`  
+Chroma-key blits, using destination color as key. Ignores `gfx_a` and `gfx_mode`. See `gfx_keyedblit()` for `kv1-kv4` explanation.
 
-`gfx_setfont(pxsize[,#fontname, flags)`  
+`gfx_setfont(pxsize[, #fontname, flags)`  
 Sets a font. `flags` are specified as a multibyte integer, using a combination of the following `flags` (specify multiple as `BI` or `OI` or `OBI` etc):  
     `B` - Bold  
     `I` - Italics  
@@ -176,59 +177,59 @@ Sets a font. `flags` are specified as a multibyte integer, using a combination o
     `S` - Shadow  
     `O` - Outline  
 
-`gfx_str_measure(#string[,w,h])`  
-Measures the size of #string, returns width
+`gfx_str_measure(#string[, w, h])`  
+Measures the size of `#string`, returns width
 
-`gfx_str_draw(#string[,x,y,fxc_r,fxc_g,fxc_b])`  
+`gfx_str_draw(#string[, x, y, fxc_r, fxc_g, fxc_b])`  
 Draw string, `fxc_r/g/b` are the FX color if Shadow/Outline are set in the font
 
-`gfx_getpixel(input,x,y,v1,v2,v3[,v4])`  
+`gfx_getpixel(input, x, y, v1, v2, v3[, v4])`  
 Gets the value of a pixel from input at `x,y`. `v1/v2/v3` will be `YUV` or `RGB` (`v4` can be used to get `A`), returns 1 on success
 
-`rgb2yuv(r,g,b)`  
-Converts `r,g,b` to `YUV`, does not clamp `[0..1]`
+`rgb2yuv(r, g, b)`  
+Converts `r, g, b` to `YUV`, does not clamp `[0..1]`
 
-`yuv2rgb(r,g,b)`  
-Converts `YUV` to `r,g,b`, not clamping `[0..1]`  
+`yuv2rgb(r, g, b)`  
+Converts `YUV` to `r, g, b`, not clamping `[0..1]`  
 
 `===============================================`  
 ### Advanced Functions  
 `===============================================`  
 
-`ui_get_state(ctx[,mouse_x, mouse_y,force_frame_in,mouse_wheel_state,mouse_hwheel_state])`  
-Gets UI state and context, only usable from Monitoring FX (returns 0 if used from track). Returns state (`1/2/4` are `l/r/m` mouse buttons, `8/16/32` are `ctrl/shift/alt`, `1024` is whether configuration for this processor is visible). If `ctx` set to -1, context is video window and any returned mouse coordinates are `[0..1]` (where `0,0` is upper left corner, `1,1` is lower right corner of the video area). If `ctx` is set to `[1..40]`, it means the user is editing that knob. If force_frame_in is specified and is positive, then the processor will be re-executed in this amount of time (even if no new video source is available)
+`ui_get_state(ctx[, mouse_x, mouse_y, force_frame_in, mouse_wheel_state, mouse_hwheel_state])`  
+Gets UI state and context, only usable from Monitoring FX (returns 0 if used from track). Returns state (`1/2/4` are `l/r/m` mouse buttons, `8/16/32` are `ctrl/shift/alt`, `1024` is whether configuration for this processor is visible). If `ctx` set to -1, context is video window and any returned mouse coordinates are `[0..1]` (where `0,0` is upper left corner, `1,1` is lower right corner of the video area). If `ctx` is set to `[1..40]`, it means the user is editing that knob. If `force_frame_in` is specified and is positive, then the processor will be re-executed in this amount of time (even if no new video source is available)
 
 `time_precise([val])`  
 Sets the parameter (or a temporary buffer if omitted) to a system-local timestamp in seconds, and returns a reference to that value. The granularity of the value returned is system defined (but generally significantly smaller than one second).
 
 `on_parameter_change(pvar[, isdone])`  
-Notifies that the parameter pointed to by pvar (must be `param1..param40` or a user-defined parameter) has changed. Specify `isdone=1` when done modifying parameter (e.g. releasing touch)
+Notifies that the parameter pointed to by `pvar` (must be `param1..param40` or a user-defined parameter) has changed. Specify `isdone=1` when done modifying parameter (e.g. releasing touch)
 
-`get_host_placement([chain_pos,flags])`  
+`get_host_placement([chain_pos, flags])`  
 Returns track index, or -1 for master track, or -2 for hardware output FX. `chain_pos` will be position in chain. `flags` will have `1` set if takeFX, `4` if inactive project, `8` if in container (in this case, `chain_pos` will be set to the address, see `TrackFX_GetParamEx` etc).
 
-`fft(buffer,size)`  
-Performs a FFT on the data in the local memory buffer at the offset specified by the first parameter. The `size` of the FFT is specified by the second parameter, which must be a power of two 16-32768. The outputs are permuted, so if you plan to use them in-order, call `fft_permute(buffer, size)` before and `fft_ipermute(buffer,size)` after in-order use. Inputs or outputs will need to be scaled down by `1/size`.  
+`fft(buffer, size)`  
+Performs a FFT on the data in the local memory buffer at the offset specified by the first parameter. The `size` of the FFT is specified by the second parameter, which must be a power of two 16-32768. The outputs are permuted, so if you plan to use them in-order, call `fft_permute(buffer, size)` before and `fft_ipermute(buffer, size)` after in-order use. Inputs or outputs will need to be scaled down by `1/size`.  
 Notes:  
     `fft()/ifft()` require real / imaginary input pairs, so a 256 point FFT actually works with 512 items.
     `fft()/ifft()` must NOT cross a 65,536 item boundary, so be sure to specify the offset accordingly.
 
-`ifft(buffer,size)`  
+`ifft(buffer, size)`  
 Performs an inverse FFT. For more information see `fft()`.
 
-`fft_real(buffer,size)`  
+`fft_real(buffer, size)`  
 Performs a real FFT, taking size input samples and producing `size/2` complex output pairs. Usually used along with `fft_permute(size/2)`. Inputs/outputs will need to be scaled by `0.5/size`. The first output complex pair will be (DC, nyquist).
 
-`ifft_real(buffer,size)`  
+`ifft_real(buffer, size)`  
 Performs an inverse FFT, taking `size/2` complex input pairs (the first being DC, nyquist) and producing size real output values. Usually used along with `fft_ipermute(size/2)`.
 
-`fft_permute(buffer,size)`  
+`fft_permute(buffer, size)`  
 Permutes the output of `fft()` to have bands in-order.
 
-`fft_ipermute(buffer,size)`  
+`fft_ipermute(buffer, size)`  
 Permutes the input for `ifft()`, taking bands from in-order to the order `ifft()` requires. See `fft()` for more information.
 
-`convolve_c(dest,src,size)`  
+`convolve_c(dest, src, size)`  
 Multiplies each of `size` complex pairs in `dest` by the complex pairs in `src`. Often used for convolution.
 
 `===============================================`  
@@ -243,7 +244,7 @@ on a line by itself. Note that when synchronizing with ReaScripts or JSFX, all p
 ### String Functions
 `===============================================`  
 
-`sprintf(#dest,"format"[, ...])`  
+`sprintf(#dest, "format"[, ...])`  
 Formats a string and stores it in `#dest`. Format specifiers begin with `%`, and may include:  
     `%%` = %  
     `%s` = string from parameter  
@@ -270,10 +271,10 @@ Many standard C `printf()` modifiers can be used, including:
 
 Values for format specifiers can be specified as additional parameters to `sprintf`, or within `{}` in the format specifier (such as `%{varname}d`, in that case a global variable is always used).
 
-`matchi("needle","haystack"[, ...])`  
+`matchi("needle", "haystack"[, ...])`  
 Case-insensitive version of `match()`.
 
-`match("needle","haystack"[, ...])`  
+`match("needle", "haystack"[, ...])`  
 Searches for the first parameter in the second parameter, using a simplified regular expression syntax.  
    `*` = match 0 or more characters  
    `*?` = match 0 or more characters, lazy  
@@ -298,37 +299,37 @@ See also `sprintf()` for other notes, including specifying direct variable refer
 `strlen("str")`  
 Returns the length of the string passed as a parameter
 
-`strcpy(#str,"srcstr")`  
+`strcpy(#str, "srcstr")`  
 Copies the contents of `srcstr` to `#str`, and returns `#str`
 
-`strcat(#str,"srcstr")`  
+`strcat(#str, "srcstr")`  
 Appends `srcstr` to `#str`, and returns `#str`
 
-`strcmp("str","str2")`  
+`strcmp("str", "str2")`  
 Compares strings, returning 0 if equal
 
-`stricmp("str","str2")`  
+`stricmp("str", "str2")`  
 Compares strings ignoring case, returning 0 if equal
 
-`strncmp("str","str2",maxlen)`  
+`strncmp("str", "str2", maxlen)`  
 Compares strings giving up after `maxlen` characters, returning 0 if equal
 
-`strnicmp("str","str2",maxlen)`  
+`strnicmp("str", "str2", maxlen)`  
 Compares strings giving up after `maxlen` characters, ignoring case, returning 0 if equal
 
-`strncpy(#str,"srcstr",maxlen)`  
+`strncpy(#str, "srcstr", maxlen)`  
 Copies srcstr to `#str`, stopping after `maxlen` characters. Returns `#str`.
 
-`strncat(#str,"srcstr",maxlen)`  
+`strncat(#str, "srcstr", maxlen)`  
 Appends `srcstr` to `#str`, stopping after `maxlen` characters of `srcstr`. Returns `#str`.
 
-`strcpy_from(#str,"srcstr",offset)`  
+`strcpy_from(#str, "srcstr", offset)`  
 Copies `srcstr` to `#str`, but starts reading `srcstr` at `offset`
 
-`strcpy_substr(#str,"srcstr",offs,ml))`  
+`strcpy_substr(#str, "srcstr", offs, ml)`  
 PHP-style (start at `offs`, offs<0 means from end, `ml` for maxlen, ml<0 = reduce length by this amt)
 
-`str_getchar("str",offset[,type])`  
+`str_getchar("str", offset[, type])`  
 Returns the data at byte-offset `offset` of `str`. If `offset` is negative, position is relative to end of string. `type` defaults to signed char, but can be specified to read raw binary data in other formats (note the single quotes, these are single/multi-byte characters):  
    `'c'` - signed char  
    `'cu'` - unsigned char  
@@ -346,14 +347,14 @@ Returns the data at byte-offset `offset` of `str`. If `offset` is negative, posi
    `'D'` - double, big endian
 
 
-`str_setchar(#str,offset,val[,type]))`  
+`str_setchar(#str, offset, val[, type])`  
 Sets value at `offset` offset, `type` optional. `offset` may be negative to refer to offset relative to end of string, or between 0 and length, inclusive, and if set to length it will lengthen string. See `str_getchar()` for more information on types.
 
-`str_setlen(#str,len)`  
+`str_setlen(#str, len)`  
 Sets length of `#str` (if increasing, will be space-padded), and returns `#str`.
 
-`str_delsub(#str,pos,len)`  
+`str_delsub(#str, pos, len)`  
 Deletes `len` characters at offset `pos` from `#str`, and returns `#str`.
 
-`str_insert(#str,"srcstr",pos)`  
+`str_insert(#str, "srcstr", pos)`  
 Inserts `srcstr` into `#str` at offset `pos`. Returns `#str`
