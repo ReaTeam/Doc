@@ -501,12 +501,33 @@ Audio Item
     MULT 1                                              //
     >                                                   // Click source section end
 
-    <SOURCE LTC                         // SMPTE Generator propetries section start (only relevant for SMPTE Generator item/take)
-    STARTTIME 0                         //
-    FRAMERATE 30 0                      //
-    SEND 0                              //
-    USERDATA 0 0 0 0                    //
-    >                                   //  SMPTE Generator propetries section end
+    <SOURCE LTC                    // SMPTE Generator propetries source section start (only relevant for SMPTE Generator item/take)
+    STARTTIME 0                    //
+    FRAMERATE 30 0                 //
+    SEND 0                         //
+    USERDATA 0 0 0 0               //
+    >                              // SMPTE Generator propetries section end
+
+    <SOURCE VIDEOEFFECT                                                             // Dedicated video processor item/take source section start
+                                                                                    // Source of item inserted with the action 
+                                                                                    // 'Insert dedicated video processor item'.
+      <CODE                                                                         // The following code formatting is identical to Video
+                                                                                    // processor code formatting showcased further below 
+                                                                                    // in the 'Video Processor plugin' paragraph
+      |// Invert colors                                                             //
+      |//@param pa 'preserve RGBA alpha' 0 0 1 .5 1                                 //
+      |ok=input_info(input=0,project_w,project_h);                                  //
+      |gfx_set(1);                                                                  //
+      |gfx_fillrect(0,0,project_w,project_h);                                       //
+      |gfx_set(0,0,0,-1,1); // negative alpha, additive                             //
+      |ok? (                                                                        //
+      |  gfx_blit(input, 0);                                                        //
+      |  pa && colorspace=='RGBA' ? ( gfx_mode=0xf0+3+3*4;  gfx_blit(input,0); );   //
+      |);                                                                           //
+      >                                                                             //
+    CODEPARM 0 8 5 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0    //
+    0 0 0 0 0 0                                                                     //
+    >                                                                               // Dedicated video processor item/take source section end
 
     TKM 0.5 "TEST 123" 21036800	0.5         // Take marker data
                                             // field 1 - float, position within take in sec
