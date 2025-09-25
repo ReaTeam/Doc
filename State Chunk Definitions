@@ -484,7 +484,23 @@ Audio Item
             FILE "C:Path\To\AudioFile.wav"              // Source file.
         >                                               // Source details end
     >                                                   // Source section end
-    
+
+    <SOURCE CLICK                                       // Click source section start
+    AUTO 1 0                                            //
+    BPM 100                                             // Project tempo at which click source item was created
+    BPI 4 4                                             //
+    VOL 0.5 0.25                                        //
+    BEATLEN 4                                           //
+    FREQ 1760 880 1                                     //
+    SAMPLES "" "" "" ""                                 //
+    SPLIGNORE 0 0                                       //
+    SPLDEF 2 660 "" 0 ""                                //
+    SPLDEF 3 440 "" 0 ""                                //
+    PATTERN 0 169                                       //
+    PATTERNSTR ABBB                                     // Click pattern
+    MULT 1                                              //
+    >                                                   // Click source section end
+
     TKM 0.5 "TEST 123" 21036800	0.5         // Take marker data
                                             // field 1 - float, position within take in sec
                                             // field 2 - string, name, without quotes if consists of only one 
