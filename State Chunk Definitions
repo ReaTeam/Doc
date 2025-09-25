@@ -486,26 +486,26 @@ Audio Item
     >                                                   // Source section end
 
     <SOURCE CLICK                                       // Click source section start (only relevant for click source item/take)
-    AUTO 1 0                                            //
-    BPM 100                                             // Project tempo at which click source item was created
-    BPI 4 4                                             //
-    VOL 0.5 0.25                                        //
-    BEATLEN 4                                           //
-    FREQ 1760 880 1                                     //
-    SAMPLES "" "" "" ""                                 //
-    SPLIGNORE 0 0                                       //
-    SPLDEF 2 660 "" 0 ""                                //
-    SPLDEF 3 440 "" 0 ""                                //
-    PATTERN 0 169                                       //
-    PATTERNSTR ABBB                                     // Click pattern
-    MULT 1                                              //
+      AUTO 1 0                                          //
+      BPM 100                                           // Project tempo at which click source item was created
+      BPI 4 4                                           //
+      VOL 0.5 0.25                                      //
+      BEATLEN 4                                         //
+      FREQ 1760 880 1                                   //
+      SAMPLES "" "" "" ""                               //
+      SPLIGNORE 0 0                                     //
+      SPLDEF 2 660 "" 0 ""                              //
+      SPLDEF 3 440 "" 0 ""                              //
+      PATTERN 0 169                                     //
+      PATTERNSTR ABBB                                   // Click pattern
+      MULT 1                                            //
     >                                                   // Click source section end
 
     <SOURCE LTC                    // SMPTE Generator propetries source section start (only relevant for SMPTE Generator item/take)
-    STARTTIME 0                    //
-    FRAMERATE 30 0                 //
-    SEND 0                         //
-    USERDATA 0 0 0 0               //
+      STARTTIME 0                  //
+      FRAMERATE 30 0               //
+      SEND 0                       //
+      USERDATA 0 0 0 0             //
     >                              // SMPTE Generator propetries section end
 
     <SOURCE VIDEOEFFECT                                                             // Dedicated video processor item/take source section start
