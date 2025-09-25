@@ -1,9 +1,6 @@
 _The document is accessible via F1 shortcut within the Video processor IDE_  
 _EEL2 general reference see at http://www.cockos.com/EEL2/ and https://www.reaper.fm/sdk/js/js.php_
 
-
-## MENU
-
 **[Video Processor Structure](#video-processor-structure)**  
 **[Special Variables Used by Processors](#special-variables-used-by-processors)**  
 **[Video Processor Specific Functions]([#video-processor-specific-functions)**  
