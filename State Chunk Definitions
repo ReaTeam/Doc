@@ -564,6 +564,7 @@ Audio Item
                                                         //  or with reaper.GetTake(item, take_idx), or with
                                                         //  reaper.GetTake(item, reaper.GetMediaItemInfo_Value(item, 'I_CURTAKE'))
                                                         //  even though it's included in the total take count.
+                                                        //  When such take is the topmost its attribute is absent in the chunk.
     TAKE SEL                                            // Third take start. SEL only appears if this take is active 
                                                         // in a selected item;
     NAME "The second take"                              // Take name
