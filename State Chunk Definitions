@@ -529,6 +529,9 @@ Audio Item
     0 0 0 0 0 0                                                                     //
     >                                                                               // Dedicated video processor item/take source section end
 
+    <SOURCE EMPTY                            // Present in items without source, which can be created 
+    >                                        // out of empty items by adding a take marker for example.
+
     TKM 0.5 "TEST 123" 21036800	0.5         // Take marker data
                                             // field 1 - float, position within take in sec
                                             // field 2 - string, name, without quotes if consists of only one 
