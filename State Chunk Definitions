@@ -1063,9 +1063,9 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
       >                           //
       <OUT_PINS                   // The principle of FX container Input pin representation described 
        PIN 0 2                    // above applies to FX container Output pins as well; here Output pin 1 
-       PIN 1 3                    // is mapped to track 3, Output pin 2 - to track 4, Output pins 3 & 4 
-      >                           // are mapped to tracks with corresponding indices, i.e. 3 & 4 hence 
-                                  // these are not listed;
+       PIN 1 3                    // is mapped to track channel 3, Output pin 2 - to track channel 4,
+      >                           // Output pins 3 & 4 are mapped to tracks channels with corresponding indices, 
+                                  // i.e. 3 & 4 hence these are not listed;
                                   //
     -- Here regular FX chain chunk follows --            // FX containers are nestable, so inside this FX chain chunk another 
        ........                                          // container block may be found;
