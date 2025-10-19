@@ -891,6 +891,12 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     PARMALIAS 4 "DS Freq"                                     //  
     PARMALIAS 6 "Delay"                                       //  
     PARMALIAS 7 "Squeeze"                                     //
+                                                              // Since presumably build 6.48 REAPER parameter index is followed by
+                                                              // parameter identifier (if available, the one returned by 
+                                                              // FX_GetParamIdent functions) or the plugin internal parameter index
+                                                              // separated by a colon:
+    PARMALIAS 8:_Max_voices "Alias"                           // RS5k/LV2 pattern
+    PARMALIAS 9:0 "Alias"                                     // VST3/CLAP pattern
 
     FXID {1191A7FE-F583-477E-8416-D9F0F58226CD}               //  Plugin id, leave it alone
     
