@@ -1117,8 +1117,16 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
       WAK 0 0                                            //
       PARALLEL 1                                         // Optional (since REAPER 7), depending on whether either of the
                                                          // following options is enabled for the FOLLOWING FX/Container instance
-                                                         //  1 - 'Run selected FX in parallel with previous FX';
-                                                         //  2 - 'Run selected FX in parallel with previous FX (merge MIDI)'.
+                                                         // 1 - 'Run selected FX in parallel with previous FX';
+                                                         // 2 - 'Run selected FX in parallel with previous FX (merge MIDI)'.
+     CONTAINER_PARM 1 0 0:1 ""                           // Parameters of a nested container mapped to the current container.
+     CONTAINER_PARM 2 0 1:2 ""                           // The difference from the data of source plugin parameters mapped
+                                                         // to a parent container (see above) is that field 3 is 0-based index 
+                                                         // of the parameter in the mapped parameters list of the nested 
+                                                         // container while field 4 is 1-based index of such parameter, 
+                                                         // the order of these indices depends on the order in which parameters 
+                                                         // were mapped to the current container, when a parameter is unmapped 
+                                                         // and then mapped again its entry is added last.
                                                          //  --- FX container definition end
 
      <COMMENT                                            //  Plugin comment. Not present if no comment.
