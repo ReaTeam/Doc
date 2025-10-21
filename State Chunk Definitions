@@ -840,16 +840,16 @@ TEMPOENVEX - Master tempo
 PARMENV contains extra data denoting which plugin parameter is controlled and what the minimum, maximum and default values are.
 
 <PARMENV 1 0.0 1469.0 734.5                     // Type
-<PARMENV 5:_1__Feedback 0 2 1                   //  field 1, int, param index - zero based top to bottom.
-<PARMENV 5:_Sample_start_offset 0 2 1           //  Since build 6.52 names of ReaPlugs parameters are also specified 
+<PARMENV 5:_1__Feedback 0 2 1                   // field 1, int, param index - 0-based top to bottom.
+<PARMENV 5:_Sample_start_offset 0 2 1           // Since builds 6.48 or 6.52 names of ReaPlugs parameters are also specified 
                                                 // in the format _paramname or _param_name
-                                                //  Previously only plugin wrapper 'wet' and 'bypass' parameter names 
-                                                // were displayed without being preceded by		
-                                                //  the underscore, e.g. 31:wet, 12:bypass
-                                                // REAPER tags additional bypass and wet params onto the end, in that order
-                                                //  field 2, float, minimum value 
-                                                //  field 3, float, maximum value
-                                                //  field 4, float, center/default value
+                                                // Previously only plugin wrapper 'wet', 'bypass' and 'delta' (since 6.37) 
+                                                // parameter names were displayed without being preceded by	the underscore,
+                                                // e.g. 31:wet, 12:bypass, 17:delta;
+                                                // REAPER tags additional bypass, wet & delta params onto the end, in that order
+                                                // field 2, float, minimum value 
+                                                // field 3, float, maximum value
+                                                // field 4, float, center/default value
    /* snip */
 >
 
@@ -887,16 +887,16 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                                               //  field 1 - top; field 2 - left; field 3 - width; field 4 - height;
                                                               //  If at least field 3 or 4 is 0, plugin window doesn't float							       
 
-    PARMALIAS 3 "Compression"                                 //  Names and indices of renamed FX parameters
-    PARMALIAS 4 "DS Freq"                                     //  
-    PARMALIAS 6 "Delay"                                       //  
-    PARMALIAS 7 "Squeeze"                                     //
+    PARMALIAS 3 "Compression alias"                           // Names and indices of aliased FX parameters
+    PARMALIAS 4 "DS Freq"                                     // field 1, int, 0-based parameter index;
+    PARMALIAS 6 Delay                                         // field 2, string, parameter alias, within quotes if contains spaces.
+    PARMALIAS 7 Squeeze                                       //
                                                               // Since presumably build 6.48 REAPER parameter index is followed by
                                                               // parameter identifier (if available, the one returned by 
                                                               // FX_GetParamIdent functions) or the plugin internal parameter index
-                                                              // separated by a colon:
-    PARMALIAS 8:_Max_voices "Alias"                           // RS5k/LV2 pattern
-    PARMALIAS 9:0 "Alias"                                     // VST3/CLAP pattern
+                                                              // separated by a colon
+    PARMALIAS 8:_Max_voices Alias                             // RS5k/LV2 pattern
+    PARMALIAS 9:0 "Alias new"                                 // VST3/CLAP pattern
 
     FXID {1191A7FE-F583-477E-8416-D9F0F58226CD}               //  Plugin id, leave it alone
     
