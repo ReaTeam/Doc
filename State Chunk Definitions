@@ -1049,7 +1049,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
    CONTAINER_PARM 2 0 2:_BW_Low_Shelf ""  // a container
                                           // field 1, int, index of the parameter within the container, 1-based;
                                           // field 2, ???;
-                                          // field 3, int, original index of the mapped paremeter in the source
+                                          // field 3, int, original index of the mapped parаmeter in the source
                                           // plugin, 0-based;
                                           // field 4, string, FX parameter identifier, the one returned with
                                           // the function FX_GetParamIdent;
