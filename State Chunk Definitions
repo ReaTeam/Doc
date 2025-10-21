@@ -1115,8 +1115,10 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                                          // field 2, int, 1-based index of the mapped parameter, identical
                                                          // to field 1 value of CONTAINER_PARM attribute (see above).
       WAK 0 0                                            //
-      PARALLEL 1                                         // Optional, depending on whether the relevant option is enabled
-                                                         // for the FOLLOWING FX instance.
+      PARALLEL 1                                         // Optional (since REAPER 7), depending on whether either of the
+                                                         // following options is enabled for the FOLLOWING FX/Container instance
+                                  						 //  1 - 'Run selected FX in parallel with previous FX';
+                                  						 //  2 - 'Run selected FX in parallel with previous FX (merge MIDI)'.
                                                          //  --- FX container definition end
 
      <COMMENT                                            //  Plugin comment. Not present if no comment.
