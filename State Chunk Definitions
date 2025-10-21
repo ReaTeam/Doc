@@ -1088,11 +1088,20 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     -- Here regular FX chain chunk follows --            // FX containers are nestable, so inside this FX chain chunk another 
        ........                                          // container block may be found;
       >                                                  //
-                                                         // Each FX container is followed by these 3 or 4 lines,
+                                                         // Each FX container is followed by these lines,
       FLOATPOS 0 0 0 0                                   // same as in FX chunk
-          FXID {CA586787-591F-4157-B5B3-888AB9F19CE3}    //
-          WAK 0 0                                        //
-      PARALLEL 1                                         // Optional, depending on whether the relevant option is enabled	  					      
+      FXID {CA586787-591F-4157-B5B3-888AB9F19CE3}        //
+      PARMALIAS 0:1 "My parameter alias 1"               // Alias of a parameter of a plugin inside the containter
+      PARMALIAS 1:2 Alias2                               // which was aliased at the container level
+                                                         // field 1, int, index of the alias instance, 0-based, always
+                                                         // sequential;
+                                                         // field 2, int, index of the mapped parameter in the list of
+                                                         // the mapped parameters within the container, 1-based;
+                                                         // field 3, string, parameter alias, within quotation marks
+                                                         // if contains spaces;
+      WAK 0 0                                            // 
+      PARALLEL 1                                         // Optional, depending on whether the relevant option is enabled
+                                                         // for the FOLLOWING FX instance.
                                                          //  --- FX container definition end
 
      <COMMENT                                            //  Plugin comment. Not present if no comment.
