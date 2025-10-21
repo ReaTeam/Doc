@@ -1019,9 +1019,9 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
 							      
     PARM_TCP 12:bypass 13:wet 4 2 0       //  Show in track controls (FX params visible in TCP/MCP), irrelevant  
                                           //  for Input, Take and Monitor FX;
-                                          //  Plugin wrapper parameters format is index:name, ReaPlug  
-                                          //  and VST2 plugin own params are referenced by their indices only, 
-                                          //  the indices count is 0 based;
+                                          //  Plugin wrapper parameters format is index:name (wet, bypass, delta),   
+                                          //  ReaPlugs and VST2 plugin own params are referenced  
+                                          //  by their indices only, the indices count is 0-based;
                                           //  Since build 6.48 (wasn't able to figure out which change in the 
                                           //  changelog refers to this) for ReaPlugs and some VST2 plugins 
                                           //  the format includes FX parameter identifiers, returned by 
@@ -1045,12 +1045,19 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                   //  2 - option 'Run selected FX in parallel with previous FX (merge MIDI)' 
                                   //  is enabled (since REAPER 7).
 
-   CONTAINER_PARM 1 0 15:_Global_Gain ""  // Attribute of FX parameters mapped to container for FX inside
-   CONTAINER_PARM 2 0 2:_BW_Low_Shelf ""  // a container
-                                          // field 1, int, index of the parameter within the container, 1-based;
+   CONTAINER_PARM 1 0 15:_Global_Gain ""  // FX parameters mapped to container for FX inside a container;
+   CONTAINER_PARM 2 0 2:_BW_Low_Shelf ""  // field 1, int, 1-based index of the mapped parameter instance,
+                                          // when some parameters are unpapped and others are mapped the indexing 
+                                          // isn't reset and continues to be incremented, i.e. if current parameter
+                                          // indexed 1 is unpapped, the list will start from 2 and next mapped 
+                                          // parameter will be assigned index 3, likeweise if unmapped parameter
+                                          // was in the middle of the list, the resulting indexing sequence will 
+                                          // have a gap, only the last mapped parameter index is maintained when
+                                          // a parameter it's assigned to is unmapped and another one is mapped 
+                                          // in its stead or the same papameter is mapped again;
                                           // field 2, ???;
-                                          // field 3, int, original index of the mapped parаmeter in the source
-                                          // plugin, 0-based;
+                                          // field 3, int, original 0-based index of the mapped parаmeter 
+                                          // in the source plugin;
                                           // field 4, string, FX parameter identifier, the one returned with
                                           // the function FX_GetParamIdent;
                                           // field 5, string within quotes, ????
@@ -1095,11 +1102,18 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
       PARMALIAS 1:2 Alias2                               // which was aliased at the container level
                                                          // field 1, int, index of the alias instance, 0-based, always
                                                          // sequential;
-                                                         // field 2, int, index of the mapped parameter in the list of
-                                                         // the mapped parameters within the container, 1-based;
+                                                         // field 2, int, 1-based index of the parameter in the list 
+                                                         // of the mapped parameters within the container;
                                                          // field 3, string, parameter alias, within quotation marks
                                                          // if contains spaces;
-      WAK 0 0                                            // 
+      PARM_TCP 0:1 1:3 2:5                               // List of parameters mapped to the container, shown in track 
+                                                         // controls (FX params visible in TCP/MCP), irrelevant  
+                                                         // for Input, Take and Monitor FX;
+                                                         // field 1, int, 0-based index of the parameter in the list
+                                                         // of the mapped parameters within the container;
+                                                         // field 2, int, 1-based index of the mapped parameter, identical
+                                                         // to field 1 value of CONTAINER_PARM attribute (see above).
+      WAK 0 0                                            //
       PARALLEL 1                                         // Optional, depending on whether the relevant option is enabled
                                                          // for the FOLLOWING FX instance.
                                                          //  --- FX container definition end
