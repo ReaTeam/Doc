@@ -1117,8 +1117,8 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
       WAK 0 0                                            //
       PARALLEL 1                                         // Optional (since REAPER 7), depending on whether either of the
                                                          // following options is enabled for the FOLLOWING FX/Container instance
-                                  						 //  1 - 'Run selected FX in parallel with previous FX';
-                                  						 //  2 - 'Run selected FX in parallel with previous FX (merge MIDI)'.
+                                                         //  1 - 'Run selected FX in parallel with previous FX';
+                                                         //  2 - 'Run selected FX in parallel with previous FX (merge MIDI)'.
                                                          //  --- FX container definition end
 
      <COMMENT                                            //  Plugin comment. Not present if no comment.
