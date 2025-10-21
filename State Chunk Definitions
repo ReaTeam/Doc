@@ -1102,8 +1102,8 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
       PARMALIAS 1:2 Alias2                               // which was aliased at the container level
                                                          // field 1, int, index of the alias instance, 0-based, always
                                                          // sequential;
-                                                         // field 2, int, 1-based index of the parameter in the list 
-                                                         // of the mapped parameters within the container;
+                                                         // field 2, int, 1-based index of the mapped parameter, identical
+                                                         // to field 1 value of CONTAINER_PARM attribute (see above);
                                                          // field 3, string, parameter alias, within quotation marks
                                                          // if contains spaces;
       PARM_TCP 0:1 1:3 2:5                               // List of parameters mapped to the container, shown in track 
