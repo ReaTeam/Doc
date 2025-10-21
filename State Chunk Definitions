@@ -888,7 +888,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                                               //  If at least field 3 or 4 is 0, plugin window doesn't float							       
 
     PARMALIAS 3 "Compression alias"                           // Names and indices of aliased FX parameters
-    PARMALIAS 4 "DS Freq"                                     // field 1, int, 0-based parameter index;
+    PARMALIAS 4 "DS Freq"                                     // field 1, int, 0-based index of the parameter;
     PARMALIAS 6 Delay                                         // field 2, string, parameter alias, within quotes if contains spaces.
     PARMALIAS 7 Squeeze                                       //
                                                               // Since presumably build 6.48 REAPER parameter index is followed by
@@ -1045,16 +1045,17 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                   //  2 - option 'Run selected FX in parallel with previous FX (merge MIDI)' 
                                   //  is enabled (since REAPER 7).
 
-   CONTAINER_PARM 1 0 15:_Global_Gain ""  // FX parameters mapped to container for FX inside a container;
+   CONTAINER_PARM 1 0 15:_Global_Gain ""  // Parameters of FX inside a container, mapped to container;
    CONTAINER_PARM 2 0 2:_BW_Low_Shelf ""  // field 1, int, 1-based index of the mapped parameter instance,
                                           // when some parameters are unpapped and others are mapped the indexing 
-                                          // isn't reset and continues to be incremented, i.e. if current parameter
-                                          // indexed 1 is unpapped, the list will start from 2 and next mapped 
-                                          // parameter will be assigned index 3, likeweise if unmapped parameter
+                                          // isn't reset but continues to be incremented from the greatest index
+                                          // of the mapped parameter, i.e. if current parameter, indexed 1,
+                                          // is unpapped, the list will start from 2 and next mapped parameter
+                                          // will be assigned index 3, likeweise if an unmapped parameter
                                           // was in the middle of the list, the resulting indexing sequence will 
-                                          // have a gap, only the last mapped parameter index is maintained when
-                                          // a parameter it's assigned to is unmapped and another one is mapped 
-                                          // in its stead or the same papameter is mapped again;
+                                          // have a gap, only the last mapped parameter index is maintained
+                                          // when a parameter it's assigned to is unmapped and another one
+                                          // is mapped in its stead or the same papameter is mapped again;
                                           // field 2, ???;
                                           // field 3, int, original 0-based index of the mapped parаmeter 
                                           // in the source plugin;
