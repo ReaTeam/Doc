@@ -1050,18 +1050,18 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                           // when some parameters are unpapped and others are mapped the indexing 
                                           // isn't reset but continues to be incremented from the greatest index
                                           // of the mapped parameter, i.e. if current parameter, indexed 1,
-                                          // is unpapped, the list will start from 2 and next mapped parameter
-                                          // will be assigned index 3, likeweise if an unmapped parameter
+                                          // is unmapped, the list will start from 2 and next mapped parameter
+                                          // will be assigned index 3, likewise if an unmapped parameter
                                           // was in the middle of the list, the resulting indexing sequence will 
                                           // have a gap, only the last mapped parameter index is maintained
                                           // when a parameter it's assigned to is unmapped and another one
-                                          // is mapped in its stead or the same papameter is mapped again;
-                                          // field 2, ???;
+                                          // is mapped in its stead or the same parameter is mapped again;
+                                          // field 2, int, 0-based index of FX instance inside the container;
                                           // field 3, int, original 0-based index of the mapped parаmeter 
                                           // in the source plugin;
                                           // field 4, string, FX parameter identifier, the one returned with
                                           // the function FX_GetParamIdent;
-                                          // field 5, string within quotes, ????
+                                          // field 5, empty string within quotes, ????
 							      
     <CONTAINER Container ""       // --- Start of FX container definition (since REAPER 7)
                                   // "" - container isn't named; as usual, names with spaces are enclosed
