@@ -752,8 +752,9 @@ MUTEENV - Track mute (0.0 to 1.0)
 AUXVOLENV - Track send volume (0.0 to 2.0)
 AUXPANENV - Track sendpan (-1.0 to 1.0)
 AUXMUTEENV - Track send mute (0.0 to 1.0)
-PARMENV - Plugin parameter (value range defined by additional parameters after type tag)
 TEMPOENVEX - Master tempo
+MASTERPLAYSPEEDENV - Master playrate
+PARMENV - Plugin parameter (value range is defined by additional parameters after type tag)
 
 <VOLENV2                                            // Type. PARMENV has additional fields on this line (see below)
     EGUID {1A24257D-0EE1-4D1C-8BF7-7D795608ED97}    // Envelope GUID
