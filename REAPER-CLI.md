@@ -25,7 +25,7 @@ Since build 6.80 passing either project/template or a media file AND a script fi
 
 ## Options:
 
-- **-noactivate** : launch but do not activate _(until build 7.29 was only supported on Windows, since then on MacOS/Linux as well)_
+- **-noactivate** : launch but do not activate _(until 7.29 was only supported on Windows, since then on MacOS/Linux as well)_
 - **-audiocfg** : show audio configuration at startup
 - **-cfgfile file.ini** : use full path for alternate resource directory, otherwise uses default path
 - **-new** : start with new project
@@ -46,16 +46,18 @@ Since build 6.80 passing either project/template or a media file AND a script fi
       plus any number of additional files
   - \<CONFIG ...> block (optional, can be generated via the Batch Converter presets button) which can contain:
     - SRATE 44100 (omit to use source samplerate)
-    - NCH 2 (omit to use source channel count; *since build 7.46:* -1=explode channels to separate files; -3=explode stereo pairs to separate files)
+    - NCH 2 (omit to use source channel count; *since 7.46:* -1=explode channels to separate files; -3=explode stereo pairs to separate files)
     - RSMODE modeidx (resample mode, copy from project file)
     - DITHER 3 (1=dither, 2=noise shaping, 3=both)
     - USESRCSTART 1 (1=write source media BWF start offset to output)
     - USESRCMETADATA 1 (1=attempt to preserve original media file metadata if possible)
-    - TRIM_START 0.0 	(trim leading silence, 0.5=-6dB peak) -- *(since 7.29)*
-    - TRIM_END 0.0 	(trim trailing silence, 0.5=-6dB peak) -- *(since 7.29)*
-    - PAD_START 1.0 (leading silence in sec, can be negative) -- *(since 7.29)*
-    - PAD_END 1.0 (trailing silence in sec, can be negative) -- *(since 7.29)*
-    - NORMALIZE 1 -6.0 0 (1=peak, 2=true peak, 3=lufs-i, 4=lufs-s, 5=lufs-m,  
+    - TRIM_START 0.0 	(trim leading silence, 0.5=-6dB peak) -- _(since 7.29)_
+    - TRIM_END 0.0 	(trim trailing silence, 0.5=-6dB peak) -- _(since 7.29)_
+    - PAD_START 1.0 (leading silence in sec, can be negative) -- _(since 7.29)_
+    - PAD_END 1.0 (trailing silence in sec, can be negative) -- _(since 7.29)_
+    - PAD_OUTSIDE_TRIM 0 	(add padding outside trimmed content *(default: inside trimmed content)*
+                          &1=add start padding before trimmed start, &2=add end padding after trimmed end) -- _(since 7.48)_
+    - NORMALIZE 1 -6.0 0 (1=peak, 2=true peak, 3=lufs-i, 4=lufs-s, 5=lufs-m, *since 7.50:* 6=rms;  
                          2nd parameter is dB,  
                          3rd parameter: 1=normalize only if too loud)
     - BRICKWALL 1 -1.0 (1=peak, 2=true peak, 2nd parameter is dB ceiling) -- _(since 6.43)_
