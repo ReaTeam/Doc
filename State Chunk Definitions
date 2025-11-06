@@ -898,6 +898,10 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                                               // separated by a colon
     PARMALIAS 8:_Max_voices Alias                             // RS5k/LV2 pattern
     PARMALIAS 9:0 "Alias new"                                 // VST3/CLAP pattern
+    PARMALIAS 10:bypass "bypass alias"                        // Since build 7.49 plugin wrapper built-in parameters Bypass/Wet/Delta
+                                                              // are allowed to be aliased as well; the format differs from plugin native
+                                                              // parameter in that the colon is followed by parameter identifier without
+                                                              // preceding underscore and where the 1st character isn't capitalized.
 
     FXID {1191A7FE-F583-477E-8416-D9F0F58226CD}               //  Plugin id, leave it alone
     
@@ -1108,6 +1112,9 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                                          // to field 1 value of CONTAINER_PARM attribute (see above);
                                                          // field 3, string, parameter alias, within quotation marks
                                                          // if contains spaces;
+                                                         // Since build 7.49 container built-in parameters Bypass/Wet/Delta
+                                                         // are allowed to be aliased as well (see details in the description
+                                                         // of plugin PARMALIAS attribute above).
       PARM_TCP 0:1 1:3 2:5                               // List of parameters mapped to the container, shown in track 
                                                          // controls (FX params visible in TCP/MCP), irrelevant  
                                                          // for Input, Take and Monitor FX;
