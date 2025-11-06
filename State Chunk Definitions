@@ -891,7 +891,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     PARMALIAS 3 "Compression alias"                           // Names and indices of aliased FX parameters
     PARMALIAS 4 "DS Freq"                                     // field 1, int, 0-based index of the parameter;
     PARMALIAS 6 Delay                                         // field 2, string, parameter alias, within quotes if contains spaces
-    PARMALIAS 7 Squeeze                                       // or starts with a hash (#) character;
+    PARMALIAS 7 Squeeze                                       // or includes a hash (#) character;
                                                               // Since presumably build 6.48 REAPER parameter index is followed by
                                                               // parameter identifier (if available, the one returned by 
                                                               // FX_GetParamIdent functions) or the plugin internal parameter index
