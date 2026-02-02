@@ -97,30 +97,30 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               // The following 3 FIL mode attributes are only supported since v7
 
     FIXEDLANES 8 0 0 0 0                                      //  field 1, int, bitfield
-                                                              //  &2 - 'Create comp areas for new recording while comping' 
-                                                              //  option is DISabled, 
-                                                              //  &8 - 'Big lanes' option is enabled, false means 'Small lanes' 
-                                                              //  option is enabled, 
-                                                              //  &32 - 'Hide all buttons' option is enabled; 
+                                                              //  &2 - 'Create comp areas for new recording while comping'
+                                                              //  option is DISabled,
+                                                              //  &8 - 'Big lanes' option is enabled, false means 'Small lanes'
+                                                              //  option is enabled,
+                                                              //  &32 - 'Hide all buttons' option is enabled;
                                                               //  field 2, int (bool), 1 - 'Allow editing source media while comping' 
                                                               //  option is enabled;
                                                               //  field 3, int (bool), 1 - 'Show/play only lane' option is enabled
                                                               //  (index of the playing lane is the 1st field of LANESOLO attribute),
                                                               //  in this mode lanes only play exclusively;
-                                                              //  field 4, int (bool), 1 - 'Media items in higher numbered lanes mask 
+                                                              //  field 4, int (bool), 1 - 'Media items in higher numbered lanes mask
                                                               //  playback of lower lanes' option is enabled;
                                                               //  field 5, int (bitfield), 0	 - Project default recording behavior 
                                                               //  set at Options -> New recording that overlaps existing media items,
-                                                              //  &1 - New recording add lanes in layers 
+                                                              //  &1 - New recording add lanes in layers
                                                               //  (multiple lanes play at once),
                                                               //  &2 - New recording add lanes (lanes play exclusively),
                                                               //  &4 - New recording does not add lanes (record into playing lane);
-                                                              //  FIXEDLANES attribute is present in track chunk by default, 
-                                                              //  it's absent when 'Small lanes' and 'Create comp areas for new  
+                                                              //  FIXEDLANES attribute is present in track chunk by default,
+                                                              //  it's absent when 'Small lanes' and 'Create comp areas for new
                                                               //  recording while comping options are enabled.
     LANESOLO 7 0 0 0 0 0 0 0                                  //  field 1, int (bitfield), 0 - no lane plays, &1 - lane 1 plays, 
                                                               //  &2 - lane 2 plays, &4 - lane 3 plays etc,
-                                                              //  he value isn't updated after the last playing lane has been deleted 
+                                                              //  he value isn't updated after the last playing lane has been deleted
                                                               //  and no other lane is a playing one;
                                                               //  field 2 ??
                                                               //  field 3 ??
@@ -129,27 +129,27 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  field 6 ??
                                                               //  field 7 ??
                                                               //  field 8 ??
-                                                              //  When lanes are toggled as playing with 'Toggle playing lane' 
-                                                              //  the default value for all fields becomes 4294967295 
-                                                              //  (a max 32 bit integer). 
+                                                              //  When lanes are toggled as playing with 'Toggle playing lane'
+                                                              //  the default value for all fields becomes 4294967295
+                                                              //  (a max 32 bit integer).
                                                               //  The difference between 4294967295 and the value of the field 1
-                                                              //  is the bitfield of the NON-playing lanes, i.e. if field 1 is 
-                                                              //  4294967289, then 4294967295 - 4294967289 = 6, 6&1 == 1 false, 
-                                                              //  6&2 = 2 true, 6&4 = 4 true, which means lane 1 plays, 
+                                                              //  is the bitfield of the NON-playing lanes, i.e. if field 1 is
+                                                              //  4294967289, then 4294967295 - 4294967289 = 6, 6&1 == 1 false,
+                                                              //  6&2 = 2 true, 6&4 = 4 true, which means lane 1 plays,
                                                               //  lanes 2 and 3 do not (toggled to off);
-                                                              //  LANESOLO attribute is absent when 'Fixed item lanes' mode 
-                                                              //  hasn't been enabled yet or when 'Play all lanes' option is enabled    
-                                                              //  as is the case immediately after enabling 'Fixed item lanes'    
+                                                              //  LANESOLO attribute is absent when 'Fixed item lanes' mode
+                                                              //  hasn't been enabled yet or when 'Play all lanes' option is enabled
+                                                              //  as is the case immediately after enabling 'Fixed item lanes'
                                                               //  on a track that hasn't had any, and it is present when only one lane  
-                                                              //  is enabled as playing, out of several, or when all lanes were enabled    
-                                                              //  as playing by Ctrl+click or with 'Toggle playing lane' regardless  
+                                                              //  is enabled as playing, out of several, or when all lanes were enabled
+                                                              //  as playing by Ctrl+click or with 'Toggle playing lane' regardless
                                                               //  of the FIL mode's being currently enabled.
     LANEREC 1 -1 -1                                           //  Only present when there's a record or comping enabled lane.
-                                                              //  field 1, int, 0-based index of a record enabled lane,  
+                                                              //  field 1, int, 0-based index of a record enabled lane,
                                                               //  lane record enabled state is exclusive; -1 - no record enabled lane;
-                                                              //  field 2, int, 0-based index of a comping enabled lane, 
+                                                              //  field 2, int, 0-based index of a comping enabled lane,
                                                               //  lane comping enabled state is exclusive, -1 - comping is disabled;
-                                                              //  field 3, int, 0-based index of the last comping enabled lane 
+                                                              //  field 3, int, 0-based index of the last comping enabled lane
                                                               //  when it's no longer active, -1 - comping hasn't been enabled yet.
                                                               //  The attribute is absent when 'Fixed item lanes' mode hasn't
                                                               //  been enabled yet and present when it was enabled at least once.
@@ -1260,7 +1260,7 @@ Freeze data chunk, storing data for unfreezing
  LASTSEL 0                                                                                              //
  DOCKED 0                                                                                               //
 >                                                                                                       //
-                                                                                                        // -----Start of a FREEZE chunk
+                                                                                                // -----Start of a FREEZE chunk
  <FREEZE 0                                                                                              // field 1, ??
    <FXCHAIN                                                                                             // A regular FXCHAIN chunk
     WNDRECT 32 60 745 420                                                                               // storing track FX, if any,
@@ -1271,10 +1271,10 @@ Freeze data chunk, storing data for unfreezing
                                                                                                         // FXCHAIN chunk is not added.
     DOCKED 0                                                                                            // Last line of FXCHAIN chunk
                                                                                                         // before closure if FX
-                                                                                                        // existed on the track at some
-                                                                                                        // point in the past but were
-                                                                                                        // absent at the moment of last
-                                                                                                        // freezing.
+                                                                                                        // existed on the track at 
+                                                                                                        // some point in the past but 
+                                                                                                        // were absent at the moment 
+                                                                                                        // of last freezing.
     BYPASS 0 0 0                                                                                        //
     <VST "VST: ReaDelay (Cockos)" readelay.dll 0 "" 1919247468<5653547265646C72656164656C617900> ""     //
       bGRlcu5e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAAIAAAAAAAAATAAAAAEAAAAAABAA                  //
