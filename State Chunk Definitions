@@ -508,6 +508,21 @@ Audio Item
       USERDATA 0 0 0 0             //
     >                              // SMPTE Generator propetries section end
 
+    <SOURCE VIDEO                  // A video item with image or video source
+      AUDIO 0                      // 'Disable audio' option is enabled in Item/Source properties -> Audio, the attribute is abesnt otherwise;
+      VIDEO_DISABLED               // 'Disable video' option is enabled in Item/Source properties -> Video, the attribute is abesnt otherwise;
+      HIRESPEAKS 1                 // int, 1 - high resolution peaks option is enabled in Item/Source properties -> Audio, 
+                                   //     -1 - low resolution peaks option is enabled in Item/Source properties -> Audio; 
+                                   // The attribute is absent when 'Use global default (high-res peaks)' option is enabled;
+      FLIP 1 0                     // field 1, int, 1 - Vertical, 2 - Horizontal, 3 - Rotate 180, 4 - Rotate 90 CW, 5 - Rotate 90 CCW, 
+                                   //               0 - a newly created video item with image source;
+                                   // The attribute is absent when the option is 'Normal';
+			                       // field 2, int or bool, 1 - a newly created video item with image source; 
+                                   //                       0 - when field 1 is other than 0, see above;
+                                   // The attribute is absent entirely in a newly created video item with video source;
+      FILE "C:\Users\Current User\Desktop\my_image.jpg"
+    >
+
     <SOURCE VIDEOEFFECT                                                             // Dedicated video processor item/take source section start
                                                                                     // Source of item inserted with the action 
                                                                                     // 'Insert dedicated video processor item'.
