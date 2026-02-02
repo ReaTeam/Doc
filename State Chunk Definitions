@@ -925,9 +925,9 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     PARMALIAS 9:0 "Alias new"                                 // VST3/CLAP pattern
     PARMALIAS 10:bypass "bypass alias"                        // Since build 7.49 plugin wrapper built-in parameters Bypass/Wet/Delta
                                                               // are allowed to be aliased as well; the format differs from plugin 
-                                                              // native parameter in that the colon is followed by parameter identifier
-                                                              // without preceding underscore and where the 1st character isn't 
-                                                              // capitalized.
+                                                              // native parameter in that the colon is followed by parameter 
+                                                              // identifier without preceding underscore and where the 1st character 
+                                                              // isn't capitalized.
 
     FXID {1191A7FE-F583-477E-8416-D9F0F58226CD}               //  Plugin id, leave it alone
     
@@ -1264,15 +1264,17 @@ Freeze data chunk, storing data for unfreezing
  <FREEZE 0                                                                                              // field 1, ?? 
    <FXCHAIN                                                                                             // A regular FXCHAIN chunk  
     WNDRECT 32 60 745 420                                                                               // storing track FX, if any,  
-                                                                                                        // which are removed on freezing.
-    SHOW 0                                                                                              // If FX have never been  
-    LASTSEL 0                                                                                           // inserted on the track FXCHAIN 
-                                                                                                        // chunk is not added.
+                                                                                                        // which are removed on 
+    SHOW 0                                                                                              // freezing.  
+    LASTSEL 0                                                                                           // If FX have never been 
+                                                                                                        // inserted on the track  
+                                                                                                        // FXCHAIN chunk is not added.
     DOCKED 0                                                                                            // Last line of FXCHAIN chunk 
-                                                                                                        // before closure if FX existed  
-                                                                                                        // on the track at some point in 
-                                                                                                        // the past but were absent at the 
-                                                                                                        // moment of last freezing.
+                                                                                                        // before closure if FX   
+                                                                                                        // existed on the track at some  
+                                                                                                        // point in the past but were  
+                                                                                                        // absent at the moment of last 
+                                                                                                        // freezing.
     BYPASS 0 0 0                                                                                        //
     <VST "VST: ReaDelay (Cockos)" readelay.dll 0 "" 1919247468<5653547265646C72656164656C617900> ""     //
       bGRlcu5e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAAIAAAAAAAAATAAAAAEAAAAAABAA                  //
