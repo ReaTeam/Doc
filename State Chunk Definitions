@@ -1254,21 +1254,24 @@ Video Processor plugin
 
 Freeze data chunk, storing data for unfreezing
 
-<FXCHAIN                                                                                                // Start of track regular FXCHAIN chunk
+<FXCHAIN                                                                                       // Start of track regular FXCHAIN chunk
  WNDRECT 32 60 745 420                                                                                  //
  SHOW 0                                                                                                 //
  LASTSEL 0                                                                                              //
  DOCKED 0                                                                                               //
 >                                                                                                       //
-                                                                                                        // -------Start of a FREEZE chunk 
+                                                                                                        // -----Start of a FREEZE chunk 
  <FREEZE 0                                                                                              // field 1, ?? 
-   <FXCHAIN                                                                                             // A regular FXCHAIN chunk storing track FX, 
-    WNDRECT 32 60 745 420                                                                               // if any, which are removed on freezing.
-    SHOW 0                                                                                              // If FX have never been inserted on the 
-    LASTSEL 0                                                                                           // track FXCHAIN chunk is not added.
-    DOCKED 0                                                                                            // Last line of FXCHAIN chunk before 
-                                                                                                        // closure if FX existed on the track at some 
-                                                                                                        // point in the past but were absent at the 
+   <FXCHAIN                                                                                             // A regular FXCHAIN chunk  
+    WNDRECT 32 60 745 420                                                                               // storing track FX, if any,  
+                                                                                                        // which are removed on freezing.
+    SHOW 0                                                                                              // If FX have never been  
+    LASTSEL 0                                                                                           // inserted on the track FXCHAIN 
+                                                                                                        // chunk is not added.
+    DOCKED 0                                                                                            // Last line of FXCHAIN chunk 
+                                                                                                        // before closure if FX existed  
+                                                                                                        // on the track at some point in 
+                                                                                                        // the past but were absent at the 
                                                                                                         // moment of last freezing.
     BYPASS 0 0 0                                                                                        //
     <VST "VST: ReaDelay (Cockos)" readelay.dll 0 "" 1919247468<5653547265646C72656164656C617900> ""     //
@@ -1280,11 +1283,11 @@ Freeze data chunk, storing data for unfreezing
     FXID {FF92D48D-1B63-44E6-A44F-EF996F9E2228}                                                         //
     WAK 0 0                                                                                             //
   >                                                                                                     //
-  <ITEM {26E45913-BFEA-417E-8F96-1C61EE6E3FE4}                                                          // Original ITEM chunk (before freezing), 
-     POSITION 0.5                                                                                       // looks the same as any item chunk.
-     SNAPOFFS 0                                                                                         //
-     LENGTH 1.27340136054422                                                                            //
-     LOOP 0                                                                                             //
+  <ITEM {26E45913-BFEA-417E-8F96-1C61EE6E3FE4}                                                          // Original ITEM chunk  
+     POSITION 0.5                                                                                       // (before freezing),
+     SNAPOFFS 0                                                                                         // looks as any 
+     LENGTH 1.27340136054422                                                                            // item chunk.
+     LOOP 0                                                                                             // 
      ALLTAKES 0                                                                                         //
      FADEIN 1 0 0 1 0 0 0                                                                               //
      FADEOUT 1 0 0 1 0 0 0                                                                              //
@@ -1302,9 +1305,9 @@ Freeze data chunk, storing data for unfreezing
      <SOURCE WAVE                                                                                       //
        FILE "C:\Users\Admin\Documents\REAPER Media\reaper.wav"                                          //
      >                                                                                                  //
-     <TAKEFX                                                                                            // A regular TAKEFX chunk if the original item 
-       WNDRECT 32 60 745 420                                                                            // had FX before freezing.
-       SHOW 0                                                                                           //
+     <TAKEFX                                                                                            // A regular TAKEFX chunk if  
+       WNDRECT 32 60 745 420                                                                            // the original item had FX 
+       SHOW 0                                                                                           // before freezing.
        LASTSEL 0                                                                                        //
        DOCKED 0                                                                                         //
        BYPASS 0 0 0                                                                                     //
@@ -1317,9 +1320,9 @@ Freeze data chunk, storing data for unfreezing
        FXID {63C343BD-C1AF-4CB0-9668-EA07D62D32A0}                                                      //
        WAK 0 0                                                                                          //
      >                                                                                                  //
-     <PITCHENV                                                                                          // Envelope chunk data if before freezing 
-       EGUID {8955C719-553C-4494-879E-286ECE31C437}                                                     // item had active take envelopes.
-       ACT 0 -1                                                                                         //
+     <PITCHENV                                                                                          // Envelope chunk data if  
+       EGUID {8955C719-553C-4494-879E-286ECE31C437}                                                     // before freezing item had 
+       ACT 0 -1                                                                                         // active take envelopes.
        VIS 0 1 1                                                                                        //
        LANEHEIGHT 0 0                                                                                   //
        ARM 0                                                                                            //
