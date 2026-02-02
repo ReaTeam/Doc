@@ -116,8 +116,8 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  &2 - New recording add lanes (lanes play exclusively),
                                                               //  &4 - New recording does not add lanes (record into playing lane);
                                                               //  FIXEDLANES attribute is present in track chunk by default, 
-                                                              //  it's absent when 'Small lanes' and 'Create comp areas for new recording 
-                                                              //  while comping options are enabled.
+                                                              //  it's absent when 'Small lanes' and 'Create comp areas for new  
+                                                              //  recording while comping options are enabled.
     LANESOLO 7 0 0 0 0 0 0 0                                  //  field 1, int (bitfield), 0 - no lane plays, &1 - lane 1 plays, 
                                                               //  &2 - lane 2 plays, &4 - lane 3 plays etc,
                                                               //  he value isn't updated after the last playing lane has been deleted 
@@ -139,11 +139,11 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  lanes 2 and 3 do not (toggled to off);
                                                               //  LANESOLO attribute is absent when 'Fixed item lanes' mode 
                                                               //  hasn't been enabled yet or when 'Play all lanes' option is enabled    
-                                                              //  as is the case immediately after enabling 'Fixed item lanes' on a track   
-                                                              //  that hasn't had any, and it is present when only one lane is enabled  
-                                                              //  as playing, out of several, or when all lanes were enabled as playing   
-                                                              //  by Ctrl+click or with 'Toggle playing lane' regardless of the FIL mode's  
-                                                              //  being currently enabled.
+                                                              //  as is the case immediately after enabling 'Fixed item lanes'    
+                                                              //  on a track that hasn't had any, and it is present when only one lane  
+                                                              //  is enabled as playing, out of several, or when all lanes were enabled    
+                                                              //  as playing by Ctrl+click or with 'Toggle playing lane' regardless  
+                                                              //  of the FIL mode's being currently enabled.
     LANEREC 1 -1 -1                                           //  Only present when there's a record or comping enabled lane.
                                                               //  field 1, int, 0-based index of a record enabled lane,  
                                                               //  lane record enabled state is exclusive; -1 - no record enabled lane;
@@ -151,8 +151,8 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  lane comping enabled state is exclusive, -1 - comping is disabled;
                                                               //  field 3, int, 0-based index of the last comping enabled lane 
                                                               //  when it's no longer active, -1 - comping hasn't been enabled yet.
-                                                              //  The attribute is absent when 'Fixed item lanes' mode 
-                                                              //  hasn't been enabled yet and present when it was enabled at least once.
+                                                              //  The attribute is absent when 'Fixed item lanes' mode hasn't
+                                                              //  been enabled yet and present when it was enabled at least once.
     LANENAME 1 2 "" "lane name"                               //  List of lane names in ascending order, the attribute is absent 
                                                               //  when 'Fixed item lanes' mode isn't enabled, names which contain 
                                                               //  spaces as well as empty names are enclosed within double quotes ""
@@ -529,12 +529,12 @@ Audio Item
       FILE "C:\Users\Current User\Desktop\my_image.jpg"
     >                              // A video take with image/video source section end
 
-    <SOURCE VIDEOEFFECT                                                             // Dedicated video processor item/take source section start
+    <SOURCE VIDEOEFFECT                                                    // Dedicated video processor item/take source section start
                                                                                     // Source of item inserted with the action 
                                                                                     // 'Insert dedicated video processor item'.
-      <CODE                                                                         // The following code formatting is identical to Video
-                                                                                    // processor code formatting showcased further below 
-                                                                                    // in the 'Video Processor plugin' paragraph
+      <CODE                                                                         // The following code formatting is identical to 
+                                                                                    // Video processor code formatting showcased further 
+                                                                                    // below in the 'Video Processor plugin' paragraph
       |// Invert colors                                                             //
       |//@param pa 'preserve RGBA alpha' 0 0 1 .5 1                                 //
       |ok=input_info(input=0,project_w,project_h);                                  //
@@ -548,7 +548,7 @@ Audio Item
       >                                                                             //
     CODEPARM 0 8 5 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0    //
     0 0 0 0 0 0                                                                     //
-    >                                                                               // Dedicated video processor item/take source section end
+    >                                                                       // Dedicated video processor item/take source section end
 
     <SOURCE EMPTY                            // Present in items without source, which can be created 
     >                                        // out of empty items by adding a take marker for example.
@@ -819,34 +819,38 @@ PARMENV - Plugin parameter (value range is defined by additional parameters afte
                                                                                             // Properties window);
                                                                                             // field 2, float/double, Position (sec);
                                                                                             // field 3, float/double, Length (sec);
-                                                                                            // field 4, float/double, Start offset (sec);
+                                                                                            // field 4, float/double, 
+                                                                                            // Start offset (sec);
                                                                                             // field 5, float/double, Play rate;
                                                                                             // field 6, int (bool), selected;
                                                                                             // field 7, float, Baseline, 0 = -100, 
                                                                                             // 0.5 = 0, 1 = 100;
                                                                                             // field 8, float, Amplitude, -2 = -200, 
                                                                                             // 1 = 100, 2 = 200;
-                                                                                            // Baseline/amplitude affects pooled copies;
+                                                                                            // Baseline/amplitude affects pooled 
+                                                                                            // copies;
                                                                                             // field 9, int (bool), Loop, 1 on, 0 off
                                                                                             // field 10, float/double, Position in QN  
                                                                                             // (only used in certain contexts);
                                                                                             // field 11, Length in QN
                                                                                             // (only used in certain contexts);
-                                                                                            // field 12, int, 1 based index of AI since
-                                                                                            // starting the project, incremented even if
-                                                                                            // older AIs were deleted and regardless of
-                                                                                            // the AI being pooled;
+                                                                                            // field 12, int, 1 based index of AI 
+                                                                                            // since starting the project, incremented 
+                                                                                            // even if older AIs were deleted and 
+                                                                                            // regardless of the AI being pooled;
                                                                                             // field 13, int, muted;
-                                                                                            // field 14, float/double, Start offset in QN 
-                                                                                            // (only used in certain contexts);
-                                                                                            // field 15, float/double, Transition time (sec)
+                                                                                            // field 14, float/double, Start offset  
+                                                                                            // in QN (only used in certain contexts);
+                                                                                            // field 15, float/double, 
+                                                                                            // Transition time (sec)
                                                                                             // field 16, int, volume envelope maximum 
-                                                                                            // when this instance was created (matches the 1|4 
-                                                                                            // bits of the "volenvrange" config variable: 
+                                                                                            // when this instance was created 
+                                                                                            // (matches the 1|4 bits of the "volenvrange" 
+                                                                                            // config variable: 
                                                                                             // 0=+6dB, 1=+0dB, 4=+12dB, 5=+24dB, i.e. 
                                                                                             // Preferences -> Editing Behavior ->
-                                                                                            // Envelope Display-> Volume envelope range); 
-                                                                                            // (source: schwa [p=2198410])
+                                                                                            // Envelope Display -> Volume envelope  
+                                                                                            // range); (source: schwa [p=2198410])
 											    
     PT 3.000000 -0.2 5 0 0 0 -0.7               // Envelope point definition
                                                 //  field 1, float, position (seconds)
@@ -901,8 +905,8 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     WET 0.5                                                   //  Amount of plugin wet output set on the plugin UI wrapper, 
                                                               //  if not 100%;
     PRESETNAME "stock - Basic 11 band"                        //  Name of current plugin preset selected in the preset drop-down list;
-                                                              //  In VST3 plugins may list .vstpreset file path enclosed within quotes,
-                                                              //  e.g. "C:\VST3 presets\test4.vstpreset"
+                                                              //  In VST3 plugins may list .vstpreset file path enclosed within 
+                                                              //  quotes, e.g. "C:\VST3 presets\test4.vstpreset"
     FLOATPOS 0 0 0 0                                          //  Plugin floating window pos, int;
                                                               //  FLOAT - plugin UI is open in a floating window; FLOATPOS - plugin UI 
                                                               //  is NOT open in a floating window;
@@ -920,9 +924,10 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     PARMALIAS 8:_Max_voices Alias                             // RS5k/LV2 pattern
     PARMALIAS 9:0 "Alias new"                                 // VST3/CLAP pattern
     PARMALIAS 10:bypass "bypass alias"                        // Since build 7.49 plugin wrapper built-in parameters Bypass/Wet/Delta
-                                                              // are allowed to be aliased as well; the format differs from plugin native
-                                                              // parameter in that the colon is followed by parameter identifier without
-                                                              // preceding underscore and where the 1st character isn't capitalized.
+                                                              // are allowed to be aliased as well; the format differs from plugin 
+                                                              // native parameter in that the colon is followed by parameter identifier
+                                                              // without preceding underscore and where the 1st character isn't 
+                                                              // capitalized.
 
     FXID {1191A7FE-F583-477E-8416-D9F0F58226CD}               //  Plugin id, leave it alone
     
