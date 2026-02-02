@@ -1065,25 +1065,25 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                           //  0-based index and the second one is plugin's own internal index.
 
 							      
-    WAK 0 0                       //  WAK = Want All Keys 
+    WAK 0 0                       //  WAK = Want All Keys
                                   //  (https://forums.cockos.com/showthread.php?p=2420594)
-                                  //  field 1, bool, 1 - 'Send all keyboard input to plug-in' option 
+                                  //  field 1, bool, 1 - 'Send all keyboard input to plug-in' option
                                   //  is enabled in the FX instance RMB context menu or FX chain 'FX' menu
                                   //  field 2, int, 1 - show embedded FX UI on TCP, 2 - show on MCP
     PARALLEL 1                    //  field 1, int, appears in the chunk of the FX instance which PRECEDES
                                   //  an instance for which either of the following options is enabled:
                                   //  1 - option 'Run selected FX in parallel with previous FX' is enabled;
-                                  //  2 - option 'Run selected FX in parallel with previous FX (merge MIDI)' 
+                                  //  2 - option 'Run selected FX in parallel with previous FX (merge MIDI)'
                                   //  is enabled (since REAPER 7).
 
    CONTAINER_PARM 1 0 15:_Global_Gain ""  // Parameters of FX inside a container, mapped to container;
    CONTAINER_PARM 2 0 2:_BW_Low_Shelf ""  // field 1, int, 1-based index of the mapped parameter instance,
-                                          // when some parameters are unpapped and others are mapped the indexing 
+                                          // when some parameters are unpapped and others are mapped the indexing
                                           // isn't reset but continues to be incremented from the greatest index
                                           // of the mapped parameter, i.e. if current parameter, indexed 1,
                                           // is unmapped, the list will start from 2 and next mapped parameter
                                           // will be assigned index 3, likewise if an unmapped parameter
-                                          // was in the middle of the list, the resulting indexing sequence will 
+                                          // was in the middle of the list, the resulting indexing sequence will
                                           // have a gap, only the last mapped parameter index is maintained
                                           // when a parameter it's assigned to is unmapped and another one
                                           // is mapped in its stead or the same parameter is mapped again;
@@ -1098,22 +1098,22 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                   // "" - container isn't named; as usual, names with spaces are enclosed
                                   // within quotes, otherwise no quotes;
       CONTAINER_CFG 4 4 2 0       // field 1, int, number of container channels;
-                                  // field 2, int, number of container inputs; 
-                                  // field 3, int, number of container outputs; 
+                                  // field 2, int, number of container inputs;
+                                  // field 3, int, number of container outputs;
                                   // field 4 ??
-      <IN_PINS                    // The Input pin indices are not listed if all container Input pins 
-      >                           // are mapped to the track channels with corresponding indices: 
+      <IN_PINS                    // The Input pin indices are not listed if all container Input pins
+      >                           // are mapped to the track channels with corresponding indices:
                                   // 0 to 0, 1 to 1 etc., the count is 0-based;
     ----------------------        //
       <IN_PINS                    // If all container Input pins are disabled, or only some
-       PIN 0                      // while others are mapped to the corresponding track channels 
+       PIN 0                      // while others are mapped to the corresponding track channels
        PIN 1                      // (see above), only indices of disabled pins are listed in the block,
        PIN 2                      // here pins 1-4 (0-3 in 0-based count);
        PIN 3                      //
       >                           //
     ----------------------        //
       <IN_PINS                    // If container Input pins are mapped to track channels whose
-       PIN 0                      // indices differ from the Input pins mapped to them, these are 
+       PIN 0                      // indices differ from the Input pins mapped to them, these are
        PIN 1 0                    // listed as pairs of indices: Input pin 2 is mapped to track channel 1,
        PIN 2                      // Input pin 4 is mapped to track channel 3, in the chunk the count is
        PIN 3 2                    // 0-based; two other entries refer to disabled container Input pins.
@@ -1124,7 +1124,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
       >                           // Output pins 3 & 4 are mapped to tracks channels with corresponding indices, 
                                   // i.e. 3 & 4 hence these are not listed;
                                   //
-    -- Here regular FX chain chunk follows --            // FX containers are nestable, so inside this FX chain chunk another 
+    -- Here regular FX chain chunk follows --            // FX containers are nestable, so inside this FX chain chunk another
        ........                                          // container block may be found;
       >                                                  //
                                                          // Each FX container is followed by these lines,
@@ -1141,8 +1141,8 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                                          // Since build 7.49 container built-in parameters Bypass/Wet/Delta
                                                          // are allowed to be aliased as well (see details in the description
                                                          // of plugin PARMALIAS attribute above).
-      PARM_TCP 0:1 1:3 2:5                               // List of parameters mapped to the container, shown in track 
-                                                         // controls (FX params visible in TCP/MCP), irrelevant  
+      PARM_TCP 0:1 1:3 2:5                               // List of parameters mapped to the container, shown in track
+                                                         // controls (FX params visible in TCP/MCP), irrelevant
                                                          // for Input, Take and Monitor FX;
                                                          // field 1, int, 0-based index of the parameter in the list
                                                          // of the mapped parameters within the container;
@@ -1208,9 +1208,9 @@ Jesusonic Plugin
 For the sake of formatting, the plugin data has been truncated.
     <JS "Guitar/tremolo" ""                                   //  Start of JS plugin data
                                                               //   field 1, str, the format is "folder name/file name"
-                                                              //   field 2, str, display name (if empty the name from 
-                                                              //  reaper-jsfx.ini is used), "" is displayed if no name is set  
-                                                              //  by the user, custom names are only enclosed within quotes 
+                                                              //   field 2, str, display name (if empty the name from
+                                                              //  reaper-jsfx.ini is used), "" is displayed if no name is set
+                                                              //  by the user, custom names are only enclosed within quotes
                                                               //  if they have spaces, so one word names don't have quotes;
         4.0 -6.0 0.0 - - - - - - - - - - - - - - - - - - - -  //  Data, 64 fields of float or '-' separated by spaces
     >                                                         //  End of JS plugin data
@@ -1219,7 +1219,7 @@ For the sake of formatting, the plugin data has been truncated.
 
 Video Processor plugin
 
-   <VIDEO_EFFECT "Video processor" ""                                               //  Start of Video Processor plugin data				  	
+   <VIDEO_EFFECT "Video processor" ""                                               //  Start of Video Processor plugin data
       <CODE                                                                         //  Stores the entire preset code
    	|// Screensaver (Monitoring FX only - blanks screen after no change)            //
    	|//@param 1:sec 'Timeout (seconds)' 10 1 240 120.5 1                            //
@@ -1260,20 +1260,20 @@ Freeze data chunk, storing data for unfreezing
  LASTSEL 0                                                                                              //
  DOCKED 0                                                                                               //
 >                                                                                                       //
-                                                                                                        // -----Start of a FREEZE chunk 
- <FREEZE 0                                                                                              // field 1, ?? 
-   <FXCHAIN                                                                                             // A regular FXCHAIN chunk  
-    WNDRECT 32 60 745 420                                                                               // storing track FX, if any,  
-                                                                                                        // which are removed on 
-    SHOW 0                                                                                              // freezing.  
-    LASTSEL 0                                                                                           // If FX have never been 
-                                                                                                        // inserted on the track  
+                                                                                                        // -----Start of a FREEZE chunk
+ <FREEZE 0                                                                                              // field 1, ??
+   <FXCHAIN                                                                                             // A regular FXCHAIN chunk
+    WNDRECT 32 60 745 420                                                                               // storing track FX, if any,
+                                                                                                        // which are removed
+    SHOW 0                                                                                              // on freezing.
+    LASTSEL 0                                                                                           // If FX have never been
+                                                                                                        // inserted on the track
                                                                                                         // FXCHAIN chunk is not added.
-    DOCKED 0                                                                                            // Last line of FXCHAIN chunk 
-                                                                                                        // before closure if FX   
-                                                                                                        // existed on the track at some  
-                                                                                                        // point in the past but were  
-                                                                                                        // absent at the moment of last 
+    DOCKED 0                                                                                            // Last line of FXCHAIN chunk
+                                                                                                        // before closure if FX
+                                                                                                        // existed on the track at some
+                                                                                                        // point in the past but were
+                                                                                                        // absent at the moment of last
                                                                                                         // freezing.
     BYPASS 0 0 0                                                                                        //
     <VST "VST: ReaDelay (Cockos)" readelay.dll 0 "" 1919247468<5653547265646C72656164656C617900> ""     //
@@ -1285,9 +1285,9 @@ Freeze data chunk, storing data for unfreezing
     FXID {FF92D48D-1B63-44E6-A44F-EF996F9E2228}                                                         //
     WAK 0 0                                                                                             //
   >                                                                                                     //
-  <ITEM {26E45913-BFEA-417E-8F96-1C61EE6E3FE4}                                                          // Original ITEM chunk  
+  <ITEM {26E45913-BFEA-417E-8F96-1C61EE6E3FE4}                                                          // Original ITEM chunk
      POSITION 0.5                                                                                       // (before freezing),
-     SNAPOFFS 0                                                                                         // looks as any 
+     SNAPOFFS 0                                                                                         // looks as any
      LENGTH 1.27340136054422                                                                            // item chunk.
      LOOP 0                                                                                             // 
      ALLTAKES 0                                                                                         //
@@ -1307,8 +1307,8 @@ Freeze data chunk, storing data for unfreezing
      <SOURCE WAVE                                                                                       //
        FILE "C:\Users\Admin\Documents\REAPER Media\reaper.wav"                                          //
      >                                                                                                  //
-     <TAKEFX                                                                                            // A regular TAKEFX chunk if  
-       WNDRECT 32 60 745 420                                                                            // the original item had FX 
+     <TAKEFX                                                                                            // A regular TAKEFX chunk if
+       WNDRECT 32 60 745 420                                                                            // the original item had FX
        SHOW 0                                                                                           // before freezing.
        LASTSEL 0                                                                                        //
        DOCKED 0                                                                                         //
@@ -1322,8 +1322,8 @@ Freeze data chunk, storing data for unfreezing
        FXID {63C343BD-C1AF-4CB0-9668-EA07D62D32A0}                                                      //
        WAK 0 0                                                                                          //
      >                                                                                                  //
-     <PITCHENV                                                                                          // Envelope chunk data if  
-       EGUID {8955C719-553C-4494-879E-286ECE31C437}                                                     // before freezing item had 
+     <PITCHENV                                                                                          // Envelope chunk data if
+       EGUID {8955C719-553C-4494-879E-286ECE31C437}                                                     // before freezing item had
        ACT 0 -1                                                                                         // active take envelopes.
        VIS 0 1 1                                                                                        //
        LANEHEIGHT 0 0                                                                                   //
@@ -1333,8 +1333,8 @@ Freeze data chunk, storing data for unfreezing
      >                                                                                                  //
    >                                                                                                    //
 >                                                                                                       // -------End of FREEZE chunk
-<ITEM                                                                                                   // Frozen item chunk, part 
-                                                                                                        // of the TRACK chunk 
+<ITEM                                                                                                   // Frozen item chunk, part
+                                                                                                        // of the TRACK chunk
   POSITION 0.5                                                                                          //
   .........                                                                                             //
   <SOURCE WAVE                                                                                          //
