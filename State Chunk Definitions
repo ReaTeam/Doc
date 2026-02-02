@@ -508,7 +508,7 @@ Audio Item
       USERDATA 0 0 0 0             //
     >                              // SMPTE Generator propetries section end
 
-    <SOURCE VIDEO                  // A video item with image or video source
+    <SOURCE VIDEO                  // A video take with image/video source section start
       AUDIO 0                      // 'Disable audio' option is enabled in Item/Source properties -> Audio, the attribute is abesnt otherwise;
       VIDEO_DISABLED               // 'Disable video' option is enabled in Item/Source properties -> Video, the attribute is abesnt otherwise;
       HIRESPEAKS 1                 // int, 1 - high resolution peaks option is enabled in Item/Source properties -> Audio, 
@@ -521,7 +521,7 @@ Audio Item
                                    //                       0 - when field 1 is other than 0, see above;
                                    // The attribute is absent entirely in a newly created video item with video source;
       FILE "C:\Users\Current User\Desktop\my_image.jpg"
-    >
+    >                              // A video take with image/video source section end
 
     <SOURCE VIDEOEFFECT                                                             // Dedicated video processor item/take source section start
                                                                                     // Source of item inserted with the action 
