@@ -111,12 +111,13 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  playback of lower lanes' option is enabled;
                                                               //  field 5, int (bitfield), 0	 - Project default recording behavior 
                                                               //  set at Options -> New recording that overlaps existing media items,
-                                                              //  &1 - New recording add lanes in layers (multiple lanes play at once),
+                                                              //  &1 - New recording add lanes in layers 
+                                                              //  (multiple lanes play at once),
                                                               //  &2 - New recording add lanes (lanes play exclusively),
                                                               //  &4 - New recording does not add lanes (record into playing lane);
-                                                              //  FIXEDLANES attribute is present in track chunk by default, it's absent 
-                                                              //  when 'Small lanes' and 'Create comp areas for new recording while comping' 
-                                                              //  options are enabled.
+                                                              //  FIXEDLANES attribute is present in track chunk by default, 
+                                                              //  it's absent when 'Small lanes' and 'Create comp areas for new recording 
+                                                              //  while comping options are enabled.
     LANESOLO 7 0 0 0 0 0 0 0                                  //  field 1, int (bitfield), 0 - no lane plays, &1 - lane 1 plays, 
                                                               //  &2 - lane 2 plays, &4 - lane 3 plays etc,
                                                               //  he value isn't updated after the last playing lane has been deleted 
@@ -129,31 +130,34 @@ The Track state chunk contains all the settings for a track and all of it's item
                                                               //  field 7 ??
                                                               //  field 8 ??
                                                               //  When lanes are toggled as playing with 'Toggle playing lane' 
-                                                              //  the default value for all fields becomes 4294967295 (a max 32 bit integer). 
+                                                              //  the default value for all fields becomes 4294967295 
+                                                              //  (a max 32 bit integer). 
                                                               //  The difference between 4294967295 and the value of the field 1
-                                                              //  is the bitfield of the NON-playing lanes, i.e. if field 1 is 4294967289,  
-                                                              //  then 4294967295 - 4294967289 = 6, 6&1 == 1 false, 6&2 = 2 true, 6&4 = 4 true, 
-                                                              //  which means lane 1 plays, lanes 2 and 3 do not (toggled to off);
-                                                              //  LANESOLO attribute is absent when 'Fixed item lanes' mode hasn't been enabled 
-                                                              //  yet or when 'Play all lanes' option is enabled as is the case immediately   
-                                                              //  after enabling 'Fixed item lanes' on a track that hasn't had any, and it is  
-                                                              //  present when only one lane is enabled as playing, out of several, or when all 
-                                                              //  lanes were enabled as playing by Ctrl+click or with 'Toggle playing lane' 
-                                                              //  regardless of the FIL mode's being currently enabled.
+                                                              //  is the bitfield of the NON-playing lanes, i.e. if field 1 is 
+                                                              //  4294967289, then 4294967295 - 4294967289 = 6, 6&1 == 1 false, 
+                                                              //  6&2 = 2 true, 6&4 = 4 true, which means lane 1 plays, 
+                                                              //  lanes 2 and 3 do not (toggled to off);
+                                                              //  LANESOLO attribute is absent when 'Fixed item lanes' mode 
+                                                              //  hasn't been enabled yet or when 'Play all lanes' option is enabled    
+                                                              //  as is the case immediately after enabling 'Fixed item lanes' on a track   
+                                                              //  that hasn't had any, and it is present when only one lane is enabled  
+                                                              //  as playing, out of several, or when all lanes were enabled as playing   
+                                                              //  by Ctrl+click or with 'Toggle playing lane' regardless of the FIL mode's  
+                                                              //  being currently enabled.
     LANEREC 1 -1 -1                                           //  Only present when there's a record or comping enabled lane.
-                                                              //  field 1, int, 0-based index of a record enabled lane, lane record enabled 
-                                                              //  state is exclusive; -1 - no record enabled lane;
-                                                              //  field 2, int, 0-based index of a comping enabled lane, lane comping enabled
-                                                              //  state is exclusive, -1 - comping is disabled;
+                                                              //  field 1, int, 0-based index of a record enabled lane,  
+                                                              //  lane record enabled state is exclusive; -1 - no record enabled lane;
+                                                              //  field 2, int, 0-based index of a comping enabled lane, 
+                                                              //  lane comping enabled state is exclusive, -1 - comping is disabled;
                                                               //  field 3, int, 0-based index of the last comping enabled lane 
                                                               //  when it's no longer active, -1 - comping hasn't been enabled yet.
-                                                              //  The attribute is absent when 'Fixed item lanes' mode hasn't been enabled yet.
-                                                              //  and present when it was enabled at least once.
+                                                              //  The attribute is absent when 'Fixed item lanes' mode 
+                                                              //  hasn't been enabled yet and present when it was enabled at least once.
     LANENAME 1 2 "" "lane name"                               //  List of lane names in ascending order, the attribute is absent 
-                                                              //  when 'Fixed item lanes' mode isn't enabled, names which contain spaces
-                                                              //  as well as empty names are enclosed within double quotes ""
-                                                              //  The attribute is absent when 'Fixed item lanes' mode hasn't been enabled yet
-                                                              //  and present when it was enabled at least once.
+                                                              //  when 'Fixed item lanes' mode isn't enabled, names which contain 
+                                                              //  spaces as well as empty names are enclosed within double quotes ""
+                                                              //  The attribute is absent when 'Fixed item lanes' mode hasn't been 
+                                                              //  enabled yet and present when it was enabled at least once.
     REC 0 0 0 0 0 0 0                                         // Record settings
                                                               //  field 1, int (bool), armed
                                                               //  field 2. int, input,
@@ -509,15 +513,17 @@ Audio Item
     >                              // SMPTE Generator propetries section end
 
     <SOURCE VIDEO                  // A video take with image/video source section start
-      AUDIO 0                      // 'Disable audio' option is enabled in Item/Source properties -> Audio, the attribute is abesnt otherwise;
-      VIDEO_DISABLED               // 'Disable video' option is enabled in Item/Source properties -> Video, the attribute is abesnt otherwise;
+      AUDIO 0                      // 'Disable audio' option is enabled in Item/Source properties -> Audio, 
+                                   // the attribute is abesnt otherwise;
+      VIDEO_DISABLED               // 'Disable video' option is enabled in Item/Source properties -> Video, 
+                                   // the attribute is abesnt otherwise;
       HIRESPEAKS 1                 // int, 1 - high resolution peaks option is enabled in Item/Source properties -> Audio, 
-                                   //     -1 - low resolution peaks option is enabled in Item/Source properties -> Audio; 
+                                   //     -1 - low resolution peaks option is enabled in Item/Source properties -> Audio,
                                    // The attribute is absent when 'Use global default (high-res peaks)' option is enabled;
       FLIP 1 0                     // field 1, int, 1 - Vertical, 2 - Horizontal, 3 - Rotate 180, 4 - Rotate 90 CW, 5 - Rotate 90 CCW, 
-                                   //               0 - a newly created video item with image source;
-                                   // The attribute is absent when the option is 'Normal';
-			                       // field 2, int or bool, 1 - a newly created video item with image source; 
+                                   //               0 - a newly created video item with image source,
+                                   // The attribute is absent when the option is 'Normal',
+                                   // field 2, int or bool, 1 - a newly created video item with image source,
                                    //                       0 - when field 1 is other than 0, see above;
                                    // The attribute is absent entirely in a newly created video item with video source;
       FILE "C:\Users\Current User\Desktop\my_image.jpg"
