@@ -830,26 +830,26 @@ PARMENV - Plugin parameter (value range is defined by additional parameters afte
                                                                                             // Baseline/amplitude affects pooled 
                                                                                             // copies;
                                                                                             // field 9, int (bool), Loop, 1 on, 0 off
-                                                                                            // field 10, float/double, Position in QN  
+                                                                                            // field 10, float/double, Position in QN
                                                                                             // (only used in certain contexts);
                                                                                             // field 11, Length in QN
                                                                                             // (only used in certain contexts);
-                                                                                            // field 12, int, 1 based index of AI 
-                                                                                            // since starting the project, incremented 
-                                                                                            // even if older AIs were deleted and 
+                                                                                            // field 12, int, 1 based index of AI
+                                                                                            // since starting the project, incremented
+                                                                                            // even if older AIs were deleted and
                                                                                             // regardless of the AI being pooled;
                                                                                             // field 13, int, muted;
-                                                                                            // field 14, float/double, Start offset  
+                                                                                            // field 14, float/double, Start offset
                                                                                             // in QN (only used in certain contexts);
-                                                                                            // field 15, float/double, 
+                                                                                            // field 15, float/double,
                                                                                             // Transition time (sec)
-                                                                                            // field 16, int, volume envelope maximum 
-                                                                                            // when this instance was created 
-                                                                                            // (matches the 1|4 bits of the "volenvrange" 
-                                                                                            // config variable: 
-                                                                                            // 0=+6dB, 1=+0dB, 4=+12dB, 5=+24dB, i.e. 
+                                                                                            // field 16, int, volume envelope maximum
+                                                                                            // when this instance was created
+                                                                                            // (matches the 1|4 bits of the
+                                                                                            // "volenvrange" config variable:
+                                                                                            // 0=+6dB, 1=+0dB, 4=+12dB, 5=+24dB, i.e.
                                                                                             // Preferences -> Editing Behavior ->
-                                                                                            // Envelope Display -> Volume envelope  
+                                                                                            // Envelope Display -> Volume envelope
                                                                                             // range); (source: schwa [p=2198410])
 											    
     PT 3.000000 -0.2 5 0 0 0 -0.7               // Envelope point definition
