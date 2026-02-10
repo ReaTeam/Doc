@@ -193,8 +193,11 @@ The Track state chunk contains all the settings for a track and all of it's item
     TRACKIMGFN "icon.jpg"                                     // Track icon file path if track icon is loaded on the track.
                                                               // Only contains file name if icon is located at Data\track_icons
                                                               // folder or in the project folder root, contains relative path
-                                                              // if the icon is located under the project media folder and
-                                                              // contains full path if icon is located elsewhere.
+                                                              // if the icon is located under the project folder subfolder and
+                                                              // contains full path if icon is located elsewhere;
+                                                              // When icon is located in the project folder the path here is
+                                                              // only updated to file name or relative after reload of a saved
+                                                              // project, otherwise full path is listed.
     MIDICOLORMAPFN "C:Path\To\note_color_map.png"             // Path to note color map file, is added after execution of the action
                                                               // "View: Load note color map from file", cleared after execution
                                                               // of the action "View: Clear note color map (use default)"
