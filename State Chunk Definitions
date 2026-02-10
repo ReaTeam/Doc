@@ -190,7 +190,7 @@ The Track state chunk contains all the settings for a track and all of it's item
     <RECCFG 1                                                 // Recording format data. Not present if not changed.
         dmdnbwAAAD8AgAAAAIAAAAAgAAAAAAEAAA==                  //  binary data, leave it alone
     >                                                         //
-    TRACKIMGFN "icon.jpg"                                     // Track icon file path if track icon is loaded on the track.
+    TRACKIMGFN "icon.jpg"                                     // Track icon file path if track icon is applied to the track.
                                                               // Only contains file name if icon is located at Data\track_icons
                                                               // folder or in the project folder root, contains relative path
                                                               // if the icon is located under the project folder subfolder and
