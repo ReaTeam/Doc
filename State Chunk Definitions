@@ -435,10 +435,11 @@ Audio Item
     >                       // Notes block end
 
     RESOURCEFN "filename.ext"       // Name of the image file loaded in item notes. 
-                                    // Only lists file name if it's located in the \Data folder under REAPER 
-                                    // resource directory, relative path if it's located in the project  
-                                    // directory subfolder and full path if the file is located elsewhere.
-                                    // is a project directory subfolder
+                                    // Only lists file name if it's located in the \Data\track_icons folder
+                                    // or \Data\toolbar_icons folders in REAPER resource directory, 
+                                    // relative path if it's located in the project directory subfolder
+                                    // and full path if the file is located elsewhere, including directly
+                                    // in the \Data folder.
     IMGRESOURCEFLAGS 0              // Bitfield of item notes settings; absent if item notes are empty
                                     // 0 - Do not display image and no Word wrap; &1 - Center/tile image; 
                                     // &3 - Stretch image/text; &5 - Full height image; &8 - Word wrap.
