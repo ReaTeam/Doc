@@ -190,11 +190,11 @@ The Track state chunk contains all the settings for a track and all of it's item
     <RECCFG 1                                                 // Recording format data. Not present if not changed.
         dmdnbwAAAD8AgAAAAIAAAAAgAAAAAAEAAA==                  //  binary data, leave it alone
     >                                                         //
-    TRACKIMGFN "icon.jpg"                                     // Track icon file path if track icon is applied to the track.
-                                                              // Only contains file name if icon is located at Data\track_icons
-                                                              // folder or in the project folder root, contains relative path
+    TRACKIMGFN "filename.ext"                                 // Track icon file path if track icon is applied to the track.
+                                                              // Only lists file name if icon is located at Data\track_icons
+                                                              // folder or in the project folder root; relative path
                                                               // if the icon is located under the project folder subfolder and
-                                                              // contains full path if icon is located elsewhere;
+                                                              // full path if the icon is located elsewhere;
                                                               // When icon is located in the project folder the path here is
                                                               // only updated to file name or relative after reload of a saved
                                                               // project, otherwise full path is listed.
@@ -435,11 +435,9 @@ Audio Item
     >                       // Notes block end
 
     RESOURCEFN "filename.ext"       // Name of the image file loaded in item notes. 
-                                    // Lists only file name if it's located in the \Data folder under REAPER 
-                                    // resource directory; relative path if it's located in the project media 
-                                    // directory which is a project directory subfolder or HAD BEEN located 
-                                    // there if project media directory was changed later; and full path if  
-                                    // the file is located elsewhere.
+                                    // Only lists file name if it's located in the \Data folder under REAPER 
+                                    // resource directory, relative path if it's located in the project  
+                                    // directory subfolder and full path if the file is located elsewhere.
                                     // is a project directory subfolder
     IMGRESOURCEFLAGS 0              // Bitfield of item notes settings; absent if item notes are empty
                                     // 0 - Do not display image and no Word wrap; &1 - Center/tile image; 
