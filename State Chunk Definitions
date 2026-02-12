@@ -434,8 +434,13 @@ Audio Item
       |-1                   // Notes content
     >                       // Notes block end
 
-    RESOURCEFN "filename.ext"       // Name of the image file loaded in the notes, full path if located outside 
-                                    // of the resource directory
+    RESOURCEFN "filename.ext"       // Name of the image file loaded in item notes. 
+                                    // Lists only file name if it's located in the \Data folder under REAPER 
+                                    // resource directory; relative path if it's located in the project media 
+                                    // directory which is a project directory subfolder or HAD BEEN located 
+                                    // there if project media directory was changed later; and full path if  
+                                    // the file is located elsewhere.
+                                    // is a project directory subfolder
     IMGRESOURCEFLAGS 0              // Bitfield of item notes settings; absent if item notes are empty
                                     // 0 - Do not display image and no Word wrap; &1 - Center/tile image; 
                                     // &3 - Stretch image/text; &5 - Full height image; &8 - Word wrap.
