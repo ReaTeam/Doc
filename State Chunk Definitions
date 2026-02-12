@@ -191,10 +191,11 @@ The Track state chunk contains all the settings for a track and all of it's item
         dmdnbwAAAD8AgAAAAIAAAAAgAAAAAAEAAA==                  //  binary data, leave it alone
     >                                                         //
     TRACKIMGFN "filename.ext"                                 // Track icon file path if track icon is applied to the track.
-                                                              // Only lists file name if icon is located at Data\track_icons
-                                                              // folder or in the project folder root; relative path
-                                                              // if the icon is located under the project folder subfolder and
-                                                              // full path if the icon is located elsewhere;
+                                                              // Only lists file name if icon is located in \Data\track_icons
+                                                              // or \Data\toolbar_icons folders or in the project folder root; 
+                                                              // relative path if the icon is located under the project folder
+                                                              // subfolder and full path if the icon is located elsewhere,
+                                                              // including directly in the \Data folder;
                                                               // When icon is located in the project folder the path here is
                                                               // only updated to file name or relative after reload of a saved
                                                               // project, otherwise full path is listed.
@@ -435,7 +436,7 @@ Audio Item
     >                       // Notes block end
 
     RESOURCEFN "filename.ext"       // Name of the image file loaded in item notes. 
-                                    // Only lists file name if it's located in the \Data\track_icons folder
+                                    // Only lists file name if it's located in the \Data\track_icons
                                     // or \Data\toolbar_icons folders in REAPER resource directory, 
                                     // relative path if it's located in the project directory subfolder
                                     // and full path if the file is located elsewhere, including directly
