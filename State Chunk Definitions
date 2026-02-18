@@ -18,17 +18,117 @@ The shorthand "int (bool)" has been used to denote "0 = False, 1 = True"
 
 
 Contents:
-1 Track
-2 Audio Item
-3 MIDI Item
-4 Envelope
-5 Track/Take FX
-6 VST(i) Plugin
-7 Jesusonic Plugin
+1 Project
+2 Track
+3 Audio Item
+4 MIDI Item
+5 Envelope
+6 Track/Take FX
+7 VST(i) Plugin
+8 Jesusonic Plugin
+
 
 --------------------------------------------------------------------------------------------------------------------
 
-The Track state chunk contains all the settings for a track and all of it's items, envelopes, receives, plugins etc.
+Project specific settings and metadata. This is the parent chunk of the whole project.
+
+<REAPER_PROJECT 0.1 "7.61/macOS-arm64" 2147483647 0           // Start of Project definition
+                                                              //   field 1, float, RPPXML schema version (?)
+                                                              //   field 2, string, combination of REAPER version number
+                                                              //   and computer OS/architecture
+                                                              //   field 3, int, Unix epoch timestamp of last modification
+                                                              //   field 4, ??
+    SAMPLERATE 48000 0 0                                      // Project sample rate
+                                                              //  field 1, int, sample rate in Hz
+                                                              //  field 2, bool, use sample rate
+                                                              //    0 = use hardware default rate
+                                                              //    1 = use specified rate
+                                                              //  field 3, bool, force tempo/sig changes on whole samples
+    TIMEMODE 0 5 0 30 0 -1 0 0                                // Ruler and frame rate settings, fps combinations explained below
+                                                              //  field 1, int, ruler time unit preset
+                                                              //    0 = Minutes:Seconds
+                                                              //    2 = Measures.Beats
+                                                              //    3 = Seconds
+                                                              //    4 = Samples
+                                                              //    5 = Hours:Minutes:Seconds:Frames
+                                                              //    6 = Measures.Beats (minimal)
+                                                              //    8 = Absolute Frames
+                                                              //    10 = Measures.Fractions
+                                                              //    11 = Minutes:Seconds (minimal)
+                                                              //  field 2, int, fps preset
+                                                              //    0 = 23.976 fps ND
+                                                              //    1 = 24 fps
+                                                              //    2 = 25 fps
+                                                              //    3 = 29.97 fps DF
+                                                              //    4 = 29.97 fps ND
+                                                              //    5 = 30 fps
+                                                              //    6 = 75 fps
+                                                              //    7 = 48 fps
+                                                              //    8 = 50 fps
+                                                              //    9 = 60 fps
+                                                              //  field 3, ??
+                                                              //  field 4, int, whole frames fps value
+                                                              //    23.976  => 24
+                                                              //    29.97 DF/ND => 30
+                                                              //  field 5, int, decimal frame rate and drop frame rate flag
+                                                              //    23.976 => 2
+                                                              //    29.97 DF => 1
+                                                              //    29.97 ND => 2
+                                                              //  field 6, int, secondary time unit preset
+                                                              //    -1 = None
+                                                              //    0-11 = same as field 1
+                                                              //  field 7, ??
+                                                              //  field 8, bool, display parent project time as secondary
+                                                              //  time unit in subproject ruler
+    MASTERMUTESOLO 5                                          // Master track mute/solo/mono controls, int (bitfield)
+                                                              //  &1 = mute
+                                                              //  &2 = solo
+                                                              //  &4 = sum to mono
+    MASTERTRACKVIEW 1 0.5 0.5 1 1 1 0 0 0 0 0 0 1 0 1         // Master track visibility
+                                                              //  field 1, bool, visible in TCP
+                                                              //  field 2, float, height of slot area in Mixer channel strip
+                                                              //    0 = slots hidden
+                                                              //    1 = slots fully expanded
+                                                              //  field 3, float, height of send/output slots in slot area
+                                                              //  field 4-14, ??
+                                                              //  field 15, bool, pinned track in TCP
+    MASTER_VOLUME 0.5 0 -1 -1 0                               // Master volume and pan
+                                                              //  field 1, float, volume: 0 = -inf, 1 = 0dB, >1 is possible
+                                                              //  field 2, float, pan: -1 = 100%L, 1 = 100%R
+
+    MARKER 1 2 "Edit Marker" 8 23514367 1 B {8C98...E6B} 0    // Project marker
+                                                              //  field 1, int, marker index, this is counted separately/
+                                                              //  between markers and regions
+                                                              //  field 2, float, time position
+                                                              //  field 3, string, marker name
+                                                              //  field 4, int (bitfield), flags
+                                                              //    &1 = is region
+                                                              //    &8 = selected
+                                                              //    &16 = hidden
+                                                              //  field 5, int, custom color, 0 for default
+                                                              //  or 0x1000000 | ColorFromNative() for custom value
+                                                              //  field 6, ??
+                                                              //  field 7, char, least-significant-bit color flag,
+                                                              //  indicating the format of the color value
+                                                              //    B = 0x1RRGGBB
+                                                              //    R = 0x1BBGGRR
+                                                              //  field 8, GUID, unique 32 digit identifier for the marker
+                                                              //  field 9, ??
+    MARKER 1 2 "Edit Region" 9 0 1 B {AFD8C34F-4325-2..} 0    // Project region, defined by a pair of MARKER chunks
+    MARKER 1 4 "" 9                                           //  field 1, int, index, the same index is used for both MARKERs 
+                                                              //  of the region
+                                                              //  field 2, float, start or end time of the region
+                                                              //  field 3, string, region name, omitted on second MARKER
+                                                              //  field 4, int, flags, &1 set to indicate it's a region
+                                                              //  field 5-9, as above, omitted on second MARKER
+
+    <TRACK                                                    // Track definitions
+     (see chunk info below)
+    >
+>
+--------------------------------------------------------------------------------------------------------------------
+
+The Track state chunk contains all the settings for a track and all of its items, envelopes, receives, plugins etc.
 <TRACK                                                        // Start of Track definition
     NAME "Track Name"                                         // Track name
     LOCK 1                                                    // Track controls are locked, absent altogether when not locked
@@ -787,6 +887,13 @@ AUXVOLENV - Track send volume (0.0 to 2.0)
 AUXPANENV - Track sendpan (-1.0 to 1.0)
 AUXMUTEENV - Track send mute (0.0 to 1.0)
 TEMPOENVEX - Master tempo
+MASTERVOLENV - Master volume (0.0 to 2.0)
+MASTERPANENV - Master pan (pre FX) (-1 to 1.0)
+MASTERVOLENV2 - Master volume (post FX) (0.0 to 2.0)
+MASTERPANENV2 - Master pan (post FX) (-1 to 1.0)
+MASTERVOLENV3 - Master trim  (0.0 to 2.0)
+MASTERWIDTHENV - Master (pre FX) stereo width (-1 to 1) in 'Stereo pan' pan mode
+MASTERWIDTHENV2 - Master stereo width (-1 to 1) in 'Stereo pan' pan mode
 MASTERPLAYSPEEDENV - Master playrate
 PARMENV - Plugin parameter (value range is defined by additional parameters after type tag)
 
