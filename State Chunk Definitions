@@ -18,7 +18,7 @@ The shorthand "int (bool)" has been used to denote "0 = False, 1 = True"
 
 
 Contents:
-1 Project (PROJECT SPECIFIC DATA IS NOT ACCESSIBLE TO ReaScript API FUNCTIONS)
+1 Project (PROJECT SPECIFIC DATA ARE NOT ACCESSIBLE TO ReaScript API FUNCTIONS)
 2 Track
 3 Audio Item
 4 MIDI Item
