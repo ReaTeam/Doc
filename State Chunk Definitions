@@ -18,7 +18,7 @@ The shorthand "int (bool)" has been used to denote "0 = False, 1 = True"
 
 
 Contents:
-1 Project
+1 Project (PROJECT SPECIFIC DATA IS NOT ACCESSIBLE TO ReaScript API FUNCTIONS)
 2 Track
 3 Audio Item
 4 MIDI Item
@@ -33,6 +33,7 @@ Contents:
 Project specific settings and metadata. This is the parent chunk of the whole project.
 
 <REAPER_PROJECT 0.1 "7.61/macOS-arm64" 2147483647 0           // Start of Project definition
+                                                              // (NOT ACCESSIBLE TO ReaScript API FUNCTIONS)
                                                               //   field 1, float, RPPXML schema version (?)
                                                               //   field 2, string, combination of REAPER version number
                                                               //   and computer OS/architecture
