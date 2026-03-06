@@ -32,6 +32,7 @@ Since build 6.80 passing either project/template or a media file AND a script fi
 - **-template filename.rpp** : start with template project
 - **-saveas newfilename.rpp** : save project (after creating/loading) as file
 - **-renderproject filename.rpp** : render project and exit
+- **-peaktest filename.cpp** : dry run render project and report peak output level -- _(since 7.62)_
 - **-ignoreerrors** : do not show errors on load
 - **-nosplash** : do not show slpash screen window
 - **-splashlog /path/to/filename.log** : write splash screen message log to file; the first line of logfile.txt will include the version number, _([source](https://forum.cockos.com/showthread.php?t=258280#4))_
