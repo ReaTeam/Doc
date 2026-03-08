@@ -984,11 +984,18 @@ PARMENV - Plugin parameter (value range is defined by additional parameters afte
                                                 //  0 when 'Set time signature:' checkbox is unchecked and
                                                 //  the point is selected
                                                 //  field 5, int (bool), selected (optional)
-                                                //  field 6, int, ?? (optional)
+                                                //  field 6, int, bitfield
+                                                //  &1 - 'Set time signature:', checked true, unchecked false
+                                                //  &2 - 'Set tempo:', checked false, uncheked true
+                                                //  &4 - 'Allow a partial measure before this marker:', 
+                                                //  checked true, unchecked false
+                                                //  &8 - 'Set metronome pattern:', checked true, unchecked false
+                                                //  &16 - 'Reset spacing for ruler labels and vertical shading:', 
+                                                //  checked true, unchecked false
                                                 //  field 7, float, bezier tension (optional);
-                                                //  For the Tempo envelope the following fields are absent when  
-                                                //  all checkboxes save for 'Set tempo:' are unchecked and the  
-                                                //  point is not selected
+                                                //  For the Tempo envelope fields 4 - 7 are absent when  
+                                                //  all checkboxes save for 'Set tempo:' are unchecked  
+                                                //  and the point is not selected
 >
 
 PARMENV contains extra data denoting which plugin parameter is controlled and what the minimum, maximum and default values are.
