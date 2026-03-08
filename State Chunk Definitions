@@ -998,6 +998,12 @@ PARMENV - Plugin parameter (value range is defined by additional parameters afte
                                                 //  field 10, bitfield, graphic metronome pattern
                                                 //  &1 - A1, &2 - B/C/D1, &4 - A2, &8 - B/C/D2,
                                                 //  &16 - A3, &32 - B/C/D3, &64 - A4, &128 - B/C/D4
+                                                //  When options 'Triplet 3 over 2' or 'Triplet 3 over 4'
+                                                //  are enabled for a beat division in the graphic pattern
+                                                //  (in which case the alphabetic metronome pattern of field
+                                                //  12 includes letters in parentheses) the bitfield only
+                                                //  includes beats which on the graphic pattern grid match
+                                                //  the time signature beats
                                                 //  field 11, ???
                                                 //  field 12, alphabetic metronome pattern.
                                                 //  Fields 8 - 12 only appear in Tempo envelope point chunk.
