@@ -973,7 +973,7 @@ PARMENV - Plugin parameter (value range is defined by additional parameters afte
                                                                                             // Envelope Display -> Volume envelope
                                                                                             // range); (source: schwa [p=2198410])
 											    
-    PT 3.000000 -0.2 5 0 0 0 -0.7               // Envelope point definition
+    PT 3.000000 -0.2 5 0 0 0 -0.7 "" 0 169 0 ABBB  // Envelope point definition
                                                 //  field 1, float, position (seconds)
                                                 //  field 2, float, value
                                                 //  field 3, int, shape (-1 = envelope default?)
@@ -993,7 +993,13 @@ PARMENV - Plugin parameter (value range is defined by additional parameters afte
                                                 //  &16 - 'Reset spacing for ruler labels and vertical shading:', 
                                                 //  checked true, unchecked false
                                                 //  field 7, float, bezier tension (optional);
-                                                //  For the Tempo envelope fields 4 - 7 are absent when  
+                                                //  field 8,
+                                                //  field 9,
+                                                //  field 10,
+                                                //  field 11,
+                                                //  field 12,
+                                                //  Fields 8 - 12 only appear in Tempo envelope point chunk.
+                                                //  For the Tempo envelope fields 4 - 12 are absent when  
                                                 //  all checkboxes save for 'Set tempo:' are unchecked  
                                                 //  and the point is not selected
 >
