@@ -979,9 +979,10 @@ PARMENV - Plugin parameter (value range is defined by additional parameters afte
                                                 //  field 3, int, shape (-1 = envelope default?)
                                                 //  0 - Linear, 1 - Square, 2 - Slow start/end, 3 - Fast start,
                                                 //  4 - Fast end, 5 - Bezier
+                                                //  The following fields are absent when all checkboxes save  
+                                                //  for 'Set tempo:' are unchecked:
                                                 //  field 4, int, optional, ?? (TEMPOENVEX time sig = 65536 * 
                                                 //  time signature denominator + time signature numerator),
-                                                //  absent when all checkboxes save for 'Set tempo:' are unchecked
                                                 //  field 5, int (bool), selected (optional)
                                                 //  field 6, int, ?? (optional)
                                                 //  field 7, float, bezier tension (optional)
