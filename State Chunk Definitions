@@ -993,18 +993,14 @@ PARMENV - Plugin parameter (value range is defined by additional parameters afte
                                                 //  &16 - 'Reset spacing for ruler labels and vertical shading:', 
                                                 //  checked true, unchecked false
                                                 //  field 7, float, bezier tension (optional);
-                                                //  field 8,
-                                                //  field 9,
-                                                //  field 10,
-                                                //  field 11, bitfield, graphic metronome pattern
+                                                //  field 8, string, ???
+                                                //  field 9, ???
+                                                //  field 10, bitfield, graphic metronome pattern
                                                 //  &1 - A1, &2 - B/C/D1, &4 - A2, &8 - B/C/D2,
                                                 //  &16 - A3, &32 - B/C/D3, &64 - A4, &128 - B/C/D4
-                                                //  field 12, ???, lists 0 when metronome pattern option
-                                                //  'Triplet 3 over 2' or 'Triplet 3 over 4' are enabled,
-                                                //  absent when metronome pattern option is 'Straight'
-                                                //  field 13 (or 12 when field 12 is absent), alphabetic 
-                                                //  metronome pattern.
-                                                //  Fields 8 - 13 only appear in Tempo envelope point chunk.
+                                                //  field 11, ???
+                                                //  field 12, alphabetic metronome pattern.
+                                                //  Fields 8 - 12 only appear in Tempo envelope point chunk.
                                                 //  For the Tempo envelope fields 4 - 12 are absent when  
                                                 //  all checkboxes save for 'Set tempo:' are unchecked  
                                                 //  and the point is not selected
