@@ -39,6 +39,10 @@ markeridx, regionidx = reaper.GetLastMarkerAndCurRegion( proj, time )
 ```lua
  reaper.NF_GetSWSMarkerRegionSub( markerRegionIdx )
 ```
+
+```lua
+marker_region_object = reaper.GetRegionOrMarker( proj, idx, "" )
+```
  
 ## markrgnindexnumber (Ruler)
 
