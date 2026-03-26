@@ -6,7 +6,7 @@ Note that markers and regions are undifferencied in this function. A regions is 
 
 Beware : `retval = idx +1`. This allows to check `retval > 0` to see if the enumeration worked for a certain idx.
 
-## IDX (Timeline)
+## IDX (Timeline Order)
 
 IDX is according to the timeline position. It is 0-based. If a marker/region move, it's IDX will also move.
  
@@ -44,12 +44,14 @@ markeridx, regionidx = reaper.GetLastMarkerAndCurRegion( proj, time )
 marker_region_object = reaper.GetRegionOrMarker( proj, idx, "" )
 ```
  
-## markrgnindexnumber (Ruler)
+## markrgnindexnumber (Displayed in Ruler)
 
 This is the number associated to the region or marker, which is displayed in the ruler.
 You can then have Marker 1 and Region 1 in the same project.
 
 This index doesn't change when you move the markers.
+
+It has not Get function (v6.13). You need to firts iterate all markers in a table to have a quick way to get them.
 
 This index is used in the following functions:
 
@@ -65,17 +67,15 @@ reaper.SetProjectMarker4( proj, markrgnindexnumber, isrgn, pos, rgnend, name, co
 reaper.DeleteProjectMarker( proj, markrgnindexnumber, isrgn )
 ```
 
-It has not Get function (v6.13). You need to firts iterate all markers in a table to have a quick way to get them.
-
 ## Marker GUID
+
+This is a unique string to identify a marker/region. it doesn't change if the marker/region move. id is timeline based like EnumProjectMarkers3.
+There is no GetMarkerByGUID native function (v6.13). You need to iterate all markers/regions in a table first to have a quick way to get them.
 
 ```lua
 id = 1
 retval, region_guid = reaper.GetSetProjectInfo_String( 0, "MARKER_GUID:" .. id, "", false )
 ```
-
-This is a unique string to identify a marker/region. it doesn't change if the marker/region move. id is timeline based like EnumProjectMarkers3.
-There is no GetMarkerByGUID native function (v6.13). You need to iterate all markers/regions in a table first to have a quick way to get them.
 
 ## Colors
 
