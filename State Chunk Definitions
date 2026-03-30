@@ -221,7 +221,7 @@ The Track state chunk contains all the settings for a track and all of its items
                                                               //  recording while comping options are enabled.
     LANESOLO 7 0 0 0 0 0 0 0                                  //  field 1, int (bitfield), 0 - no lane plays, &1 - lane 1 plays, 
                                                               //  &2 - lane 2 plays, &4 - lane 3 plays etc,
-                                                              //  he value isn't updated after the last playing lane has been deleted
+                                                              //  the value isn't updated after the last playing lane has been deleted
                                                               //  and no other lane is a playing one;
                                                               //  field 2 ??
                                                               //  field 3 ??
