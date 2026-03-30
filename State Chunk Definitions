@@ -252,11 +252,8 @@ The Track state chunk contains all the settings for a track and all of its items
                                                               //  lane comping enabled state is exclusive, -1 - comping is disabled;
                                                               //  field 3, int, 0-based index of the last comping enabled lane
                                                               //  when it's no longer active, -1 - comping hasn't been enabled yet.
-                                                              //  The attribute is absent when 'Fixed item lanes' mode hasn't
-                                                              //  been enabled yet and present when it was enabled at least once.
-    LANENAME 1 2 "" "lane name"                               //  List of lane names in ascending order, the attribute is absent 
-                                                              //  when 'Fixed item lanes' mode isn't enabled, names which contain 
-                                                              //  spaces as well as empty names are enclosed within double quotes ""
+    LANENAME 1 2 "" "lane name"                               //  List of lane names in ascending order. Names which contain spaces
+                                                              //  as well as empty names are enclosed within double quotes "".
                                                               //  The attribute is absent when 'Fixed item lanes' mode hasn't been 
                                                               //  enabled yet and present when it was enabled at least once.
     REC 0 0 0 0 0 0 0                                         // Record settings
