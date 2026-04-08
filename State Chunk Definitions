@@ -1215,7 +1215,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                   //  (https://forums.cockos.com/showthread.php?p=2420594)
                                   //  field 1, bool, 1 - 'Send all keyboard input to plug-in' option
                                   //  is enabled in the FX instance RMB context menu or FX chain 'FX' menu
-                                  //  field 2, int, 1 - show embedded FX UI on TCP, 2 - show on MCP
+                                  //  field 2, int, 1 - show embedded FX UI in TCP, 2 - show in MCP
     PARALLEL 1                    //  field 1, int, appears in the chunk of the FX instance which PRECEDES
                                   //  an instance for which either of the following options is enabled:
                                   //  1 - option 'Run selected FX in parallel with previous FX' is enabled;
