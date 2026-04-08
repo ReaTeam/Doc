@@ -595,7 +595,10 @@ Audio Item
         STARTPOS 0.000                                  // Section start offset (in seconds)
         OVERLAP 0.010                                   // Section crossfade (in seconds)
         <SOURCE WAVE                                    // Source details. Appears alone if SOURCE SECTION is not set;
-                                                        // when the take is offline WAVE is replaced with _OFFLINE_WAVE
+                                                        // when the take is forced offline with actions
+                                                        // Item: Toggle force media offline, 
+                                                        // Item: Toggle force inactive take media offline
+                                                        // WAVE is replaced with _OFFLINE_WAVE
             FILE "C:Path\To\AudioFile.wav"              // Source file.
         >                                               // Source details end
     >                                                   // Source section end
