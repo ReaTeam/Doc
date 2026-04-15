@@ -1014,14 +1014,25 @@ PARMENV - Plugin parameter (value range is defined by additional parameters afte
 
 PARMENV contains extra data denoting which plugin parameter is controlled and what the minimum, maximum and default values are.
 
-<PARMENV 1 0.0 1469.0 734.5                     // Type
-<PARMENV 5:_1__Feedback 0 2 1                   // field 1, int, param index - 0-based top to bottom.
-<PARMENV 5:_Sample_start_offset 0 2 1           // Since builds 6.48 or 6.52 names of ReaPlugs parameters are also specified 
+<PARMENV 1 0.0 1469.0 734.5                            // Type, see examples of the 1st line below
+<PARMENV 5:_1__Feedback 0 2 1 "1: Feedback / ReaDelay" // (syntax used in track/item chunk, ReaPlugs)
+<PARMENV 3:2 0 1 0.5 "dry/wet / More"                  // (syntax used in track/item chunk, VST3)
+<PARMENV 5:_1__Feedback 0.000000 2.000000 1.000000     // (syntax used in envelope chunk, ReaPlugs)
+<PARMENV 5:_1__Feedback 0 2 1                          // (syntax used in envelope chunk in older builds, ReaPlugs)
+<PARMENV 2:_Pan 0.000000 1.000000 0.500000             // (syntax used in envelope chunk, VST2)
+<PARMENV 0 0.000000 1.000000 0.500000                  // (syntax used in envelope chunk, VST2)
+<PARMENV 3:2 0.000000 1.000000 0.500000                // (syntax used in track/item chunk, VST3)
+                                                // field 1, int, param index - 0-based top to bottom.
+                                                // Since builds 6.48 or 6.52 names of ReaPlugs parameters are also specified 
                                                 // in the format _paramname or _param_name
                                                 // Previously only plugin wrapper 'wet', 'bypass' and 'delta' (since 6.37) 
                                                 // parameter names were displayed without being preceded by	the underscore,
                                                 // e.g. 31:wet, 12:bypass, 17:delta;
-                                                // REAPER tags additional bypass, wet & delta params onto the end, in that order
+                                                // additional bypass, wet & delta params of the plugin wrapper REAPER tags 
+                                                // onto the end, in that order;
+                                                // in 3d party plugins parameter envelope chunk, parameter index may be 
+                                                // followed by a number or a parameter identifier statring with underscore
+                                                // separated by a colon from parameter index;
                                                 // field 2, float, minimum value 
                                                 // field 3, float, maximum value
                                                 // field 4, float, center/default value
