@@ -1014,28 +1014,34 @@ PARMENV - Plugin parameter (value range is defined by additional parameters afte
 
 PARMENV contains extra data denoting which plugin parameter is controlled and what the minimum, maximum and default values are.
 
-<PARMENV 1 0.0 1469.0 734.5                            // Type, see examples of the 1st line below
+<PARMENV 1 0.0 1469.0 734.5                            // Type, below see examples of the 1st line syntax
 <PARMENV 5:_1__Feedback 0 2 1 "1: Feedback / ReaDelay" // (syntax used in track/item chunk, ReaPlugs)
-<PARMENV 3:2 0 1 0.5 "dry/wet / More"                  // (syntax used in track/item chunk, VST3)
+<PARMENV 2:_Pan 0 1 0.5 "Pan / A1StereoControl"        // (syntax used in envelope chunk, VST2, LV2)
+<PARMENV 3:2 0 1 0.5 "dry/wet / More"                  // (syntax used in track/item chunk, VST3, CLAP)
 <PARMENV 5:_1__Feedback 0.000000 2.000000 1.000000     // (syntax used in envelope chunk, ReaPlugs)
 <PARMENV 5:_1__Feedback 0 2 1                          // (syntax used in envelope chunk in older builds, ReaPlugs)
-<PARMENV 2:_Pan 0.000000 1.000000 0.500000             // (syntax used in envelope chunk, VST2)
+<PARMENV 2:_Pan 0.000000 1.000000 0.500000             // (syntax used in envelope chunk, VST2, LV2)
 <PARMENV 0 0.000000 1.000000 0.500000                  // (syntax used in envelope chunk, VST2)
-<PARMENV 3:2 0.000000 1.000000 0.500000                // (syntax used in track/item chunk, VST3)
+<PARMENV 3:2 0.000000 1.000000 0.500000                // (syntax used in envelope chunk, VST3, CLAP)
                                                 // field 1, int, param index - 0-based top to bottom.
-                                                // Since builds 6.48 or 6.52 names of ReaPlugs parameters are also specified 
-                                                // in the format _paramname or _param_name
-                                                // Previously only plugin wrapper 'wet', 'bypass' and 'delta' (since 6.37) 
+                                                // Since builds 6.48 or 6.52 ReaPlugs parameter identifiers are also 
+                                                // included in the format _paramname or _param_name separated by a colon;
+                                                // previously only plugin wrapper 'wet', 'bypass' and (since 6.37) 'delta' 
                                                 // parameter names were displayed without being preceded by	the underscore,
                                                 // e.g. 31:wet, 12:bypass, 17:delta;
-                                                // additional bypass, wet & delta params of the plugin wrapper REAPER tags 
-                                                // onto the end, in that order;
+                                                // additional bypass, wet & delta params (in that order) of the plugin 
+                                                // wrapper REAPER tags onto the end;
                                                 // in 3d party plugins parameter envelope chunk, parameter index may be 
-                                                // followed by a number or a parameter identifier statring with underscore
+                                                // followed by an integer or a parameter identifier preceded by underscore
                                                 // separated by a colon from parameter index;
-                                                // field 2, float, minimum value 
+                                                // field 2, float, minimum value
                                                 // field 3, float, maximum value
-                                                // field 4, float, center/default value
+                                                // field 4, float, center/default value;
+                                                // To sum up: the difference in envelope data representation between
+                                                // track/item and envelope chunks lies in the presence of parameter
+                                                // name and plugin instance name separated by slash in track/item chunk
+                                                // and in the format of values in fields 2-4 which are integers in
+                                                // track/item chunk and floats in envelope chunk
    /* snip */
 >
 
