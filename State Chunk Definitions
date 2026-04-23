@@ -1380,6 +1380,10 @@ For the sake of formatting, the plugin data has been truncated.
                                                               //  if they have spaces, so one word names don't have quotes;
         4.0 -6.0 0.0 - - - - - - - - - - - - - - - - - - - -  //  Data, 64 fields of float or '-' separated by spaces
     >                                                         //  End of JS plugin data
+    <JS_PINMAP                                                //  JSFX pin connector configuration,
+    6AMAABwAAADoAwAABgAAAAIAAAAFAAAAAAAAAAoAAAAAAAAAHAAAAOgD  //  follows plugin configuration block
+    AAAGAAAAAgAAAAUAAAAAAAAACgAAAAAAAAA=                      //  if different from deafult
+    >                                                         //
 
 --------------------------------------------------------------------------------------------------------------------
 
