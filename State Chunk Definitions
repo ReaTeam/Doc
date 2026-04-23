@@ -1338,6 +1338,10 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
      <JS "Guitar/tremolo" ""                             //  Start of JS plugin data
          (see Jesusonic plugin info below)               //
      >                                                   //
+     <JS_PINMAP                                                //  JSFX pin connector configuration,
+     6AMAABwAAADoAwAABgAAAAIAAAAFAAAAAAAAAAoAAAAAAAAAHAAAAOgD  //  follows plugin configuration block
+     AAAGAAAAAgAAAAUAAAAAAAAACgAAAAAAAAA=                      //  if different from deafult
+     >                                                         //
      JS_DIMS 489 305                                     //  Dimensions of JS plugin UI
      FLOATPOS 0 0 0 0                                    //  ...
      FXID {BE5D3334-6675-4DAD-AFDD-F4489878D82A}         //  ...
@@ -1380,10 +1384,6 @@ For the sake of formatting, the plugin data has been truncated.
                                                               //  if they have spaces, so one word names don't have quotes;
         4.0 -6.0 0.0 - - - - - - - - - - - - - - - - - - - -  //  Data, 64 fields of float or '-' separated by spaces
     >                                                         //  End of JS plugin data
-    <JS_PINMAP                                                //  JSFX pin connector configuration,
-    6AMAABwAAADoAwAABgAAAAIAAAAFAAAAAAAAAAoAAAAAAAAAHAAAAOgD  //  follows plugin configuration block
-    AAAGAAAAAgAAAAUAAAAAAAAACgAAAAAAAAA=                      //  if different from deafult
-    >                                                         //
 
 --------------------------------------------------------------------------------------------------------------------
 
