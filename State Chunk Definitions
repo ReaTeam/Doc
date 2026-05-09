@@ -613,7 +613,7 @@ Audio Item
                                                         // is listed if sample edits were enabled at least once
                                                         // field 1, bool, 1 - sample edits are visible and active, 
                                                         // 0 - sample edits are hidden and inactive
-                                                        // field 2, int, media channel count
+                                                        // field 2, int, media source channel count
                                                         // field 3, int, media source sample rate
     <SPLS 0                                             // List of edited samples, absent if sample edits have been cleared
                                                         // field 1, int, number of the channel the samples belong to, 0-based
