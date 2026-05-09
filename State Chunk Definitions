@@ -619,7 +619,7 @@ Audio Item
                                                         // field 1, int, number of the channel the samples belong to, 0-based
        SPL 1613 -0.02521008403361                       // Edited sample properties
                                                         // field 1, int, sample index, 1-based
-                                                        // field 1, float, sample amplitude in the range of -1 - 1
+                                                        // field 2, float, sample amplitude in the range of -1 - 1
        SPL 1614 0.00840336134454
     >                                                   // End of sample edits data
 
