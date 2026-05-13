@@ -561,21 +561,26 @@ Audio Item
                                     // if negative 'Invert phase' setting is enabled
                                     // field 4, float, first take pan law
     SOFFS 0.000                     // First take slip offset (in seconds)
-    PLAYRATE 1.000 1 0.000 -1       // First take playrate settings
+    PLAYRATE 1.000 1 0.000 -1 0 0.0025      // First take playrate settings
                                     //  field 1, float, playrate
                                     //  field 2, int (bool), preserve pitch while changing rate
                                     //  field 3, float, pitch adjust, in semitones.cents
                                     //  field 4, int, pitch shifting/time stretch mode and preset
-                                    //    -1 - project default
+                                    //    -1 - project default, since presumably build 5.60 project default is -65536
                                     //    0-2 - Sound Touch (3 presets)
-                                    //    65536-65567 - Dirac LE (32 presets)
+                                    //    65536-65567 - Dirac LE (32 presets), discontinued since certain build
                                     //    131072-131119 - Low quality windowed (48 presets)
                                     //    196608-196639 - élastique Pro (32 presets)
                                     //    262144-262147 - élastique Efficient (4 presets)
                                     //    327680-327683 - élastique SOLOIST (4 presets)
                                     //    393216-393247 - élastique 2.1 Pro (32 presets)
                                     //    458752-458755 - élastique 2.1 Efficient (4 presets)
-                                    //    524288-524291 - élastique 2.1 SOLOIST (4 presets)
+                                    //    524288-524291 - élastique 2.1 SOLOIST (4 presets);
+                                    //    since presumably build 5.60 the algos array has changed
+                                    //    and number of options per algo has increased, so since then
+                                    //    high 2 bytes = algo type, low 2 bytes = algo options bitfield
+                                    //  field 5, ??
+                                    //  field 6, float, stretch markers fade size in sec
     CHANMODE 0                      // First take channel mode, int
                                     //   0 = normal, 1 = reverse stereo, 2 = mono (downmix)
                                     //   3 = mono (left), 4 = mono (right),
