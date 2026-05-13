@@ -568,7 +568,7 @@ Audio Item
                                     //  field 4, int, pitch shifting/time stretch mode and preset
                                     //    -1 - project default, since presumably build 5.60 project default is -65536
                                     //    0-2 - Sound Touch (3 presets)
-                                    //    65536-65567 - Dirac LE (32 presets), discontinued since certain build
+                                    //    65536-65567 - Dirac LE (32 presets), discontinued since presumably build 5.60
                                     //    131072-131119 - Low quality windowed (48 presets)
                                     //    196608-196639 - élastique Pro (32 presets)
                                     //    262144-262147 - élastique Efficient (4 presets)
