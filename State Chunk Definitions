@@ -1,4 +1,4 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 NOTE ON FORMATTING: USE REGULAR SPACE RATHER THAN TAB TO CREATE IDENTATION AND SEPARATE COMMENTS FROM THE CODE TO ENSURE FORWARD COMPATIBILITY 
 BECAUSE GITHUB MAY CHANGE THE LENGTH OF TAB SPACE WHICH WILL BREAK FORMATTING LIKE WHAT HAPPENED DURING UPDATE OF THE DOC ON AUG 16, 2025.
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -578,8 +578,8 @@ Audio Item
                                     //    458752-458755 - élastique 2.1 Efficient (4 presets)
                                     //    524288-524291 - élastique 2.1 SOLOIST (4 presets)
                                     //  LEGACY INFO END
-                                    //    Since presumably build 5.60 the algo types array has changed
-                                    //    and number of options per algo has increased, so since then
+                                    //    Since build 5.60 the algo types array has changed and number
+                                    //    of options per algo has increased, so since then
                                     //    high 2 bytes = algo type, low 2 bytes = algo options bitfield
                                     //    As of build 7.72 the algo types are as follows: 
                                     //    -65536 (direct value) - project default,
