@@ -566,7 +566,8 @@ Audio Item
                                     //  field 2, int (bool), preserve pitch while changing rate
                                     //  field 3, float, pitch adjust, in semitones.cents
                                     //  field 4, int, pitch shifting/time stretch mode and preset
-                                    //    -1 - project default, since presumably build 5.60 project default is -65536
+                                    //  LEGACY INFO START
+                                    //    -1 - project default
                                     //    0-2 - Sound Touch (3 presets)
                                     //    65536-65567 - Dirac LE (32 presets), discontinued since presumably build 5.60
                                     //    131072-131119 - Low quality windowed (48 presets)
@@ -575,10 +576,18 @@ Audio Item
                                     //    327680-327683 - élastique SOLOIST (4 presets)
                                     //    393216-393247 - élastique 2.1 Pro (32 presets)
                                     //    458752-458755 - élastique 2.1 Efficient (4 presets)
-                                    //    524288-524291 - élastique 2.1 SOLOIST (4 presets);
-                                    //    since presumably build 5.60 the algos array has changed
+                                    //    524288-524291 - élastique 2.1 SOLOIST (4 presets)
+                                    //  LEGACY INFO END
+                                    //    Since presumably build 5.60 the algo types array has changed
                                     //    and number of options per algo has increased, so since then
                                     //    high 2 bytes = algo type, low 2 bytes = algo options bitfield
+                                    //    As of build 7.72 the algo types are as follows: 
+                                    //    -65536 (direct value) - project default,
+                                    //    0 - Sound Touch, 2 - Simple windowed (fast), 
+                                    //    6 - Elastique 2.2.8 Pro, 7 - ~ Efficient, 8 - ~ Soloist,
+                                    //    9 - Elastique 3.3.3 Pro, 10 - ~ Efficient, 11 - ~ Soloist,
+                                    //    13 - Rubber Band Library (since 5.60), 14 - Rrreeeaaa (since 6.57),
+                                    //    15 - ReaReaRea (since 6.74);
                                     //  field 5, ??
                                     //  field 6, float, stretch markers fade size in sec
     CHANMODE 0                      // First take channel mode, int
