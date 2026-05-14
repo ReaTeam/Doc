@@ -587,7 +587,9 @@ Audio Item
                                     //    6 - Elastique 2.2.8 Pro, 7 - ~ Efficient, 8 - ~ Soloist,
                                     //    9 - Elastique 3.3.3 Pro, 10 - ~ Efficient, 11 - ~ Soloist,
                                     //    13 - Rubber Band Library (since 5.60), 14 - Rrreeeaaa (since 6.57),
-                                    //    15 - ReaReaRea (since 6.74);
+                                    //    15 - ReaReaRea (since 6.74)
+                                    //  Explication of the low 2 bytes values is ommitted because
+                                    //  they're too numerous;
                                     //  field 5, ??
                                     //  field 6, float, stretch markers fade size in sec
     CHANMODE 0                      // First take channel mode, int
