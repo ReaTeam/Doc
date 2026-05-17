@@ -1,4 +1,4 @@
-			!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 NOTE ON FORMATTING: USE REGULAR SPACE RATHER THAN TAB TO CREATE IDENTATION AND SEPARATE COMMENTS FROM THE CODE TO ENSURE FORWARD COMPATIBILITY 
 BECAUSE GITHUB MAY CHANGE THE LENGTH OF TAB SPACE WHICH WILL BREAK FORMATTING LIKE WHAT HAPPENED DURING UPDATE OF THE DOC ON AUG 16, 2025.
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -495,7 +495,8 @@ Audio Item
                             //  field 2, float, ratio between track height and single fixed item lane height,
                             //  where track height is 1, so 0.25 means there're 4 lanes, because 1 / 0.25 = 4,
                             //  track height is divided uniformely between lanes;
-                            //  field 3, ??, the value of 2 seems constant.
+                            //  field 3, ??, the value of 2 seems constant in items on track with fixed lanes
+                            //  whereas 0 on tracks with no fixed lanes
     FADEIN 1 0.0 0.0        // Fade in settings
                             //  field 1, int, fade in curve type (0 - linear, etc.)
                             //  field 2, float, fade in time (in seconds)
