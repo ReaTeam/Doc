@@ -492,12 +492,14 @@ Audio Item
                             //  occupied by the current and preceding lanes (0.75 + 0.25), then divide by
                             //  the ratio between track height and lane height (0.25), which is the same as 
                             //  reaper.GetMediaItemInfo_Value(item, 'I_FIXEDLANE');
-                            //  2 seems constant in items on tracks which had mutliple FIL at least once; 
+                            //  In items which at any point in the past were located on FIL or in their copies
+                            //  field 1 contains the 0-based index of their last lane;
                             //  field 2, float, ratio between track height and single fixed item lane height,
                             //  where track height is 1, so 0.25 means there're 4 lanes, because 1 / 0.25 = 4,
                             //  track height is divided uniformely between lanes,
-                            //  1 seems constant in items on tracks which had mutliple FIL at least once;
-                            //  field 3, ??, the value of 2 seems constant in items on track with fixed lanes
+                            //  1 seems constant in items which at any point in the past were located on FIL 
+                            //  or in their copies;
+                            //  field 3, ??, the value of 2 seems constant in items on tracks with fixed lanes
                             //  whereas 0 on tracks with no FIL
     FADEIN 1 0.0 0.0        // Fade in settings
                             //  field 1, int, fade in curve type (0 - linear, etc.)
