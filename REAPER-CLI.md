@@ -25,20 +25,20 @@ Since build 6.80 passing either project/template or a media file AND a script fi
 
 ## Options:
 
-- **-noactivate** : launch but do not activate _(until 7.29 was only supported on Windows, since then on MacOS/Linux as well)_
 - **-audiocfg** : show audio configuration at startup
 - **-cfgfile file.ini** : use full path for alternate resource directory, otherwise uses default path
 - **-new** : start with new project
 - **-template filename.rpp** : start with template project
 - **-saveas newfilename.rpp** : save project (after creating/loading) as file
 - **-renderproject filename.rpp** : render project and exit
+- **--fxoffline filename.rpp** : load project with FX offline (recovery mode)
 - **-peaktest filename.cpp** : dry run render project and report peak output level -- _(since 7.62)_
 - **-ignoreerrors** : do not show errors on load
 - **-nosplash** : do not show slpash screen window
 - **-splashlog /path/to/filename.log** : write splash screen message log to file; the first line of logfile.txt will include the version number, _([source](https://forum.cockos.com/showthread.php?t=258280#4))_
 - **-newinst | -nonewinst** : override preference for new instance checking
 - **-close[all][:save|:nosave][:exit]** : close project(s), optionally not prompting for save and exiting _(**:exit** argument since 7.29)_
-- **-noactivate** : launch but do not activate
+- **-noactivate** : launch but do not activate _(until 7.29 was only supported on Windows, since then on MacOS/Linux as well)_
 - **-batchconvert filelist.txt** : batch converter mode, filelist.txt includes:
   - list of files to convert:
     `filename.wav`
