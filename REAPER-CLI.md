@@ -31,7 +31,7 @@ Since build 6.80 passing either project/template or a media file AND a script fi
 - **-template filename.rpp** : start with template project
 - **-saveas newfilename.rpp** : save project (after creating/loading) as file
 - **-renderproject filename.rpp** : render project and exit
-- **--fxoffline filename.rpp** : load project with FX offline (recovery mode)
+- **--fxoffline filename.rpp** : load project with FX offline (recovery mode) -- _(since 7.74)_
 - **-peaktest filename.cpp** : dry run render project and report peak output level -- _(since 7.62)_
 - **-ignoreerrors** : do not show errors on load
 - **-nosplash** : do not show slpash screen window
