@@ -1280,27 +1280,15 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                   //  1 - option 'Run selected FX in parallel with previous FX' is enabled;
                                   //  2 - option 'Run selected FX in parallel with previous FX (merge MIDI)'
                                   //  is enabled (since REAPER 7).
+    FX_SLOT_HINT 2                //  field 1, int, 0-based FX slot index of FX preceded by empty slots
+                                  //  in TCP/MCP, supported since build 7.75;
+                                  //  the data of all following FX will also include this attribute because
+                                  //  their slot index will not be sequential as well;
+                                  //  the data of FX inside containers cannot include this attribute because
+                                  //  such FX don't appear in the TCP/MCP.
 
-   CONTAINER_PARM 1 0 15:_Global_Gain ""  // Parameters of FX inside a container, mapped to container;
-   CONTAINER_PARM 2 0 2:_BW_Low_Shelf ""  // field 1, int, 1-based index of the mapped parameter instance,
-                                          // when some parameters are unpapped and others are mapped the indexing
-                                          // isn't reset but continues to be incremented from the greatest index
-                                          // of the mapped parameter, i.e. if current parameter, indexed 1,
-                                          // is unmapped, the list will start from 2 and next mapped parameter
-                                          // will be assigned index 3, likewise if an unmapped parameter
-                                          // was in the middle of the list, the resulting indexing sequence will
-                                          // have a gap, only the last mapped parameter index is maintained
-                                          // when a parameter it's assigned to is unmapped and another one
-                                          // is mapped in its stead or the same parameter is mapped again;
-                                          // field 2, int, 0-based index of FX instance inside the container;
-                                          // field 3, int, original 0-based index of the mapped parаmeter 
-                                          // in the source plugin;
-                                          // field 4, string, FX parameter identifier, the one returned with
-                                          // the function FX_GetParamIdent;
-                                          // field 5, empty string within quotes, ????
-							      
-    <CONTAINER Container ""       // --- Start of FX container definition (since REAPER 7)
-                                  // "" - container isn't named; as usual, names with spaces are enclosed
+    BYPASS 0 0                    // --- Start of FX container definition (since REAPER 7)
+    <CONTAINER Container ""       // "" - container isn't named; as usual, names with spaces are enclosed
                                   // within quotes, otherwise no quotes;
       CONTAINER_CFG 4 4 2 0       // field 1, int, number of container channels;
                                   // field 2, int, number of container inputs;
@@ -1358,15 +1346,32 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                                          // following options is enabled for the FOLLOWING FX/Container instance
                                                          // 1 - 'Run selected FX in parallel with previous FX';
                                                          // 2 - 'Run selected FX in parallel with previous FX (merge MIDI)'.
-     CONTAINER_PARM 1 0 0:1 ""                           // Parameters of a nested container mapped to the current container.
-     CONTAINER_PARM 2 0 1:2 ""                           // The difference from the data of source plugin parameters mapped
-                                                         // to a parent container (see above) is that field 3 is 0-based index 
-                                                         // of the parameter in the mapped parameters list of the nested 
-                                                         // container while field 4 is 1-based index of such parameter, 
-                                                         // the order of these indices depends on the order in which parameters 
-                                                         // were mapped to the current container, when a parameter is unmapped 
-                                                         // and then mapped again its entry is added last.
-                                                         //  --- FX container definition end
+    CONTAINER_PARM 1 0 15:_Global_Gain ""      // Parameters of FX inside a container, mapped to container;
+    CONTAINER_PARM 2 0 2:_BW_Low_Shelf ""      // field 1, int, 1-based index of the mapped parameter instance,
+                                               // when some parameters are unmapped and others are mapped the indexing
+                                               // isn't reset but continues to be incremented from the greatest index
+                                               // of the mapped parameter, i.e. if current parameter, indexed 1,
+                                               // is unmapped, the list will start from 2 and next mapped parameter
+                                               // will be assigned index 3, likewise if an unmapped parameter
+                                               // was in the middle of the list, the resulting indexing sequence will
+                                               // have a gap, only the last mapped parameter index is maintained
+                                               // when a parameter it's assigned to is unmapped and another one
+                                               // is mapped in its stead or the same parameter is mapped again;
+                                               // field 2, int, 0-based index of FX instance inside the container;
+                                               // field 3, int, original 0-based index of the mapped parаmeter 
+                                               // in the source plugin;
+                                               // field 4, string, FX parameter identifier, the one returned with
+                                               // the function FX_GetParamIdent;
+                                               // field 5, empty string within quotes, ????
+     CONTAINER_PARM 1 0 0:1 ""                 // Parameters of a nested container mapped to the current container.
+     CONTAINER_PARM 2 0 1:2 ""                 // The difference from the data of plugin parameters mapped
+                                               // to a parent container (see above) is that field 3 is 0-based index 
+                                               // of the parameter in the mapped parameters list of the nested 
+                                               // container while field 4 is 1-based index of such parameter, 
+                                               // the order of these indices depends on the order in which parameters 
+                                               // were mapped to the current container, when a parameter is unmapped 
+                                               // and then mapped again its entry is added last.
+                                               //  --- FX container definition end
 
      <COMMENT                                            //  Plugin comment. Not present if no comment.
         Y29tbWVudA==                                     //   Binary data, probably best to leave it alone
