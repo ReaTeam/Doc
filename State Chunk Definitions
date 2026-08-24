@@ -1098,11 +1098,11 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
                                                               //  field 3, int, width
                                                               //  field 4, int, height
     SHOW 0                                                    //  field 1, int, index of an FX currently open in the chain 
-                                                              // (NOT zero based), 0 means that the FX chain window is closed;
-    LASTSEL 1                                                 // field 1, int, index of the plugin selected in the FX chain (0-based);
-                                                              // COMMENT: SHOW and LASTSEL values are basically identical
-                                                              // and only differ by 1 because one uses 1-based count whereas 
-                                                              // another 0-based count;
+                                                              // (NOT zero based), 0 means that the FX chain window is closed
+                                                              // or for FX inside containers - that the one of the parent container 
+                                                              // isn't selected so the FX UI isn't shown in the FX chain;
+    LASTSEL 1                                                 // field 1, int, index of the plugin selected in the FX chain (0-based),
+                                                              // the value doesn't depend on the FX UI being shown in the FX chain;
     DOCKED 0                                                  // field 1, int (bool), 1 - FX chain window is docked, 0 - floating;
 	
                                                               // --- Start of first plugin definition
