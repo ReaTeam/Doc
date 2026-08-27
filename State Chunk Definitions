@@ -1093,16 +1093,19 @@ Track/Take FX
 Plugin chains appear to be the same for both tracks and item takes, with the exception that the chunk name is different.
     <FXCHAIN                                                  // FXCHAIN for track or TAKEFX for take
     WNDRECT 0 42 716 227                                      // FX Window position
-                                                              //  field 1, int, top
-                                                              //  field 2, int, left
-                                                              //  field 3, int, width
-                                                              //  field 4, int, height
-    SHOW 0                                                    //  field 1, int, index of an FX currently open in the chain 
-                                                              // (NOT zero based), 0 means that the FX chain window is closed
-                                                              // or for FX inside containers - that the one of the parent container 
-                                                              // isn't selected so the FX UI isn't shown in the FX chain;
+                                                              // field 1, int, top
+                                                              // field 2, int, left
+                                                              // field 3, int, width
+                                                              // field 4, int, height
+    SHOW 0                                                    // field 1, int, 1-based index of an FX currently open in the chain 
+                                                              // 0 means that the FX chain window is closed or for FX inside
+                                                              // containers - that the one of the parent containers isn't selected 
+                                                              // so the FX UI isn't shown in the FX chain;
     LASTSEL 1                                                 // field 1, int, index of the plugin selected in the FX chain (0-based),
-                                                              // the value doesn't depend on the FX UI being shown in the FX chain;
+                                                              // the value doesn't depend on the FX UI being shown in the FX chain
+                                                              // COMMENT: when SHOW is not 0, it's identical to LASTSEL and only
+                                                              // differs from it by 1 because it uses 1-based count whereas LASTSEL 
+                                                              // uses 0-based count;
     DOCKED 0                                                  // field 1, int (bool), 1 - FX chain window is docked, 0 - floating;
 	
                                                               // --- Start of first plugin definition
