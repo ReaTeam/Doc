@@ -274,8 +274,9 @@ The Track state chunk contains all the settings for a track and all of its items
                                                               //  field 7. int, record path, 0=primary, 1=secondary, 2=both
     VU 2                                                      //  ???
     MIDIEDITOR 12 1                                           //  field 1, int, MIDI pitch envelope range in semitones
-                                                              //  set via Snap -> Set Pitchweel Range dialogue
-                                                              //  field 2, ??;
+                                                              //  set via 'Snap' box click (or right click when custom range
+                                                              //  is set) -> 'Set Pitchweel Range' dialogue
+                                                              //  field 2, bool, 0 - pitch snap disabled, 1 - enabled,
                                                               //  the attribute is absent when no custom range is set.
     TRACKHEIGHT 0 0                                           // Height in TCP,
                                                               //  field 1, int, height in pixels
