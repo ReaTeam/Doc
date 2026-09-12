@@ -277,6 +277,7 @@ The Track state chunk contains all the settings for a track and all of its items
                                                               //  set via 'Snap' box click (or right click when custom range
                                                               //  is set) -> 'Set Pitchweel Range' dialogue
                                                               //  field 2, bool, 0 - pitch snap disabled, 1 - enabled,
+                                                              //  same data as those returned by MIDIEditorFlagsForTrack(),
                                                               //  the attribute is absent when no custom range is set.
     TRACKHEIGHT 0 0                                           // Height in TCP,
                                                               //  field 1, int, height in pixels
