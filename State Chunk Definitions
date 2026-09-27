@@ -1493,6 +1493,10 @@ Freeze data chunk, storing data for unfreezing
 >                                                                                                       //
                                                                                                 // -----Start of a FREEZE chunk
  <FREEZE 0                                                                                              // field 1, ??
+  FREEZE_CHILD_MAINSEND_ON_GUID '{07996186-993B-4604-BA3D-06EBD366CF79}'                                // GUID of a child track 
+                                                                                                        // in which Parent send was
+                                                                                                        // disabled as a result of
+                                                                                                        // freezing the parent track.
    <FXCHAIN                                                                                             // A regular FXCHAIN chunk
     WNDRECT 32 60 745 420                                                                               // storing track FX, if any,
                                                                                                         // which are removed
