@@ -788,7 +788,7 @@ MIDI Item
     SOFFS 0.000 0.000                                   // Slip offset (in seconds; the second field is always twice the first field)
     PLAYRATE 1.000 1 0.000 -65536                       // ...
     CHANMODE 0                                          // ...
-    GUID {9C93A652-09A2-4A46-9E1B-EF83EB7CED29}         // ...
+    GUID {9C93A652-09A2-4A46-9E1B-EF83EB7CED29}         // Take ID
     <SOURCE MIDI                                        // Source section start
         HASDATA 1 960 QN                                // Does the item have any data? PPQ resolution in ticks per quarter note
         e 300 90 2b 60                                  // Standard MIDI message
@@ -808,7 +808,7 @@ MIDI Item
           8AECAwQF9w==                                  // (Base64 encoded)
         >                                               // SysEx section end
         E 540 b0 7b 00                                  // unselected msg, offset 540, Control Change , all notes off (cc123)
-        GUID {9DAB52C8-6257-4A4E-9E60-323514C0DB9B}     // Take id
+        GUID {9DAB52C8-6257-4A4E-9E60-323514C0DB9B}     // ?????
         IGNTEMPO 0 120.00000000 4 4                     // Ignore project tempo, override with new settings
                                                         //  field 1, int, ignore on/off
                                                         //  field 2, float, tempo used to override project tempo
