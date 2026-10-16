@@ -490,7 +490,7 @@ Audio Item
     ALLTAKES 0              // Play all takes? int (bool)
     COLOR 22278759          // Item colour, int , Not present if not set.
     BEAT 0                  // Item timebase, int, Not present if not set. -1 = use track timebase
-    SEL 1                   // Is the item selected? int (bool)
+    SEL 1                   // field 1, bool, 0 - item is not selected, 1 - item is selected
     YPOS 0.75 0.25 2        // Item lane relative position (supported since v7)
                             // Only present when Fixed item lanes (FIL) mode is or was enabled in item's parent track
                             //  field 1, float, fixed item lane top edge relative Y coordinate within track height
@@ -752,8 +752,7 @@ Audio Item
                                                         //  even though it's included in the total take count.
                                                         //  When such take is the topmost its attribute is absent in the chunk
                                                         //  and the data of the next valid take are listed under TAKE attribute.
-    TAKE SEL                                            // Third take start. SEL only appears if this take is active 
-                                                        // in a selected item;
+    TAKE SEL                                            // Third take start. SEL only appears if this take is active
     NAME "The second take"                              // Take name
     TAKEVOLPAN 0.0 1.0 -1.0                             // Take volume and pan settings
                                                         //  field 1, float, take pan
