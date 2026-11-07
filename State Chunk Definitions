@@ -1493,6 +1493,12 @@ Freeze data chunk, storing data for unfreezing
  DOCKED 0                                                                                               //
 >                                                                                                       //
                                                                                                 // -----Start of a FREEZE chunk
+                                                                                                // For each freeze applied on 
+                                                                                                // top of an existing freeze a new
+                                                                                                // <FREEZE section is added, so
+                                                                                                // a chunk of a track frozen several 
+                                                                                                // times in a row will contain more
+                                                                                                // than one such section
  <FREEZE 0                                                                                              // field 1, ??
   FREEZE_CHILD_MAINSEND_ON_GUID '{07996186-993B-4604-BA3D-06EBD366CF79}'                                // GUID of a child track 
                                                                                                         // in which Parent send was
