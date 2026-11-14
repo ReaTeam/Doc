@@ -3,10 +3,10 @@ _E.g. on Windows_
 _(reaper.exe installation path is on the system drive)_  
 `C:\Users\%USER NAME%>cd ..`  
 `C:\Users>cd ..`  
-`C:\>Prorgam Files\REAPER\reaper.exe -?`  
+`C:\>Program Files\REAPER\reaper.exe -?`  
 _(reaper.exe installation path is on drive D)_  
 `C:\Users\%USER NAME%>D:`  
-`D:\>Prorgam Files\REAPER\reaper.exe -?`
+`D:\>Program Files\REAPER\reaper.exe -?`
 
 ## Usage:
 
