@@ -40,11 +40,11 @@ Since build 6.80 passing either project/template or a media file AND a script fi
 - **-close[all][:save|:nosave][:exit]** : close project(s), optionally not prompting for save and exiting _(**:exit** argument since 7.29)_
 - **-noactivate** : launch but do not activate _(until 7.29 was only supported on Windows, since then on MacOS/Linux as well)_
 - **-batchconvert filelist.txt** : batch converter mode, filelist.txt includes:
-  - list of files to convert:
-    `filename.wav`
-      or
-    `filename.wav(TAB CHARACTER)outputfile.wav`
-      plus any number of additional files
+  - list of files to convert:  
+    `filename.wav`  
+      or  
+    `filename.wav`(TAB CHARACTER)`outputfile.wav` _(plus any number of additional files)_ (TAB CHARACTER)`optional_gain_adjustment_db`
+    _(gain adjustment is supported since 7.83, applied after normalization, if any)_
   - \<CONFIG ...> block (optional, can be generated via the Batch Converter presets button) which can contain:
     - SRATE 44100 (omit to use source samplerate)
     - NCH 2 (omit to use source channel count; *since 7.46:* -1=explode channels to separate files; -3=explode stereo pairs to separate files)
@@ -58,9 +58,9 @@ Since build 6.80 passing either project/template or a media file AND a script fi
     - PAD_END 1.0 (trailing silence in sec, can be negative) -- _(since 7.29)_
     - PAD_OUTSIDE_TRIM 0 	(add padding outside trimmed content *(default: inside trimmed content)*
                           &1=add start padding before trimmed start, &2=add end padding after trimmed end) -- _(since 7.48)_
-    - NORMALIZE 1 -6.0 0 (1=peak, 2=true peak, 3=lufs-i, 4=lufs-s, 5=lufs-m, *since 7.50:* 6=rms;  
-                         2nd parameter is dB,  
-                         3rd parameter: 1=normalize only if too loud)
+    - NORMALIZE 1 -6.0 0 (1=peak, 2=true peak, 3=lufs-i, 4=lufs-s, 5=lufs-m, *since 7.50*: 6=rms;  
+                         2nd parameter: dB,  
+                         3rd parameter: &1=normalize only if too loud; *since 7.83*: &2=normalize only if too quiet)
     - BRICKWALL 1 -1.0 (1=peak, 2=true peak, 2nd parameter is dB ceiling) -- _(since 6.43)_
     - FADE 0.0 0.0 1 1 (fade-in length, fade-out length, fade-in shape, fade-out shape; length 0.001 = 1 ms)
     - OUTPATH 'path'
