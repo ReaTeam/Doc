@@ -486,8 +486,8 @@ Audio Item
     POSITION 0.000          // Position on the timeline, in seconds
     SNAPOFFS 0.000          // Snap offset, in seconds
     LENGTH 145.500          // Item length, in seconds
-    LOOP 0                  // Loop source? int (bool)
-    ALLTAKES 0              // Play all takes? int (bool)
+    LOOP 0                  // Loop source int (bool)
+    ALLTAKES 0              // Play all takes int (bool)
     COLOR 22278759          // Item colour, int , Not present if not set.
     BEAT 0                  // Item timebase, int, Not present if not set. -1 = use track timebase
     SEL 1                   // field 1, bool, 0 - item is not selected, 1 - item is selected
@@ -531,6 +531,12 @@ Audio Item
                             // 'Item properties: Toggle solo' or via ReaScript API); 
                             // 1 - item was soloed and its solo was overridden by soloing of another item 
                             // (via action 'Item properties: Toggle solo exclusive' or via ReaScript API)
+    FREEZE 0 2.27340136054422 0    // Frozen item on a frozen track
+                                   // field 1, ???;
+                                   // field 2, float, item length in sec, same as LENGTH attribute;
+                                   // field 3, ???
+    LOCK 0                  // Item lock status
+                            // field 1, bool, 0 = not locked, 1 = locked;
     FADEFLAG 1                                          // ??, int, may not be present
     GROUP 2560                                          // A number of the group the item belongs to, if grouped
     IGUID {98E8ECDE-FF4D-4E06-87ED-43A5E7E6A61A}        // Item id. Leave it alone
@@ -783,6 +789,7 @@ MIDI Item
     FADEIN 1 0.0 0.0                                    // ...
     FADEOUT 1 0.0 0.0                                   // ...
     MUTE 0                                              // ...
+    LOCK 0                                              // ...
     IGUID {967EE770-4144-472A-89D6-B72BB910A916}        // ...
     NAME "MIDI item"                                    // ...
     VOLPAN 1.0 0.0 1.0 -1.0                             // ...
