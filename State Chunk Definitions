@@ -531,10 +531,6 @@ Audio Item
                             // 'Item properties: Toggle solo' or via ReaScript API); 
                             // 1 - item was soloed and its solo was overridden by soloing of another item 
                             // (via action 'Item properties: Toggle solo exclusive' or via ReaScript API)
-    FREEZE 0 2.27340136054422 0    // Frozen item on a frozen track
-                                   // field 1, ???;
-                                   // field 2, float, item length in sec, same as LENGTH attribute;
-                                   // field 3, ???
     LOCK 0                  // Item lock status
                             // field 1, bool, 0 = not locked, 1 = locked;
     FADEFLAG 1                                          // ??, int, may not be present
@@ -1137,6 +1133,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
     PRESETNAME "stock - Basic 11 band"                        //  Name of current plugin preset selected in the preset drop-down list;
                                                               //  In VST3 plugins may list .vstpreset file path enclosed within 
                                                               //  quotes, e.g. "C:\VST3 presets\test4.vstpreset"
+    MULTIFXLINK 0                                             //  ?????
     FLOATPOS 0 0 0 0                                          //  Plugin floating window pos, int;
                                                               //  FLOAT - plugin UI is open in a floating window; FLOATPOS - plugin UI 
                                                               //  is NOT open in a floating window;
@@ -1412,6 +1409,7 @@ Plugin chains appear to be the same for both tracks and item takes, with the exc
      AAAGAAAAAgAAAAUAAAAAAAAACgAAAAAAAAA=                      //  if different from deafult
      >                                                         //
      JS_DIMS 489 305                                     //  Dimensions of JS plugin UI
+     MULTIFXLINK 0                                       //  ...
      FLOATPOS 0 0 0 0                                    //  ...
      FXID {BE5D3334-6675-4DAD-AFDD-F4489878D82A}         //  ...
      WAK 0 0                                             //  ...
@@ -1494,11 +1492,11 @@ Video Processor plugin
 Freeze data chunk, storing data for unfreezing
 
 <FXCHAIN                                                                                       // Start of track regular FXCHAIN chunk
- WNDRECT 32 60 745 420                                                                                  //
- SHOW 0                                                                                                 //
- LASTSEL 0                                                                                              //
- DOCKED 0                                                                                               //
->                                                                                                       //
+ WNDRECT 32 60 745 420                                                                          // ...
+ SHOW 0                                                                                         // ...
+ LASTSEL 0                                                                                      // ...
+ DOCKED 0                                                                                       // ...
+>                                                                                               // ...
                                                                                                 // -----Start of a FREEZE chunk
                                                                                                 // For each freeze applied on 
                                                                                                 // top of an existing freeze a new
@@ -1530,6 +1528,7 @@ Freeze data chunk, storing data for unfreezing
       AAAAAAAAAAABAAAALAAAAAIAAAAAAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAIA8nNEHMwAAgD8AAAAAAACAPwAAgD8AAIA/  //
      AAAAPw==AAAQAAAA                                                                                   //
     >                                                                                                   //
+    MULTIFXLINK 0                                                                                       //
     FLOATPOS 0 0 0 0                                                                                    //
     FXID {FF92D48D-1B63-44E6-A44F-EF996F9E2228}                                                         //
     WAK 0 0                                                                                             //
@@ -1567,6 +1566,7 @@ Freeze data chunk, storing data for unfreezing
          AAAAAAAAAAABAAAALAAAAAIAAAAAAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAIA8nNEHMwAAgD8AAAAAAACAPw         //
         AAgD8AAIA/AAAAPw==AAAQAAA                                                                       //
         >                                                                                               //
+       MULTIFXLINK 0                                                                                    //
        FLOATPOS 0 0 0 0                                                                                 //
        FXID {63C343BD-C1AF-4CB0-9668-EA07D62D32A0}                                                      //
        WAK 0 0                                                                                          //
@@ -1585,6 +1585,12 @@ Freeze data chunk, storing data for unfreezing
 <ITEM                                                                                                   // Frozen item chunk, part
                                                                                                         // of the TRACK chunk
   POSITION 0.5                                                                                          //
+  .........                                                                                             //
+  FREEZE 0 2.27340136054422 0                                                                           // Frozen item on a frozen track
+                                                                                                        // field 1, ???;
+                                                                                                        // field 2, float, item length 
+                                                                                                        // in sec, same as LENGTH attribute;
+                                                                                                        // field 3, ???                                             
   .........                                                                                             //
   <SOURCE WAVE                                                                                          //
     FILE "C:\Users\Admin\Documents\REAPER Media\reaper_freeze.wav"                                      //
